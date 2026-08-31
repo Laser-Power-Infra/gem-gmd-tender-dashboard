@@ -2,11 +2,15 @@ import os
 import re
 import glob
 import json
+import time
 import threading
+from datetime import datetime, timezone
 import pandas as pd
 from flask import Flask, render_template, jsonify, request, send_file
 from flask_cors import CORS
 from gem_scraper import scrape_gem_bid, extract_bid_details_from_html
+
+START_TIME = time.time()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)
@@ -497,6 +501,17 @@ def trigger_scraper():
         'message': f'Started scraping {len(items_to_scrape)} item(s)',
         'items': items_to_scrape
     })
+
+@app.route('/api/health', methods=['GET'])
+def get_health():
+    uptime = round(time.time() - START_TIME, 2)
+    response = jsonify({
+        'status': 'ok',
+        'uptime': uptime,
+        'timestamp': datetime.now(timezone.utc).isoformat()
+    })
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 @app.route('/api/scraper-status', methods=['GET'])
 def get_scraper_status():
