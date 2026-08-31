@@ -1,0 +1,364 @@
+{
+  "source_id": "8416956",
+  "bid_number": "GEM/2025/B/6741193",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6741193",
+    "Bid Status": "Active",
+    "Quantity": "46",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "26-10-2025 14:20:44",
+    "Bid End Date / Time": "17-11-2025 15:00:00",
+    "Bid Opening Date / Time": "17-11-2025 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "N.a. Suresh",
+    "Address": "N.A. Suresh,suresh.n.a.nlc@nic.in,NLC TAMILNADU POWER LIMITED 2X500 MW THERMAL POWER PLANT HORBOUR ESTATE, TUTICORIN,Tuticorin ( thoothukudi ),TAMIL NADU,628004,India,0461-2626329-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Nlc Tamil Nadu Power Limited",
+    "Organisation": "Nlc Tamil Nadu Power Limited",
+    "Office": "Tuticorin 628004"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "11-11-2025 11:07:05",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-11-2025 11:26:58",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CONTINENTAL VALVES LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-11-2025 12:54:06",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "DEMBLA VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-11-2025 10:26:46",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "DUNCAN ENGINEERING LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-11-2025 09:27:03",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "-",
+      "Participated On": "16-11-2025 23:12:11",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-11-2025 14:55:56",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "GLOBE ENGINEERING ASSOCIATES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-11-2025 17:48:57",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "HAWA ENGINEERS LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-11-2025 18:51:06",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "KHIMJI FLOW EQUIPMENTS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-11-2025 17:14:02",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-11-2025 14:56:05",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "MAS ENERGY SOLUTIONS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "28-10-2025 18:43:37",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-11-2025 16:08:32",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "SAFE VALVES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "16-11-2025 19:37:24",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "SAMRAT ENGINEERING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "07-11-2025 14:51:52",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "STEELSTRONG VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-11-2025 13:12:36",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "T S ENGINEERS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-11-2025 11:51:55",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "UNIQUE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "13-11-2025 20:37:29",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "VKE VALVES INDUSTRIES PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "07-11-2025 17:24:18",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "VOYAGER MARINE SERVICES INDIA PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-11-2025 12:37:31",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "YAMAC VALVES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-11-2025 12:41:17",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "13-11-2025 16:01:08",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "SAMRAT ENGINEERING (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 120652.64",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "T S ENGINEERS (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 182200.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "HAWA ENGINEERS LTD (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 233670.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "A V VALVES LTD (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 284516.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MAS ENERGY SOLUTIONS ( MSE Social Category:SC ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 315156.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "SAFE VALVES Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 390126.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "UNIQUE VALVES PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 408112.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "M/S PIPING ZONE (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 430992.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "DUNCAN ENGINEERING LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 442882.32",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 471360.00",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "STEELSTRONG VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 800460.00",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 888068.00",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1102146.00",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "GLOBE ENGINEERING ASSOCIATES ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1159600.00",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "KHIMJI FLOW EQUIPMENTS PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1170845.94",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "YAMAC VALVES (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1298000.00",
+      "Rank": "L16"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1632966.00",
+      "Rank": "L17"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "VOYAGER MARINE SERVICES INDIA PRIVATE LIMITED ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1642010.00",
+      "Rank": "L18"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "CONTINENTAL VALVES LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1851420.00",
+      "Rank": "L19"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "DEMBLA VALVES LTD Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 1902296.00",
+      "Rank": "L20"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "VKE VALVES INDUSTRIES PVT LTD (MSE) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 3308335.32",
+      "Rank": "L21"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : ST020340966- DN100, wafer type metal seated butterfly valve for steam, 10kg cm2, 400degC, body WCB,",
+      "Total Price": "` 5151366.00",
+      "Rank": "L22"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8416956"
+}

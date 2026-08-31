@@ -1,0 +1,102 @@
+{
+  "source_id": "5870774",
+  "bid_number": "GEM/2024/B/4460512",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4460512",
+    "Bid Status": "Active",
+    "Quantity": "44",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "02-02-2024 20:14:34",
+    "Bid End Date / Time": "23-02-2024 12:00:00",
+    "Bid Opening Date / Time": "23-02-2024 12:30:00",
+    "Average Turn Over of Last 3 Years": "15 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Raj Kumar",
+    "Address": "RAJ KUMAR,buycon1.npp.muradngr@gembuyer.in,MAIN KASBA ROAD / TANKI ROAD, NAGAR PALIKA COMPOUND, MURADNAGAR, GHAZIABAD,GHAZIABAD,UTTAR PRADESH,201206,India",
+    "State": "Uttar Pradesh",
+    "Department": "Urban Development Department Uttar Pradesh",
+    "Organisation": "N/a",
+    "Office": "Nagar Palika Parishad Muradnagar Ghaziabad"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE 350MM PN 1.6 Title : SLUICE VALVE 350MM PN 1.6",
+      "Participated On": "22-02-2024 12:49:43",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "GLOBAL TRADERS Under PMA",
+      "Offered Item": "Make : Global Model : 200 Mm Sluice Valve Title : 200 Mm Sluice Valve",
+      "Participated On": "23-02-2024 02:58:26",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M/S SHYAM CONSTRUCTION COMPANY Under PMA",
+      "Offered Item": "Make : Shyam Construction Model : 400 Mm Sluice Valve Geal Box Title : 400 Mm Sluice Valve Geal Box",
+      "Participated On": "22-02-2024 20:57:59",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "MAYANK ENTERPRISES Under PMA",
+      "Offered Item": "Make : Mayank Model : Supply Of Chlorine Doser Pump Set Complete Title : Supply Of Chlorine Doser Pump Set Complete",
+      "Participated On": "22-02-2024 14:33:58",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "PROTIMA ENGINEERING Under PMA",
+      "Offered Item": "Make : PROTIMA Model : GTV Title : GATE VALVE",
+      "Participated On": "22-02-2024 11:51:32",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "M/S SHYAM CONSTRUCTION COMPANY",
+      "Total L1 Price": "1296000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "M/S SHYAM CONSTRUCTION COMPANY",
+      "Total L1 Price": "565000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "M/S SHYAM CONSTRUCTION COMPANY",
+      "Total L1 Price": "1132250",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/5870774"
+}

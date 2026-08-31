@@ -1,0 +1,80 @@
+{
+  "source_id": "7891707",
+  "bid_number": "GEM/2025/B/6277197",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6277197",
+    "Bid Status": "Active",
+    "Quantity": "16",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "27-05-2025 09:53:36",
+    "Bid End Date / Time": "17-06-2025 10:00:00",
+    "Bid Opening Date / Time": "17-06-2025 10:30:00"
+  },
+  "buyer_details": {
+    "Name": "Mausoom Choudhury",
+    "Address": "Mausoom Choudhury,buycon4.bcplbga.as@gembuyer.in,M/s Brahmaputra Cracker And Polymer Limited, Contract & Procurement Department, Administrative Building, Lepetkata - 786006 Dibrugarh (Assam),DIBRUGARH,ASSAM,786006,India,0373-2914637-",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Brahmaputra Cracker And Polymer Limited",
+    "Organisation": "Brahmaputra Cracker And Polymer Limited",
+    "Office": "Lepetkata"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "DELVAL FLOW CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Delval Model : Series 40 Title : BUTTERFLY VALVE Model: IVTFE Size: 300",
+      "Participated On": "17-06-2025 09:53:27",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "S M TRADING COMPANY Under PMA",
+      "Offered Item": "Make : INTERVALVE Model : IVTFE Title : BUTTERFLY VALVE Model: IVTFE Size: 300",
+      "Participated On": "14-06-2025 16:20:07",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "UNICK CONTROL SYSTEM Under PMA",
+      "Offered Item": "Make : UNICK CONTROL SYSTEM Model : BUTTERFLY VALVE Model: IVTFE Size: 300 Title : BUTTERFLY VALVE Model: IVTFE Size: 300",
+      "Participated On": "16-06-2025 17:50:07",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "WELL CAST INDUSTRIES Under PMA",
+      "Offered Item": "Make : WCI WELLCAST INDUSTRIES Model : BFV1210 Title : BUTTERFLY VALVE Model: IVTFE Size: 300",
+      "Participated On": "17-06-2025 09:10:47",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "DELVAL FLOW CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE Model: IVTFE Size: 300,Seal Kit set for butterfly valve,Gear Box For the Valve BUTT",
+      "Total Price": "` 347246.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "S M TRADING COMPANY Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE Model: IVTFE Size: 300,Seal Kit set for butterfly valve,Gear Box For the Valve BUTT",
+      "Total Price": "` 605600.00",
+      "Rank": "L2"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7891707"
+}

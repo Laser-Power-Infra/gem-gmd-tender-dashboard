@@ -1,0 +1,34 @@
+{
+  "source_id": "9412222",
+  "bid_number": "GEM/2026/B/7614106",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7614106",
+    "Bid Status": "Active",
+    "Quantity": "15",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "02-06-2026 23:25:48",
+    "Bid End Date / Time": "13-06-2026 09:00:00",
+    "Bid Opening Date / Time": "13-06-2026 09:30:00",
+    "Average Turn Over of Last 3 Years": "5 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Harsh Vardhan",
+    "Address": "Harsh Vardhan,buycon2.np.hathras@gembuyer.in,Nagar Palika Parishad, Aligarh Road Hathras,Hathras,UTTAR PRADESH,204101,India,05722-241521-",
+    "State": "Uttar Pradesh",
+    "Department": "Urban Development Department Uttar Pradesh",
+    "Organisation": "E-municipalities - Eservices To Citizens And Employees Of Urban Local Bodies Of Uttar Pradesh",
+    "Office": "Nagar Palika Parishad Hathras"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9412222"
+}

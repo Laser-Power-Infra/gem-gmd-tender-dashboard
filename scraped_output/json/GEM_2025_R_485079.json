@@ -1,0 +1,111 @@
+{
+  "source_id": "7813343",
+  "bid_number": "GEM/2025/R/485079",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/485079",
+    "RA Status": "Active",
+    "Quantity": "30",
+    "RA Validity (From End Date)": "90 ( Days)",
+    "RA Start Date / Time": "08-05-2025 11:00 AM",
+    "RA End Date / Time": "09-05-2025 12:25 PM"
+  },
+  "buyer_details": {
+    "Name": "Mohammed Raziq Khan",
+    "Address": "Mohammed Raziq Khan,buycon2317.bhelb.ts@gembuyer.in,BHEL , HPEP , Ramachandrapuram,Medak,TELANGANA,502032,India,040-23182390-",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10130010-hpep Hyderabad"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "MVITO INDUSTRIES PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 224618.64",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 225008.39",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 240508.48",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 389250.00 (Bid Price)",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLUIDLINE VALVES COMPANY PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 405000.00 (Bid Price)",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 459990.00 (Bid Price)",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "SKILT FABRICATORS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 559983.05 (Bid Price)",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "SHALIMAR VALVES PVT LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 580650.00 (Bid Price)",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "LEADER VALVES LTD (MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 614771.19 (Bid Price)",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "GOYAL VALVES AND CONTROLS (MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 1037237.29 (Bid Price)",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "ENGINEERS COMBINE (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : AA7526408681_ GATE VLV CS(A216WCB) 4\" SG CL150 BW",
+      "Total Price": "` 1121186.44 (Bid Price)",
+      "Rank": "L11"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/485079",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "08-05-2025 11:00 AM",
+    "ra_end_date": "09-05-2025 12:25 PM",
+    "parent_bid_number": "GEM/2025/B/6061728"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7813343",
+  "parent_bid_number": "GEM/2025/B/6061728"
+}

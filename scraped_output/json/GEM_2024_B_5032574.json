@@ -1,0 +1,153 @@
+{
+  "source_id": "6500135",
+  "bid_number": "GEM/2024/B/5032574",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5032574",
+    "Bid Status": "Active",
+    "Quantity": "50",
+    "Bid Validity (From End Date)": "60 ( Days)",
+    "Bid Start Date / Time": "10-06-2024 17:45:38",
+    "Bid End Date / Time": "01-07-2024 18:00:00",
+    "Bid Opening Date / Time": "01-07-2024 18:30:00",
+    "Average Turn Over of Last 3 Years": "Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Samrath Patidar",
+    "Address": "Samrath Patidar,buycon1107.ongcl.py@gembuyer.in,OIL AND NATURAL GAS CORPORATION LTD., Cauvery Asset, Neravy Complex, Neravy,KARAIKAL,PUDUCHERRY,609604,India,04368-235143-5042",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Na",
+    "Organisation": "Oil And Natural Gas Corporation Limited",
+    "Office": "Cauvery Asset Karaikal"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ARM PIPING ZONE PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ARM PIPINGZONE Model : VALVES Title : BUTTEFLY VALVES",
+      "Participated On": "01-07-2024 09:31:33",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ASTEN CONTROLS LLP Under PMA",
+      "Offered Item": "Make : Asten Model : ABFV - HO Title : Manual butterfly valve",
+      "Participated On": "01-07-2024 11:29:29",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "BDK VALVE PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : BDK Model : M85F Title : BUTTERFLY VALVE",
+      "Participated On": "22-06-2024 12:51:10",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Make : Cair Model : LEVER OPERATED BUTTERFLY VALVE Title : 3\" LEVER OPERATED BUTTERFLY VALVE",
+      "Participated On": "25-06-2024 17:27:14",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "CRAWLEY & RAY (FOUNDERS & ENGINEERS) PVT LTD Under PMA",
+      "Offered Item": "Make : Crawley & Ray Model : CRBFVSL80 Title : BUTTERFLY VALVE WITH LEVER AND LIMIT SWITCH OR OPEN CLOSE INDICATION",
+      "Participated On": "01-07-2024 16:05:24",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : FVMC Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE",
+      "Participated On": "29-06-2024 17:21:46",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : Butterfly Valve 3 Inch Title : Butterfly Valve 3 Inch",
+      "Participated On": "01-07-2024 17:28:33",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "INDUSKART ENGITECH LLP Under PMA",
+      "Offered Item": "Make : Leader Model : CI 091B Title : 3” Butterfly Valve Of Wafer Type",
+      "Participated On": "01-07-2024 15:29:32",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "M/S VIKRAM INTERNATIONAL Under PMA",
+      "Offered Item": "Make : LP Model : LPV-1001 Title : Butterfly valves of Wafer type",
+      "Participated On": "27-06-2024 14:33:52",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PASCAL HYDRAULICS Under PMA",
+      "Offered Item": "Make : Pascal Hydraulics Model : PH- Butterfly valve Title : Butterfly valve 80 mm wafer type",
+      "Participated On": "15-06-2024 17:13:23",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "Make : CVVALVES Model : 3” Butterfly Valve Of Wafer Type Title : 3” Butterfly Valve Of Wafer Type",
+      "Participated On": "30-06-2024 17:13:12",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : ZED Title : BUTTERFLY VALVE",
+      "Participated On": "01-07-2024 15:50:31",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "M/S VIKRAM INTERNATIONAL Under PMA",
+      "Offered Item": "Item Categories : 3” Butterfly valve of Wafer type,4” Butterfly valve of Wafer type,6\" Butterfly valve of Wafer t",
+      "Total Price": "` 181654.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Item Categories : 3” Butterfly valve of Wafer type,4” Butterfly valve of Wafer type,6\" Butterfly valve of Wafer t",
+      "Total Price": "` 184757.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 3” Butterfly valve of Wafer type,4” Butterfly valve of Wafer type,6\" Butterfly valve of Wafer t",
+      "Total Price": "` 1783875.62",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6500135"
+}

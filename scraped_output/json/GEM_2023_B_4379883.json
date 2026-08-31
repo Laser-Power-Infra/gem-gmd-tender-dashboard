@@ -1,0 +1,626 @@
+{
+  "source_id": "5782624",
+  "bid_number": "GEM/2023/B/4379883",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2023/B/4379883",
+    "Bid Status": "Active",
+    "Quantity": "335",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "10-01-2024 17:14:58",
+    "Bid End Date / Time": "31-01-2024 18:00:00",
+    "Bid Opening Date / Time": "31-01-2024 18:30:00"
+  },
+  "buyer_details": {
+    "Name": "Sonali Agarwal",
+    "Address": "Sonali Agarwal,buyer2.ntpc.mum@gembuyer.in,NTPC Ltd , Western Region-II Head Quarter , Plot No. -87, Sector-24, Atal Nagar, Nava Raipur , Raipur , Chhattisgarh,RAIPUR,CHHATTISGARH,492101,India",
+    "Ministry": "Ministry Of Power",
+    "Department": "Na",
+    "Organisation": "Ntpc Limited",
+    "Office": "Cg"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-01-2024 12:28:39",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ARM PIPING ZONE PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "31-01-2024 09:43:27",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "12-01-2024 17:56:27",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "31-01-2024 12:43:34",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "HAZRA ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-01-2024 19:36:13",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "KOLEY VALVES CORPORATION Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-01-2024 19:51:40",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-01-2024 13:25:50",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-01-2024 16:07:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "SUBHAS ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "17-01-2024 15:54:56",
+      "EMD Status": "Central / State PSUs",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "175362",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "196027",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "91949",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "156280",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "72690",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "109268",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "41772",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "8",
+      "Schedule Title": "Schedule 8",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "127205",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "9",
+      "Schedule Title": "Schedule 9",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "160240",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "10",
+      "Schedule Title": "Schedule 10",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "29736",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "11",
+      "Schedule Title": "Schedule 11",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "21476",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "12",
+      "Schedule Title": "Schedule 12",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "23292",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "13",
+      "Schedule Title": "Schedule 13",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "21807",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "14",
+      "Schedule Title": "Schedule 14",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "40638",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "15",
+      "Schedule Title": "Schedule 15",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "111392",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "16",
+      "Schedule Title": "Schedule 16",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "46964",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "17",
+      "Schedule Title": "Schedule 17",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "128325",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "18",
+      "Schedule Title": "Schedule 18",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "82368",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "19",
+      "Schedule Title": "Schedule 19",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "172140",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "20",
+      "Schedule Title": "Schedule 20",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "82368",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "21",
+      "Schedule Title": "Schedule 21",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "51642",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "22",
+      "Schedule Title": "Schedule 22",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "206205",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "23",
+      "Schedule Title": "Schedule 23",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "222784",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "24",
+      "Schedule Title": "Schedule 24",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "128325",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "25",
+      "Schedule Title": "Schedule 25",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "234820",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "26",
+      "Schedule Title": "Schedule 26",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "21807",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "27",
+      "Schedule Title": "Schedule 27",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "13546",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "28",
+      "Schedule Title": "Schedule 28",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "180068",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "29",
+      "Schedule Title": "Schedule 29",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "293820",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "30",
+      "Schedule Title": "Schedule 30",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "36345",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "31",
+      "Schedule Title": "Schedule 31",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "63768",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "32",
+      "Schedule Title": "Schedule 32",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "46124",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "33",
+      "Schedule Title": "Schedule 33",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "54698",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "34",
+      "Schedule Title": "Schedule 34",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "33436",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "35",
+      "Schedule Title": "Schedule 35",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "41772",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "36",
+      "Schedule Title": "Schedule 36",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "25441",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "37",
+      "Schedule Title": "Schedule 37",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "16024",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "38",
+      "Schedule Title": "Schedule 38",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "29736",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "39",
+      "Schedule Title": "Schedule 39",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "21476",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "40",
+      "Schedule Title": "Schedule 40",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "7764",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "41",
+      "Schedule Title": "Schedule 41",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "321727",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "42",
+      "Schedule Title": "Schedule 42",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "67024",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "43",
+      "Schedule Title": "Schedule 43",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "178087",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "44",
+      "Schedule Title": "Schedule 44",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "125316",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "45",
+      "Schedule Title": "Schedule 45",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "66872",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "46",
+      "Schedule Title": "Schedule 46",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "31256",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "47",
+      "Schedule Title": "Schedule 47",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "92248",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "48",
+      "Schedule Title": "Schedule 48",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "63768",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "49",
+      "Schedule Title": "Schedule 49",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "218536",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "50",
+      "Schedule Title": "Schedule 50",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "289336",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "51",
+      "Schedule Title": "Schedule 51",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "29076",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "52",
+      "Schedule Title": "Schedule 52",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "120498",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "53",
+      "Schedule Title": "Schedule 53",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "27456",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "54",
+      "Schedule Title": "Schedule 54",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "34428",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "55",
+      "Schedule Title": "Schedule 55",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "42775",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "56",
+      "Schedule Title": "Schedule 56",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "58152",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "57",
+      "Schedule Title": "Schedule 57",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "60957",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "58",
+      "Schedule Title": "Schedule 58",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "43614",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "59",
+      "Schedule Title": "Schedule 59",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "175348",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "60",
+      "Schedule Title": "Schedule 60",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "144668",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "61",
+      "Schedule Title": "Schedule 61",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "109268",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "62",
+      "Schedule Title": "Schedule 62",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "79710",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "63",
+      "Schedule Title": "Schedule 63",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "57655",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "64",
+      "Schedule Title": "Schedule 64",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "62512",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "65",
+      "Schedule Title": "Schedule 65",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "58513",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "66",
+      "Schedule Title": "Schedule 66",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "208860",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "67",
+      "Schedule Title": "Schedule 67",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "178087",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "68",
+      "Schedule Title": "Schedule 68",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "67024",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "69",
+      "Schedule Title": "Schedule 69",
+      "L1 Seller Name": "SUBHAS ENGINEERING WORKS",
+      "Total L1 Price": "137883",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "70",
+      "Schedule Title": "Schedule 70",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "128192",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "71",
+      "Schedule Title": "Schedule 71",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "74340",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "72",
+      "Schedule Title": "Schedule 72",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "96642",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "73",
+      "Schedule Title": "Schedule 73",
+      "L1 Seller Name": "SIGMA FLOW CONTROL INDIA LIMITED",
+      "Total L1 Price": "46584",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/5782624"
+}

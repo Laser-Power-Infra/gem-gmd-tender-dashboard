@@ -1,0 +1,227 @@
+{
+  "source_id": "7716239",
+  "bid_number": "GEM/2025/B/6118810",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6118810",
+    "Bid Status": "Active",
+    "Quantity": "22",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "24-04-2025 15:33:04",
+    "Bid End Date / Time": "17-05-2025 11:00:00",
+    "Bid Opening Date / Time": "17-05-2025 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Videha Avadhoot Pathre",
+    "Address": "Videha Avadhoot Pathre,buyer4.npcil.karwar@gembuyer.in,Plant Site, Kaiga Generating Station, PO: Kaiga,Uttara Kannada,KARNATAKA,581400,India,08382-253530-4530",
+    "Ministry": "Pmo",
+    "Department": "Department Of Atomic Energy",
+    "Organisation": "Nuclear Power Corporation Of India Limited",
+    "Office": "Kaiga Karnataka"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "Make : AV Model : AVNY06 Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "09-05-2025 14:46:42",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUID-O-MECH CONTROLS INC Under PMA",
+      "Offered Item": "Make : FLUIDO Model : GATE VALVE, Size: 350 mm, Class: 150 lbs, End conn Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 21:02:10",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : GATE VALVE, Size: 350 Mm, Class: 150 Lbs Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 16:16:56",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "Make : JAYANT VALVES Model : GATE VALVE, Size: 350 mm, Class: 150 lbs, End conn Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 18:03:00",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MOTIPUR INDUSTRIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MOTIPUR INDUSTRIES PVT LTD Model : CS-GTV-RISING-F/E-150#-350MM Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 16:37:16",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "OSWAL INDUSTRIES LIMITED Under PMA",
+      "Offered Item": "Make : Oswal Industries Limited Model : GATE VALVE, Size: 350 mm, Class: 150 Lbs BWE Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 18:58:00",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 14\" X 150# WCB GATE VALVE BUTT WELD GEAR OPERATED Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "28-04-2025 17:18:30",
+      "EMD Status": "Start-up",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "QUALITY VALVE CO Under PMA",
+      "Offered Item": "Make : QUALITY VALVE CO Model : GATE VALVE, Size: 350 mm, Class: 150 lbs, End conn Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "28-04-2025 21:39:29",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "S.S ENGINEERS Under PMA",
+      "Offered Item": "Make : NA Model : GATE VALVE, Size: 350 mm, Class: 150 lbs, End conn Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "09-05-2025 12:51:02",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "Make : CV Valves Model : 350MM GTV Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 22:31:00",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "SHIVANSH IMPEX Under PMA",
+      "Offered Item": "Make : NA Model : NA Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "15-05-2025 12:19:59",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "SQK VALVES FITTINGS & AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : 350mmGatevalve Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "05-05-2025 15:46:20",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "UNICK CONTROL SYSTEM Under PMA",
+      "Offered Item": "Make : UNICK Model : GATE VALVE, Size: 350 mm, Class: 150 lbs, End conn Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 16:54:58",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "VALVEQUIP ENGINEERING CORPORATION Under PMA",
+      "Offered Item": "Make : Unbrand Model : GATE VALVE, Size: 350 mm, Class: 150 lbs Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "17-05-2025 09:55:15",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "YAMAC VALVES Under PMA",
+      "Offered Item": "Make : YAMAC VALVES Model : GATE VALVE, Size: 350 mm, Class: 150 lbs, End conn Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "26-04-2025 17:29:06",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : GTV Title : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld",
+      "Participated On": "16-05-2025 12:24:56",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "QUALITY VALVE CO (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 931964.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 940035.20",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 1305600.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 1375856.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLUID-O-MECH CONTROLS INC (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 1444048.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 1754483.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "UNICK CONTROL SYSTEM (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE, Size: 350 mm, Class: 150 lbs, End connection Butt weld,GATE VALVE, Size: 200 mm, Class:",
+      "Total Price": "` 3384240.00",
+      "Rank": "L7"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7716239"
+}

@@ -1,0 +1,96 @@
+{
+  "source_id": "7362711",
+  "bid_number": "GEM/2025/B/5807573",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5807573",
+    "Bid Status": "Active",
+    "Quantity": "8",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "10-01-2025 17:52:03",
+    "Bid End Date / Time": "07-02-2025 15:00:00",
+    "Bid Opening Date / Time": "07-02-2025 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Shashank Shekhar",
+    "Address": "Shashank Shekhar,buycon165.igr.gj@gembuyer.in,P.O Jawaharnagar 391320,VADODARA RURAL,GUJARAT,391320,India,0265-2237265-",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Indian Oil Corporation Limited",
+    "Organisation": "Indian Oil Corporation Limited",
+    "Office": "Iocl- Gujarat Refinery"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "Make : AV Model : AVLG-BFV-36\" INCH Title : Site Supervision for 36 inches Valve",
+      "Participated On": "30-01-2025 16:24:52",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ADVANCE VALVES PRIVATE LTD Under PMA",
+      "Offered Item": "Make : ADVANCE VALVES PVT LTD Model : BT15.SS44HE.36.DB.31EFQY Title : Site Supervision for 36 inches Valve",
+      "Participated On": "07-02-2025 13:31:53",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : FVMC Model : Site Supervision for 36 inches Valve Title : Site Supervision for 36 inches Valve",
+      "Participated On": "28-01-2025 16:30:05",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MICON Model : Site Supervision for 36 inches Valve Title : Site Supervision for 36 inches Valve",
+      "Participated On": "06-02-2025 11:21:53",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "QASWA ENGINEERING PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : CONTROL VALVES Model : QASWA Title : control Valve 3IN 300#",
+      "Participated On": "27-01-2025 16:33:58",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : BFV Title : Site Supervision for 36 inches Valve",
+      "Participated On": "31-01-2025 15:06:32",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "36 INCH BUTTERFLY VALVES",
+      "L1 Seller Name": "ADVANCE VALVES PRIVATE LTD",
+      "Total L1 Price": "3321420",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "26 INCH BUTTERFLY VALVES",
+      "L1 Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED",
+      "Total L1 Price": "1935418",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7362711"
+}

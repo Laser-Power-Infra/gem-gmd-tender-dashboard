@@ -1,0 +1,400 @@
+{
+  "source_id": "8194381",
+  "bid_number": "GEM/2025/B/6545840",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6545840",
+    "Bid Status": "Active",
+    "Quantity": "205",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "09-08-2025 10:25:27",
+    "Bid End Date / Time": "27-09-2025 16:00:00",
+    "Bid Opening Date / Time": "27-09-2025 16:30:00"
+  },
+  "buyer_details": {
+    "Name": "Mayank Tiwari",
+    "Address": "Mayank Tiwari,buycon12.ndmcl.kn@gembuyer.in,NMDC Limited, Donimalai Complex, Donimalai, Karnataka,Bellary,KARNATAKA,583118,India,08395-274630-",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Nmdc Limited",
+    "Organisation": "Nmdc Limited",
+    "Office": "Donimalai Complex"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-08-2025 14:40:45",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ALAMDAR INTERNATIONAL Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-08-2025 15:20:25",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "ARH FLOW CONTROLS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 17:25:00",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "ARM PIPING ZONE PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-08-2025 00:47:36",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "CHEMICO VALVES INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "28-08-2025 17:55:01",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "Cnc engineering Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 13:38:33",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "CRAWLEY & RAY (FOUNDERS & ENGINEERS) PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "21-08-2025 16:31:45",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "ENTEC ENGINEERING CORP Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-09-2025 21:15:36",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "FLUIR CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-09-2025 17:16:25",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-08-2025 10:45:30",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "26-08-2025 12:57:19",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "28-08-2025 19:59:28",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "Kamala Valves Manufacturing Concern Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 16:53:47",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "KETAN ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-09-2025 11:10:52",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "KOLEY VALVES CORPORATION Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 11:26:56",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-08-2025 16:44:58",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "LEHRY INSTRUMENTATION AND VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "11-08-2025 10:54:07",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "M X ENTERPRISE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 23:48:47",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "M/S CHANDEL ASSOCIATES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-08-2025 17:00:52",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "M/s INDIA ENGINEERING VALVE & PIPE FITTING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "13-08-2025 12:43:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-09-2025 12:33:25",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "MA-SARADA ENTERPRISE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-08-2025 12:40:28",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "23",
+      "Seller Name": "N.ROY & CO. Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 15:17:35",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "24",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 18:41:36",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "25",
+      "Seller Name": "POLINE TECHNOLOGIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "21-08-2025 17:09:49",
+      "EMD Status": "Start-up",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "26",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "20-08-2025 08:11:26",
+      "EMD Status": "Start-up",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "27",
+      "Seller Name": "PROTIMA ENGINEERING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-08-2025 10:33:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "28",
+      "Seller Name": "R S EQUIPMENT & MFG. CO. Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-09-2025 09:23:21",
+      "EMD Status": "Central / State PSUs",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "29",
+      "Seller Name": "SHREE JAGANNATH IRON FOUNDRY PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "09-08-2025 14:36:45",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "30",
+      "Seller Name": "SITARAM INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-09-2025 10:17:33",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "31",
+      "Seller Name": "STERLING VALVES AND CONTROLS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 20:12:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "32",
+      "Seller Name": "SWAMYJEE ENGINEERS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-09-2025 07:49:11",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "33",
+      "Seller Name": "THIRUPATHY INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-09-2025 14:25:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "34",
+      "Seller Name": "UNICK CONTROL SYSTEM Under PMA",
+      "Offered Item": "-",
+      "Participated On": "13-08-2025 12:59:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "35",
+      "Seller Name": "VALVEQUIP ENGINEERING CORPORATION Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-08-2025 18:22:33",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "36",
+      "Seller Name": "WELL CAST INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-09-2025 20:06:55",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED",
+      "Total L1 Price": "136172",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "WELL CAST INDUSTRIES",
+      "Total L1 Price": "201572",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "PROTIMA ENGINEERING",
+      "Total L1 Price": "260000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "PROTIMA ENGINEERING",
+      "Total L1 Price": "200000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "PROTIMA ENGINEERING",
+      "Total L1 Price": "273000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "PROTIMA ENGINEERING",
+      "Total L1 Price": "260000",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/8194381"
+}

@@ -1,0 +1,214 @@
+{
+  "source_id": "5891039",
+  "bid_number": "GEM/2024/B/4479199",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4479199",
+    "Bid Status": "Active",
+    "Quantity": "20",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "13-01-2024 09:56:41",
+    "Bid End Date / Time": "23-01-2024 16:00:00",
+    "Bid Opening Date / Time": "23-01-2024 16:30:00"
+  },
+  "buyer_details": {
+    "Name": "***********",
+    "Address": "*********** PALAKKAD",
+    "Ministry": "Ministry Of Defence",
+    "Department": "Department Of Defence Production",
+    "Organisation": "Bharat Earth Movers Limited (beml)",
+    "Office": "***********"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ACTIVE FLOW CONTROLS Under PMA",
+      "Offered Item": "Make : AFC Model : AFC-50MM-CISGILO Title : 50MM CI BODY SGI DISC WAFER TYPE BUTTERFLY VALVE L/O",
+      "Participated On": "15-01-2024 11:35:37",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "BANGALORE TOOLS CENTRE Under PMA",
+      "Offered Item": "Make : INTERVALVE Model : 2\" BUTTERFLY VALVE WAFER TYPE LEVER OPERATED PN10 Title : 2\" BUTTERFLY VALVE WAFER TYPE LEVER OPERATED PN10 BODY-CI DISC-DI/SG",
+      "Participated On": "23-01-2024 15:49:40",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Make : Cair Model : 50MM LEVER OPERATED BUTTERFLY VALVE Title : 50MM LEVER OPERATED BUTTERFLY VALVE",
+      "Participated On": "16-01-2024 12:47:43",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : FVMC Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE",
+      "Participated On": "23-01-2024 15:49:12",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : 250NB WAFER TYPE BUTTERFLY VALVES AS PER IS:13095 Title : 250NB WAFER TYPE BUTTERFLY VALVES (Q3)",
+      "Participated On": "22-01-2024 16:21:08",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : GETWAY Model : GCISSWBFV Title : CAST IRON BODY SS DISC EPDM SEAT BUTTERFLY VALVES",
+      "Participated On": "23-01-2024 12:22:55",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "M/s TOOFLOW ENGINEERING Under PMA",
+      "Offered Item": "Make : TOOFLOW Model : 2\" BUTTERFLY VALVE P/n 8644887404 ( Q3 ) Title : 2\" BUTTERFLY VALVE P/n 8644887404 ( Q3)",
+      "Participated On": "23-01-2024 15:55:52",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "PAREKH ENGINEERING COMPANY Under PMA",
+      "Offered Item": "Make : LP Model : 2\" BUTTERFLY VALVE P/n 8644887404 Title : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Participated On": "23-01-2024 12:16:49",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 2\" X PN 10 CI BFV WAFER TYPE 4479199 Title : 2\" X PN 10 CI BFV WAFER TYPE 4479199",
+      "Participated On": "17-01-2024 10:47:39",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "SAFE VALVES Under PMA",
+      "Offered Item": "Make : BUTTERFLY VALVE Model : SAFE Title : BUTTERFLY VALVE",
+      "Participated On": "21-01-2024 17:12:32",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "SEALMECH VALVES Under PMA",
+      "Offered Item": "Make : SEALMECH Model : C.I./D.I. BUTTERFLY VALVE WAFER TYPE 50MM Title : BUTTERFLY VALVE",
+      "Participated On": "18-01-2024 11:44:09",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "THE SOUTHERN TRADERS Under PMA",
+      "Offered Item": "Make : NA Model : NA Title : BUTTERFLY VALVE",
+      "Participated On": "21-01-2024 11:52:51",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "SAFE VALVES (MII) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 11760.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ACTIVE FLOW CONTROLS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 14160.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "SEALMECH VALVES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 14200.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 16000.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "CAIR CONTROLS (MII) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 18740.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/s TOOFLOW ENGINEERING (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 19000.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 23200.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "PAREKH ENGINEERING COMPANY (MII) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 23700.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 24420.00",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "BANGALORE TOOLS CENTRE (MII) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 43600.00",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "THE SOUTHERN TRADERS (MII) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 54000.00",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 2\" BUTTERFLY VALVE P/n 8644887404",
+      "Total Price": "` 63129.60",
+      "Rank": "L12"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/5891039"
+}

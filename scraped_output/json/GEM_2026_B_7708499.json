@@ -1,0 +1,83 @@
+{
+  "source_id": "9517650",
+  "bid_number": "GEM/2026/B/7708499",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7708499",
+    "Bid Status": "Active",
+    "Quantity": "71",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "25-06-2026 08:11:37",
+    "Bid End Date / Time": "10-07-2026 09:00:00",
+    "Bid Opening Date / Time": "10-07-2026 09:30:00",
+    "Average Turn Over of Last 3 Years": "Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Dayaram Kevat",
+    "Address": "Dayaram Kevat,kscm.belrayan@gmail.com,Sarjoo Sahkari Chini Mills Limited Belrayan GST number- 09AAAAS4398E1Z9 Contact Number -7880888991, 6389025060,Kheri,UTTAR PRADESH,262906,India",
+    "State": "Uttar Pradesh",
+    "Department": "Uttar Pradesh Cooperative Sugar Factories Federation Limited",
+    "Organisation": "N/a",
+    "Office": "Lucknow"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ESS ESS TRADERS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "09-07-2026 20:25:12",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLOWMECH SOLUTIONS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "09-07-2026 17:02:31",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "PROTIMA ENGINEERING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "09-07-2026 11:36:55",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "REAL TECH INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "04-07-2026 11:49:08",
+      "EMD Status": "MSE",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "SARASWATI ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-07-2026 02:02:17",
+      "EMD Status": "MSE",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Supply of C.I. Sluice valve Butterfly valve",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "760092",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/9517650"
+}

@@ -1,0 +1,103 @@
+{
+  "source_id": "6125607",
+  "bid_number": "GEM/2024/B/4693072",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4693072",
+    "Bid Status": "Active",
+    "Quantity": "64",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "28-02-2024 11:34:15",
+    "Bid End Date / Time": "18-03-2024 18:00:00",
+    "Bid Opening Date / Time": "18-03-2024 18:30:00",
+    "RA Start Date / Time": "10-04-2024 6:00 PM",
+    "RA End Date / Time": "13-04-2024 6:52 PM"
+  },
+  "buyer_details": {
+    "Name": "Pradeepta Kumar Chinara",
+    "Address": "Pradeepta Kumar Chinara,so-mm-hina.mcl@nic.in,GM Office Hingula AreA PO: N.S. NagarDist: Angul, Odisha,ANGUL,ODISHA,759148,India,06760-265357-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Mahanadi Coalfields Limited",
+    "Organisation": "Mahanadi Coalfields Limited",
+    "Office": "Mahanadi Coalfields Limited"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : AARKO Model : AARKO SLUICE VA;LVE 200MM PN 1.6",
+      "Participated On": "18-03-2024 13:09:16",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : AJANTA VALVES--AJANTA VALVES Model : SV-200",
+      "Participated On": "07-03-2024 12:57:37",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : DALUI Model : Sluice Valve 200mm",
+      "Participated On": "18-03-2024 17:37:13",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : AGRO Model : AGRO",
+      "Participated On": "06-03-2024 10:53:00",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : MINOTI Model : IS 14846",
+      "Participated On": "18-03-2024 15:58:28",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "AARKO MANUFACTURING COMPANY",
+      "Total L1 Price": "171600",
+      "Schedule Status": "RA Ended"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/328163",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "10-04-2024 6:00 PM",
+    "ra_end_date": "13-04-2024 6:52 PM",
+    "ra_schedules_url": "https://bidplus.gem.gov.in/list-ra-schedules/6301161"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/6125607"
+}

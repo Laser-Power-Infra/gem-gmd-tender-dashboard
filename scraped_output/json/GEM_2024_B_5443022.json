@@ -1,0 +1,87 @@
+{
+  "source_id": "6953314",
+  "bid_number": "GEM/2024/B/5443022",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5443022",
+    "Bid Status": "Active",
+    "Quantity": "3",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "26-09-2024 13:13:42",
+    "Bid End Date / Time": "14-10-2024 13:00:00",
+    "Bid Opening Date / Time": "14-10-2024 13:30:00"
+  },
+  "buyer_details": {
+    "Name": "Aniket Wadnerkar",
+    "Address": "Aniket Wadnerkar,bsp.e2econs@sail.in,Hall 1, 3rd Floor, Ispat Bhavan Bhilai Steel Plant Bhilai-490001,Durg,CHHATTISGARH,490001,India,0788-2861556-",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Bhilai Steel Plant",
+    "Office": "Materials Management"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AGS VALVES PVT LTD Under PMA",
+      "Offered Item": "Make : AGS Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE, DWN: OPII-20-006",
+      "Participated On": "05-10-2024 12:23:46",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : FCE Model : NA Title : ITEM 1VALVE, GLOBE, CS, 200MM, FLGD, NP40",
+      "Participated On": "05-10-2024 17:56:14",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : BUTTERFLY VALVE 450MM Title : BUTTERFLY VALVE, DWN: OPII-20-006",
+      "Participated On": "08-10-2024 17:00:18",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "PHARMACH ENGINEERING INDIA PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Pharmach Model : Pharmach-Mov-gate-Vl Title : VALVE, GATE, CST, 100MM, FLGD, CLASS 300",
+      "Participated On": "30-09-2024 16:07:12",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, DWN: OPII-20-006",
+      "Total Price": "` 198788.70",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, DWN: OPII-20-006",
+      "Total Price": "` 400020.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "AGS VALVES PVT LTD ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, DWN: OPII-20-006",
+      "Total Price": "` 484980.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6953314"
+}

@@ -1,0 +1,32 @@
+{
+  "source_id": "7157551",
+  "bid_number": "GEM/2024/B/5624801",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5624801",
+    "Bid Status": "Active",
+    "Quantity": "23",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "19-11-2024 17:06:02",
+    "Bid End Date / Time": "09-12-2024 14:00:00",
+    "Bid Opening Date / Time": "02-12-2024 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Mohit Gupta",
+    "Address": "Mohit Gupta,buyer1.nfl.vjp@gembuyer.in,National Fertilizers Limited (A Government of India Undertaking) Gohana Road, Panipat Haryana - 132106,ROHTAK,HARYANA,132106,India,0180-2653458-",
+    "Ministry": "Ministry Of Chemicals And Fertilizers",
+    "Department": "Department Of Fertilizers",
+    "Organisation": "National Fertilizers Limited (nfl)",
+    "Office": "Nfl Panipat"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7157551"
+}

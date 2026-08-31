@@ -1,0 +1,151 @@
+{
+  "source_id": "8510437",
+  "bid_number": "GEM/2025/B/6823023",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6823023",
+    "Bid Status": "Active",
+    "Quantity": "38",
+    "Bid Validity (From End Date)": "66 ( Days)",
+    "Bid Start Date / Time": "25-10-2025 10:23:23",
+    "Bid End Date / Time": "06-11-2025 11:00:00",
+    "Bid Opening Date / Time": "06-11-2025 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Deepak Kumar Behera",
+    "Address": "DEEPAK KUMAR BEHERA,con38.sail.or@gembuyer.in,Administrative Building, Rourkela Steel Plant, Rourkela,Sundergarh,ODISHA,769011,India",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Rourkela Steel Plant",
+    "Office": "Materials Management Purchase"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AGS VALVES PVT LTD Under PMA",
+      "Offered Item": "Make : AGS Model : AGS/CSGTV3000/100 Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "04-11-2025 12:55:38",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : FCE Model : CSGTV100MMFL Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "29-10-2025 16:49:07",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12 Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "05-11-2025 17:04:41",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : getway Model : NA Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "04-11-2025 13:39:38",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "KRISHA INDUSTRIES Under PMA",
+      "Offered Item": "Make : Commercial Model : Commercial Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "04-11-2025 23:18:57",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "KUNJAV MACHINERY & MFG CO Under PMA",
+      "Offered Item": "Make : NA Model : CS GATE VALVE 100MM Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "02-11-2025 23:50:25",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "METAVAL ENGINEERING PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : METAVAL Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "06-11-2025 10:54:44",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MICON Model : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12 Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "03-11-2025 13:55:06",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "R S EQUIPMENT & MFG. CO. Under PMA",
+      "Offered Item": "Make : RSEMC Model : RS-GV Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "06-11-2025 09:26:29",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "UNITEK VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Unbrand Model : CS-GTV-FLANGED-150#-100MM Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "06-11-2025 10:15:47",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "VENUS VALVES MANUFACTURING CO. Under PMA",
+      "Offered Item": "Make : Venus Model : Venus Valve Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "05-11-2025 23:22:55",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "YAMAC VALVES Under PMA",
+      "Offered Item": "Make : NA Model : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12 Title : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12",
+      "Participated On": "05-11-2025 01:46:36",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "KUNJAV MACHINERY & MFG CO (MII) Under PMA",
+      "Offered Item": "Item Categories : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12,Item 2: VALVE, GATE, CS, 150MM, FLGD, RSN: 54.12,I",
+      "Total Price": "` 938622.03",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AGS VALVES PVT LTD (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12,Item 2: VALVE, GATE, CS, 150MM, FLGD, RSN: 54.12,I",
+      "Total Price": "` 987155.93",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Item 1: VALVE, GATE, CS, 100MM, FLGD, RSN: 54.12,Item 2: VALVE, GATE, CS, 150MM, FLGD, RSN: 54.12,I",
+      "Total Price": "` 988165.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8510437"
+}

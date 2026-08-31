@@ -1,0 +1,242 @@
+{
+  "source_id": "8070955",
+  "bid_number": "GEM/2025/B/6436724",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6436724",
+    "Bid Status": "Active",
+    "Quantity": "134",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "15-07-2025 18:49:09",
+    "Bid End Date / Time": "05-08-2025 19:00:00",
+    "Bid Opening Date / Time": "05-08-2025 19:30:00"
+  },
+  "buyer_details": {
+    "Name": "Vivek Saraswat",
+    "Address": "Vivek Saraswat,somm.jhl@nic.in,Depot Officer, Regional Stores, Johilla Area SECL , Naurozabad Dist:Umaria, Madhya Pradesh -484555,Umaria,MADHYA PRADESH,484555,India,7653-268205-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Coal India Limited",
+    "Organisation": "South Eastern Coalfields Limited",
+    "Office": "Secl Bilaspur Chhattisgarh"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AARKO MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : AARKO Model : AARKO SLUICE VA;LVE 200MM PN 1.6",
+      "Participated On": "01-08-2025 13:53:14",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AJANTA VALVES Under PMA",
+      "Offered Item": "Make : ajanta Model : Sluice Valve 150MM",
+      "Participated On": "05-08-2025 17:37:42",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CAIR VALVE AUTOMATION Under PMA",
+      "Offered Item": "Make : NA Model : SV-200",
+      "Participated On": "05-08-2025 12:55:01",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : Sluice valve 200 mm PN-1.6",
+      "Participated On": "04-08-2025 18:13:59",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "HAZRA ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : Unbranded--HAZRA ENGG.WORKS Model : Sluice Valve 200mm",
+      "Participated On": "04-08-2025 14:53:59",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "J K SANITATIONS & TOOLS Under PMA",
+      "Offered Item": "Make : AARKO Model : AARKO NON RETURN VALVE 200MM 1.6 VERTICAL SEATING",
+      "Participated On": "01-08-2025 23:03:06",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "KAPSON INTERNATIONAL (INDIA) Under PMA",
+      "Offered Item": "Make : NA Model : Sluice Valve for Water Works Purposes (50 to 1200",
+      "Participated On": "05-08-2025 10:57:09",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "M/S CHANDEL ASSOCIATES Under PMA",
+      "Offered Item": "Make : ajanta Model : ACISVPN16-200",
+      "Participated On": "05-08-2025 16:35:43",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "M/S, MINOTI ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : MINOTI Model : IS : 14846",
+      "Participated On": "05-08-2025 14:43:24",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "MA MANASHA VALVE MFG. CO. Under PMA",
+      "Offered Item": "Make : Unbranded--MA MANASHA VALVE MFG. CO. Model : SV- 200MM",
+      "Participated On": "05-08-2025 12:51:33",
+      "EMD Status": "Central / State PSUs",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "POLINE TECHNOLOGIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : POLINE Model : PCI-2015-200",
+      "Participated On": "21-07-2025 16:04:07",
+      "EMD Status": "Start-up",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "SUPER SALES CORPORATION Under PMA",
+      "Offered Item": "Make : Blessed Model : CAST IRON FOOT VALVE 200MM",
+      "Participated On": "05-08-2025 17:58:58",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "V.V. Valves Industrial Corporation Under PMA",
+      "Offered Item": "Make : V V Model : V V-1016",
+      "Participated On": "05-08-2025 13:09:43",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "132750",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "AJANTA VALVES",
+      "Total L1 Price": "142218",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "63012",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "24426",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "POLINE TECHNOLOGIES PRIVATE LIMITED",
+      "Total L1 Price": "-",
+      "Schedule Status": "Cancelled"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "135936",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "136290",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "8",
+      "Schedule Title": "Schedule 8",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "70800",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "9",
+      "Schedule Title": "Schedule 9",
+      "L1 Seller Name": "M/S CHANDEL ASSOCIATES",
+      "Total L1 Price": "16000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "10",
+      "Schedule Title": "Schedule 10",
+      "L1 Seller Name": "SUPER SALES CORPORATION",
+      "Total L1 Price": "104320",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "11",
+      "Schedule Title": "Schedule 11",
+      "L1 Seller Name": "SUPER SALES CORPORATION",
+      "Total L1 Price": "78260",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "12",
+      "Schedule Title": "Schedule 12",
+      "L1 Seller Name": "SUPER SALES CORPORATION",
+      "Total L1 Price": "55913",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "13",
+      "Schedule Title": "Schedule 13",
+      "L1 Seller Name": "J K SANITATIONS & TOOLS",
+      "Total L1 Price": "-",
+      "Schedule Status": "Cancelled"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/8070955"
+}

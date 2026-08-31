@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeM Bid & Reverse Auction Evaluation Dashboard</title>
+
+  <!-- Google Fonts (Inter) & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- TOP HEADER NAV -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-group">
+        <div class="logo-badge">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div>
+          <h1>GeM Bid & Reverse Auction (RA) Dashboard</h1>
+          <p>Government e Marketplace • Live Bid & RA Scraper • Desktop PC Edition</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="http://192.168.1.200:4560/" target="_blank" class="btn btn-secondary" style="text-decoration:none; background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd;">
+          <i data-lucide="external-link"></i> Network Portal (4560)
+        </a>
+        <button id="btnCombinedPdf" class="btn btn-secondary">
+          <i data-lucide="file-text"></i> Combined Master PDF
+        </button>
+        <button id="btnExportCsv" class="btn btn-secondary">
+          <i data-lucide="download"></i> Summary CSV
+        </button>
+        <button id="btnManageIds" class="btn btn-secondary">
+          <i data-lucide="plus-circle"></i> Manage GeM IDs
+        </button>
+        <button id="btnRunScraper" class="btn btn-primary btn-pulse">
+          <i data-lucide="zap"></i> Run Auto Scraper (All Bids)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-container">
+
+    <!-- G.M. DALUI COMPANY PERFORMANCE BANNER -->
+    <div class="company-banner">
+      <div class="company-banner-header">
+        <div class="company-title">
+          <i data-lucide="building-2" style="width:24px; height:24px; color:#38bdf8;"></i>
+          <div>
+            <h2>G.M. DALUI Performance Tracker</h2>
+            <p>Targeted bid evaluation, Reverse Auction (RA), & price gap analysis for G.M. DALUI</p>
+          </div>
+        </div>
+        <button id="btnFilterDalui" class="btn btn-secondary btn-sm" style="background:#0284c7; color:#fff; border:none;">
+          <i data-lucide="filter"></i> Show Only G.M. DALUI Bids
+        </button>
+      </div>
+
+      <div class="company-metrics-grid">
+        <div class="c-metric">
+          <span class="c-label">Participated Bids</span>
+          <h3 id="cStatParticipated">0</h3>
+        </div>
+        <div class="c-metric">
+          <span class="c-label">Qualified</span>
+          <h3 id="cStatQualified" style="color:#22c55e;">0 <span id="cStatQualifiedPct" class="c-pct"></span></h3>
+        </div>
+        <div class="c-metric">
+          <span class="c-label">Disqualified</span>
+          <h3 id="cStatDisqualified" style="color:#ef4444;">0 <span id="cStatDisqualifiedPct" class="c-pct"></span></h3>
+        </div>
+        <div class="c-metric">
+          <span class="c-label">Won L1 Bids</span>
+          <h3 id="cStatWonL1" style="color:#eab308;">0 <span id="cStatWonL1Pct" class="c-pct"></span></h3>
+        </div>
+        <div class="c-metric">
+          <span class="c-label">L2 (Missed L1)</span>
+          <h3 id="cStatMissedL2" style="color:#38bdf8;">0 <span id="cStatMissedL2Pct" class="c-pct"></span></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- METRICS / STATS CARDS -->
+    <div class="metrics-grid">
+      <div class="metric-card card-blue">
+        <div class="metric-icon"><i data-lucide="file-spreadsheet"></i></div>
+        <div class="metric-content">
+          <span class="metric-label">Apply for the Bid</span>
+          <h2 class="metric-value">
+            <span id="statApplyBid">0</span>
+            <span id="statApplyBidPct" class="apply-pct"></span>
+          </h2>
+          <div class="apply-sub-stats">
+            <div class="apply-sub"><span class="dot dot-green"></span> Qualified: <strong id="statApplyQualPct">0 (0%)</strong></div>
+            <div class="apply-sub"><span class="dot dot-red"></span> Disqualified: <strong id="statApplyDisqualPct">0 (0%)</strong></div>
+            <div class="apply-sub"><span class="dot dot-gold"></span> Won L1: <strong id="statApplyWonPct">0 (0%)</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN BOARD & TABLE -->
+    <div class="content-card">
+      <div class="table-header">
+        <div class="table-title">
+          <h3>GeM Bid Result Records</h3>
+          <span id="recordCountBadge" class="badge badge-slate">0 records</span>
+        </div>
+        <div class="table-controls">
+          <button id="btnRefresh" class="btn btn-icon" title="Refresh Data">
+            <i data-lucide="refresh-cw"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ADVANCED FILTERS PANEL -->
+      <div class="filter-panel">
+        <div class="filter-group">
+          <label><i data-lucide="search"></i> Keyword Search</label>
+          <input type="text" id="searchInput" placeholder="Search Bid No, RA No, Buyer, Seller...">
+        </div>
+
+        <div class="filter-group">
+          <label><i data-lucide="calendar"></i> Date Type</label>
+          <select id="filterDateType">
+            <option value="start">Bid Start Date</option>
+            <option value="end">Bid End Date</option>
+            <option value="opening">Bid Opening Date</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Date From</label>
+          <input type="date" id="filterDateFrom">
+        </div>
+
+        <div class="filter-group">
+          <label>Date To</label>
+          <input type="date" id="filterDateTo">
+        </div>
+
+        <div class="filter-group">
+          <label><i data-lucide="layers"></i> Min Quantity (>)</label>
+          <input type="number" id="filterMinQty" placeholder="e.g. 10">
+        </div>
+
+        <div class="filter-group">
+          <label><i data-lucide="award"></i> Financial / Rank</label>
+          <select id="filterRankType">
+            <option value="all">All Bids</option>
+            <option value="ra_only">⚡ Reverse Auction (RA) Bids</option>
+            <option value="l1_available">Financial Evaluated (L1)</option>
+            <option value="dalui_participated">🏢 G.M. DALUI Participated</option>
+            <option value="dalui_l1">🏆 G.M. DALUI Won L1</option>
+          </select>
+        </div>
+
+        <div class="filter-actions-group">
+          <button id="btnClearFilters" class="btn btn-secondary btn-sm">
+            <i data-lucide="rotate-ccw"></i> Reset Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- TABLE CONTAINER -->
+      <div class="table-responsive">
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th style="width: 55px; text-align: center; color: #94a3b8; font-size: 0.8rem;">Sl No.</th>
+              <th class="sortable" data-col="bid_no">
+                <div class="th-wrap">
+                  <span class="th-label">Bid / RA Number</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="bid_no"></div>
+              </th>
+              <th class="sortable" data-col="status">
+                <div class="th-wrap">
+                  <span class="th-label">User Status</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="status"></div>
+              </th>
+              <th class="sortable" data-col="current_state">
+                <div class="th-wrap">
+                  <span class="th-label">GeM Portal Status</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="current_state"></div>
+              </th>
+              <th class="sortable" data-col="ra_date">
+                <div class="th-wrap">
+                  <span class="th-label">RA Date</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="ra_date"></div>
+              </th>
+              <th class="sortable" data-col="bid_date">
+                <div class="th-wrap">
+                  <span class="th-label">Bid Date</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="bid_date"></div>
+              </th>
+              <th class="sortable" data-col="qty">
+                <div class="th-wrap">
+                  <span class="th-label">Quantity</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="qty"></div>
+              </th>
+              <th class="sortable" data-col="buyer">
+                <div class="th-wrap">
+                  <span class="th-label">Buyer & Ministry</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="buyer"></div>
+              </th>
+              <th class="sortable" data-col="l1_seller">
+                <div class="th-wrap">
+                  <span class="th-label">Financial L1 Leader</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="l1_seller"></div>
+              </th>
+              <th class="sortable" data-col="l1_price">
+                <div class="th-wrap">
+                  <span class="th-label">L1 Price</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="l1_price"></div>
+              </th>
+              <th class="sortable" data-col="dalui">
+                <div class="th-wrap">
+                  <span class="th-label">G.M. DALUI Position & Price Gap</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="dalui"></div>
+              </th>
+              <th class="sortable" data-col="remark">
+                <div class="th-wrap">
+                  <span class="th-label">User Remarks</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="remark"></div>
+              </th>
+              <th style="text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bidsTableBody">
+            <tr>
+              <td colspan="12" class="text-center py-8">
+                <div class="loading-state">
+                  <i data-lucide="loader-2" class="spin-icon"></i>
+                  <p>Loading GeM Bid & RA Records...</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL 1: VIEW DETAILS MODAL -->
+  <div id="detailsModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="modalBidNumber">GEM/2023/B/4309262</h3>
+          <span id="modalBidStatus" class="badge badge-green">Active</span>
+        </div>
+        <button class="modal-close" onclick="closeModal('detailsModal')">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- TABS -->
+      <div class="modal-tabs">
+        <button class="tab-btn active" onclick="switchTab('tabBidDetails', this)">1. Bid Details</button>
+        <button class="tab-btn" onclick="switchTab('tabBuyerDetails', this)">Buyer Details</button>
+        <button class="tab-btn" onclick="switchTab('tabTechEval', this)">2. Technical Evaluation</button>
+        <button class="tab-btn" onclick="switchTab('tabFinEval', this)">3. Financial Evaluation</button>
+        <button class="tab-btn" onclick="switchTab('tabRaDetails', this)">⚡ 4. Reverse Auction (RA)</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- TAB 1: BID DETAILS -->
+        <div id="tabBidDetails" class="tab-content active">
+          <div id="gridBidDetails" class="detail-grid"></div>
+        </div>
+
+        <!-- TAB 2: BUYER DETAILS -->
+        <div id="tabBuyerDetails" class="tab-content">
+          <div id="gridBuyerDetails" class="detail-grid"></div>
+        </div>
+
+        <!-- TAB 3: TECH EVALUATION -->
+        <div id="tabTechEval" class="tab-content">
+          <div class="table-responsive">
+            <table class="modal-table">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Seller Name</th>
+                  <th>Offered Item</th>
+                  <th>Participated On</th>
+                  <th>MSE/MII</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="bodyTechEval"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: FINANCIAL EVALUATION -->
+        <div id="tabFinEval" class="tab-content">
+          <div class="table-responsive">
+            <table class="modal-table">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Seller Name</th>
+                  <th>Offered Item</th>
+                  <th>Total Price</th>
+                  <th>Rank</th>
+                </tr>
+              </thead>
+              <tbody id="bodyFinEval"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 5: REVERSE AUCTION (RA) DETAILS -->
+        <div id="tabRaDetails" class="tab-content">
+          <div id="gridRaDetails" class="detail-grid" style="margin-bottom:16px;"></div>
+          <div id="raTableContainer" class="table-responsive"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modalOpenPdfBtn" class="btn btn-primary">
+          <i data-lucide="file-text"></i> Open PDF Document
+        </button>
+        <button class="btn btn-secondary" onclick="closeModal('detailsModal')">Close</button>
+      </div>
+    </div>
+  </div>v>
+
+  <!-- MODAL 2: PDF PREVIEW MODAL -->
+  <div id="pdfModal" class="modal-overlay">
+    <div class="modal-card modal-xl">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i data-lucide="file-text" style="color:#0284c7;"></i>
+          <h3 id="pdfModalTitle">PDF Document Preview</h3>
+        </div>
+        <button class="modal-close" onclick="closeModal('pdfModal')">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body p-0" style="height: 75vh;">
+        <iframe id="pdfFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+      </div>
+      <div class="modal-footer">
+        <a id="pdfDownloadLink" href="#" download class="btn btn-primary">
+          <i data-lucide="download"></i> Download PDF File
+        </a>
+        <button class="btn btn-secondary" onclick="closeModal('pdfModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: MANAGE IDS MODAL -->
+  <div id="manageModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Manage GeM IDs / URLs List</h3>
+        <button class="modal-close" onclick="closeModal('manageModal')">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted mb-2">Paste GeM Bid Numbers (e.g. <code>GEM/2023/B/4309262</code>) or View IDs (e.g. <code>5705747</code>) below, one per line or comma-separated:</p>
+        <textarea id="txtGemIds" rows="8" class="form-textarea" placeholder="5705747&#10;GEM/2023/B/4309262&#10;6000000&#10;https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9689162"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="btnSaveAndRun" class="btn btn-primary">
+          <i data-lucide="zap"></i> Save & Run Scraper Now
+        </button>
+        <button class="btn btn-secondary" onclick="closeModal('manageModal')">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: SCRAPER PROGRESS OVERLAY -->
+  <div id="progressOverlay" class="modal-overlay">
+    <div class="modal-card text-center" style="max-width: 480px;">
+      <div class="modal-body py-6">
+        <div class="spinner-group mb-4">
+          <i data-lucide="loader-2" class="spin-icon text-primary" style="width:48px; height:48px;"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1">Scraping GeM Portal...</h3>
+        <p id="progressStatusText" class="text-sm text-slate mb-4">Initializing automated browser engine...</p>
+        
+        <div class="progress-bar-bg mb-2">
+          <div id="progressBarFill" class="progress-bar-fill" style="width: 0%;"></div>
+        </div>
+        <span id="progressPercent" class="text-xs font-semibold text-slate">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lucide icons init & Script -->
+  <script>lucide.createIcons();</script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

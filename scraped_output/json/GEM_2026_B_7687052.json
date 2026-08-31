@@ -1,0 +1,110 @@
+{
+  "source_id": "9493569",
+  "bid_number": "GEM/2026/B/7687052",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7687052",
+    "Bid Status": "Active",
+    "Quantity": "7",
+    "Bid Validity (From End Date)": "75 ( Days)",
+    "Bid Start Date / Time": "25-06-2026 15:01:09",
+    "Bid End Date / Time": "10-07-2026 15:00:00",
+    "Bid Opening Date / Time": "10-07-2026 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Lisa M Lal",
+    "Address": "Lisa M Lal,purchase1@madrasfert.co.in,Madras Fertilizers Limited, Post Bag No.2, Manali Express Highway, Manali,Tiruvallur,TAMIL NADU,600068,India",
+    "Ministry": "Ministry Of Chemicals And Fertilizers",
+    "Department": "Department Of Fertilizers",
+    "Organisation": "Madras Fertilizers Limited (mfl)",
+    "Office": "Manali Chennai"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : AIRA Model : ECOTECH Title : Hand Lever Operated Butterfly Valve 200 MM",
+      "Participated On": "08-07-2026 12:07:37",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Cair Model : Hand Lever Operated Butterfly Valve 200 MM Title : Hand Lever Operated Butterfly Valve 200 MM",
+      "Participated On": "10-07-2026 12:06:59",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : AIRA Model : Butterfly Valve Title : Hand Lever Operated Butterfly Valve 200 MM",
+      "Participated On": "10-07-2026 10:42:25",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "JETFLO ENGINEERS Under PMA",
+      "Offered Item": "Make : JETFLO ENGINEERS Model : JETFLO Title : Hand Lever Operated Butterfly Valve 200 MM",
+      "Participated On": "10-07-2026 14:44:57",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "JG VALVES & FITTINGS (I) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : JGV Model : 200 MM HAND LEVER OPERATED BUTTERFLY VALVE Title : Hand Lever Operated Butterfly Valve 200 MM",
+      "Participated On": "10-07-2026 09:35:10",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "THANGA TECH SYSTEMS Under PMA",
+      "Offered Item": "Make : AIRA Model : Hand Lever Operated Butterfly Valve 200 MM Title : Hand Lever Operated Butterfly Valve 200 MM",
+      "Participated On": "10-07-2026 06:53:30",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Hand Lever Operated Butterfly Valve 200 MM",
+      "Total Price": "` 43533.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "THANGA TECH SYSTEMS Under PMA",
+      "Offered Item": "Item Categories : Hand Lever Operated Butterfly Valve 200 MM",
+      "Total Price": "` 83881.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "JETFLO ENGINEERS (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Hand Lever Operated Butterfly Valve 200 MM",
+      "Total Price": "` 93800.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Hand Lever Operated Butterfly Valve 200 MM",
+      "Total Price": "` 105000.00",
+      "Rank": "L4"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9493569"
+}

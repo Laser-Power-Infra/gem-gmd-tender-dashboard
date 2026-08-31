@@ -1,0 +1,34 @@
+{
+  "source_id": "9302038",
+  "bid_number": "GEM/2026/B/7515435",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7515435",
+    "Bid Status": "Active",
+    "Quantity": "1",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "07-05-2026 18:33:33",
+    "Bid End Date / Time": "30-05-2026 15:00:00",
+    "Bid Opening Date / Time": "30-05-2026 15:30:00",
+    "Average Turn Over of Last 3 Years": "23 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Sunil Kumar Murmu",
+    "Address": "Sunil Kumar Murmu,skmurmu@bhel.in,Anuppur Thermal Energy (MP) Private Limited, Village: Chhatai, Majhtoliya and Umarda Tehsil: Kotma, District: Anuppur, State: Madhya Pradesh., PIN- 484440,Anuppur,MADHYA PRADESH,484440,India",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10360010-pe&sd Hyderabad"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9302038"
+}

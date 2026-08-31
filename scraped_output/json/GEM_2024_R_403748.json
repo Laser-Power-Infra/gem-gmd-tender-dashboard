@@ -1,0 +1,33 @@
+{
+  "source_id": "7094745",
+  "bid_number": "GEM/2024/R/403748",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/403748",
+    "RA Status": "Active",
+    "Quantity": "27",
+    "RA Validity (From End Date)": "120 ( Days)",
+    "RA Start Date / Time": "04-11-2024 12:00 PM",
+    "RA End Date / Time": "05-11-2024 3:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Tanmay Dave",
+    "Address": "Tanmay Dave,buyer1701.bhelb.mp@gembuyer.in,BHARAT HEAVY ELECTRICAL LTD, PIPLANI,BHOPAL,MADHYA PRADESH,462022,India",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "Hep Bhopal"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/403748",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "04-11-2024 12:00 PM",
+    "ra_end_date": "05-11-2024 3:00 PM",
+    "parent_bid_number": "GEM/2024/B/5294034"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7094745",
+  "parent_bid_number": "GEM/2024/B/5294034"
+}

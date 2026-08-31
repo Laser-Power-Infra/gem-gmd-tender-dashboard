@@ -1,0 +1,32 @@
+{
+  "source_id": "9293538",
+  "bid_number": "GEM/2026/B/7507652",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7507652",
+    "Bid Status": "Active",
+    "Quantity": "14",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "06-05-2026 11:46:19",
+    "Bid End Date / Time": "29-05-2026 11:00:00",
+    "Bid Opening Date / Time": "29-05-2026 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Shivam Soni",
+    "Address": "Shivam Soni,shivam.soni.bpscl@nic.in,Hall No.- M-01 Old ADM Building Ispat Bhawan Bokaro Steel City,Bokaro,JHARKHAND,827001,India",
+    "Ministry": "Ministry Of Power",
+    "Department": "Thermal Power",
+    "Organisation": "Bokaro Power Supply Company Private Limited",
+    "Office": "Bokaro Steel City"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/9293538"
+}

@@ -1,0 +1,191 @@
+{
+  "source_id": "6343918",
+  "bid_number": "GEM/2024/B/4890183",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4890183",
+    "Bid Status": "Active",
+    "Quantity": "64",
+    "Bid Validity (From End Date)": "175 ( Days)",
+    "Bid Start Date / Time": "25-04-2024 17:38:32",
+    "Bid End Date / Time": "06-05-2024 18:00:00",
+    "Bid Opening Date / Time": "06-05-2024 18:30:00"
+  },
+  "buyer_details": {
+    "Name": "Chaudhary Pradeep Kumar",
+    "Address": "Chaudhary Pradeep Kumar,chaudharypradeep.kr@coalindia.in,DEPOT OFFICE, REGIONAL STORES, BLOCK B, NCL, PO - GORBI,SIDHI,MADHYA PRADESH,486892,India,07805-275144-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Materials Management",
+    "Organisation": "Northern Coalfields Limited",
+    "Office": "Singrauli"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ARM PIPING ZONE PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 07:54:54",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CHANDIGARH SANITARY AND HARDWARES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "04-05-2024 18:12:55",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 16:44:04",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "HAZRA ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 16:19:52",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "J K SANITATIONS & TOOLS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 16:28:59",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/S, MINOTI ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "04-05-2024 15:50:31",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 17:07:13",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-04-2024 10:03:12",
+      "EMD Status": "Start-up",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "PUNIT ENGINEERING COMPANY Under PMA",
+      "Offered Item": "-",
+      "Participated On": "03-05-2024 17:59:51",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "S & M INDUSTRIAL VALVES LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "04-05-2024 15:30:03",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 16:18:57",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "VALVEQUIP ENGENEERING CORPORATION Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2024 16:59:59",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "71272",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "PRESSURE VALVES PRIVATE LIMITED",
+      "Total L1 Price": "108000",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "PUNIT ENGINEERING COMPANY",
+      "Total L1 Price": "244260",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "384090",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "223020",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "371700",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "PUNIT ENGINEERING COMPANY",
+      "Total L1 Price": "458784",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/6343918"
+}

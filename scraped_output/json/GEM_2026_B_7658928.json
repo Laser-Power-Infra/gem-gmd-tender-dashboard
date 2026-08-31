@@ -1,0 +1,50 @@
+{
+  "source_id": "9462004",
+  "bid_number": "GEM/2026/B/7658928",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7658928",
+    "Bid Status": "Active",
+    "Quantity": "47",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "19-06-2026 13:15:34",
+    "Bid End Date / Time": "10-07-2026 15:00:00",
+    "Bid Opening Date / Time": "10-07-2026 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Vinay Vanwanshi",
+    "Address": "Vinay Vanwanshi,vinay.vanwanshi@sjvn.nic.in,SJVN Thermal Pvt. Ltd., Buxar Thermal Power Project, Main Office Building, Mohanpurwa, Akhouripur Gola, Chausa, Buxar- 802114 (Bihar),Buxar,BIHAR,802114,India",
+    "Ministry": "Ministry Of Power",
+    "Department": "Sjvn Limited",
+    "Organisation": "Sjvn Limited",
+    "Office": "Shimla"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "INDUSTRIAL SPARES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "09-07-2026 17:10:26",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "INDUSTRIAL SPARES (MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 50NB BUTERFLY VALVE PN10,50NB BUTERFLY VALVE SEAL KIT PN10,80NB BUTERFLY VALVE MOTRIZED PN10,80NB B",
+      "Total Price": "` 659196.00",
+      "Rank": "L1"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9462004"
+}

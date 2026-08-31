@@ -1,0 +1,55 @@
+{
+  "source_id": "7691934",
+  "bid_number": "GEM/2025/R/473101",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/473101",
+    "RA Status": "Active",
+    "Quantity": "4",
+    "RA Validity (From End Date)": "90 ( Days)",
+    "RA Start Date / Time": "29-03-2025 5:00 PM",
+    "RA End Date / Time": "31-03-2025 5:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Sibnath Bera",
+    "Address": "Sibnath Bera,con39.sail.or@gembuyer.in,Administrative Building, Rourkela Steel Plant, Rourkela,Sundergarh,ODISHA,769011,India",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Rourkela Steel Plant",
+    "Office": "Materials Management Purchase"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "H R VALVE (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : ITEM 10 71406000300610 VALVE, GATE, DN300, 270MM",
+      "Total Price": "` 384745.76",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "THE NEW BHAGYA LAKSHMI PATTERN WORKS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : ITEM 10 71406000300610 VALVE, GATE, DN300, 270MM",
+      "Total Price": "` 389830.51",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "GLOBAL FLOW INDUSTRIES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : ITEM 10 71406000300610 VALVE, GATE, DN300, 270MM",
+      "Total Price": "` 395600.00 (Bid Price)",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/473101",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "29-03-2025 5:00 PM",
+    "ra_end_date": "31-03-2025 5:00 PM",
+    "parent_bid_number": "GEM/2025/B/5911493"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7691934",
+  "parent_bid_number": "GEM/2025/B/5911493"
+}

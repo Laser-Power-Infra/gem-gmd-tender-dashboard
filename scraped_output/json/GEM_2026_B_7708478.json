@@ -1,0 +1,177 @@
+{
+  "source_id": "9517626",
+  "bid_number": "GEM/2026/B/7708478",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7708478",
+    "Bid Status": "Active",
+    "Quantity": "64",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "25-06-2026 00:26:50",
+    "Bid End Date / Time": "11-07-2026 10:00:00",
+    "Bid Opening Date / Time": "11-07-2026 10:30:00",
+    "Average Turn Over of Last 3 Years": "1 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Dileram",
+    "Address": "Dileram,purchaseoffice1985@gmail.com,Shravasti Kisan Sahkari Chini Mills Ltd, Nanpara. District Bahraich GSTN 09AAAAS4522Q1Z2,Bahraich,UTTAR PRADESH,271865,India",
+    "State": "Uttar Pradesh",
+    "Department": "Uttar Pradesh Cooperative Sugar Factories Federation Limited",
+    "Organisation": "N/a",
+    "Office": "Lucknow"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "08-07-2026 11:34:48",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ESS ESS TRADERS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-07-2026 21:35:18",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLOWMECH SOLUTIONS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-07-2026 16:45:17",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "JSS ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-06-2026 14:41:54",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MAHAVIR METAL INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-07-2026 12:46:52",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "MINAR PIPE AND FITTING CO. Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-07-2026 12:43:04",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PROTIMA ENGINEERING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-07-2026 15:03:04",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "SARASWATI ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "11-07-2026 00:43:20",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "55800",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "21800",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "51920",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "124348",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "10973",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "78900",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "141600",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "8",
+      "Schedule Title": "Schedule 8",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "65900",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "9",
+      "Schedule Title": "Schedule 9",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "4920",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "10",
+      "Schedule Title": "Schedule 10",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "12018",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "11",
+      "Schedule Title": "Schedule 11",
+      "L1 Seller Name": "SARASWATI ENTERPRISES",
+      "Total L1 Price": "102500",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/9517626"
+}

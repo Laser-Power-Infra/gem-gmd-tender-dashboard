@@ -1,0 +1,33 @@
+{
+  "source_id": "9753747",
+  "bid_number": "GEM/2026/R/716441",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2026/R/716441",
+    "RA Status": "Active",
+    "Quantity": "3",
+    "RA Validity (From End Date)": "180 ( Days)",
+    "RA Start Date / Time": "14-08-2026 6:00 PM",
+    "RA End Date / Time": "17-08-2026 6:00 PM"
+  },
+  "buyer_details": {
+    "Name": "***********",
+    "Address": "*********** BHANDARA",
+    "Ministry": "Ministry Of Defence",
+    "Department": "Department Of Defence Production",
+    "Organisation": "Munitions India Limited",
+    "Office": "***********"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2026/R/716441",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "14-08-2026 6:00 PM",
+    "ra_end_date": "17-08-2026 6:00 PM",
+    "parent_bid_number": "GEM/2026/B/7631102"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9753747",
+  "parent_bid_number": "GEM/2026/B/7631102"
+}

@@ -1,0 +1,76 @@
+{
+  "source_id": "6198318",
+  "bid_number": "GEM/2024/R/317607",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/317607",
+    "RA Status": "Active",
+    "Quantity": "8",
+    "RA Validity (From End Date)": "120 ( Days)",
+    "RA Start Date / Time": "10-03-2024 5:00 PM",
+    "RA End Date / Time": "11-03-2024 5:18 PM"
+  },
+  "buyer_details": {
+    "Name": "Animesh Jain",
+    "Address": "Animesh Jain,animesh.jain.sail@nic.in,Room No- B324, Administrative Building, Bokaro Steel Plant, Bokaro Steel City.,BOKARO,JHARKHAND,827001,India,-8986871591-",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Bokaro Steel Plant",
+    "Office": "Bslp61"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : Cast Steel Sluice Valve 350mm",
+      "Total Price": "` 698305.09",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MC MIRA & CO. (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Cast Steel Sluice Valve 350mm",
+      "Total Price": "` 828474.58",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "DINTECH VALVES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Cast Steel Sluice Valve 350mm",
+      "Total Price": "` 881355.93 (Bid Price)",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "KALPANA VALVES MANUFACTURING COMPANY PVT. LTD. (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Cast Steel Sluice Valve 350mm",
+      "Total Price": "` 1394096.00 (Bid Price)",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "VALVE TECH INDUSTRIES (MII) Under PMA",
+      "Offered Item": "Item Categories : Cast Steel Sluice Valve 350mm",
+      "Total Price": "` 1460000.00 (Bid Price)",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "A V VALVES LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Cast Steel Sluice Valve 350mm",
+      "Total Price": "` 3153837.29 (Bid Price)",
+      "Rank": "L6"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/317607",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "10-03-2024 5:00 PM",
+    "ra_end_date": "11-03-2024 5:18 PM",
+    "parent_bid_number": "GEM/2024/B/4484153"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6198318",
+  "parent_bid_number": "GEM/2024/B/4484153"
+}

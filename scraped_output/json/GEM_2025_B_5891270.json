@@ -1,0 +1,137 @@
+{
+  "source_id": "7456342",
+  "bid_number": "GEM/2025/B/5891270",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5891270",
+    "Bid Status": "Active",
+    "Quantity": "8",
+    "Bid Validity (From End Date)": "30 ( Days)",
+    "Bid Start Date / Time": "04-02-2025 16:44:51",
+    "Bid End Date / Time": "14-02-2025 17:00:00",
+    "Bid Opening Date / Time": "14-02-2025 17:30:00",
+    "Average Turn Over of Last 3 Years": "2 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Surendar Kumar Sharma",
+    "Address": "Surendar Kumar Sharma,buycon2.npp.shahganj@gembuyer.in,NAGAR PALIKA PARISHAD SHAHGANJ PIN 223101,Jaunpur,UTTAR PRADESH,223101,India,05453-221011-",
+    "State": "Uttar Pradesh",
+    "Department": "Urban Development Department Uttar Pradesh",
+    "Organisation": "Nagar Palika Parishad Shahganj Jaunpur",
+    "Office": "Nagar Palika Parishad Shahganj Jaunpur"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Make : NA Model : CISVFE16-150",
+      "Participated On": "06-02-2025 18:40:09",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : CISVFE16-150",
+      "Participated On": "05-02-2025 14:16:17",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE 300MM",
+      "Participated On": "13-02-2025 14:35:03",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "KSB CONTROLS Under PMA",
+      "Offered Item": "Make : NA Model : CISVFE16-200",
+      "Participated On": "14-02-2025 16:48:36",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "M/S ASIAN ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : SV-001",
+      "Participated On": "14-02-2025 11:21:47",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/S CHANDEL ASSOCIATES Under PMA",
+      "Offered Item": "Make : ajanta Model : ACISVPN16-150",
+      "Participated On": "05-02-2025 13:16:56",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "MAA GANGA & SONS Under PMA",
+      "Offered Item": "Make : NA Model : SV-001",
+      "Participated On": "14-02-2025 11:40:11",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "SHREE JAGANNATH IRON FOUNDRY PVT LTD Under PMA",
+      "Offered Item": "Make : NA Model : 300 mm Flanged Cast Iron Sluice Valve",
+      "Participated On": "06-02-2025 16:45:37",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "unique enterprise Under PMA",
+      "Offered Item": "Make : NA Model : 300 mm Flanged Cast Iron Sluice Valve",
+      "Participated On": "08-02-2025 17:24:58",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "UTKARSH ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : SV-001",
+      "Participated On": "14-02-2025 09:40:04",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "UTKARSH ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 438400.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MAA GANGA & SONS Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 438480.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M/S ASIAN ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 439120.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7456342"
+}

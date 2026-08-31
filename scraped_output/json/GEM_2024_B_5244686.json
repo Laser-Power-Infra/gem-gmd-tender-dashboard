@@ -1,0 +1,28 @@
+{
+  "source_id": "GEM/2024/B/5244686",
+  "bid_number": "GEM/2024/B/5244686",
+  "parent_bid_number": "GEM/2024/B/5244686",
+  "bid_title_type": "BID DETAILS (BID AWARD)",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5244686",
+    "Bid Status": "Bid Award",
+    "Quantity": "15",
+    "Items": "Sluice Valve For Water Works P...",
+    "Bid Start Date / Time": "03-08-2024 10:05 AM",
+    "Bid End Date / Time": "13-08-2024 11:00 AM"
+  },
+  "buyer_details": {
+    "Name": "Ministry of RailwaysIndian Railways",
+    "Address": "Ministry of RailwaysIndian Railways",
+    "Department": "Ministry of RailwaysIndian Railways"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "N/A",
+    "ra_status": "N/A",
+    "ra_start_date": "03-08-2024 10:05 AM",
+    "ra_end_date": "13-08-2024 11:00 AM"
+  }
+}

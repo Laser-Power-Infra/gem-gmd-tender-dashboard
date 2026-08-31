@@ -1,0 +1,253 @@
+{
+  "source_id": "6734545",
+  "bid_number": "GEM/2024/B/5246076",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5246076",
+    "Bid Status": "Active",
+    "Quantity": "17",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "05-08-2024 10:29:54",
+    "Bid End Date / Time": "27-08-2024 11:00:00",
+    "Bid Opening Date / Time": "26-08-2024 11:30:00",
+    "RA Start Date / Time": "24-08-2025 4:00 PM",
+    "RA End Date / Time": "26-08-2025 10:00 AM"
+  },
+  "buyer_details": {
+    "Name": "Pasagada Somasekhara Prasad",
+    "Address": "Pasagada Somasekhara Prasad,buyer12.rinl.vskp@gembuyer.in,ADMINISTRATIVE BUILDING, VISAKHAPATNAM STEEL PLANT,VISAKHAPATNAM,ANDHRA PRADESH,530031,India",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Rashtriya Ispat Nigam Limited",
+    "Organisation": "Rashtriya Ispat Nigam Limited",
+    "Office": "Visakhapatnam Steel Plant"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AEGIS VALVES INDUSTRIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 17:58:53",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AL-FINE VALVES LLP Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 13:31:29",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "AQUA ENGINEERING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-08-2024 12:34:18",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "ENGINEERS COMBINE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-08-2024 16:32:19",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLUID CONTROLS LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-08-2024 12:00:46",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 13:47:29",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "FORXAR INDUSTRIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 10:21:57",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "GOYAL VALVES AND CONTROLS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 13:35:13",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "INTEGRAL PROCESS CONTROLS (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 16:15:13",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "26-08-2024 10:59:01",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "JEET INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "21-08-2024 17:52:39",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "JINDAL FORGING PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 12:49:47",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-08-2024 17:37:37",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "MALEK ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "16-08-2024 15:59:56",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "MC MIRA & CO. Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 16:46:14",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "METAVAL ENGINEERING PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "23-08-2024 14:16:48",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-08-2024 17:03:15",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "07-08-2024 08:56:13",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "S.S CAST VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-08-2024 22:18:48",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "24-08-2024 18:24:44",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "8",
+      "Schedule Title": "Schedule 8",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/534887",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "24-08-2025 4:00 PM",
+    "ra_end_date": "26-08-2025 10:00 AM",
+    "ra_schedules_url": "https://bidplus.gem.gov.in/list-ra-schedules/8260057"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/6734545"
+}

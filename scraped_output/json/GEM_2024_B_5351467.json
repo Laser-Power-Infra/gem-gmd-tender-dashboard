@@ -1,0 +1,28 @@
+{
+  "source_id": "GEM/2024/B/5351467",
+  "bid_number": "GEM/2024/B/5351467",
+  "parent_bid_number": "GEM/2024/B/5351467",
+  "bid_title_type": "BID DETAILS (BID AWARD)",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5351467",
+    "Bid Status": "Bid Award",
+    "Quantity": "9",
+    "Items": "CARBON STEEL GATE VALVE 150NB,...",
+    "Bid Start Date / Time": "03-09-2024 3:05 PM",
+    "Bid End Date / Time": "24-09-2024 3:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Ministry of Chemicals and FertilizersDepartment of Fertilizers",
+    "Address": "Ministry of Chemicals and FertilizersDepartment of Fertilizers",
+    "Department": "Ministry of Chemicals and FertilizersDepartment of Fertilizers"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "N/A",
+    "ra_status": "N/A",
+    "ra_start_date": "03-09-2024 3:05 PM",
+    "ra_end_date": "24-09-2024 3:00 PM"
+  }
+}

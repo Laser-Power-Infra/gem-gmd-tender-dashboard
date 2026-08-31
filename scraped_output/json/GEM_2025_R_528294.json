@@ -1,0 +1,83 @@
+{
+  "source_id": "8206760",
+  "bid_number": "GEM/2025/R/528294",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/528294",
+    "RA Status": "Active",
+    "Quantity": "34",
+    "RA Validity (From End Date)": "109 ( Days)",
+    "RA Start Date / Time": "12-08-2025 10:00 AM",
+    "RA End Date / Time": "13-08-2025 10:00 AM"
+  },
+  "buyer_details": {
+    "Name": "Ashish Gupta",
+    "Address": "Ashish Gupta,con696.bhelb.ts@gembuyer.in,BHARAT HEAVY ELECTRICAL LTD, PIPLANI,Bhopal,MADHYA PRADESH,462022,India,0755-2505456-",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "Hep Bhopal"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ARH FLOW CONTROLS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 43177.12",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "S & M INDUSTRIAL VALVES LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 78372.88 (Bid Price)",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 102605.09 (Bid Price)",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "AQUA FLOW TECHNOLOGIES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 144500.00 (Bid Price)",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "LEVCON VALVES PVT LTD (MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 170000.00 (Bid Price)",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 297500.00 (Bid Price)",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 50NB WAFER TYPE BUTTERFLY VALVES ANSI CL-150",
+      "Total Price": "` 311532.20 (Bid Price)",
+      "Rank": "L7"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/528294",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "12-08-2025 10:00 AM",
+    "ra_end_date": "13-08-2025 10:00 AM",
+    "parent_bid_number": "GEM/2025/B/6194901"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8206760",
+  "parent_bid_number": "GEM/2025/B/6194901"
+}

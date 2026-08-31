@@ -1,0 +1,66 @@
+{
+  "source_id": "7152025",
+  "bid_number": "GEM/2024/B/5619843",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5619843",
+    "Bid Status": "Active",
+    "Quantity": "80",
+    "Bid Validity (From End Date)": "45 ( Days)",
+    "Bid Start Date / Time": "19-11-2024 16:15:01",
+    "Bid End Date / Time": "10-12-2024 16:00:00",
+    "Bid Opening Date / Time": "10-12-2024 16:30:00",
+    "Average Turn Over of Last 3 Years": "Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Debajit Chakraborty",
+    "Address": "Debajit Chakraborty,buycon1098.ongcl.wb@gembuyer.in,Technopolis, Sector -V, Salt Lake, Kolkata,North 24 parganas,WEST BENGAL,700091,India,033-23404329-",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Na",
+    "Organisation": "Oil And Natural Gas Corporation Limited",
+    "Office": "Mba Basin Kolkata"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : BUTTERFLY VALVE 250MM PN10",
+      "Participated On": "10-12-2024 12:41:07",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "S K ENTERPRISE Under PMA",
+      "Offered Item": "Make : NOVA Model : WBV SS 250",
+      "Participated On": "25-11-2024 21:24:45",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "S K ENTERPRISE Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) a",
+      "Total Price": "` 312032.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) a",
+      "Total Price": "` 552726.16",
+      "Rank": "L2"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7152025"
+}

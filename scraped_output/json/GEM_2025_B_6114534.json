@@ -1,0 +1,176 @@
+{
+  "source_id": "7711384",
+  "bid_number": "GEM/2025/B/6114534",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6114534",
+    "Bid Status": "Active",
+    "Quantity": "138",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "04-04-2025 18:35:51",
+    "Bid End Date / Time": "14-04-2025 19:00:00",
+    "Bid Opening Date / Time": "14-04-2025 19:30:00",
+    "RA Start Date / Time": "25-04-2025 11:00 AM",
+    "RA End Date / Time": "26-04-2025 5:40 PM"
+  },
+  "buyer_details": {
+    "Name": "Yamini Tamrakar",
+    "Address": "Yamini Tamrakar,yaminitamrakar@sail.in,Boria Storage Complex, Bhilai Steel Plant Bhilai-490001,Durg,CHHATTISGARH,490001,India,0788-2860966-",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Bhilai Steel Plant",
+    "Office": "Materials Management"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "CALSENS PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "12-04-2025 12:39:29",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CRAWLEY & RAY (FOUNDERS & ENGINEERS) PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-04-2025 12:28:18",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "14-04-2025 08:41:12",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "12-04-2025 13:36:01",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "H. SARKER & COMPANY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "10-04-2025 13:02:15",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "Kay Kay Corporation Under PMA",
+      "Offered Item": "-",
+      "Participated On": "13-04-2025 11:03:44",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "14-04-2025 11:13:32",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "M/S CHANDEL ASSOCIATES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "11-04-2025 08:30:53",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "MC MIRA & CO. Under PMA",
+      "Offered Item": "-",
+      "Participated On": "08-04-2025 17:44:48",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "09-04-2025 14:05:21",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "14-04-2025 14:28:18",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "RONEX ENGINEERING COMPANY Under PMA",
+      "Offered Item": "-",
+      "Participated On": "11-04-2025 12:20:52",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "WELL CAST INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "13-04-2025 12:21:56",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/480671",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "25-04-2025 11:00 AM",
+    "ra_end_date": "26-04-2025 5:40 PM",
+    "ra_schedules_url": "https://bidplus.gem.gov.in/list-ra-schedules/7767978"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7711384"
+}

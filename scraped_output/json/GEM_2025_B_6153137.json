@@ -1,0 +1,166 @@
+{
+  "source_id": "7754102",
+  "bid_number": "GEM/2025/B/6153137",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6153137",
+    "Bid Status": "Active",
+    "Quantity": "64",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "26-04-2025 19:01:42",
+    "Bid End Date / Time": "06-05-2025 20:00:00",
+    "Bid Opening Date / Time": "06-05-2025 20:30:00"
+  },
+  "buyer_details": {
+    "Name": "Mandar Ramesh Patil",
+    "Address": "Mandar Ramesh Patil,mr.patil3485@nic.in,Regional Stores, WCL Wani North Area , PO UKNI, Tahsil WANI Dist Yavatmal (MS)Pin 445 304,YAVATMAL,MAHARASHTRA,445304,India,07239-241341-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Coal India Limited",
+    "Organisation": "Western Coalfields Limited",
+    "Office": "Wcl Nagpur Maharashtra"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-05-2025 17:45:01",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-05-2025 16:13:25",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "JMD ENGINEERING Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2025 11:51:58",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "M/S, MINOTI ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "03-05-2025 16:48:40",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-05-2025 16:04:56",
+      "EMD Status": "Vendor Assessed",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "NIKHIL TRADING COMPANY Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-05-2025 16:57:00",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PUNIT ENGINEERING COMPANY Under PMA",
+      "Offered Item": "-",
+      "Participated On": "03-05-2025 15:46:46",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "RAJAPUR IRON & STEEL INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-05-2025 15:43:57",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "UNICK CONTROL SYSTEM Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-04-2025 17:20:51",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "ZOVIAN VALVES INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "03-05-2025 18:05:47",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "114460",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "237770",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "PUNIT ENGINEERING COMPANY",
+      "Total L1 Price": "93668.4",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "PUNIT ENGINEERING COMPANY",
+      "Total L1 Price": "101952",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "92512",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "372880",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7754102"
+}

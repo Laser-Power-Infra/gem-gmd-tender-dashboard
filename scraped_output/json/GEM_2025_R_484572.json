@@ -1,0 +1,35 @@
+{
+  "source_id": "7807525",
+  "bid_number": "GEM/2025/R/484572",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/484572",
+    "RA Status": "Active",
+    "Quantity": "16",
+    "RA Validity (From End Date)": "180 ( Days)",
+    "RA Start Date / Time": "06-05-2025 6:00 PM",
+    "RA End Date / Time": "09-05-2025 6:00 PM",
+    "Average Turn Over of Last 3 Years": "2 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "***********",
+    "Address": "*********** VISAKHAPATNAM",
+    "Ministry": "Ministry Of Defence",
+    "Department": "Department Of Military Affairs",
+    "Organisation": "Indian Navy",
+    "Office": "***********"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/484572",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "06-05-2025 6:00 PM",
+    "ra_end_date": "09-05-2025 6:00 PM",
+    "parent_bid_number": "GEM/2024/B/5594597"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7807525",
+  "parent_bid_number": "GEM/2024/B/5594597"
+}

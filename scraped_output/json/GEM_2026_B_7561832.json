@@ -1,0 +1,49 @@
+{
+  "source_id": "9353595",
+  "bid_number": "GEM/2026/B/7561832",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7561832",
+    "Bid Status": "Active",
+    "Quantity": "78",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "25-05-2026 10:29:41",
+    "Bid End Date / Time": "15-06-2026 11:00:00",
+    "Bid Opening Date / Time": "15-06-2026 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Mundayil Pisharath Vinod",
+    "Address": "Mundayil Pisharath Vinod,mp.rpum-dae@gov.in,Regional Purchase Unit, DPS, Heavy Water General Facilities, DAE Colony, ECIL Road, ECIL Post,Hyderabad,TELANGANA,500062,India",
+    "Ministry": "Pmo",
+    "Department": "Department Of Atomic Energy",
+    "Organisation": "Directorate Of Purchase And Stores",
+    "Office": "Directorate Of Purchase And Stores"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "HHV THERMAL TECHNOLOGIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "03-06-2026 16:05:04",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "HHV THERMAL TECHNOLOGIES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Pneumatically operated Right angle valve Model RPV 75 HHV Part No VL13002RPV75F,Pneumatically opera",
+      "Total Price": "` 752250.00",
+      "Rank": "L1"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9353595"
+}

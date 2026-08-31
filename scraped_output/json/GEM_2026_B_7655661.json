@@ -1,0 +1,144 @@
+{
+  "source_id": "9458423",
+  "bid_number": "GEM/2026/B/7655661",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7655661",
+    "Bid Status": "Active",
+    "Quantity": "68",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "12-06-2026 11:55:38",
+    "Bid End Date / Time": "25-06-2026 15:00:00",
+    "Bid Opening Date / Time": "25-06-2026 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Praneeth Maxim Noronha",
+    "Address": "Praneeth Maxim Noronha,praneethmaxim.noronha@hpcl.in,Minor Projects, Technical Department, HPCL, Visakh Refinery, Malkapuram PO, Visakhapatnam-530011,Visakhapatnam,ANDHRA PRADESH,530011,India,--",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Na",
+    "Organisation": "Hindustan Petroleum Corporation Ltd",
+    "Office": "Petroleum House"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-06-2026 14:09:37",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ENGINEERS COMBINE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-06-2026 14:52:35",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLOWJET VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-06-2026 14:57:24",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-06-2026 13:11:05",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "JSS ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "18-06-2026 13:43:04",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "20-06-2026 10:11:25",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "LIBRA VALVES INDIA PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-06-2026 14:10:30",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "18-06-2026 17:44:48",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "NIS MARKETING PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-06-2026 11:47:01",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "VALVEQUIP ENGINEERING CORPORATION Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-06-2026 14:10:54",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "YAMAC VALVES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-06-2026 11:44:03",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "20-06-2026 11:57:11",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "LIBRA VALVES INDIA PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 8 inch 150 LBS Gate valve RF,8 inch 150 lbs globe valve RF,8 inch 150 lbs check valve RF,6 inch 150",
+      "Total Price": "` 1186815.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 8 inch 150 LBS Gate valve RF,8 inch 150 lbs globe valve RF,8 inch 150 lbs check valve RF,6 inch 150",
+      "Total Price": "` 1361164.00",
+      "Rank": "L2"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9458423"
+}

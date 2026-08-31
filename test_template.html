@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+    @bottom-right {
+      content: counter(page) ' / ' counter(pages);
+      font-size: 9pt;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #666;
+    }
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #0284c7;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .title-group h1 {
+    margin: 0;
+    font-size: 18pt;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .title-group p {
+    margin: 3px 0 0 0;
+    font-size: 10pt;
+    color: #64748b;
+  }
+  .badge {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 9pt;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .badge-primary { background-color: #e0f2fe; color: #0369a1; }
+  .badge-success { background-color: #dcfce7; color: #15803d; }
+  .badge-danger { background-color: #fee2e2; color: #b91c1c; }
+  
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+  }
+  .section-title {
+    font-size: 13pt;
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+  .info-item {
+    font-size: 9.5pt;
+  }
+  .info-label {
+    font-weight: 600;
+    color: #475569;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .info-value {
+    color: #0f172a;
+  }
+  
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 9.5pt;
+  }
+  table.data-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 600;
+    font-size: 9pt;
+  }
+  table.data-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  table.data-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 8pt;
+    color: #94a3b8;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+  }
+</style>
+</head>
+<body>
+  <div class='header-bar'>
+    <div class='title-group'>
+      <h1>GeM Bid Evaluation Summary</h1>
+      <p>Government e Marketplace Portal Data Report</p>
+    </div>
+    <div>
+      <span class='badge badge-primary'>GEM/2023/B/4309262</span>
+    </div>
+  </div>
+  
+  <div class='card'>
+    <div class='section-title'>1. Bid Details</div>
+    <div class='grid-2'>
+      <div class='info-item'><span class='info-label'>Bid Number:</span><span class='info-value'>GEM/2023/B/4309262</span></div>
+      <div class='info-item'><span class='info-label'>Bid Status:</span><span class='info-value'>Active</span></div>
+      <div class='info-item'><span class='info-label'>Quantity:</span><span class='info-value'>12</span></div>
+      <div class='info-item'><span class='info-label'>Bid Validity:</span><span class='info-value'>120 Days</span></div>
+      <div class='info-item'><span class='info-label'>Start Date/Time:</span><span class='info-value'>18-01-2024 13:22:28</span></div>
+      <div class='info-item'><span class='info-label'>End Date/Time:</span><span class='info-value'>08-02-2024 14:00:00</span></div>
+    </div>
+  </div>
+
+  <div class='card'>
+    <div class='section-title'>Buyer Details</div>
+    <div class='grid-2'>
+      <div class='info-item'><span class='info-label'>Name:</span><span class='info-value'>Deo Kumar Singh</span></div>
+      <div class='info-item'><span class='info-label'>Ministry:</span><span class='info-value'>Ministry Of Coal</span></div>
+      <div class='info-item'><span class='info-label'>Department:</span><span class='info-value'>Materials Management</span></div>
+      <div class='info-item'><span class='info-label'>Organisation:</span><span class='info-value'>Northern Coalfields Limited</span></div>
+      <div class='info-item' style='grid-column: span 2;'><span class='info-label'>Address:</span><span class='info-value'>REGIONAL STORES, NCL, AMLOHRI PROJECT, PO - AMLOHRI, SINGRAULI, MADHYA PRADESH, 486887</span></div>
+    </div>
+  </div>
+
+  <div class='card'>
+    <div class='section-title'>2. Technical Evaluation</div>
+    <table class='data-table'>
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>Seller Name</th>
+          <th>Offered Item</th>
+          <th>Participated On</th>
+          <th>MSE/MII</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>**********</td>
+          <td>Make: DALUI<br><small style='color:#64748b'>Model: Sluice Valve 200mm</small></td>
+          <td>07-02-2024 16:27</td>
+          <td>MSE</td>
+          <td><span class='badge badge-danger'>Disqualified</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>**********</td>
+          <td>Make: Unbranded--HAZRA ENGG.WORKS<br><small style='color:#64748b'>Model: Sluice Valve 200mm PN 1.6</small></td>
+          <td>06-02-2024 13:00</td>
+          <td>MSE</td>
+          <td><span class='badge badge-success'>Qualified</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

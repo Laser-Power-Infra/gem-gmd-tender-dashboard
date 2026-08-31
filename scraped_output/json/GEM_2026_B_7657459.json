@@ -1,0 +1,109 @@
+{
+  "source_id": "9460403",
+  "bid_number": "GEM/2026/B/7657459",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7657459",
+    "Bid Status": "Active",
+    "Quantity": "384",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "12-06-2026 14:32:58",
+    "Bid End Date / Time": "27-06-2026 16:00:00",
+    "Bid Opening Date / Time": "27-06-2026 16:30:00"
+  },
+  "buyer_details": {
+    "Name": "Vibhuti Paliwal",
+    "Address": "Vibhuti Paliwal,vibhutis@bhel.in,BHEL, HEEP, Main Admin Building, 4th Floor, Haridwar,Haridwar,UTTARAKHAND,249403,India,01334-953685-8080",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10110009-heep, Haridwar"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : DALUI Model : BALL VALVE WITH COMPANION FLANGES SIZE: 2 IN Title : FF7598098204 FULL-BORE ONE-PIECE DESIGN (CARBON STEEL) BALL VALVE WITH COMPANION FLANGES SIZE: 2 IN",
+      "Participated On": "27-06-2026 15:17:28",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : getway Model : BALL VALVE Title : FF7598098204 FULL-BORE ONE-PIECE DESIGN (CARBON STEEL) BALL VALVE WITH COMPANION FLANGES SIZE: 2 IN",
+      "Participated On": "27-06-2026 14:44:04",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : LEADER Model : CCS0103 Title : FF7598098204 FULL-BORE ONE-PIECE DESIGN (CARBON STEEL) BALL VALVE WITH COMPANION FLANGES SIZE: 2 IN",
+      "Participated On": "27-06-2026 15:10:44",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : Unbrand Model : FF7598098204 Title : FF7598098204 FULL-BORE ONE-PIECE DESIGN (CARBON STEEL) BALL VALVE WITH COMPANION FLANGES SIZE: 2 IN",
+      "Participated On": "27-06-2026 15:02:12",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : Unbrand Model : NA Title : FF7598098204 FULL-BORE ONE-PIECE DESIGN (CARBON STEEL) BALL VALVE WITH COMPANION FLANGES SIZE: 2 IN",
+      "Participated On": "26-06-2026 15:21:49",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Evaluation in Progress"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "**********",
+      "Total L1 Price": "-",
+      "Schedule Status": "Evaluation in Progress"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/9460403"
+}

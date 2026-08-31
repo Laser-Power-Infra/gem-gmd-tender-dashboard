@@ -1,0 +1,72 @@
+{
+  "source_id": "6845116",
+  "bid_number": "GEM/2024/B/5346045",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5346045",
+    "Bid Status": "Active",
+    "Quantity": "20",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "03-09-2024 18:02:54",
+    "Bid End Date / Time": "25-11-2024 11:00:00",
+    "Bid Opening Date / Time": "25-11-2024 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Sonudeep",
+    "Address": "Sonudeep,buyer2.pgcil.patna@gembuyer.in,POWERGRID CORPORATION OF INDIA LIMITED, Eastern Region-I Headquarter (ER-I RHQ), Board Colony, Near Transformer Repair Works, Shastri Nagar, Patna, Bihar 800023,Patna,BIHAR,800023,India,700-4603180-",
+    "Ministry": "Ministry Of Power",
+    "Department": "Power Grid Corporation Of India Limited",
+    "Organisation": "Power Grid Corporation Of India Limited",
+    "Office": "Corporate Office Gurgaon"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AGRAWAL TRADING COMPANY Under PMA",
+      "Offered Item": "Make : NA Model : 80nb sluice valve",
+      "Participated On": "19-11-2024 17:14:45",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "Dinesh Enterprises Under PMA",
+      "Offered Item": "Make : deepak Model : DEEPAK",
+      "Participated On": "06-09-2024 19:32:25",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M/S CHANDEL ASSOCIATES Under PMA",
+      "Offered Item": "Make : AJANTA VALVES--AJANTA VALVES Model : SLUICE VALVE 80MM",
+      "Participated On": "11-09-2024 14:05:20",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "M/S CHANDEL ASSOCIATES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846,Sluice Valve For Wa",
+      "Total Price": "` 306693.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "Dinesh Enterprises Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846,Sluice Valve For Wa",
+      "Total Price": "` 317000.00",
+      "Rank": "L2"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6845116"
+}

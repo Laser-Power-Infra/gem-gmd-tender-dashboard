@@ -1,0 +1,95 @@
+{
+  "source_id": "8572586",
+  "bid_number": "GEM/2025/B/6876977",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6876977",
+    "Bid Status": "Active",
+    "Quantity": "30",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "12-11-2025 13:26:33",
+    "Bid End Date / Time": "27-11-2025 14:00:00",
+    "Bid Opening Date / Time": "27-11-2025 14:30:00"
+  },
+  "buyer_details": {
+    "Name": "Amit Kumar Jaiswal",
+    "Address": "Amit Kumar Jaiswal,somm.bkp.secl@coalindia.in,Depot officer, Regional store, Baikunthpur Area, churcha, PO churcha colliery, Dist Koriya, State. Chattisgarh, pin. 497339.,Koriya,CHHATTISGARH,497339,India,94255-33206-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Coal India Limited",
+    "Organisation": "South Eastern Coalfields Limited",
+    "Office": "Secl Bilaspur Chhattisgarh"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AJANTA VALVES Under PMA",
+      "Offered Item": "Make : AJANTA VALVES--AJANTA VALVES Model : Sluice Valve 100mm",
+      "Participated On": "20-11-2025 10:23:38",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE PN-1.6 100MM",
+      "Participated On": "26-11-2025 15:54:19",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "HAZRA ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : Unbranded--HAZRA ENGG.WORKS Model : sluice valve 100mm",
+      "Participated On": "25-11-2025 16:24:57",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "MA MANASHA VALVE MFG. CO. Under PMA",
+      "Offered Item": "Make : Unbranded--MA MANASHA VALVE MFG. CO. Model : SV- 100MM",
+      "Participated On": "25-11-2025 13:16:48",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MINAR ENGINEERING CO. Under PMA",
+      "Offered Item": "Make : M.E.C--MINAR ENGINEERING CO. Model : Sluice Valve , Size 100 mm",
+      "Participated On": "27-11-2025 12:47:32",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "MA MANASHA VALVE MFG. CO.",
+      "Total L1 Price": "86610",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "MA MANASHA VALVE MFG. CO.",
+      "Total L1 Price": "60158",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "MA MANASHA VALVE MFG. CO.",
+      "Total L1 Price": "23456",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/8572586"
+}

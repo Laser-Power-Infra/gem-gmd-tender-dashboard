@@ -1,0 +1,328 @@
+{
+  "source_id": "7343560",
+  "bid_number": "GEM/2025/B/5790369",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5790369",
+    "Bid Status": "Active",
+    "Quantity": "3",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "07-01-2025 12:46:28",
+    "Bid End Date / Time": "24-01-2025 17:00:00",
+    "Bid Opening Date / Time": "24-01-2025 17:30:00"
+  },
+  "buyer_details": {
+    "Name": "Makwana Kishan Arajanbhai",
+    "Address": "Makwana Kishan Arajanbhai,buycon5.iocl.brc@gembuyer.in,P.O Jawaharnagar 391320,VADODARA RURAL,GUJARAT,391320,India,0265-2237261-",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Indian Oil Corporation Limited",
+    "Organisation": "Indian Oil Corporation Limited",
+    "Office": "Iocl- Gujarat Refinery"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "DINTECH VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DINTECH Model : DIN-GTV-CS-150#-20\" Title : Gate Valves",
+      "Participated On": "21-01-2025 13:47:32",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ENGINEERS COMBINE Under PMA",
+      "Offered Item": "Make : VALVE INDIA Model : Gate Valves Title : Gate Valves",
+      "Participated On": "21-01-2025 11:55:27",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "HAWA VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : HAWA VALVES Model : GATE VALVE Title : Gate Valves",
+      "Participated On": "20-01-2025 10:19:32",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "KSB CONTROLS Under PMA",
+      "Offered Item": "Make : KSB CONTROLS (KC) Model : Gate Valve 20inch Title : Gate Valves",
+      "Participated On": "24-01-2025 14:42:56",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "LIBRA ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : LIBRA Model : NA Title : Gate Valves",
+      "Participated On": "09-01-2025 17:45:47",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "Make : PIPINGZONE Model : PZ Title : Bellow seal valve, bellow unit compatible with Bell-O-Seal make valves of size 15NB as per annexure",
+      "Participated On": "24-01-2025 09:04:38",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "METAVAL ENGINEERING PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : OEM Model : METAVAL Title : Gate Valves",
+      "Participated On": "13-01-2025 10:07:28",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "Make : METROPOLITAN INDUSTRIES Model : Gate Valves Title : Gate Valves",
+      "Participated On": "21-01-2025 12:54:23",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MICON Model : Gate Valves Title : Gate Valves",
+      "Participated On": "17-01-2025 17:19:34",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "MVITO INDUSTRIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MVITO Model : 20\"X150#GATE WCB RF G O Title : Gate Valves",
+      "Participated On": "14-01-2025 19:44:07",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "OCEAN VALVES MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : OCEAN Model : OV Title : Gate Valves",
+      "Participated On": "18-01-2025 18:44:03",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 20\" X 150# CS GATE VALVE FLANGE GEAR Title : Gate Valves",
+      "Participated On": "21-01-2025 12:46:04",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "QUALITY VALVE CO Under PMA",
+      "Offered Item": "Make : QUALITY VALVE Model : Gate Valves Title : Gate Valves",
+      "Participated On": "16-01-2025 18:06:55",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "S.S CAST VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : SS CAST VALVES Model : SS CAST Title : Gate Valves",
+      "Participated On": "20-01-2025 21:53:11",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "SAP INDUSTRIES LIMITED Under PMA",
+      "Offered Item": "Make : SAP Model : GTV CS Title : Gate Valves",
+      "Participated On": "21-01-2025 13:49:33",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "Make : CV VALVES Model : GTV Title : Gate Valves",
+      "Participated On": "21-01-2025 14:44:16",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "SYSCHEM CONTROLS Under PMA",
+      "Offered Item": "Make : SYSCHEM Model : SYS-GTV-20'' Title : Gate Valves",
+      "Participated On": "23-01-2025 12:57:00",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "TS FLOW CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : TSFlo Model : GATE VALVE Title : Gate Valves",
+      "Participated On": "21-01-2025 12:57:17",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "VALVES INDUSTRIES Under PMA",
+      "Offered Item": "Make : VALVE INDUSTRIES Model : 500 MM Title : Gate Valves",
+      "Participated On": "24-01-2025 15:28:48",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "XSIS VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : XSIS Model : Gate Valves ( 3 pieces ) Title : Gate Valves",
+      "Participated On": "17-01-2025 18:02:12",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : GTV Title : Gate Valves",
+      "Participated On": "21-01-2025 11:51:44",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "OCEAN VALVES MFG. CO (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 397086.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MVITO INDUSTRIES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 409755.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "LIBRA ENGINEERING WORKS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 477531.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "XSIS VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 477900.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 477900.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "DINTECH VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 525690.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "S.S CAST VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 543510.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "VALVES INDUSTRIES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 554364.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "QUALITY VALVE CO (MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 594720.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "SYSCHEM CONTROLS (MII) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 597000.00",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "SAP INDUSTRIES LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 598260.00",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 601357.50",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 628545.00",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "TS FLOW CONTROLS PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 631995.00",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 742500.00",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 868503.00",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "METAVAL ENGINEERING PRIVATE LIMITED (MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 1093368.90",
+      "Rank": "L16"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "ENGINEERS COMBINE (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Gate Valves",
+      "Total Price": "` 1674000.00",
+      "Rank": "L17"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7343560"
+}

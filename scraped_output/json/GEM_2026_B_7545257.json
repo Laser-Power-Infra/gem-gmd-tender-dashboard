@@ -1,0 +1,99 @@
+{
+  "source_id": "9335005",
+  "bid_number": "GEM/2026/B/7545257",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7545257",
+    "Bid Status": "Active",
+    "Quantity": "1",
+    "Bid Validity (From End Date)": "180 ( Days)",
+    "Bid Start Date / Time": "15-05-2026 13:51:27",
+    "Bid End Date / Time": "05-06-2026 14:00:00",
+    "Bid Opening Date / Time": "05-06-2026 14:30:00",
+    "Average Turn Over of Last 3 Years": "2 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Koustav Sanyal",
+    "Address": "Koustav Sanyal,buycon706.bpcl.mp@gembuyer.in,BPCL, LPG Bottling Plant, KHEDA INDUSTRIAL AREA, Pithampur, DIST. - DHAR, Madhya Pradesh, PIN- 454774,Dhar,MADHYA PRADESH,454774,India,0729-2256380-",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Bharat Petroleum Corporation Ltd",
+    "Organisation": "Bharat Petroleum Corporation Ltd",
+    "Office": "Lpg Western Region"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "JETFLO ENGINEERS Under PMA",
+      "Offered Item": "Make : JETFLO ENGINEERS Model : JETFLO Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "04-06-2026 16:33:57",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MASS VALVES INDIA PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Unbrand Model : 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12- Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "05-06-2026 13:57:05",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "MSR ENTERPRISES Under PMA",
+      "Offered Item": "Make : L&T Valves Model : GATE VALVE Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "04-06-2026 23:19:31",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 12\" x 150# GATE VALVE AND CHECK VALVE Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "25-05-2026 17:19:36",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "ROHILLA ROV MAINTENANCE Under PMA",
+      "Offered Item": "Make : L&T Valves Ltd. Model : VALVES Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "19-05-2026 19:36:08",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "SAVTECH MAINTENANCE Under PMA",
+      "Offered Item": "Make : Larsen and Toubro (L&T) Model : NRV/GATE VALVE Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "19-05-2026 19:30:09",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "SHALIMAR VALVES PVT LTD Under PMA",
+      "Offered Item": "Make : SHALIMAR VALVES PVT. LTD. Model : SUPPLY OF 12-INCH DIAMETER Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "05-06-2026 13:48:22",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "VANSH ENGINEERS Under PMA",
+      "Offered Item": "Make : CREST Model : 2-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-I Title : SUPPLY OF 12-INCH DIAMETER; 150 CLASS SWING TYPE NRV AND 12-INCH, 150 CLASS GATE VALVE AT BPCL PEET",
+      "Participated On": "03-06-2026 20:26:22",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9335005"
+}

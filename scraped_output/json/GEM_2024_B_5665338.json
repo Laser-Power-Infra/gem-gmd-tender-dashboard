@@ -1,0 +1,168 @@
+{
+  "source_id": "7202986",
+  "bid_number": "GEM/2024/B/5665338",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5665338",
+    "Bid Status": "Active",
+    "Quantity": "290",
+    "Bid Validity (From End Date)": "60 ( Days)",
+    "Bid Start Date / Time": "05-12-2024 16:56:25",
+    "Bid End Date / Time": "26-12-2024 17:00:00",
+    "Bid Opening Date / Time": "26-12-2024 17:30:00",
+    "Average Turn Over of Last 3 Years": "Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Bandana Chakrabarty",
+    "Address": "Bandana Chakrabarty,eeapwdhb.and@gov.in,Office of The Executive Engineer, Minor Irrigation Division, APWD, Hut Bay,ANDAMAN,ANDAMAN & NICOBAR,744207,India,03192-284257-",
+    "State": "Andaman & Nicobar",
+    "Department": "Andaman Public Works Department (apwd), Andaman & Nicobar",
+    "Organisation": "N/a",
+    "Office": "Chief Engineer Office Apwd"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ARROW PLUMBING AND HARDWARE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-12-2024 13:29:38",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "26-12-2024 10:04:24",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "LUCKY HARDWARE Under PMA",
+      "Offered Item": "-",
+      "Participated On": "15-12-2024 11:08:28",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "M/s Prince Stores Port Blair Under PMA",
+      "Offered Item": "-",
+      "Participated On": "18-12-2024 17:44:15",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "SREE HARI FABRICATOR Under PMA",
+      "Offered Item": "-",
+      "Participated On": "26-12-2024 13:46:00",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "Surya pipe Under PMA",
+      "Offered Item": "-",
+      "Participated On": "22-12-2024 14:10:06",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "SREE HARI FABRICATOR",
+      "Total L1 Price": "21000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "Surya pipe",
+      "Total L1 Price": "12500",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "Surya pipe",
+      "Total L1 Price": "4000",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "LUCKY HARDWARE",
+      "Total L1 Price": "1962.25",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "LUCKY HARDWARE",
+      "Total L1 Price": "1125",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "LUCKY HARDWARE",
+      "Total L1 Price": "2231.25",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "M/s Prince Stores Port Blair",
+      "Total L1 Price": "1200",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "8",
+      "Schedule Title": "Schedule 8",
+      "L1 Seller Name": "M/s Prince Stores Port Blair",
+      "Total L1 Price": "1400",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "9",
+      "Schedule Title": "Schedule 9",
+      "L1 Seller Name": "SREE HARI FABRICATOR",
+      "Total L1 Price": "1080",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "10",
+      "Schedule Title": "Schedule 10",
+      "L1 Seller Name": "LUCKY HARDWARE",
+      "Total L1 Price": "10400",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "11",
+      "Schedule Title": "Schedule 11",
+      "L1 Seller Name": "Surya pipe",
+      "Total L1 Price": "5200",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "12",
+      "Schedule Title": "Schedule 12",
+      "L1 Seller Name": "LUCKY HARDWARE",
+      "Total L1 Price": "2456",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7202986"
+}

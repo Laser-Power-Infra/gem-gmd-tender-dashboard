@@ -1,0 +1,55 @@
+{
+  "source_id": "9549661",
+  "bid_number": "GEM/2026/R/691353",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2026/R/691353",
+    "RA Status": "Active",
+    "Quantity": "26",
+    "RA Validity (From End Date)": "180 ( Days)",
+    "RA Start Date / Time": "03-07-2026 4:00 PM",
+    "RA End Date / Time": "04-07-2026 4:03 PM"
+  },
+  "buyer_details": {
+    "Name": "Gireesh Babu A.v",
+    "Address": "Gireesh Babu A.V,buycon2251.bhelb.tn@gembuyer.in,BHEL Site office, 2 X 660 MW Ennore SEZ STPP, Voyalur PO, Minjur, Ponneri Taluk, Tamil Nadu \u2013 601203,Tiruvallur,TAMIL NADU,601203,India",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10270005 Pssr"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "FLUIR CONTROLS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Manual (lever operated) Butterfly valves, wafer type, 100 NB",
+      "Total Price": "` 159745.76",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "VALVICON INDIA PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Manual (lever operated) Butterfly valves, wafer type, 100 NB",
+      "Total Price": "` 297457.63 (Bid Price)",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "STAFFORD CONTROLS LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : Manual (lever operated) Butterfly valves, wafer type, 100 NB",
+      "Total Price": "` 610757.63 (Bid Price)",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2026/R/691353",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "03-07-2026 4:00 PM",
+    "ra_end_date": "04-07-2026 4:03 PM",
+    "parent_bid_number": "GEM/2026/B/7574070"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9549661",
+  "parent_bid_number": "GEM/2026/B/7574070"
+}

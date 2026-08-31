@@ -1,0 +1,259 @@
+{
+  "source_id": "6262698",
+  "bid_number": "GEM/2024/B/4816728",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4816728",
+    "Bid Status": "Active",
+    "Quantity": "6",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "08-04-2024 12:51:53",
+    "Bid End Date / Time": "29-04-2024 13:00:00",
+    "Bid Opening Date / Time": "29-04-2024 13:30:00"
+  },
+  "buyer_details": {
+    "Name": "Md Akhtar",
+    "Address": "Md Akhtar,buyer19.ntecl.tn@gembuyer.in,NTPC Tamilnadu Energy Company Ltd. Vallur Thermal Power Project, PO Vellivoyal Chavadi, Ponneri Taluk, Thiruvallur District, Chennai 600103,TIRUVALLUR,TAMIL NADU,600103,India",
+    "Ministry": "Ministry Of Power",
+    "Department": "Contracts And Materials",
+    "Organisation": "Ntpc Tamilnadu Energy Company Ltd",
+    "Office": "Chennai"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : AIRA Model : BOD Title : BARESHAFT BOD 900 MM",
+      "Participated On": "26-04-2024 12:20:50",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Cair Model : GEAR OPERATED BUTTERFLY VALVE Title : 900MM GEAR OPERATED DOUBLE OFFSET BUTTERFLY VALVE",
+      "Participated On": "27-04-2024 16:04:15",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "DINTECH VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DINTECH Model : DIN-DFBTFV-CS-150#-36\" Title : DN900 FLANGED MANUAL BUTTERFLY VALVE",
+      "Participated On": "27-04-2024 14:03:13",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : FVMC Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE",
+      "Participated On": "27-04-2024 14:16:59",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : BFV/V-200MM: COMPLETE ASSY Title : BFV/V-200MM: COMPLETE ASSY",
+      "Participated On": "27-04-2024 17:33:13",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : 300NB WAFER TYPE BUTTERFLY VALVES Title : 300NB WAFER TYPE BUTTERFLY VALVES",
+      "Participated On": "24-04-2024 13:36:00",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "GEA BGR ENERGY SYSTEM INDIA LIMITED Under PMA",
+      "Offered Item": "Make : axis Model : Butterfly valve 900mm Title : Butterfly valve",
+      "Participated On": "28-04-2024 20:46:22",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "MALIMBUS VALVES AND CONTROL PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MALIMBUS VALVES AND CONTROL PVT LTD Model : M56 Title : MALIMBUS",
+      "Participated On": "24-04-2024 17:58:47",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "PASSI MACHINE TOOLS Under PMA",
+      "Offered Item": "Make : PASSI Model : PMTBFV2500 Title : BUTTERFLY VALVE",
+      "Participated On": "29-04-2024 10:53:30",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 36\" X 150# CI BFV FLAG MOV-4816728 Title : 36\" X 150# CI BFV FLAG MOV-4816728",
+      "Participated On": "12-04-2024 07:37:45",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "Make : CV VALVES Model : BUTTERFLY VALVE,FLANGE,A126,150A,900MM Title : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Participated On": "29-04-2024 12:46:31",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "SES MECHTECH PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : SES MAKE Model : SES MAKE Title : SES MAKE BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM (Q3)",
+      "Participated On": "29-04-2024 12:19:43",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "TECH FLOW VALVES AND CONTROLS LLP Under PMA",
+      "Offered Item": "Make : TECH FLOW VALVES AND CONTROLS LLP Model : TF 156 Title : LARGE SIZE BFV",
+      "Participated On": "28-04-2024 13:13:01",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "UNIQUE CONTROL SYSTEM Under PMA",
+      "Offered Item": "Make : UNICK CONTROL SYSTEM Model : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM Title : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Participated On": "29-04-2024 12:40:58",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : BFV Title : BUTTERFLY VALVE",
+      "Participated On": "29-04-2024 10:51:35",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 1906679.40",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MALIMBUS VALVES AND CONTROL PRIVATE LIMITED (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 2283000.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 2584200.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "UNIQUE CONTROL SYSTEM (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 3398400.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "TECH FLOW VALVES AND CONTROLS LLP (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 3781200.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 4176315.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 4200000.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 4337356.68",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 4348350.00",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN (MSE,MII) ( MSE Social Category: ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 4679700.00",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "PASSI MACHINE TOOLS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 5664000.00",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "DINTECH VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 6450000.00",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 6455700.00",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "GEA BGR ENERGY SYSTEM INDIA LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 7871544.00",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "SES MECHTECH PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE, FLANGE, A126, 150A, 900MM",
+      "Total Price": "` 16549500.00",
+      "Rank": "L15"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6262698"
+}

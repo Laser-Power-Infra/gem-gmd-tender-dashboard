@@ -1,0 +1,132 @@
+{
+  "source_id": "7105877",
+  "bid_number": "GEM/2024/R/404987",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/404987",
+    "RA Status": "Active",
+    "Quantity": "8",
+    "RA Validity (From End Date)": "92 ( Days)",
+    "RA Start Date / Time": "07-11-2024 2:00 PM",
+    "RA End Date / Time": "08-11-2024 3:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Sujatha V K",
+    "Address": "Sujatha V K,purmtl2@nfc.gov.in,HRPSU, NFC, P.O. ECIL,HYDERABAD,TELANGANA,500062,India,022-27123505-",
+    "Ministry": "Pmo",
+    "Department": "Department Of Atomic Energy",
+    "Organisation": "Directorate Of Purchase And Stores",
+    "Office": "Directorate Of Purchase And Stores"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "VALVEQUIP ENGENEERING CORPORATION (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 127440.00",
+      "Rank": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 78400.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 78720.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 80800.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "SYSCHEM CONTROLS Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 116000.00 (Bid Price)",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "SES MECHTECH PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 128714.40 (Bid Price)",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "VALVES INDUSTRIES (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 130080.00 (Bid Price)",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "SPECTRA ENGINEERS (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 140800.00 (Bid Price)",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "FLUID-O-MECH CONTROLS INC (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 141600.00 (Bid Price)",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 180000.00 (Bid Price)",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD (MSE) Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 185056.00 (Bid Price)",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "CAIR VALVE AUTOMATION Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 197464.00 (Bid Price)",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "TRUST SERVICES Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 214099.20 (Bid Price)",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Hand operated Gate Valve",
+      "Total Price": "` 235764.00 (Bid Price)",
+      "Rank": "L13"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/404987",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "07-11-2024 2:00 PM",
+    "ra_end_date": "08-11-2024 3:00 PM",
+    "parent_bid_number": "GEM/2024/B/5276904"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7105877",
+  "parent_bid_number": "GEM/2024/B/5276904"
+}

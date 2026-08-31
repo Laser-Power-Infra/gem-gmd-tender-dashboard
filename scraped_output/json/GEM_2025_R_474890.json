@@ -1,0 +1,33 @@
+{
+  "source_id": "7707828",
+  "bid_number": "GEM/2025/R/474890",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/474890",
+    "RA Status": "Active",
+    "Quantity": "15",
+    "RA Validity (From End Date)": "289 ( Days)",
+    "RA Start Date / Time": "05-04-2025 9:00 AM",
+    "RA End Date / Time": "07-04-2025 9:00 AM"
+  },
+  "buyer_details": {
+    "Name": "Sumit Das Sarkar",
+    "Address": "Sumit Das Sarkar,buyer1456.bhelb.ts@gembuyer.in,BHEL , HPEP , Ramachandrapuram,MEDAK,TELANGANA,502032,India,040-23182374-",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10130010-hpep Hyderabad"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/474890",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "05-04-2025 9:00 AM",
+    "ra_end_date": "07-04-2025 9:00 AM",
+    "parent_bid_number": "GEM/2024/B/5096089"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7707828",
+  "parent_bid_number": "GEM/2024/B/5096089"
+}

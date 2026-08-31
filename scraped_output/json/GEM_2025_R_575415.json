@@ -1,0 +1,174 @@
+{
+  "source_id": "8586036",
+  "bid_number": "GEM/2025/R/575415",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/575415",
+    "RA Status": "Active",
+    "Quantity": "4",
+    "RA Validity (From End Date)": "201 ( Days)",
+    "RA Start Date / Time": "14-11-2025 6:00 PM",
+    "RA End Date / Time": "17-11-2025 11:00 AM"
+  },
+  "buyer_details": {
+    "Name": "Goyeena Gorakhnath",
+    "Address": "Goyeena Gorakhnath,g.gorakhnath.bpscl@nic.in,Hall No.- M-01 Old ADM Building Ispat Bhawan Bokaro Steel City,Bokaro,JHARKHAND,827001,India",
+    "Ministry": "Ministry Of Power",
+    "Department": "Thermal Power",
+    "Organisation": "Bokaro Power Supply Company Private Limited",
+    "Office": "Bokaro Steel City"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "M/S PIPING ZONE (MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 219813.56",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "YAMAC VALVES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 260000.00 (Bid Price)",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "QUALITY VALVE CO (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 261016.95 (Bid Price)",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 508474.58 (Bid Price)",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 536760.00 (Bid Price)",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "XSIS VALVES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 559600.00 (Bid Price)",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "ACTIVE FLOW CONTROLS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 578291.53 (Bid Price)",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "ENERGO PRODUCTS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 600000.00 (Bid Price)",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "UNICK CONTROL SYSTEM (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 692000.00 (Bid Price)",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 765423.73 (Bid Price)",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "S.S ENGINEERS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 772000.00 (Bid Price)",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "METAVAL ENGINEERING PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 831907.56 (Bid Price)",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 840498.31 (Bid Price)",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "M/S SHRI KRISHNA COMMERCIAL (MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 882711.86 (Bid Price)",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 943393.22 (Bid Price)",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 1176613.56 (Bid Price)",
+      "Rank": "L16"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 1180000.00 (Bid Price)",
+      "Rank": "L17"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "A V VALVES LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 1232230.51 (Bid Price)",
+      "Rank": "L18"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "OMEGA CORPORATION (MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 1600000.00 (Bid Price)",
+      "Rank": "L19"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Gate valve Size 300 mm",
+      "Total Price": "` 1995900.00 (Bid Price)",
+      "Rank": "L20"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/575415",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "14-11-2025 6:00 PM",
+    "ra_end_date": "17-11-2025 11:00 AM",
+    "parent_bid_number": "GEM/2025/B/6151803"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8586036",
+  "parent_bid_number": "GEM/2025/B/6151803"
+}

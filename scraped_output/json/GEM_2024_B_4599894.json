@@ -1,0 +1,129 @@
+{
+  "source_id": "6023369",
+  "bid_number": "GEM/2024/B/4599894",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4599894",
+    "Bid Status": "Active",
+    "Quantity": "73",
+    "Bid Validity (From End Date)": "30 ( Days)",
+    "Bid Start Date / Time": "08-02-2024 11:53:14",
+    "Bid End Date / Time": "19-02-2024 12:00:00",
+    "Bid Opening Date / Time": "19-02-2024 12:30:00",
+    "Average Turn Over of Last 3 Years": "100 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Moolchandra Singh",
+    "Address": "Moolchandra Singh,buycon387.eecep.up@gembuyer.in,Nagar Palika Parishad Rampur, Near Hathi Khana, Rampur,RAMPUR,UTTAR PRADESH,244901,India,0595-2975001-",
+    "State": "Uttar Pradesh",
+    "Department": "Urban Development Department Uttar Pradesh",
+    "Organisation": "E-municipalities - Eservices To Citizens And Employees Of Urban Local Bodies Of Uttar Pradesh",
+    "Office": "Nagar Palika Parishad Rampur Moradabad"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AANYA ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 10:04:55",
+      "EMD Status": "Offline upload",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 10:09:13",
+      "EMD Status": "BIS License",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 10:42:11",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "HEDIS ASSOCIATES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 07:29:27",
+      "EMD Status": "Offline upload",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "M/S CHARLEY ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 10:34:03",
+      "EMD Status": "Offline upload",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/S G. K. ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 11:32:42",
+      "EMD Status": "Offline upload",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "18-02-2024 12:22:58",
+      "EMD Status": "Start-up",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "S M ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "19-02-2024 10:49:58",
+      "EMD Status": "Offline upload",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "SAI INDO INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "18-02-2024 23:47:47",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "S M ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Supply of Sluice Valves, Supply of the following size of hand wheel operated with sluice valves des",
+      "Total Price": "` 3426000.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AANYA ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Supply of Sluice Valves, Supply of the following size of hand wheel operated with sluice valves des",
+      "Total Price": "` 3473484.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "HEDIS ASSOCIATES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Supply of Sluice Valves, Supply of the following size of hand wheel operated with sluice valves des",
+      "Total Price": "` 3483000.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6023369"
+}

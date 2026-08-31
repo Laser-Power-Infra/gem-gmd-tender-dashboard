@@ -1,0 +1,167 @@
+{
+  "source_id": "8625727",
+  "bid_number": "GEM/2025/R/580208",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/580208",
+    "RA Status": "Active",
+    "Quantity": "280",
+    "RA Validity (From End Date)": "149 ( Days)",
+    "RA Start Date / Time": "25-11-2025 11:00 AM",
+    "RA End Date / Time": "26-11-2025 2:07 PM"
+  },
+  "buyer_details": {
+    "Name": "Vivek Kumar Sahu",
+    "Address": "Vivek Kumar Sahu,buyer61.naclb.or@gembuyer.in,Alumina Refinery Nalco, Damanjodi,Koraput,ODISHA,763008,India,-7415187221-",
+    "Ministry": "Ministry Of Mines",
+    "Department": "Materials",
+    "Organisation": "National Aluminium Company Limited, Bhubaneswar",
+    "Office": "Alumina Refinery Nalco Damanjodi"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1172000.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "R S EQUIPMENT & MFG. CO. (MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1174360.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1291500.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "MA-SARADA ENTERPRISE (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1467130.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "SHREE JAGANNATH IRON FOUNDRY PVT LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1500900.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/s INDIA ENGINEERING VALVE & PIPE FITTING (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1521000.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PROTIMA ENGINEERING (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1560500.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "POLINE TECHNOLOGIES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1573270.00 (Bid Price)",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "M/s TOOFLOW ENGINEERING (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1938100.00 (Bid Price)",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "KAMALA VALVES & ENGINEERING PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 1991600.00 (Bid Price)",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2128448.60 (Bid Price)",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2389960.00 (Bid Price)",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2480745.00 (Bid Price)",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "LEADER VALVES LTD (MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2530845.00 (Bid Price)",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "FLUID CONTROL EQUIPMENTS PVT. LTD. (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2542650.00 (Bid Price)",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "PECO VALVES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2735240.00 (Bid Price)",
+      "Rank": "L16"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "HAZRA ENGINEERING WORKS (MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 2737983.50 (Bid Price)",
+      "Rank": "L17"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "Kamala Valves Manufacturing Concern (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 3032600.00 (Bid Price)",
+      "Rank": "L18"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : 95503011190,95503072120,95523014520,95523015020,95523016070,95523014070",
+      "Total Price": "` 3811690.00 (Bid Price)",
+      "Rank": "L19"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/580208",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "25-11-2025 11:00 AM",
+    "ra_end_date": "26-11-2025 2:07 PM",
+    "parent_bid_number": "GEM/2025/B/6368745"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8625727",
+  "parent_bid_number": "GEM/2025/B/6368745"
+}

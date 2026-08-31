@@ -1,0 +1,113 @@
+{
+  "source_id": "6036362",
+  "bid_number": "GEM/2024/B/4611901",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4611901",
+    "Bid Status": "Active",
+    "Quantity": "10",
+    "Bid Validity (From End Date)": "45 ( Days)",
+    "Bid Start Date / Time": "09-02-2024 19:42:10",
+    "Bid End Date / Time": "19-02-2024 20:00:00",
+    "Bid Opening Date / Time": "19-02-2024 20:30:00",
+    "Average Turn Over of Last 3 Years": "12 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Udham Singh",
+    "Address": "Udham Singh,buycon1.ud.bsc@gembuyer.in,Mo Bazarpukhta East Jahangirabad Distt Bulandshahr,Bulandshahr,UTTAR PRADESH,202394,India,12063-35917-",
+    "State": "Uttar Pradesh",
+    "Department": "Urban Development Department Uttar Pradesh",
+    "Organisation": "N/a",
+    "Office": "Uttar Pradesh"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A.M. ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : AM_150 MM Cast Iron ISI Sluice Valves Title : 150 MM Cast Iron ISI Sluice Valves",
+      "Participated On": "19-02-2024 11:57:49",
+      "EMD Status": "Offline upload",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR VALVE AUTOMATION Under PMA",
+      "Offered Item": "Make : CAIR Model : SLUICE VALVE Title : 150 MM HAND WHEEL OPERATED SLUICE VALVE FLANGED END",
+      "Participated On": "12-02-2024 13:25:13",
+      "EMD Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLUID CONTROL EQUIPMENTS PVT. LTD. Under PMA",
+      "Offered Item": "Make : FLUID CONTROL EQUIPMENTS PVT LTD Model : CI SLUICE VALVE Title : CI SLUICE VALVE",
+      "Participated On": "19-02-2024 18:21:52",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE 350MM PN 1.6 Title : SLUICE VALVE 350MM PN 1.6",
+      "Participated On": "19-02-2024 16:18:11",
+      "EMD Status": "BIS License",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "KOLEY VALVES CORPORATION Under PMA",
+      "Offered Item": "Make : KOLEY Model : KOLEY SLUICE VALVE 150MM Title : SLUICE VALVE",
+      "Participated On": "19-02-2024 16:58:42",
+      "EMD Status": "BIS License",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/S R G ASSOCIATES Under PMA",
+      "Offered Item": "Make : NA Model : RG_SWINGREFLUXVALVE_2024 Title : 150 MM SWING CHECK TYPE REFLUX VALVES",
+      "Participated On": "17-02-2024 18:22:22",
+      "EMD Status": "Offline upload",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "M/S TRUPATI ELECTRICALS Under PMA",
+      "Offered Item": "Make : NA Model : TRIU_150 MM Cast Iron ISI Sluice Valves Title : 150 MM Cast Iron ISI Sluice Valves",
+      "Participated On": "19-02-2024 13:22:50",
+      "EMD Status": "Offline upload",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A.M. ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : 150 MM Cast Iron ISI Sluice Valves",
+      "Total Price": "` 318600.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "M/S TRUPATI ELECTRICALS Under PMA",
+      "Offered Item": "Item Categories : 150 MM Cast Iron ISI Sluice Valves",
+      "Total Price": "` 330000.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "R.G. Associates Under PMA",
+      "Offered Item": "Item Categories : 150 MM Cast Iron ISI Sluice Valves",
+      "Total Price": "` 390000.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6036362"
+}

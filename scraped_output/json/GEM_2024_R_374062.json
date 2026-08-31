@@ -1,0 +1,33 @@
+{
+  "source_id": "6813391",
+  "bid_number": "GEM/2024/R/374062",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/374062",
+    "RA Status": "Active",
+    "Quantity": "158",
+    "RA Validity (From End Date)": "90 ( Days)",
+    "RA Start Date / Time": "23-08-2024 5:00 PM",
+    "RA End Date / Time": "26-08-2024 1:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Mohammed Raziq Khan",
+    "Address": "Mohammed Raziq Khan,buycon2317.bhelb.ts@gembuyer.in,BHEL , HPEP , Ramachandrapuram,MEDAK,TELANGANA,502032,India,040-23182390-",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10130010-hpep Hyderabad"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/374062",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "23-08-2024 5:00 PM",
+    "ra_end_date": "26-08-2024 1:00 PM",
+    "parent_bid_number": "GEM/2024/B/5146234"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6813391",
+  "parent_bid_number": "GEM/2024/B/5146234"
+}

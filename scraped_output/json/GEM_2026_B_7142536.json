@@ -1,0 +1,456 @@
+{
+  "source_id": "8876101",
+  "bid_number": "GEM/2026/B/7142536",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7142536",
+    "Bid Status": "Active",
+    "Quantity": "2",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "28-01-2026 17:59:17",
+    "Bid End Date / Time": "16-02-2026 12:00:00",
+    "Bid Opening Date / Time": "16-02-2026 12:30:00"
+  },
+  "buyer_details": {
+    "Name": "Kumari Mohini",
+    "Address": "Kumari Mohini,kmmohini@ntpc.co.in,9th Floor Tower-C Commercial Complex Plot No. C-03, Central business District (CBD), Sector - 21, Atal Nagar, Naya Raipur,Raipur,Chhattisgarh,492018,India,07712-515822-000000",
+    "Ministry": "Ministry Of Power",
+    "Department": "Na",
+    "Organisation": "Ntpc Limited",
+    "Office": "Ussc Cpg2 Raipur"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : AIRA Model : BOD Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "14-02-2026 15:01:06",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Cair Model : 1000MM BUTTERFLY VALVE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 17:19:48",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CONTINENTAL VALVES LIMITED Under PMA",
+      "Offered Item": "Make : Continental Model : 2101 Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "11-02-2026 11:07:42",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "DUNCAN ENGINEERING LIMITED Under PMA",
+      "Offered Item": "Make : DUNCAN Model : 1000NB butterfly valves Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "11-02-2026 08:48:10",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLOCHEK INDUSTRIES Under PMA",
+      "Offered Item": "Make : FI Model : VV,BTFL: IS13095,FLG,FG200,PN0.6,1000MM Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "16-02-2026 11:14:21",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "FLOW MARSHAL VALVES Under PMA",
+      "Offered Item": "Make : NA Model : butterfly Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "04-02-2026 17:54:42",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "FLOWSHREE ENGINEERS Under PMA",
+      "Offered Item": "Make : FLOWSHREE ENGINEERS Model : FLOWSHREE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 20:51:32",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : Unbrand Model : 1000NB butterfly valves Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 19:39:32",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : FCE Model : 1000CIBTV0.6 Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "05-02-2026 17:22:02",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : 1000NB butterfly valve Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "11-02-2026 11:40:34",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : NA Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "11-02-2026 11:50:25",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "GLOBETECH Under PMA",
+      "Offered Item": "Make : Unbrand Model : BUTTERFLY VALVE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "15-02-2026 15:39:31",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "J N ENGINEERS Under PMA",
+      "Offered Item": "Make : NA Model : 1000NB butterfly valves Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "04-02-2026 14:39:36",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "JETFLO ENGINEERS Under PMA",
+      "Offered Item": "Make : JETFLO ENGINEERS Model : JETFLO Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "09-02-2026 12:31:45",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : SUPARNA Model : 4KV/CI/FLGD/BFV/PN06/1000 Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 18:51:15",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "Kamala Valves Manufacturing Concern Under PMA",
+      "Offered Item": "Make : K.V.M.C. Model : 1 Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "09-02-2026 16:15:05",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "KOLEY VALVES CORPORATION Under PMA",
+      "Offered Item": "Make : KOLEY Model : KOLEY DOUBLE FLANGED BUTTERFLY VALVE MANUALLY OPER Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "07-02-2026 17:54:51",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "M X ENTERPRISE Under PMA",
+      "Offered Item": "Make : OEM Model : MXE BUTTERFLY VALVE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "08-02-2026 12:45:43",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "Make : Metropolitan Industries Model : BUTTERFLY VALVE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "06-02-2026 16:10:55",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD Under PMA",
+      "Offered Item": "Make : NA Model : NUPRO MAKE BUTTERFLY VALVE 1000 MM Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "04-02-2026 00:24:59",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "Panja Valve Mfg Co Under PMA",
+      "Offered Item": "Make : PANJA Model : 1000BFV Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "03-02-2026 17:35:31",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "PECO VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PECO Model : 1000NB Butterfly Valves Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "09-02-2026 16:51:35",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "23",
+      "Seller Name": "PHIXER VALVES Under PMA",
+      "Offered Item": "Make : PHIXER Model : RB02 Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "11-02-2026 00:11:25",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "24",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 1000 MM X 150# CI BFV FLANGE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "09-02-2026 08:29:18",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "25",
+      "Seller Name": "QUEST FLOW CONTROLS LIMITED Under PMA",
+      "Offered Item": "Make : Quest Model : QUEST Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "14-02-2026 17:21:34",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "26",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "Make : CV Valves Model : BFV 1000NB Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "11-02-2026 10:53:50",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "27",
+      "Seller Name": "THORAT VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : thorat Model : DEBV1000 Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "09-02-2026 11:13:21",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "28",
+      "Seller Name": "VENUS VALVES MANUFACTURING CO. Under PMA",
+      "Offered Item": "Make : Venus Model : Venus Valve Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 01:16:18",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "29",
+      "Seller Name": "W R T SALES AND SERVICES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : KIRLOSKAR BROTHERS LIMITED--KIRLOSKAR BROTHERS LIMITED Model : 1000 NB BUTTERFLY VALVE Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 15:10:03",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "30",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : BFV Title : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Participated On": "10-02-2026 19:21:47",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "Panja Valve Mfg Co (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 556724.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "KOLEY VALVES CORPORATION (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 584280.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 708000.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "FLOCHEK INDUSTRIES (MII) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 770400.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN (MSE,MII) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 792084.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 874890.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "Kamala Valves Manufacturing Concern (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 885000.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "VENUS VALVES MANUFACTURING CO. (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 898450.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "CONTINENTAL VALVES LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 958054.00",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "DUNCAN ENGINEERING LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 987990.00",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 997584.00",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "J N ENGINEERS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1010316.00",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1095402.00",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "JETFLO ENGINEERS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1100000.00",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "FLOWSHREE ENGINEERS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1201440.00",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1240000.00",
+      "Rank": "L16"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "PHIXER VALVES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1260170.00",
+      "Rank": "L17"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "THORAT VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1273000.00",
+      "Rank": "L18"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "QUEST FLOW CONTROLS LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1357850.00",
+      "Rank": "L19"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1441252.00",
+      "Rank": "L20"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "M X ENTERPRISE (MSE,MII) ( MSE Social Category:SC ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1613147.32",
+      "Rank": "L21"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1649582.00",
+      "Rank": "L22"
+    },
+    {
+      "S.No.": "23",
+      "Seller Name": "FLOW MARSHAL VALVES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1821330.00",
+      "Rank": "L23"
+    },
+    {
+      "S.No.": "24",
+      "Seller Name": "PECO VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1935098.00",
+      "Rank": "L24"
+    },
+    {
+      "S.No.": "25",
+      "Seller Name": "W R T SALES AND SERVICES PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 1970400.00",
+      "Rank": "L25"
+    },
+    {
+      "S.No.": "26",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : 1000NB butterfly valves_ Schedule 1_ Item_ 10_ M1878170388_ 100268668",
+      "Total Price": "` 2138430.00",
+      "Rank": "L26"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8876101"
+}

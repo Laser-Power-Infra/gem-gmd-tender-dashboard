@@ -1,0 +1,33 @@
+{
+  "source_id": "6816097",
+  "bid_number": "GEM/2024/R/374352",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/374352",
+    "RA Status": "Active",
+    "Quantity": "2",
+    "RA Validity (From End Date)": "90 ( Days)",
+    "RA Start Date / Time": "24-08-2024 1:00 PM",
+    "RA End Date / Time": "26-08-2024 1:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Avishek Mozumder",
+    "Address": "Avishek Mozumder,buyer6.isp.wb@gembuyer.in,PURCHASE SECTION, MATERIALS MANAGEMENT DPT. STEEL AUTHORITY OF INDIA LTD. IISCO STEEL PLANT, Burnpur, 713325, West Bengal India, IISCO STEEL PLANT, GSTIN Number 19AAACS7062F6Z6,BARDHAMAN,WEST BENGAL,713325,India",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Iisco Steel Plant",
+    "Office": "Materials Management Dept Iisco Steel Plant"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/374352",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "24-08-2024 1:00 PM",
+    "ra_end_date": "26-08-2024 1:00 PM",
+    "parent_bid_number": "GEM/2024/B/5104017"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6816097",
+  "parent_bid_number": "GEM/2024/B/5104017"
+}

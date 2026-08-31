@@ -1,0 +1,146 @@
+{
+  "source_id": "5963644",
+  "bid_number": "GEM/2024/R/296614",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/296614",
+    "RA Status": "Active",
+    "Quantity": "13",
+    "RA Validity (From End Date)": "180 ( Days)",
+    "RA Start Date / Time": "30-01-2024 12:00 PM",
+    "RA End Date / Time": "31-01-2024 1:26 PM"
+  },
+  "buyer_details": {
+    "Name": "Sunny Bharti",
+    "Address": "Sunny Bharti,xentownsnr@bbmb.nic.in,ADDITIONAL SUPERINTENDING ENGINEER, TOWNSHIP DIVISION BBMB SUNDERNAGAR,Mandi,HIMACHAL PRADESH,174402,India,01907-262374-",
+    "Ministry": "Ministry Of Power",
+    "Department": "Bhakra Beas Managemet Board",
+    "Organisation": "Bhakra Beas Management Board",
+    "Office": "Bhakra Beas Management Board, Chandigarh"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "KAPSON INTERNATIONAL (INDIA) (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 75800.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "M/S GALAXY ENTERPRISES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 75900.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "OP TRADERS (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 84500.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "PAREKH ENGINEERING COMPANY (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 84751.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "RAMA TRADERS (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 89000.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 115805.20 (Bid Price)",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "UNICK CONTROL SYSTEM (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 122248.00 (Bid Price)",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "S.G.R. (INDIA) ENGG, CO. (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 126860.00 (Bid Price)",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "CAIR INDIA (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 129498.00 (Bid Price)",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "RULIA RAM MAHAVIR PARSHAD (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 142996.00 (Bid Price)",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "INTECH ENGINEERING (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 165916.00 (Bid Price)",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "HARI OM ENTERPRISES (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 220000.00 (Bid Price)",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "A V VALVES LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 276626.00 (Bid Price)",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "M/S PIPING ZONE (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 559062.00 (Bid Price)",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "GS OVERSEAS (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 966531.00 (Bid Price)",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "VINAYAK ENTERPRISES (MII) Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve 50 mm,Sluice Valve 80 mm,Sluice valve 100 mm,Sluice valve 300 mm",
+      "Total Price": "` 966544.00 (Bid Price)",
+      "Rank": "L16"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/296614",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "30-01-2024 12:00 PM",
+    "ra_end_date": "31-01-2024 1:26 PM",
+    "parent_bid_number": "GEM/2023/B/4400683"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/5963644",
+  "parent_bid_number": "GEM/2023/B/4400683"
+}

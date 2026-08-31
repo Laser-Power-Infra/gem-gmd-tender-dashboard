@@ -1,0 +1,597 @@
+{
+  "source_id": "6610648",
+  "bid_number": "GEM/2024/B/5133388",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5133388",
+    "Bid Status": "Active",
+    "Quantity": "4",
+    "Bid Validity (From End Date)": "30 ( Days)",
+    "Bid Start Date / Time": "06-07-2024 10:41:39",
+    "Bid End Date / Time": "27-07-2024 11:00:00",
+    "Bid Opening Date / Time": "27-07-2024 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Kumar Prince",
+    "Address": "Kumar Prince,buycon1242.nl.bh@gembuyer.in,BARH STPP, NTPC LTD, DIST-PATNA, BIHAR 803213,PATNA,BIHAR,803213,India,06132-245000-",
+    "Ministry": "Ministry Of Power",
+    "Department": "Na",
+    "Organisation": "Ntpc Limited",
+    "Office": "Barh Super Thermal Power Project"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "Make : AV Model : AVNY04 Title : Butterfly Valve 400MM PN6",
+      "Participated On": "25-07-2024 12:29:41",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ACTIVE FLOW CONTROLS Under PMA",
+      "Offered Item": "Make : AFC Model : AFC-400MM-CISGIGO Title : 400MM CI BODY SGI DISC EPDM SEAT GEAR OPERATED WAFER TYPE BUTTERFLY VALVE",
+      "Participated On": "16-07-2024 16:44:14",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : AIRA Model : ECOTECH Title : CENTER DISC BUTTERFLY VALVE",
+      "Participated On": "18-07-2024 13:24:46",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "AL-FINE VALVES LLP Under PMA",
+      "Offered Item": "Make : LIBRA Model : LIBRA Butterfly valve Title : LIBRA Butterfly valve 400 mm, PN6",
+      "Participated On": "24-07-2024 17:26:40",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "AQUA FLOW TECHNOLOGIES Under PMA",
+      "Offered Item": "Make : Aqua Flow Technologies Model : Butterfly Valve - 400mm Title : Butterfly Valve",
+      "Participated On": "26-07-2024 14:44:11",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "ASTEN CONTROLS LLP Under PMA",
+      "Offered Item": "Make : Asten Controls LLP Model : ABFV - GO Title : Butterfly valve",
+      "Participated On": "26-07-2024 11:41:16",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Make : Cair Model : GEAR OPERATED BUTTERFLY VALVE Title : 400MM LEVER OPERATED BUTTERFLY VALVE",
+      "Participated On": "11-07-2024 14:35:45",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "CAIR VALVE AUTOMATION Under PMA",
+      "Offered Item": "Make : CAIR Model : BFV Title : 400 MM BARE SHAFT BUTTERFLY VALVE",
+      "Participated On": "09-07-2024 11:35:08",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "DAVSGEMINI VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DAVGSEMINI VALVES PVT LTD Model : BFV SERIES 100 Title : BUTTERFLY VALVES",
+      "Participated On": "27-07-2024 10:45:14",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "FLOCHEK INDUSTRIES Under PMA",
+      "Offered Item": "Make : Flochek Model : BUTTERFLY VALVE 400MM WAFER TYPE(WITH BARE SHAFT) Title : BUTTERFLY VALVE 400MM WAFER TYPE (WITH BARE SHAFT)",
+      "Participated On": "23-07-2024 18:43:35",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "FLUID CONTROL EQUIPMENTS PVT. LTD. Under PMA",
+      "Offered Item": "Make : Fluid Control Equipments Pvt Ltd Model : Butterfly Valve, 400 mm, PN6 Title : Butterfly Valve, 400 mm, PN6",
+      "Participated On": "13-07-2024 12:10:47",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : FVMC Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE",
+      "Participated On": "26-07-2024 14:32:38",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : FCE Model : NA Title : BUTTERFLY VALVE",
+      "Participated On": "24-07-2024 19:21:34",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : Butterfly valve, 400 mm, PN6 Title : Butterfly valve, 400 mm, PN6",
+      "Participated On": "24-07-2024 18:17:36",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "H R VALVE Under PMA",
+      "Offered Item": "Make : HR Model : HR-BFV-400-GO Title : 400MM WAFER TYPE BUTTERFLY VALVE GEAR OPERATED",
+      "Participated On": "08-07-2024 19:30:58",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "INDUSKART ENGITECH LLP Under PMA",
+      "Offered Item": "Make : Leader Model : Butterfly valve Title : Butterfly valve, 400 mm, PN6",
+      "Participated On": "27-07-2024 10:43:57",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "INDUSTRIAL SPARES Under PMA",
+      "Offered Item": "Make : Intervalve Poonawalla Limited Model : IVGK Title : Butterfly valve, 400 mm",
+      "Participated On": "25-07-2024 10:49:14",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "Make : NA Model : Butterfly Valve Title : Butterfly Valve, 400 Mm, PN6",
+      "Participated On": "24-07-2024 16:24:42",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "K P Mondal & Sons Under PMA",
+      "Offered Item": "Make : KPM VALVE Model : KPM VALVE Title : BUTTERFLY VALVE",
+      "Participated On": "21-07-2024 22:30:23",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "Kamala Valves Manufacturing Concern Under PMA",
+      "Offered Item": "Make : KVMC Model : 1 Title : BUTTERFLY VALVES",
+      "Participated On": "23-07-2024 14:42:04",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "KURWA ENGINEERING PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : KURWA Model : BTV Title : BUTTERFLY VALVE 400MM",
+      "Participated On": "25-07-2024 12:32:40",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "M X ENTERPRISE Under PMA",
+      "Offered Item": "Make : oem Model : BUTTERFLY VALVE Title : u BUTTERFLY VALVE",
+      "Participated On": "09-07-2024 01:06:50",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "23",
+      "Seller Name": "M/S AIRCON SYSTEMS Under PMA",
+      "Offered Item": "Make : AIRCON SYSTEMS Model : AS-BFV-BSTPP-400 Title : AIRCON SYSTEM BUTTERFLY VALVE 400MM",
+      "Participated On": "26-07-2024 17:35:42",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "24",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "Make : PIPINGZONE Model : PZ Title : GATE VLAVE FLANGED",
+      "Participated On": "27-07-2024 09:20:16",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "25",
+      "Seller Name": "M/s TOOFLOW ENGINEERING Under PMA",
+      "Offered Item": "Make : TOOFLOW Model : TOOFLOW Title : Butterfly Valve, 400 Mm, PN6",
+      "Participated On": "25-07-2024 12:28:56",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "26",
+      "Seller Name": "MALIMBUS VALVES AND CONTROL PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MALIMBUS VALVES AND CONTROL PVT LTD Model : MR Title : BUTTERFLY VALVES",
+      "Participated On": "27-07-2024 10:23:42",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "27",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "Make : METROPOLITAN INDUSTRIES Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE 400 MM",
+      "Participated On": "25-07-2024 15:58:25",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "28",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Micon Model : MV-651 Title : BUTTERFLY VALVE",
+      "Participated On": "24-07-2024 15:11:54",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "29",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD Under PMA",
+      "Offered Item": "Make : NUPRO Model : BUTTERFLY VLV 400MM NTPC Title : BUTTERFLY VLV 400MM NTPC",
+      "Participated On": "26-07-2024 11:51:17",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "30",
+      "Seller Name": "Panja Valve Mfg Co Under PMA",
+      "Offered Item": "Make : PANJA Model : BFV Title : BFV",
+      "Participated On": "11-07-2024 11:39:20",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "31",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 16\" X PN6 CI BFV GEAR 5133388 Title : 16\" X PN6 CI BFV GEAR 5133388",
+      "Participated On": "10-07-2024 09:32:44",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "32",
+      "Seller Name": "PRO TECH VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRO TECH MAKE Model : PRO TECH BUTTERFLY VALVE Title : BUTTERFLY VALVE",
+      "Participated On": "12-07-2024 12:45:54",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "33",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN Under PMA",
+      "Offered Item": "Make : CVVALVES Model : Butterfly Valve, 400 Mm, Title : Butterfly Valve, 400 Mm,",
+      "Participated On": "26-07-2024 15:56:41",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "34",
+      "Seller Name": "SBE FLOW CONTROL PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : VALMET Model : 400 JA10W242141NBA Title : Butterfly valve, 400 mm, PN6",
+      "Participated On": "25-07-2024 17:10:26",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "35",
+      "Seller Name": "SMS TRADING Under PMA",
+      "Offered Item": "Make : ANY STANDARD Model : 400mm Title : BUTTERFLY VALVE",
+      "Participated On": "27-07-2024 10:55:14",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "36",
+      "Seller Name": "V TORK CONTROLS Under PMA",
+      "Offered Item": "Make : V-TORK Model : BFV Title : BUTTERFLY VALVE",
+      "Participated On": "25-07-2024 17:32:13",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "37",
+      "Seller Name": "VENUS VALVES MANUFACTURING CO. Under PMA",
+      "Offered Item": "Make : Venus Model : Venus Butterfly Valve Title : Venus Butterfly Valve",
+      "Participated On": "17-07-2024 18:00:48",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "38",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : BFV Title : BUTTERFLY VALVE",
+      "Participated On": "26-07-2024 15:48:01",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "FLOCHEK INDUSTRIES (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 81156.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 91005.36",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M X ENTERPRISE Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 99120.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "H R VALVE Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 104400.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "ACTIVE FLOW CONTROLS (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 116240.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "CAIR CONTROLS Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 119656.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "FLUID CONTROL EQUIPMENTS PVT. LTD. ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 125080.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "K P Mondal & Sons (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 131500.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "ASTEN CONTROLS LLP ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 131528.00",
+      "Rank": "L9"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "SARVSHRESHTH SAMBHARAN (MSE) ( MSE Social Category: ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 139404.00",
+      "Rank": "L10"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 141000.00",
+      "Rank": "L11"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 142028.00",
+      "Rank": "L12"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "AIRA EURO AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 144448.00",
+      "Rank": "L13"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "MALIMBUS VALVES AND CONTROL PRIVATE LIMITED (MSE) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 152000.00",
+      "Rank": "L14"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "CAIR INDIA Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 156756.00",
+      "Rank": "L15"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 162400.00",
+      "Rank": "L16"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "LIBRA VALVES LLP ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 166576.00",
+      "Rank": "L17"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "M/s TOOFLOW ENGINEERING (MSE) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 171400.00",
+      "Rank": "L18"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "KURWA ENGINEERING PRIVATE LIMITED (MSE) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 179360.00",
+      "Rank": "L19"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "Panja Valve Mfg Co (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 183608.00",
+      "Rank": "L20"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 188210.00",
+      "Rank": "L21"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "AQUA FLOW TECHNOLOGIES ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 188800.00",
+      "Rank": "L22"
+    },
+    {
+      "S.No.": "23",
+      "Seller Name": "V TORK CONTROLS (MSE) ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 205839.20",
+      "Rank": "L23"
+    },
+    {
+      "S.No.": "24",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 206784.00",
+      "Rank": "L24"
+    },
+    {
+      "S.No.": "25",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 212400.00",
+      "Rank": "L25"
+    },
+    {
+      "S.No.": "26",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 214404.00",
+      "Rank": "L26"
+    },
+    {
+      "S.No.": "27",
+      "Seller Name": "DAVSGEMINI VALVES PRIVATE LIMITED ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 244384.00",
+      "Rank": "L27"
+    },
+    {
+      "S.No.": "28",
+      "Seller Name": "Kamala Valves Manufacturing Concern (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 245440.00",
+      "Rank": "L28"
+    },
+    {
+      "S.No.": "29",
+      "Seller Name": "VENUS VALVES MANUFACTURING CO. (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 251480.00",
+      "Rank": "L29"
+    },
+    {
+      "S.No.": "30",
+      "Seller Name": "INDUSKART ENGITECH LLP Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 256364.00",
+      "Rank": "L30"
+    },
+    {
+      "S.No.": "31",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 266198.56",
+      "Rank": "L31"
+    },
+    {
+      "S.No.": "32",
+      "Seller Name": "PRO TECH VALVES PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 361080.00",
+      "Rank": "L32"
+    },
+    {
+      "S.No.": "33",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 378004.00",
+      "Rank": "L33"
+    },
+    {
+      "S.No.": "34",
+      "Seller Name": "A V VALVES LTD (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 442832.00",
+      "Rank": "L34"
+    },
+    {
+      "S.No.": "35",
+      "Seller Name": "INDUSTRIAL SPARES Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 539448.00",
+      "Rank": "L35"
+    },
+    {
+      "S.No.": "36",
+      "Seller Name": "SBE FLOW CONTROL PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 553860.00",
+      "Rank": "L36"
+    },
+    {
+      "S.No.": "37",
+      "Seller Name": "M/S AIRCON SYSTEMS (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly valve, 400 mm, PN6",
+      "Total Price": "` 739152.00",
+      "Rank": "L37"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6610648"
+}

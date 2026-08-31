@@ -1,0 +1,55 @@
+{
+  "source_id": "7629279",
+  "bid_number": "GEM/2025/R/464173",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/464173",
+    "RA Status": "Active",
+    "Quantity": "8",
+    "RA Validity (From End Date)": "180 ( Days)",
+    "RA Start Date / Time": "11-03-2025 7:00 PM",
+    "RA End Date / Time": "13-03-2025 12:01 PM"
+  },
+  "buyer_details": {
+    "Name": "Neeraj Kumar",
+    "Address": "Neeraj Kumar,neerajkumar@dvc.gov.in,C&M, HQ, Damodar Valley Corporation, DVC Towers, VIP Road, Kolkata-700054,CALCUTTA NORTH DIVISION,WEST BENGAL,700054,India",
+    "Ministry": "Ministry Of Power",
+    "Department": "Contracts And Materials",
+    "Organisation": "Damodar Valley Corporation",
+    "Office": "Damodar Valley Corporation"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Flanged end Metal seated Butterfly valve, Size-400 MM(NB) , Class- 150, Medium clarified",
+      "Total Price": "` 1136000.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Flanged end Metal seated Butterfly valve, Size-400 MM(NB) , Class- 150, Medium clarified",
+      "Total Price": "` 1142800.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "S & M INDUSTRIAL VALVES LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : Flanged end Metal seated Butterfly valve, Size-400 MM(NB) , Class- 150, Medium clarified",
+      "Total Price": "` 2662080.00 (Bid Price)",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/464173",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "11-03-2025 7:00 PM",
+    "ra_end_date": "13-03-2025 12:01 PM",
+    "parent_bid_number": "GEM/2025/B/5820602"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7629279",
+  "parent_bid_number": "GEM/2025/B/5820602"
+}

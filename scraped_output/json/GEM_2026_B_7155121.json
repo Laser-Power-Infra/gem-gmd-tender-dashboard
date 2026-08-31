@@ -1,0 +1,136 @@
+{
+  "source_id": "8890528",
+  "bid_number": "GEM/2026/B/7155121",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7155121",
+    "Bid Status": "Active",
+    "Quantity": "18",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "27-01-2026 16:39:08",
+    "Bid End Date / Time": "11-02-2026 09:00:00",
+    "Bid Opening Date / Time": "11-02-2026 09:30:00"
+  },
+  "buyer_details": {
+    "Name": "Sumit Das Sarkar",
+    "Address": "Sumit Das Sarkar,sdsarkar@bhel.in,BHEL , HPEP , Ramachandrapuram,Medak,TELANGANA,502032,India,040-23182155-",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10130010-hpep Hyderabad"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "Make : AV Model : AVNY12 Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "06-02-2026 14:21:18",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ADVANCE VALVES PRIVATE LTD Under PMA",
+      "Offered Item": "Make : Advance Valves Model : BT15.SCDCHG.04.DA.3A Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "06-02-2026 16:28:20",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Cair Model : 100MM TOB BUTTERFLY VALVE 150# Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "10-02-2026 17:42:59",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : Unbrand Model : IPAA05457001 BUTTERFLY VALVE B7J1Z26426 Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "06-02-2026 14:11:55",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : IPAA05457001 BUTTERFLY VALVE B7J1Z26426 Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "06-02-2026 15:43:03",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : getway Model : NA Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "05-02-2026 16:12:14",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "HAWA VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : HAWA VALVES Model : IPAA05457001 BUTTERFLY VALVE B7J1Z26426 Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "06-02-2026 14:24:40",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "K.F. INDUSTRIES Under PMA",
+      "Offered Item": "Make : AIZEN Model : IPAA05454009 FLAP NRV B7J1Z26426 Title : IPAA05454009 FLAP NRV B7J1Z26426",
+      "Participated On": "06-02-2026 13:39:56",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "Make : PIPING ZONE Model : PZ Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "05-02-2026 19:10:09",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "STEAMLINE TECHNOCRATES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : STPL Model : 5570 B DN 100 WCB LEVER Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "09-02-2026 19:03:11",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "TS FLOW CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : TSflo Model : BUTTERFLY VALVE Title : IPAA05457001 BUTTERFLY VALVE B7J1Z26426",
+      "Participated On": "06-02-2026 10:03:04",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "M/S PIPING ZONE",
+      "Total L1 Price": "53938.98",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "A V VALVES LTD",
+      "Total L1 Price": "23522.03",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/8890528"
+}

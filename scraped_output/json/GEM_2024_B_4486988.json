@@ -1,0 +1,93 @@
+{
+  "source_id": "5899589",
+  "bid_number": "GEM/2024/B/4486988",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4486988",
+    "Bid Status": "Active",
+    "Quantity": "4",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "15-01-2024 17:54:22",
+    "Bid End Date / Time": "24-02-2024 15:00:00",
+    "Bid Opening Date / Time": "24-02-2024 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Anil Kumar",
+    "Address": "Anil Kumar,buyer14.gail.guna@gembuyer.in,GAIL INDIA LIMITED GAIL COMPLEX VIJAIPUR DIST-GUNA,GUNA,MADHYA PRADESH,473112,India,07544-274444-3810",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Gail India Limited",
+    "Organisation": "Gail India Limited",
+    "Office": "Vijaipur"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "M/S PIPING ZONE Under PMA",
+      "Offered Item": "Make : pipingzone Model : VALVES Title : VALVES",
+      "Participated On": "14-02-2024 10:28:56",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MOTIPUR INDUSTRIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MOTIPUR INDUSTRIES PVT. LTD. Model : WCB-GTV-600#-20\" Title : WCB GATE VALVE 600# FLANGED 20\"",
+      "Participated On": "23-02-2024 17:46:38",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "NITON VALVE INDUSTRIES PVT LTD Under PMA",
+      "Offered Item": "Make : GATE VALVE Model : NV/1060 Title : GATE VALVE",
+      "Participated On": "24-02-2024 10:46:46",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "SHALIMAR VALVES PVT LTD Under PMA",
+      "Offered Item": "Make : SHALIMAR VALVES PVT. LTD. Model : GTV Title : GATE VALVE",
+      "Participated On": "14-02-2024 14:10:54",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : GTV Title : GATE VALVE",
+      "Participated On": "23-02-2024 18:33:50",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "BALL VALVE",
+      "L1 Seller Name": "NITON VALVE INDUSTRIES PVT LTD",
+      "Total L1 Price": "9795498.6",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "GATE VAVLE",
+      "L1 Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED",
+      "Total L1 Price": "2829581",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/5899589"
+}

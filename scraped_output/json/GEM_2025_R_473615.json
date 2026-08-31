@@ -1,0 +1,97 @@
+{
+  "source_id": "7695657",
+  "bid_number": "GEM/2025/R/473615",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2025/R/473615",
+    "RA Status": "Active",
+    "Quantity": "4",
+    "RA Validity (From End Date)": "90 ( Days)",
+    "RA Start Date / Time": "01-04-2025 11:00 AM",
+    "RA End Date / Time": "02-04-2025 1:29 PM"
+  },
+  "buyer_details": {
+    "Name": "Rahul Roy",
+    "Address": "RAHUL ROY,buyer16.isp.wb@gembuyer.in,PURCHASE SECTION, MATERIALS MANAGEMENT DPT. STEEL AUTHORITY OF INDIA LTD. IISCO STEEL PLANT, Burnpur, 713325, West Bengal India, IISCO STEEL PLANT, GSTIN Number 19AAACS7062F6Z6,Bardhaman,WEST BENGAL,713325,India",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Iisco Steel Plant",
+    "Office": "Materials Management Dept Iisco Steel Plant"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "SUDIP ENGINEERING (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 777966.10",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "SRK VALVES (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 780000.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M/S MODERN ELECTRONICS ENTERPRISES (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 850372.88",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 917625.42 (Bid Price)",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "A V VALVES LTD (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 1353264.41 (Bid Price)",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 1419384.75 (Bid Price)",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 1537600.00 (Bid Price)",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "MICON VALVES (INDIA) PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 1670000.00 (Bid Price)",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE 500MM(20\" ),BUTTERFLY VALVE 600MM(24\" )",
+      "Total Price": "` 1697700.00 (Bid Price)",
+      "Rank": "L9"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2025/R/473615",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "01-04-2025 11:00 AM",
+    "ra_end_date": "02-04-2025 1:29 PM",
+    "parent_bid_number": "GEM/2025/B/5913550"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7695657",
+  "parent_bid_number": "GEM/2025/B/5913550"
+}

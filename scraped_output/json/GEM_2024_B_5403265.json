@@ -1,0 +1,273 @@
+{
+  "source_id": "6909079",
+  "bid_number": "GEM/2024/B/5403265",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5403265",
+    "Bid Status": "Active",
+    "Quantity": "2",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "16-09-2024 11:11:29",
+    "Bid End Date / Time": "26-09-2024 12:00:00",
+    "Bid Opening Date / Time": "26-09-2024 12:30:00"
+  },
+  "buyer_details": {
+    "Name": "Namasri Banerjee",
+    "Address": "Namasri Banerjee,buyer73.sail.wb@gembuyer.in,PURCHASE SECTION, MATERIALS MANAGEMENT DPT. STEEL AUTHORITY OF INDIA LTD. IISCO STEEL PLANT, Burnpur, 713325, West Bengal India, IISCO STEEL PLANT, GSTIN Number 19AAACS7062F6Z6,Bardhaman,WEST BENGAL,713325,India",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Iisco Steel Plant",
+    "Office": "Materials Management Dept Iisco Steel Plant"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AQUA ENGINEERING Under PMA",
+      "Offered Item": "Make : AQUA Model : GTV 12\" 300# Title : GATE VALVE",
+      "Participated On": "23-09-2024 17:00:50",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR VALVE AUTOMATION Under PMA",
+      "Offered Item": "Make : NA Model : GATE VALVE Title : GATE VALVE",
+      "Participated On": "25-09-2024 16:35:44",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "DINTECH VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DINTECH Model : DIN-GTV-CS-150# Title : GATE VALVE: 16\" X 150# SALF ADJUSTING FLEXIBLE WEDGE RISING STEM OUTS SCREW",
+      "Participated On": "25-09-2024 18:34:03",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "ENGINEERS COMBINE Under PMA",
+      "Offered Item": "Make : VALVE INDIA Model : GATE VALVE Title : GATE VALVE",
+      "Participated On": "26-09-2024 00:58:11",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLOW MAX Under PMA",
+      "Offered Item": "Make : NA Model : GATE VALVE Title : GATE VALVE",
+      "Participated On": "25-09-2024 17:28:49",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : GETWAY Model : GCSGVFE Title : GATE VALVE: 16\" X 150# SALF ADJUSTING FLEXIBLE WEDGE RISING STEM OUTS SCREW",
+      "Participated On": "26-09-2024 11:30:32",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "INDUSKART ENGITECH LLP Under PMA",
+      "Offered Item": "Make : Leader Model : CCS 002 Title : GATE VALVE",
+      "Participated On": "25-09-2024 11:16:33",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "J SURYANARAYANAN Under PMA",
+      "Offered Item": "Make : L&T Valves LTd Model : 133-8 300 mm Title : GATE VALVE",
+      "Participated On": "23-09-2024 15:46:58",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "Make : Jayant Model : GATE VALVE Title : GATE VALVE",
+      "Participated On": "26-09-2024 11:38:05",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "Make : LEADER Model : CCS00002 Title : GATE VALVE",
+      "Participated On": "25-09-2024 13:11:07",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "MAMTA TRADING COMPANY Under PMA",
+      "Offered Item": "Make : OMEGA VALVE MFG CO Model : GATE VALVE 71406000401064 Title : GATE VALVE",
+      "Participated On": "19-09-2024 18:41:21",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "Make : METROPOLITAN INDUSTRIES Model : GATE VALVE Title : GATE VALVE",
+      "Participated On": "24-09-2024 18:31:47",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "MRS Enterprise Under PMA",
+      "Offered Item": "Make : Intervalve Poonawalla Ltd Model : IVGTC Title : GATE VALVE",
+      "Participated On": "24-09-2024 12:54:29",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "OMEGA CORPORATION Under PMA",
+      "Offered Item": "Make : MIR VALVES Model : NA Title : GATE VALVE",
+      "Participated On": "26-09-2024 10:55:15",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 12\" X 300# WCB GATE VALVE FLANGE Title : GATE VALVE",
+      "Participated On": "18-09-2024 10:36:58",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "S.G.R. (INDIA) ENGG, CO. Under PMA",
+      "Offered Item": "Make : Leader Model : NA Title : GATE VALVE",
+      "Participated On": "25-09-2024 16:18:29",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "SES MECHTECH PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : SES MAKE Model : SES MAKE GATE VALVE Title : GATE VALVE",
+      "Participated On": "21-09-2024 13:31:53",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "18",
+      "Seller Name": "SHALIMAR VALVES PVT LTD Under PMA",
+      "Offered Item": "Make : SHALIMAR VALVES PVT. LTD Model : BLV Title : CS BALL VALVES for NTPC KAYAMKULAM project",
+      "Participated On": "26-09-2024 10:50:02",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "19",
+      "Seller Name": "SPECTRA ENGINEERS Under PMA",
+      "Offered Item": "Make : SPECTRA Model : GTV Title : GATE VALVE",
+      "Participated On": "26-09-2024 11:45:48",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "20",
+      "Seller Name": "STEELSTRONG VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : steel strong valve Model : sst1 Title : GATE VALVE",
+      "Participated On": "24-09-2024 17:54:28",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "21",
+      "Seller Name": "SUBHAS ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : SEW / SUBHAS Model : CS GATE VALVE Title : GATE VALVE",
+      "Participated On": "23-09-2024 12:05:30",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "22",
+      "Seller Name": "SUDIP ENGINEERING Under PMA",
+      "Offered Item": "Make : SE Model : AS PER SPECIFICATION Title : GATE VALVE",
+      "Participated On": "26-09-2024 11:48:46",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AQUA ENGINEERING (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 168271.19",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "SES MECHTECH PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 206400.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 219915.25",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 235764.41",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "ENGINEERS COMBINE (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 252542.37",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "CAIR INDIA Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 255735.59",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "S.G.R. (INDIA) ENGG, CO. (MSE) ( MSE Social Category:SC ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 431788.14",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "LEADER VALVES LTD Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 432870.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "SHALIMAR VALVES PVT LTD (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE",
+      "Total Price": "` 598000.00",
+      "Rank": "L9"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6909079"
+}

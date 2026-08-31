@@ -1,0 +1,167 @@
+{
+  "source_id": "9499159",
+  "bid_number": "GEM/2026/B/7692034",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7692034",
+    "Bid Status": "Active",
+    "Quantity": "11",
+    "Bid Validity (From End Date)": "30 ( Days)",
+    "Bid Start Date / Time": "20-06-2026 17:41:03",
+    "Bid End Date / Time": "06-07-2026 18:00:00",
+    "Bid Opening Date / Time": "06-07-2026 18:30:00"
+  },
+  "buyer_details": {
+    "Name": "Zubair Saifee",
+    "Address": "Zubair Saifee,zubairsaifi481@gmail.com,The Kisan Sahkari Chini Mills Ltd. Sheikhupur Badaun Pin 243601 GST No 09AAAAT9678A1Z7 Contact No 9368052768, 7880888951,Budaun,UTTAR PRADESH,243601,India",
+    "State": "Uttar Pradesh",
+    "Department": "Uttar Pradesh Cooperative Sugar Factories Federation Limited",
+    "Organisation": "N/a",
+    "Office": "Lucknow"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-06-2026 13:12:06",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "ESS ESS TRADERS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-07-2026 17:55:56",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "IHM VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "26-06-2026 13:28:34",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "INDOCORE ENGINEERING CORPORATION Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-06-2026 15:18:49",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "30-06-2026 19:29:06",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/S SHREE RAJENDRA UDYOG Under PMA",
+      "Offered Item": "-",
+      "Participated On": "05-07-2026 23:25:16",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "MINAR ENGINEERING CO. Under PMA",
+      "Offered Item": "-",
+      "Participated On": "04-07-2026 18:09:44",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "P R ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-06-2026 14:37:56",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "POLINE TECHNOLOGIES PRIVATE LIMITED Under PMA",
+      "Offered Item": "-",
+      "Participated On": "29-06-2026 15:37:14",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PRAJAPATI ENTERPRISES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-06-2026 08:59:46",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "RAJAPUR IRON & STEEL INDUSTRIES Under PMA",
+      "Offered Item": "-",
+      "Participated On": "01-07-2026 15:19:34",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "SEHGAL SONS Under PMA",
+      "Offered Item": "-",
+      "Participated On": "06-07-2026 17:34:19",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "SHREE JAGANNATH IRON FOUNDRY PVT LTD Under PMA",
+      "Offered Item": "-",
+      "Participated On": "25-06-2026 11:15:09",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "unique enterprise Under PMA",
+      "Offered Item": "-",
+      "Participated On": "27-06-2026 11:41:21",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "ESS ESS TRADERS (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Supply of CI Sluice Valve ISI mark Size - 200mm,Supply of CI Sluice Valve ISI mark Size - 150mm,Sup",
+      "Total Price": "` 71738.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "POLINE TECHNOLOGIES PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Supply of CI Sluice Valve ISI mark Size - 200mm,Supply of CI Sluice Valve ISI mark Size - 150mm,Sup",
+      "Total Price": "` 110523.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "SEHGAL SONS Under PMA",
+      "Offered Item": "Item Categories : Supply of CI Sluice Valve ISI mark Size - 200mm,Supply of CI Sluice Valve ISI mark Size - 150mm,Sup",
+      "Total Price": "` 126816.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9499159"
+}

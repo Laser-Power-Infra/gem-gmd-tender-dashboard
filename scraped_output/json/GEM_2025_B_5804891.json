@@ -1,0 +1,233 @@
+{
+  "source_id": "7359778",
+  "bid_number": "GEM/2025/B/5804891",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5804891",
+    "Bid Status": "Active",
+    "Quantity": "10",
+    "Bid Validity (From End Date)": "140 ( Days)",
+    "Bid Start Date / Time": "10-01-2025 17:52:03",
+    "Bid End Date / Time": "31-01-2025 15:00:00",
+    "Bid Opening Date / Time": "31-01-2025 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Yasobanta Rout",
+    "Address": "Yasobanta Rout,buycon43.hcl.mp@gembuyer.in,Malanjkhand Copper Project, Dist- Balaghat, Madhya Pradesh- 481116,Balaghat,MADHYA PRADESH,481116,India",
+    "Ministry": "Ministry Of Mines",
+    "Department": "Hindustan Copper Limited",
+    "Organisation": "Hindustan Copper Limited",
+    "Office": "Kolkata Corporate Office"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V ENGINEERS Under PMA",
+      "Offered Item": "Make : AJANTA Model : AJANTA Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "31-01-2025 14:54:33",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : CAIR Model : 80 MM RISIING SPINDEL SLUICE VALVE Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "23-01-2025 15:43:01",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "Dinesh Enterprises Under PMA",
+      "Offered Item": "Make : KUSHA Model : KUSHA Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "25-01-2025 20:28:14",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "FLUID CONTROL EQUIPMENTS PVT. LTD. Under PMA",
+      "Offered Item": "Make : FCEPL-Fluid Control Equipments Pvt Ltd Model : C. I. SLUICE VALVE & GATE VALVE Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "31-01-2025 13:12:07",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "FLUIDTECH EQUIPMENT PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : FCE Model : NA Title : CAST STEEL GATE VALVE SIZE 200 MM",
+      "Participated On": "25-01-2025 16:59:01",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : C. I. SLUICE VALVE 3 INCH 1.6MPA Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "31-01-2025 11:48:38",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "IHM VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : KIRLOSKAR Model : KIRLOSKAR C.I GATE VALVE Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "24-01-2025 15:21:54",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : SUPARNA Model : 4KV/CI/GT/001 Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "29-01-2025 18:03:33",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "KSB CONTROLS Under PMA",
+      "Offered Item": "Make : KSB CONTROLS (KC) Model : C. I. SLUICE VALVE 3 INCH Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "24-01-2025 20:12:17",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "M/s INDIA ENGINEERING VALVE & PIPE FITTING Under PMA",
+      "Offered Item": "Make : IEV Model : SLV Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "13-01-2025 16:42:14",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "METROPOLITAN INDUSTRIES Under PMA",
+      "Offered Item": "Make : METROPOLITAN INDUSTRIES Model : CI GATE VALVE 3 INCH Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "30-01-2025 14:36:45",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "PAREKH ENGINEERING COMPANY Under PMA",
+      "Offered Item": "Make : lp Model : SLUICE VALVE Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "31-01-2025 13:15:34",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 3\" X PN 10 CI SLUICE GATE VALVE FLANGE Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "11-01-2025 13:20:26",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "14",
+      "Seller Name": "SHREE JAGANNATH IRON FOUNDRY PVT LTD Under PMA",
+      "Offered Item": "Make : SJIF Model : SV80 Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "17-01-2025 14:33:48",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "15",
+      "Seller Name": "SYSCHEM CONTROLS Under PMA",
+      "Offered Item": "Make : SYSCHEM Model : SYS-SLGV-3\" Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "28-01-2025 18:06:25",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "16",
+      "Seller Name": "TEJWALA ENGINEERING COMPANY Under PMA",
+      "Offered Item": "Make : NA Model : C. I. SLUICE VALVE & GATE VALVE Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "31-01-2025 13:45:59",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "17",
+      "Seller Name": "W R T SALES AND SERVICES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : KIRLOSKAR Model : C. I. SLUICE VALVE 100 MM Title : C. I. SLUICE VALVE & GATE VALVE",
+      "Participated On": "24-01-2025 12:33:05",
+      "MSE/MII Status": "MII",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 53812.72",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "A V ENGINEERS (MII) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 54300.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M/s INDIA ENGINEERING VALVE & PIPE FITTING (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 66474.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "PAREKH ENGINEERING COMPANY (MII) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 69950.00",
+      "Rank": "L4"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "Dinesh Enterprises (MII) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 71002.00",
+      "Rank": "L5"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "KAMALA VALVES & ENGINEERING WORKS (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 92040.00",
+      "Rank": "L6"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 141600.00",
+      "Rank": "L7"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "METROPOLITAN INDUSTRIES (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 166290.00",
+      "Rank": "L8"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "W R T SALES AND SERVICES PRIVATE LIMITED (MII) Under PMA",
+      "Offered Item": "Item Categories : C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE,C. I. SLUICE VALVE & GATE VALVE",
+      "Total Price": "` 308260.00",
+      "Rank": "L9"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7359778"
+}

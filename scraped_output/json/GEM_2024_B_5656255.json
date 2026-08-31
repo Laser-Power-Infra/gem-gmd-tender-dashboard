@@ -1,0 +1,72 @@
+{
+  "source_id": "7192510",
+  "bid_number": "GEM/2024/B/5656255",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5656255",
+    "Bid Status": "Active",
+    "Quantity": "14",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "28-11-2024 14:45:18",
+    "Bid End Date / Time": "19-12-2024 15:00:00",
+    "Bid Opening Date / Time": "19-12-2024 15:30:00"
+  },
+  "buyer_details": {
+    "Name": "Amit Kumar Jaiswal",
+    "Address": "Amit Kumar Jaiswal,somm.bkp.secl@coalindia.in,Depot officer, Regional store, Baikunthpur Area, churcha, PO churcha colliery, Dist Koriya, State. Chattisgarh, pin. 497339.,Koriya,CHHATTISGARH,497339,India,94255-33206-",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Coal India Limited",
+    "Organisation": "South Eastern Coalfields Limited",
+    "Office": "Secl Bilaspur Chhattisgarh"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AARKO MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : AARKO Model : AARKO SLUICE VALVE 100MM PN 1.6",
+      "Participated On": "18-12-2024 12:39:57",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUID CONTROL EQUIPMENTS PVT. LTD. Under PMA",
+      "Offered Item": "Make : FCEPL--FLUID CONTROL EQUIPMENTS PVT. LTD. Model : Sluice Valve For Water Works Purposes",
+      "Participated On": "09-12-2024 17:27:42",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "MA MANASHA VALVE MFG. CO. Under PMA",
+      "Offered Item": "Make : Unbranded--MA MANASHA VALVE MFG. CO. Model : SV- 100MM",
+      "Participated On": "19-12-2024 10:10:54",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "MA MANASHA VALVE MFG. CO.",
+      "Total L1 Price": "35100",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "MA MANASHA VALVE MFG. CO.",
+      "Total L1 Price": "25280",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7192510"
+}

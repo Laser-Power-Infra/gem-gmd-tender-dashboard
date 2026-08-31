@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  gem-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gem-scraper-dashboard
+    restart: unless-stopped
+    ports:
+      - "6001:6001"
+    environment:
+      - PORT=6001
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./scraped_output:/app/scraped_output
+      - ./bids_input_sample.txt:/app/bids_input_sample.txt
+    network_mode: bridge

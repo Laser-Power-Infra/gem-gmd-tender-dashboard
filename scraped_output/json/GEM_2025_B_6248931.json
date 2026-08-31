@@ -1,0 +1,152 @@
+{
+  "source_id": "7860265",
+  "bid_number": "GEM/2025/B/6248931",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6248931",
+    "Bid Status": "Active",
+    "Quantity": "2",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "19-05-2025 16:40:58",
+    "Bid End Date / Time": "29-05-2025 17:00:00",
+    "Bid Opening Date / Time": "29-05-2025 17:30:00"
+  },
+  "buyer_details": {
+    "Name": "Shashi Pal",
+    "Address": "Shashi Pal,buyer1336.bhelb.ua@gembuyer.in,BHEL, HEEP, Main Admin Building, 4th Floor, Haridwar,Haridwar,UTTARAKHAND,249403,India,01334-819284-7287",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10110009-heep, Haridwar"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Cair Model : BUTTERFLY Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "27-05-2025 16:34:28",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CHEMICO VALVES INDUSTRIES Under PMA",
+      "Offered Item": "Make : UNBRAND Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "28-05-2025 13:19:51",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "FLUIR CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : Fluir Controls Model : BUTTERFLY VALVE Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "23-05-2025 16:28:09",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : BUTTERFLY VALVE 100NB FOR OIL MODULE Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "29-05-2025 13:24:55",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "H K ENTERPRISES Under PMA",
+      "Offered Item": "Make : HK Model : BFV Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "26-05-2025 14:05:28",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "HAWA VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : HAWA Model : BUTTERFLY VALVE FOR OIL MODULE Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "28-05-2025 17:39:59",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "J N ENGINEERS Under PMA",
+      "Offered Item": "Make : JNE--J N ENGINEERS Model : JNE/L-BFV-01/25 Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "26-05-2025 14:41:43",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "K.F. INDUSTRIES Under PMA",
+      "Offered Item": "Make : AIZEN Model : BUTTERFLY VALVE FOR OIL MODULE Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "28-05-2025 21:16:32",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "OMVAL CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : OM Model : 4CWBV0W1F Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "22-05-2025 15:09:19",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PVPL-PRESSURE--PRESSURE VALVES PRIVATE LIMITED Model : 2\" X 150# CS BFV WAFER TYPE Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "21-05-2025 16:43:38",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "STEELSTRONG VALVES (INDIA) PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : STEELSTRONG VALVES Model : SSV BFV0101 Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "28-05-2025 17:51:50",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "UNIQUE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : UNIVAS Model : U09_DN50_DN1200 Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "28-05-2025 15:33:45",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "13",
+      "Seller Name": "ZED VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : ZED Model : BFV Title : BUTTERFLY VALVE FOR OIL MODULE",
+      "Participated On": "29-05-2025 13:32:39",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "UNIQUE VALVES PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE FOR OIL MODULE",
+      "Total Price": "` 10169.49",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "HAWA VALVES (INDIA) PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVE FOR OIL MODULE",
+      "Total Price": "` 16938.98",
+      "Rank": "L2"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7860265"
+}

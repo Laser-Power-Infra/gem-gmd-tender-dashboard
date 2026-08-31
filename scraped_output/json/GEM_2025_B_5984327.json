@@ -1,0 +1,124 @@
+{
+  "source_id": "7561225",
+  "bid_number": "GEM/2025/B/5984327",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5984327",
+    "Bid Status": "Active",
+    "Quantity": "100",
+    "Bid Validity (From End Date)": "120 ( Days)",
+    "Bid Start Date / Time": "26-02-2025 18:17:02",
+    "Bid End Date / Time": "10-03-2025 11:00:00",
+    "Bid Opening Date / Time": "10-03-2025 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Abhishek Singh",
+    "Address": "Abhishek Singh,abhishek.singh1673@coalindia.in,REGIONAL STORES, JAYANT PROJECT, NCL, PO - JAYANT, DISTT - SINGRAULI M.P.,SINGRAULI,MADHYA PRADESH,486890,India,07805-222759-52141",
+    "Ministry": "Ministry Of Coal",
+    "Department": "Coal India Limited",
+    "Organisation": "Northern Coalfields Limited",
+    "Office": "Ncl Singrauli Madhya Pradesh"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AARKO MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : AARKO Model : AARKO SLUICE VALVE 80MM PN 1.6",
+      "Participated On": "08-03-2025 14:35:09",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE 80mm PN1.6",
+      "Participated On": "08-03-2025 12:24:31",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "M/S, MINOTI ENGINEERING WORKS Under PMA",
+      "Offered Item": "Make : MINOTI Model : IS : 14846",
+      "Participated On": "07-03-2025 15:55:03",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "View",
+      "Status": "Evaluated"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Schedule Title": "Schedule 1",
+      "L1 Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED",
+      "Total L1 Price": "128183.4",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "2",
+      "Schedule Title": "Schedule 2",
+      "L1 Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED",
+      "Total L1 Price": "170038",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "3",
+      "Schedule Title": "Schedule 3",
+      "L1 Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED",
+      "Total L1 Price": "138248.8",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "4",
+      "Schedule Title": "Schedule 4",
+      "L1 Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED",
+      "Total L1 Price": "126855.9",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "5",
+      "Schedule Title": "Schedule 5",
+      "L1 Seller Name": "AARKO MANUFACTURING COMPANY",
+      "Total L1 Price": "172200",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "6",
+      "Schedule Title": "Schedule 6",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "132160",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "7",
+      "Schedule Title": "Schedule 7",
+      "L1 Seller Name": "AARKO MANUFACTURING COMPANY",
+      "Total L1 Price": "161400",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "8",
+      "Schedule Title": "Schedule 8",
+      "L1 Seller Name": "M/S, MINOTI ENGINEERING WORKS",
+      "Total L1 Price": "560500",
+      "Schedule Status": "Awarded"
+    },
+    {
+      "S.No.": "9",
+      "Schedule Title": "Schedule 9",
+      "L1 Seller Name": "AARKO MANUFACTURING COMPANY",
+      "Total L1 Price": "27300",
+      "Schedule Status": "Awarded"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultViewSchedule/7561225"
+}

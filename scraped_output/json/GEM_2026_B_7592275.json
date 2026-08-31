@@ -1,0 +1,75 @@
+{
+  "source_id": "9387567",
+  "bid_number": "GEM/2026/B/7592275",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2026/B/7592275",
+    "Bid Status": "Active",
+    "Quantity": "152",
+    "Bid Validity (From End Date)": "150 ( Days)",
+    "Bid Start Date / Time": "16-06-2026 19:59:42",
+    "Bid End Date / Time": "27-06-2026 20:00:00",
+    "Bid Opening Date / Time": "27-06-2026 20:30:00",
+    "Average Turn Over of Last 3 Years": "2 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "***********",
+    "Address": "*********** BANGALORE",
+    "Ministry": "Ministry Of Defence",
+    "Department": "Department Of Military Affairs",
+    "Organisation": "Indian Army",
+    "Office": "***********"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : getway Model : GETWAYCLASS1_20MM",
+      "Participated On": "24-06-2026 22:55:46",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : BAJAJ Model : BV101-20",
+      "Participated On": "27-06-2026 11:11:07",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : getway Model : GETWAYCLASS1_20MM",
+      "Participated On": "25-06-2026 11:39:07",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : getway Model : GETWAYCLASS1_20MM",
+      "Participated On": "24-06-2026 23:27:35",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "********** Under PMA",
+      "Offered Item": "Make : getway Model : GETWAYCLASS1_20MM",
+      "Participated On": "27-06-2026 16:08:38",
+      "MSE/MII Status": "MII",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/9387567"
+}

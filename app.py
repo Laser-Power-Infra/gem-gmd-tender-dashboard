@@ -1,0 +1,525 @@
+import os
+import re
+import glob
+import json
+import threading
+import pandas as pd
+from flask import Flask, render_template, jsonify, request, send_file
+from flask_cors import CORS
+from gem_scraper import scrape_gem_bid, extract_bid_details_from_html
+
+app = Flask(__name__, static_folder='static', template_folder='templates')
+CORS(app)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(BASE_DIR, "scraped_output")
+PDF_DIR = os.path.join(OUTPUT_DIR, "pdfs")
+JSON_DIR = os.path.join(OUTPUT_DIR, "json")
+CSV_PATH = os.path.join(OUTPUT_DIR, "bids_summary.csv")
+COMBINED_PDF_PATH = os.path.join(OUTPUT_DIR, "ALL_BIDS_COMBINED_REPORT.pdf")
+BIDS_INPUT_FILE = os.path.join(BASE_DIR, "bids_input_sample.txt")
+
+# Ensure required directories exist
+os.makedirs(PDF_DIR, exist_ok=True)
+os.makedirs(JSON_DIR, exist_ok=True)
+
+REMARKS_PATH = os.path.join(OUTPUT_DIR, "remarks.json")
+STATUSES_PATH = os.path.join(OUTPUT_DIR, "statuses.json")
+
+def load_remarks():
+    if os.path.exists(REMARKS_PATH):
+        try:
+            with open(REMARKS_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+def save_remark(bid_no, remark):
+    remarks = load_remarks()
+    remarks[bid_no] = remark
+    with open(REMARKS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(remarks, f, indent=2, ensure_ascii=False)
+    return remarks
+
+def load_statuses():
+    if os.path.exists(STATUSES_PATH):
+        try:
+            with open(STATUSES_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+def save_user_status(bid_no, user_status):
+    statuses = load_statuses()
+    statuses[bid_no] = user_status
+    with open(STATUSES_PATH, 'w', encoding='utf-8') as f:
+        json.dump(statuses, f, indent=2, ensure_ascii=False)
+    return statuses
+
+# Global scraping state tracker
+scraper_state = {
+    "is_running": False,
+    "current_index": 0,
+    "total_items": 0,
+    "current_item": "",
+    "status_message": "Idle",
+    "completed_items": [],
+    "failed_items": [],
+    "error": None
+}
+
+def compute_l1_l2_diff(fin_eval):
+    if not fin_eval or len(fin_eval) < 2:
+        return None
+    l1_row = next((r for r in fin_eval if r.get('Rank', '').upper() == 'L1'), None)
+    l2_row = next((r for r in fin_eval if r.get('Rank', '').upper() == 'L2'), None)
+    if not l1_row or not l2_row:
+        return None
+    try:
+        p1 = float(re.sub(r'[^\d.]', '', l1_row.get('Total Price', '')))
+        p2 = float(re.sub(r'[^\d.]', '', l2_row.get('Total Price', '')))
+        if p1 > 0 and p2 > p1:
+            diff_amt = p2 - p1
+            diff_pct = (diff_amt / p1) * 100.0
+            return {
+                'l1_seller': l1_row.get('Seller Name', ''),
+                'l1_price': p1,
+                'l2_seller': l2_row.get('Seller Name', ''),
+                'l2_price': p2,
+                'diff_amount': diff_amt,
+                'diff_pct': round(diff_pct, 2),
+                'formatted_diff': f"+₹ {diff_amt:,.2f} (+{diff_pct:.2f}%)"
+            }
+    except Exception:
+        pass
+    return None
+
+def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI', 'G M DALUI']):
+    t_eval = data.get('technical_evaluation', [])
+    f_eval = data.get('financial_evaluation', [])
+    
+    comp_tech_row = None
+    for row in t_eval:
+        row_str = (str(row.get('Seller Name', '')) + ' ' + str(row.get('Offered Item', ''))).upper()
+        if any(kw in row_str for kw in company_keywords):
+            comp_tech_row = row
+            break
+            
+    comp_fin_row = None
+    for row in f_eval:
+        row_str = (str(row.get('Seller Name', '')) + ' ' + str(row.get('L1 Seller Name', '')) + ' ' + str(row.get('Offered Item', ''))).upper()
+        if any(kw in row_str for kw in company_keywords):
+            comp_fin_row = row
+            break
+            
+    if not comp_tech_row and not comp_fin_row:
+        return {'participated': False, 'company_name': 'G.M. DALUI & SONS'}
+        
+    def parse_val(s):
+        c = re.sub(r'[^\d.]', '', str(s or ''))
+        return float(c) if c else 0.0
+
+    tech_status = comp_tech_row.get('Status', 'N/A') if comp_tech_row else 'N/A'
+    st_upper = tech_status.upper()
+    
+    is_disqual = 'DISQUALIFIED' in st_upper or 'REJECTED' in st_upper
+    is_qual = ('QUALIFIED' in st_upper or 'EVALUATED' in st_upper or 'ACCEPTED' in st_upper) and not is_disqual
+
+    l1_row = next((r for r in f_eval if r.get('Rank', '').upper() == 'L1'), None)
+    l2_row = next((r for r in f_eval if r.get('Rank', '').upper() == 'L2'), None)
+
+    my_rank = comp_fin_row.get('Rank', 'N/A') if comp_fin_row else 'N/A'
+    is_l1 = my_rank.upper() == 'L1' or (comp_fin_row and comp_fin_row.get('L1 Seller Name') and any(kw in str(comp_fin_row.get('L1 Seller Name')).upper() for kw in company_keywords))
+
+    my_price = parse_val(comp_fin_row.get('Total Price', '')) if comp_fin_row else 0.0
+    l1_price = parse_val(l1_row.get('Total Price', '')) if l1_row else 0.0
+
+    gap_msg = ''
+    diff_amount = 0.0
+    diff_pct = 0.0
+
+    if comp_fin_row and l1_price > 0 and my_price > 0:
+        if is_l1:
+            if l2_row:
+                p2 = parse_val(l2_row.get('Total Price', ''))
+                if p2 > my_price:
+                    diff_amount = p2 - my_price
+                    diff_pct = (diff_amount / my_price) * 100.0
+                    gap_msg = f"WON L1! Lead over L2: ₹ {diff_amount:,.2f} ({diff_pct:.2f}% lower)"
+            else:
+                gap_msg = "WON L1! Lowest Bidder"
+        else:
+            diff_amount = my_price - l1_price
+            diff_pct = (diff_amount / l1_price) * 100.0 if l1_price > 0 else 0
+            gap_msg = f"Position {my_rank} • Gap to L1: +₹ {diff_amount:,.2f} (+{diff_pct:.2f}% higher)"
+
+    return {
+        'participated': True,
+        'company_name': 'G.M. DALUI & SONS',
+        'tech_status': tech_status,
+        'is_qualified': is_qual,
+        'is_disqualified': is_disqual,
+        'rank': my_rank if not is_l1 else 'L1',
+        'is_l1': is_l1,
+        'my_price': my_price,
+        'l1_price': l1_price,
+        'diff_amount': diff_amount,
+        'diff_pct': round(diff_pct, 2),
+        'gap_message': gap_msg
+    }
+
+def load_all_json_bids():
+    json_files = glob.glob(os.path.join(JSON_DIR, "*.json"))
+    bids_dict = {}
+    remarks = load_remarks()
+    statuses = load_statuses()
+    
+    for filepath in json_files:
+        if os.path.basename(filepath).startswith("temp_"):
+            continue
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+                # Check if data already has ra_info with parent bid_number
+                b_details = data.get('bid_details', {})
+                raw_bid_no = data.get('bid_number', os.path.splitext(os.path.basename(filepath))[0])
+                
+                # Extract RA details
+                ra_inf = data.get('ra_info', {})
+                ra_no = ra_inf.get('ra_number') or b_details.get('RA Number') or (raw_bid_no if '/R/' in raw_bid_no.upper() else 'N/A')
+                
+                # Determine primary bid number (always prefer /B/ format if available)
+                bid_no = raw_bid_no
+                parent_b = data.get('parent_bid_number') or ra_inf.get('parent_bid_number')
+                if '/R/' in bid_no.upper() and parent_b:
+                    bid_no = parent_b
+
+                title_type = str(data.get('bid_title_type', '')).upper()
+                has_r_in_no = '/R/' in raw_bid_no.upper()
+                has_ra_title = 'RA DETAILS' in title_type or 'REVERSE AUCTION' in title_type
+                has_ra_num = ('RA Number' in b_details) or (ra_no != 'N/A')
+                has_ra_dates = 'RA Start Date / Time' in b_details or 'RA End Date / Time' in b_details
+                
+                is_ra = has_r_in_no or has_ra_title or has_ra_num or has_ra_dates
+                ra_status = b_details.get('RA Status', b_details.get('RA Bid Status', b_details.get('Bid Status', 'Active' if is_ra else 'N/A')))
+
+                data['bid_number'] = bid_no
+                data['user_remark'] = remarks.get(bid_no, remarks.get(raw_bid_no, ''))
+                data['user_status'] = statuses.get(bid_no, statuses.get(raw_bid_no, 'Pending'))
+                
+                bid_file_name = bid_no.replace('/', '_')
+                pdf_path = os.path.join(PDF_DIR, f"{bid_file_name}.pdf")
+                data['has_pdf'] = os.path.exists(pdf_path)
+                data['pdf_filename'] = f"{bid_file_name}.pdf"
+                data['l1_l2_diff'] = compute_l1_l2_diff(data.get('financial_evaluation', []))
+                data['company_analysis'] = analyze_company_bid(data)
+
+                data['ra_info'] = {
+                    'is_ra': is_ra,
+                    'ra_number': ra_no,
+                    'ra_status': ra_status,
+                    'ra_start_date': b_details.get('RA Start Date / Time', b_details.get('RA Start Date', ra_inf.get('ra_start_date', 'N/A'))),
+                    'ra_end_date': b_details.get('RA End Date / Time', b_details.get('RA End Date', ra_inf.get('ra_end_date', 'N/A')))
+                }
+                
+                # Deduplicate: if bid_no is already in bids_dict, merge RA info into existing record
+                if bid_no in bids_dict:
+                    existing = bids_dict[bid_no]
+                    if is_ra and not existing.get('ra_info', {}).get('is_ra'):
+                        existing['ra_info'] = data['ra_info']
+                    elif is_ra and ra_no != 'N/A':
+                        existing['ra_info']['ra_number'] = ra_no
+                        existing['ra_info']['is_ra'] = True
+                    if not existing.get('user_remark') and data.get('user_remark'):
+                        existing['user_remark'] = data['user_remark']
+                else:
+                    bids_dict[bid_no] = data
+
+        except Exception as e:
+            print(f"Error loading {filepath}: {e}")
+    
+    bids = list(bids_dict.values())
+    bids.sort(key=lambda x: x.get('bid_number', ''), reverse=True)
+    return bids
+
+def run_batch_scrape(inputs_list):
+    global scraper_state
+    scraper_state["is_running"] = True
+    scraper_state["total_items"] = len(inputs_list)
+    scraper_state["current_index"] = 0
+    scraper_state["completed_items"] = []
+    scraper_state["failed_items"] = []
+    scraper_state["status_message"] = "Started batch scraping..."
+    scraper_state["error"] = None
+
+    all_results = []
+    pdf_paths = []
+
+    for i, item in enumerate(inputs_list):
+        scraper_state["current_index"] = i + 1
+        scraper_state["current_item"] = item
+        scraper_state["status_message"] = f"Scraping bid {i+1}/{len(inputs_list)}: {item}..."
+        print(f"[SCRAPER WORKER] Scraping {item}...")
+        
+        try:
+            data, pdf_path = scrape_gem_bid(item, output_dir=OUTPUT_DIR)
+            all_results.append(data)
+            pdf_paths.append(pdf_path)
+            scraper_state["completed_items"].append(item)
+        except Exception as e:
+            print(f"[SCRAPER WORKER ERROR] Failed {item}: {e}")
+            scraper_state["failed_items"].append({"item": item, "error": str(e)})
+
+    # Generate Summary CSV
+    if all_results:
+        summary_rows = []
+        for d in all_results:
+            b_details = d.get('bid_details', {})
+            b_buyer = d.get('buyer_details', {})
+            t_eval = d.get('technical_evaluation', [])
+            f_eval = d.get('financial_evaluation', [])
+            
+            row = {
+                'Bid Number': d.get('bid_number', ''),
+                'Source ID': d.get('source_id', ''),
+                'Bid Status': b_details.get('Bid Status', ''),
+                'Quantity': b_details.get('Quantity', ''),
+                'Start Date': b_details.get('Bid Start Date / Time', ''),
+                'End Date': b_details.get('Bid End Date / Time', ''),
+                'Buyer Name': b_buyer.get('Name', ''),
+                'Buyer Ministry': b_buyer.get('Ministry', ''),
+                'Buyer Organisation': b_buyer.get('Organisation', ''),
+                'Total Tech Sellers': len(t_eval),
+                'Qualified Sellers': sum(1 for x in t_eval if 'QUALIFIED' in x.get('Status', '').upper() and 'DISQUALIFIED' not in x.get('Status', '').upper()),
+                'Disqualified Sellers': sum(1 for x in t_eval if 'DISQUALIFIED' in x.get('Status', '').upper()),
+                'Financial L1 Seller': f_eval[0].get('Seller Name', '') if f_eval else 'N/A',
+                'Financial L1 Price': f_eval[0].get('Total Price', '') if f_eval else 'N/A'
+            }
+            summary_rows.append(row)
+
+        summary_df = pd.DataFrame(summary_rows)
+        summary_df.to_csv(CSV_PATH, index=False, encoding='utf-8-sig')
+
+        # Merge PDFs if multiple
+        if len(pdf_paths) > 1:
+            try:
+                from PyPDF2 import PdfMerger
+                merger = PdfMerger()
+                for pdf in pdf_paths:
+                    if os.path.exists(pdf):
+                        merger.append(pdf)
+                merger.write(COMBINED_PDF_PATH)
+                merger.close()
+            except Exception as me:
+                print(f"Error merging PDFs: {me}")
+
+    scraper_state["is_running"] = False
+    scraper_state["status_message"] = f"Finished scraping {len(scraper_state['completed_items'])} bid(s)."
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/api/bids', methods=['GET'])
+def get_bids():
+    bids = load_all_json_bids()
+    
+    total_bids = len(bids)
+    total_tech_qualified = 0
+    total_tech_disqualified = 0
+    total_financial_l1 = 0
+    
+    # G.M. DALUI specific stats
+    dalui_participated = 0
+    dalui_qualified = 0
+    dalui_disqualified = 0
+    dalui_l1 = 0
+    dalui_l2 = 0
+
+    for b in bids:
+        t_eval = b.get('technical_evaluation', [])
+        f_eval = b.get('financial_evaluation', [])
+        c_an = b.get('company_analysis', {})
+
+        for t in t_eval:
+            st = t.get('Status', '').upper()
+            if 'QUALIFIED' in st and 'DISQUALIFIED' not in st:
+                total_tech_qualified += 1
+            elif 'DISQUALIFIED' in st:
+                total_tech_disqualified += 1
+                
+        if f_eval:
+            total_financial_l1 += 1
+
+        if c_an.get('participated'):
+            dalui_participated += 1
+            if c_an.get('is_qualified'): dalui_qualified += 1
+            if c_an.get('is_disqualified'): dalui_disqualified += 1
+            if c_an.get('is_l1'): dalui_l1 += 1
+            if c_an.get('is_l2'): dalui_l2 += 1
+
+    return jsonify({
+        'status': 'success',
+        'stats': {
+            'total_bids': total_bids,
+            'tech_qualified': total_tech_qualified,
+            'tech_disqualified': total_tech_disqualified,
+            'financial_l1_count': total_financial_l1,
+            'company_stats': {
+                'name': 'G.M. DALUI',
+                'participated': dalui_participated,
+                'qualified': dalui_qualified,
+                'disqualified': dalui_disqualified,
+                'l1_won': dalui_l1,
+                'l2_missed': dalui_l2
+            }
+        },
+        'bids': bids
+    })
+
+@app.route('/api/remark', methods=['POST'])
+def save_user_remark():
+    req = request.json or {}
+    bid_no = req.get('bid_number')
+    remark = req.get('remark', '')
+    if not bid_no:
+        return jsonify({'status': 'error', 'message': 'bid_number is required'}), 400
+    save_remark(bid_no, remark)
+    return jsonify({'status': 'success', 'bid_number': bid_no, 'remark': remark})
+
+@app.route('/api/status', methods=['POST'])
+def save_manual_user_status():
+    req = request.json or {}
+    bid_no = req.get('bid_number')
+    user_status = req.get('user_status', 'Pending')
+    if not bid_no:
+        return jsonify({'status': 'error', 'message': 'bid_number is required'}), 400
+    save_user_status(bid_no, user_status)
+    return jsonify({'status': 'success', 'bid_number': bid_no, 'user_status': user_status})
+
+import urllib.parse
+
+@app.route('/api/bid/<path:bid_no>', methods=['GET'])
+def get_single_bid(bid_no):
+    bid_no_clean = urllib.parse.unquote(bid_no).strip().upper()
+    all_bids = load_all_json_bids()
+    
+    for b in all_bids:
+        bn = str(b.get('bid_number', '')).strip().upper()
+        rn = str(b.get('ra_info', {}).get('ra_number', '')).strip().upper()
+        raw = str(b.get('raw_bid_no', '')).strip().upper()
+        if bid_no_clean in (bn, rn, raw) or bid_no_clean.replace('_', '/') in (bn, rn, raw):
+            return jsonify({'status': 'success', 'data': b})
+
+    # Fallback to direct file search
+    clean_no = bid_no_clean.replace('/', '_')
+    json_path = os.path.join(JSON_DIR, f"{clean_no}.json")
+    if os.path.exists(json_path):
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        data['company_analysis'] = analyze_company_bid(data)
+        data['l1_l2_diff'] = compute_l1_l2_diff(data.get('financial_evaluation', []))
+        return jsonify({'status': 'success', 'data': data})
+
+    return jsonify({'status': 'error', 'message': f'Bid JSON not found for {bid_no}'}), 404
+
+@app.route('/api/pdf/<path:filename>', methods=['GET'])
+def get_pdf(filename):
+    if filename == "combined":
+        if os.path.exists(COMBINED_PDF_PATH):
+            return send_file(COMBINED_PDF_PATH, mimetype='application/pdf')
+        else:
+            return jsonify({'status': 'error', 'message': 'Combined PDF not found'}), 404
+            
+    pdf_file = os.path.join(PDF_DIR, filename)
+    if os.path.exists(pdf_file):
+        return send_file(pdf_file, mimetype='application/pdf')
+    return jsonify({'status': 'error', 'message': f'PDF file {filename} not found'}), 404
+
+@app.route('/api/csv', methods=['GET'])
+def get_summary_csv():
+    if os.path.exists(CSV_PATH):
+        return send_file(CSV_PATH, mimetype='text/csv', as_attachment=True, download_name='gem_bids_summary.csv')
+    return jsonify({'status': 'error', 'message': 'Summary CSV not found'}), 404
+
+@app.route('/api/inputs', methods=['GET', 'POST'])
+def handle_inputs():
+    if request.method == 'POST':
+        data = request.json or {}
+        inputs_text = data.get('inputs', '')
+        if inputs_text:
+            lines = [l.strip() for l in inputs_text.replace(',', '\n').split('\n') if l.strip()]
+            with open(BIDS_INPUT_FILE, 'w', encoding='utf-8') as f:
+                f.write("# GeM Bid IDs or URLs\n" + "\n".join(lines))
+            return jsonify({'status': 'success', 'count': len(lines), 'items': lines})
+        return jsonify({'status': 'error', 'message': 'No input provided'}), 400
+    else:
+        items = []
+        if os.path.exists(BIDS_INPUT_FILE):
+            with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        items.append(line)
+        return jsonify({'status': 'success', 'items': items})
+
+@app.route('/api/run-scraper', methods=['POST'])
+def trigger_scraper():
+    global scraper_state
+    if scraper_state["is_running"]:
+        return jsonify({'status': 'error', 'message': 'Scraper is already running'}), 400
+
+    data = request.json or {}
+    items_to_scrape = data.get('items', [])
+    
+    if not items_to_scrape:
+        # Load from file
+        if os.path.exists(BIDS_INPUT_FILE):
+            with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        items_to_scrape.append(line)
+
+    if not items_to_scrape:
+        items_to_scrape = ["5705747", "6000000", "9689162", "9734482"]
+
+    # Start thread
+    thread = threading.Thread(target=run_batch_scrape, args=(items_to_scrape,))
+    thread.daemon = True
+    thread.start()
+
+    return jsonify({
+        'status': 'started',
+        'message': f'Started scraping {len(items_to_scrape)} item(s)',
+        'items': items_to_scrape
+    })
+
+@app.route('/api/scraper-status', methods=['GET'])
+def get_scraper_status():
+    return jsonify(scraper_state)
+
+if __name__ == '__main__':
+    import socket
+    local_ip = "127.0.0.1"
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+    except Exception:
+        try:
+            local_ip = socket.gethostbyname(socket.gethostname())
+        except Exception:
+            pass
+
+    port = int(os.environ.get('PORT', 6001))
+    print(f"\n=======================================================")
+    print(f"[SERVER] Starting GeM Bid Scraper Dashboard on Network")
+    print(f"  • Local Machine : http://127.0.0.1:{port}")
+    print(f"  • Local Network : http://{local_ip}:{port}")
+    print(f"=======================================================\n")
+    app.run(host='0.0.0.0', port=port, debug=False)

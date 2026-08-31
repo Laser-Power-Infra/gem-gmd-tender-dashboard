@@ -1,0 +1,86 @@
+{
+  "source_id": "5669610",
+  "bid_number": "GEM/2023/B/4275540",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2023/B/4275540",
+    "Bid Status": "Active",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "02-01-2024 10:02:29",
+    "Bid End Date / Time": "23-01-2024 18:00:00",
+    "Bid Opening Date / Time": "23-01-2024 18:30:00",
+    "Contract Duration": "2 Month(s)",
+    "Average Turn Over of Last 3 Years": "Lakhs",
+    "Experience with Gov. Required": "Years",
+    "Project Experience Required": "No"
+  },
+  "buyer_details": {
+    "Name": "Shraddha Munjewar",
+    "Address": "Shraddha Munjewar,con599.pgcil.mh@gembuyer.in,POWER GRID CORPORATION OF INDIA LTD. 765/400 KV GIS SUB-STATION, VILLAGE KHANIVALI, PO VASHIND, TAH. BHIWANDI, DIST. THANE, Maharastra-421601,THANE,MAHARASHTRA,421601,India,-9424401314-",
+    "Ministry": "Ministry Of Power",
+    "Department": "Power Grid Corporation Of India Limited",
+    "Organisation": "Power Grid Corporation Of India Limited",
+    "Office": "Corporate Office Gurgaon"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A TO Z VALVES MFG. CO. Under PMA",
+      "Participated On": "22-01-2024 21:34:47",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "HARSH ENGINEERING COMP.CO. Under PMA",
+      "Participated On": "18-01-2024 17:57:30",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "MULTI FIRE CONTROL SYSTEMS Under PMA",
+      "Participated On": "05-01-2024 08:57:37",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "SUCCESS FIRE PROTECTION PRIVATE LIMITED Under PMA",
+      "Participated On": "08-01-2024 15:47:18",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A TO Z VALVES MFG. CO. ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Custom Bid for Services - Supply and Installation of Geared Butterfly Valves for isolating sections",
+      "Total Price": "` 411339.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "MULTI FIRE CONTROL SYSTEMS ( MSE Social Category:OBC ) Under PMA",
+      "Offered Item": "Item Categories : Custom Bid for Services - Supply and Installation of Geared Butterfly Valves for isolating sections",
+      "Total Price": "` 465000.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "HARSH ENGINEERING COMP.CO. ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Custom Bid for Services - Supply and Installation of Geared Butterfly Valves for isolating sections",
+      "Total Price": "` 482820.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/5669610"
+}

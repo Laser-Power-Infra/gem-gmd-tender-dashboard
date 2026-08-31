@@ -1,0 +1,55 @@
+{
+  "source_id": "7055857",
+  "bid_number": "GEM/2024/R/399545",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/399545",
+    "RA Status": "Active",
+    "Quantity": "1",
+    "RA Validity (From End Date)": "90 ( Days)",
+    "RA Start Date / Time": "23-10-2024 6:00 PM",
+    "RA End Date / Time": "28-10-2024 3:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Pralay Shankar Mohanty",
+    "Address": "Pralay Shankar Mohanty,buycon2038.bhelb.ts@gembuyer.in,IOCL BRPL Refinery, Dhaligaon Urban, Bongaigaon, Assam,Chirang,ASSAM,783385,India,040-23182460-",
+    "Ministry": "Ministry Of Heavy Industries And Public Enterprises",
+    "Department": "Department Of Heavy Industry",
+    "Organisation": "Bharat Heavy Electricals Limited (bhel)",
+    "Office": "10360010-pe&sd Hyderabad"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "VALVE TECH INDUSTRIES (MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVES for TANGEDCO UDANGUDI project",
+      "Total Price": "` 309000.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "FLUID VALVE MANUFACTURING COMPANY (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVES for TANGEDCO UDANGUDI project",
+      "Total Price": "` 310576.00 (Bid Price)",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE,MII) Under PMA",
+      "Offered Item": "Item Categories : BUTTERFLY VALVES for TANGEDCO UDANGUDI project",
+      "Total Price": "` 544636.08 (Bid Price)",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/399545",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "23-10-2024 6:00 PM",
+    "ra_end_date": "28-10-2024 3:00 PM",
+    "parent_bid_number": "GEM/2024/B/5350662"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7055857",
+  "parent_bid_number": "GEM/2024/B/5350662"
+}

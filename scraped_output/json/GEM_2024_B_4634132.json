@@ -1,0 +1,57 @@
+{
+  "source_id": "6060828",
+  "bid_number": "GEM/2024/B/4634132",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/4634132",
+    "Bid Status": "Active",
+    "Quantity": "19",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "26-02-2024 17:29:43",
+    "Bid End Date / Time": "11-04-2024 11:00:00",
+    "Bid Opening Date / Time": "11-04-2024 11:30:00"
+  },
+  "buyer_details": {
+    "Name": "Sudhakar Narasimham Earla",
+    "Address": "Sudhakar Narasimham Earla,buyer141.npcil.mh@gembuyer.in,TARAPUR MAHASHTRA SITE, PO TAPP, VIA BOISAR, DIST. PALGHAR,THANE,MAHARASHTRA,401504,India",
+    "Ministry": "Pmo",
+    "Department": "Department Of Atomic Energy",
+    "Organisation": "Nuclear Power Corporation Of India Limited",
+    "Office": "Boisar Maharashtra"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : MODEL-10",
+      "Participated On": "08-04-2024 16:35:25",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "USMANI TUBES AND VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : UTVC Model : UTVC/BFY/WCB/CL150/150NB/GO",
+      "Participated On": "10-04-2024 18:07:13",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "USMANI TUBES AND VALVES COMPANY PRIVATE LIMITED Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valve (as per API Std. 609),Butterfly Valve (as per API Std. 609)",
+      "Total Price": "` 127089.00",
+      "Rank": "L1"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6060828"
+}

@@ -1,0 +1,163 @@
+{
+  "source_id": "7503262",
+  "bid_number": "GEM/2025/B/5932842",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5932842",
+    "Bid Status": "Active",
+    "Quantity": "48",
+    "Bid Validity (From End Date)": "126 ( Days)",
+    "Bid Start Date / Time": "15-02-2025 11:51:04",
+    "Bid End Date / Time": "08-03-2025 12:00:00",
+    "Bid Opening Date / Time": "08-03-2025 12:30:00"
+  },
+  "buyer_details": {
+    "Name": "Ashok Kumar Prasad",
+    "Address": "Ashok Kumar Prasad,buyer230.nl.jk@gembuyer.in,GINGLE,Baramulla,JAMMU & KASHMIR,193122,India,01956-253211-164",
+    "Ministry": "Ministry Of Power",
+    "Department": "Na",
+    "Organisation": "Nhpc Limited",
+    "Office": "Uri Power Station"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "A V VALVES LTD Under PMA",
+      "Offered Item": "Make : AV Model : AVNY12 Title : GATE VALVE DN80 PN10",
+      "Participated On": "27-02-2025 10:24:36",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AGS VALVES PVT LTD Under PMA",
+      "Offered Item": "Make : AGS Model : GATE VALVE Title : GATE VALVE DN80 PN10",
+      "Participated On": "08-03-2025 10:51:24",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : GATE VALVE DN80 PN1.0 Title : GATE VALVE DN80 PN10",
+      "Participated On": "08-03-2025 11:39:30",
+      "EMD Status": "BIS License",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "H. K. ENGINEERS Under PMA",
+      "Offered Item": "Make : NA Model : GATE VALVE DN80 PN10 Title : GATE VALVE DN80 PN10",
+      "Participated On": "07-03-2025 14:33:39",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD Under PMA",
+      "Offered Item": "Make : JAYANT VALVES Model : GATE VALVE DN80 PN10 Title : GATE VALVE DN80 PN10",
+      "Participated On": "07-03-2025 17:49:03",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "M/s TOOFLOW ENGINEERING Under PMA",
+      "Offered Item": "Make : TOOFLOW Model : TOOFLOW Title : GATE VALVE DN80 PN10",
+      "Participated On": "08-03-2025 11:31:54",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "MELCO INDIA PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : MELCO Model : MELCO Title : GATE VALVE DN80 PN10",
+      "Participated On": "07-03-2025 12:41:58",
+      "EMD Status": "Offline upload",
+      "MSE/MII Status": "N/A",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "METAVAL ENGINEERING PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : METAVAL Model : METAVAL Title : GATE VALVE DN80 PN10",
+      "Participated On": "08-03-2025 11:57:50",
+      "EMD Status": "MSE",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "9",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD Under PMA",
+      "Offered Item": "Make : NUPRO Model : MO GATE VALVE NHPC Title : GATE VALVE DN80 PN10",
+      "Participated On": "02-03-2025 01:44:22",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MII MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "10",
+      "Seller Name": "PRESSURE VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : PRESSURE Model : 80 NB X PN10 CS SLUICE GATE VALVE FLANGE Title : GATE VALVE DN80 PN10",
+      "Participated On": "23-02-2025 10:47:28",
+      "EMD Status": "Start-up",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "11",
+      "Seller Name": "UNICK CONTROL SYSTEM Under PMA",
+      "Offered Item": "Make : UNICK Model : GATE VALVE DN80 PN10 Title : GATE VALVE DN80 PN10",
+      "Participated On": "27-02-2025 13:32:10",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "12",
+      "Seller Name": "WELL CAST INDUSTRIES Under PMA",
+      "Offered Item": "Make : WCI WELLCAST INDUSTRIES Model : SGTV80PN10 Title : GATE VALVE DN80 PN10",
+      "Participated On": "07-03-2025 19:52:21",
+      "EMD Status": "Registered with designated Agency / Authority",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "NUPRO ENGINEERING SYNDICATE PVT LTD (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE DN80 PN10,GATE VALVE DN100 PN10,GATE VALVE DN65 PN10",
+      "Total Price": "` 420264.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "AGS VALVES PVT LTD (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE DN80 PN10,GATE VALVE DN100 PN10,GATE VALVE DN65 PN10",
+      "Total Price": "` 511176.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "JAYANT ENGINEERING AND MARKETING PVT LTD (MSE,MII) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : GATE VALVE DN80 PN10,GATE VALVE DN100 PN10,GATE VALVE DN65 PN10",
+      "Total Price": "` 761806.32",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7503262"
+}

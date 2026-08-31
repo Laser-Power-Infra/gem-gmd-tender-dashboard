@@ -1,0 +1,33 @@
+{
+  "source_id": "6340639",
+  "bid_number": "GEM/2024/R/331738",
+  "bid_title_type": "RA DETAILS",
+  "bid_details": {
+    "RA Number": "GEM/2024/R/331738",
+    "RA Status": "Active",
+    "Quantity": "10",
+    "RA Validity (From End Date)": "180 ( Days)",
+    "RA Start Date / Time": "25-04-2024 8:00 PM",
+    "RA End Date / Time": "26-04-2024 8:00 PM"
+  },
+  "buyer_details": {
+    "Name": "Aman Kumar",
+    "Address": "Aman Kumar,buyer7.bsp.jh@gembuyer.in,mjunction office, Administrative Building, Bokaro Steel Plant, Bokaro Steel City.,BOKARO,JHARKHAND,827001,India,-9771974586-",
+    "Ministry": "Ministry Of Steel",
+    "Department": "Steel Authority Of India Limited",
+    "Organisation": "Bokaro Steel Plant",
+    "Office": "Bslp61"
+  },
+  "technical_evaluation": [],
+  "financial_evaluation": [],
+  "ra_info": {
+    "is_ra": true,
+    "ra_number": "GEM/2024/R/331738",
+    "ra_status": "RA Created / Active",
+    "ra_start_date": "25-04-2024 8:00 PM",
+    "ra_end_date": "26-04-2024 8:00 PM",
+    "parent_bid_number": "GEM/2024/B/4619740"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/6340639",
+  "parent_bid_number": "GEM/2024/B/4619740"
+}

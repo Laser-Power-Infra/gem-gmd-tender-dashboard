@@ -1,0 +1,96 @@
+{
+  "source_id": "7314617",
+  "bid_number": "GEM/2024/B/5764896",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2024/B/5764896",
+    "Bid Status": "Active",
+    "Quantity": "18",
+    "Bid Validity (From End Date)": "60 ( Days)",
+    "Bid Start Date / Time": "31-12-2024 09:57:36",
+    "Bid End Date / Time": "20-01-2025 16:00:00",
+    "Bid Opening Date / Time": "20-01-2025 16:30:00",
+    "Average Turn Over of Last 3 Years": "Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Rajesh Kumar Ojha",
+    "Address": "Rajesh Kumar Ojha,buyer618.ongcl.gj@gembuyer.in,DRILLING SERVICES, ONGC, CAMBAY ASSET, P.O. KANSARI, KHAMBHAT - 388630, DIST. ANAND, GUJARAT.,Anand,GUJARAT,388630,India,02698-227670-",
+    "Ministry": "Ministry Of Petroleum And Natural Gas",
+    "Department": "Na",
+    "Organisation": "Oil And Natural Gas Corporation Limited",
+    "Office": "Cambay Asset"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : BUTTERFLY VALVE 125MM PN1.6",
+      "Participated On": "20-01-2025 10:34:25",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "OMVAL CONTROLS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : OM Model : 5\"CWBV0IC",
+      "Participated On": "04-01-2025 18:15:06",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "OSKAR INDUSTRIES Under PMA",
+      "Offered Item": "Make : OSKO Model : BFV04",
+      "Participated On": "19-01-2025 16:18:17",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "Valvco International Under PMA",
+      "Offered Item": "Make : QINN Model : Q-80",
+      "Participated On": "15-01-2025 12:18:40",
+      "MSE/MII Status": "MSE",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "OSKAR INDUSTRIES (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) a",
+      "Total Price": "` 32684.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "Valvco International (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) a",
+      "Total Price": "` 46700.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "OMVAL CONTROLS PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) a",
+      "Total Price": "` 47266.00",
+      "Rank": "L3"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED (MSE) ( MSE Social Category:General ) Under PMA",
+      "Offered Item": "Item Categories : Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) as per IS 13095,Butterfly Valves (V2) a",
+      "Total Price": "` 93559.84",
+      "Rank": "L4"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7314617"
+}

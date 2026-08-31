@@ -1,0 +1,111 @@
+{
+  "source_id": "7526108",
+  "bid_number": "GEM/2025/B/5953314",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/5953314",
+    "Bid Status": "Active",
+    "Quantity": "10",
+    "Bid Validity (From End Date)": "15 ( Days)",
+    "Bid Start Date / Time": "15-02-2025 13:05:16",
+    "Bid End Date / Time": "25-02-2025 14:00:00",
+    "Bid Opening Date / Time": "25-02-2025 14:30:00"
+  },
+  "buyer_details": {
+    "Name": "Shamkala Surdasji Chaudhari",
+    "Address": "Shamkala Surdasji Chaudhari,buycon5531.rdprdm.mh@gembuyer.in,GP SUKADIDE, MSH-271, Bhandara Tumsar Road, Tumsar, Tumsar, Maharashtra 441912,Bhandara,MAHARASHTRA,441912,India",
+    "State": "Maharashtra",
+    "Department": "Rural Development And Panchayat Raj Department Maharashtra",
+    "Organisation": "N/a",
+    "Office": "Msh271 Bhandara Tumsar Road Tumsar Tumsar"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AARKO MANUFACTURING COMPANY Under PMA",
+      "Offered Item": "Make : AARKO Model : AARKO SLUICE VALVE 250MM PN 1.0",
+      "Participated On": "24-02-2025 13:04:46",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "CAIR EUROMATIC AUTOMATION PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : CISVSARP10-250",
+      "Participated On": "18-02-2025 11:32:04",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE 250MM PN1.0",
+      "Participated On": "24-02-2025 12:53:40",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "LAKISHA ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : CISVSARP10-250",
+      "Participated On": "20-02-2025 17:33:54",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "RIDHAN ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : CISVSARP10-250",
+      "Participated On": "20-02-2025 17:31:58",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "SHREE COMPUTER AND ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : CISVSARP10-250",
+      "Participated On": "20-02-2025 17:36:08",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "SHREE JAGANNATH IRON FOUNDRY PVT LTD Under PMA",
+      "Offered Item": "Make : NA Model : SLUICE VALVE",
+      "Participated On": "17-02-2025 13:54:10",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "RIDHAN ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 9000.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "LAKISHA ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 9500.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "SHREE COMPUTER & ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 9800.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/7526108"
+}

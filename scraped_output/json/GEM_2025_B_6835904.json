@@ -1,0 +1,121 @@
+{
+  "source_id": "8525295",
+  "bid_number": "GEM/2025/B/6835904",
+  "bid_title_type": "BID DETAILS",
+  "bid_details": {
+    "Bid Number": "GEM/2025/B/6835904",
+    "Bid Status": "Active",
+    "Quantity": "5",
+    "Bid Validity (From End Date)": "90 ( Days)",
+    "Bid Start Date / Time": "07-11-2025 13:04:07",
+    "Bid End Date / Time": "17-11-2025 14:00:00",
+    "Bid Opening Date / Time": "17-11-2025 14:30:00",
+    "Average Turn Over of Last 3 Years": "1 Lakhs",
+    "Experience with Gov. Required": "Years"
+  },
+  "buyer_details": {
+    "Name": "Mahendra Kumar",
+    "Address": "Mahendra Kumar,buycon1.npp.agar@gembuyer.in,Nagar Palika Parishad Bah Agra,Agra,UTTAR PRADESH,283104,India,05614-299001-",
+    "State": "Uttar Pradesh",
+    "Department": "Urban Development Department Uttar Pradesh",
+    "Organisation": "E-municipalities - Eservices To Citizens And Employees Of Urban Local Bodies Of Uttar Pradesh",
+    "Office": "Nagar Palika Parishad Bah Agra"
+  },
+  "technical_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AVNI TRADERS Under PMA",
+      "Offered Item": "Make : NA Model : CISV 100",
+      "Participated On": "17-11-2025 12:48:09",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "G.M. DALUI & SONS PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : DALUI Model : SLUICE VALVE PN-1.6 100MM",
+      "Participated On": "17-11-2025 13:21:12",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "GETWAY VALVES PRIVATE LIMITED Under PMA",
+      "Offered Item": "Make : NA Model : CISVFEPN16-100",
+      "Participated On": "17-11-2025 11:49:09",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "4",
+      "Seller Name": "LARA MAINTENANCE AND CONSTRUCTION Under PMA",
+      "Offered Item": "Make : NA Model : CISV 100",
+      "Participated On": "17-11-2025 11:47:35",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    },
+    {
+      "S.No.": "5",
+      "Seller Name": "MINAR ENGINEERING CO. Under PMA",
+      "Offered Item": "Make : M.E.C--MINAR ENGINEERING CO. Model : Sluice Valve , Size 100 mm",
+      "Participated On": "15-11-2025 17:13:54",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "6",
+      "Seller Name": "PLASTO TEXMO SALES CORPORATION Under PMA",
+      "Offered Item": "Make : ajanta Model : ACISVPN16-100",
+      "Participated On": "08-11-2025 10:40:10",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "7",
+      "Seller Name": "RAJAPUR IRON & STEEL INDUSTRIES Under PMA",
+      "Offered Item": "Make : NA Model : CISVFEPN16-100",
+      "Participated On": "10-11-2025 16:37:27",
+      "MSE/MII Status": "MSE",
+      "Status": "Disqualified"
+    },
+    {
+      "S.No.": "8",
+      "Seller Name": "S.K.S ENTERPRISES Under PMA",
+      "Offered Item": "Make : NA Model : CISV 100",
+      "Participated On": "16-11-2025 21:22:23",
+      "MSE/MII Status": "N/A",
+      "Status": "Qualified"
+    }
+  ],
+  "financial_evaluation": [
+    {
+      "S.No.": "1",
+      "Seller Name": "AVNI TRADERS Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 173500.00",
+      "Rank": "L1"
+    },
+    {
+      "S.No.": "2",
+      "Seller Name": "LARA MAINTENANCE AND CONSTRUCTION Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 174500.00",
+      "Rank": "L2"
+    },
+    {
+      "S.No.": "3",
+      "Seller Name": "S.K.S ENTERPRISES Under PMA",
+      "Offered Item": "Item Categories : Sluice Valve For Water Works Purposes (50 To 1200 Mm Size) (V2) As Per Is 14846",
+      "Total Price": "` 177500.00",
+      "Rank": "L3"
+    }
+  ],
+  "ra_info": {
+    "is_ra": false,
+    "ra_number": "",
+    "ra_status": "Active",
+    "ra_start_date": "N/A",
+    "ra_end_date": "N/A"
+  },
+  "bid_result_url": "https://bidplus.gem.gov.in/bidding/bid/getBidResultView/8525295"
+}
