@@ -180,6 +180,14 @@ def load_all_json_bids():
     remarks = load_remarks()
     statuses = load_statuses()
     
+    valid_input_ids = set()
+    if os.path.exists(BIDS_INPUT_FILE):
+        with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f_in:
+            for line in f_in:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    valid_input_ids.add(line.upper())
+    
     for filepath in json_files:
         if os.path.basename(filepath).startswith("temp_"):
             continue
@@ -200,6 +208,19 @@ def load_all_json_bids():
                 parent_b = data.get('parent_bid_number') or ra_inf.get('parent_bid_number')
                 if '/R/' in bid_no.upper() and parent_b:
                     bid_no = parent_b
+
+                # Filter out files that do not belong to bids_input_sample.txt
+                if valid_input_ids:
+                    raw_upper = raw_bid_no.upper()
+                    bid_upper = bid_no.upper()
+                    parent_upper = (parent_b or '').upper()
+                    ra_upper = (ra_no or '').upper()
+                    source_upper = str(data.get('source_id', '')).upper()
+
+                    if not (raw_upper in valid_input_ids or bid_upper in valid_input_ids or 
+                            parent_upper in valid_input_ids or ra_upper in valid_input_ids or 
+                            source_upper in valid_input_ids):
+                        continue
 
                 title_type = str(data.get('bid_title_type', '')).upper()
                 has_r_in_no = '/R/' in raw_bid_no.upper()

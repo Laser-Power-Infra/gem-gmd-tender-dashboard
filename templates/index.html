@@ -161,7 +161,10 @@
             <option value="ra_only">⚡ Reverse Auction (RA) Bids</option>
             <option value="l1_available">Financial Evaluated (L1)</option>
             <option value="dalui_participated">🏢 G.M. DALUI Participated</option>
+            <option value="dalui_qualified">🟢 G.M. DALUI Qualified</option>
+            <option value="dalui_disqualified">🔴 G.M. DALUI Disqualified</option>
             <option value="dalui_l1">🏆 G.M. DALUI Won L1</option>
+            <option value="dalui_l2">🔵 G.M. DALUI L2 (Missed L1)</option>
           </select>
         </div>
 
@@ -226,13 +229,21 @@
                 </div>
                 <div class="col-dropdown" data-dropdown="qty"></div>
               </th>
-              <th class="sortable" data-col="buyer">
+              <th class="sortable" data-col="buyer_name">
                 <div class="th-wrap">
-                  <span class="th-label">Buyer & Ministry</span>
+                  <span class="th-label">Buyer Name</span>
                   <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
                   <span class="sort-indicator"></span>
                 </div>
-                <div class="col-dropdown" data-dropdown="buyer"></div>
+                <div class="col-dropdown" data-dropdown="buyer_name"></div>
+              </th>
+              <th class="sortable" data-col="buyer_ministry">
+                <div class="th-wrap">
+                  <span class="th-label">Ministry / Department</span>
+                  <button class="th-filter-btn" title="Filter column"><i data-lucide="filter"></i></button>
+                  <span class="sort-indicator"></span>
+                </div>
+                <div class="col-dropdown" data-dropdown="buyer_ministry"></div>
               </th>
               <th class="sortable" data-col="l1_seller">
                 <div class="th-wrap">

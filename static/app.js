@@ -11,12 +11,18 @@ const COLUMNS = [
   { key: 'ra_date',       label: 'RA Date', type: 'date', getVal: b => (b.ra_info && b.ra_info.is_ra && b.ra_info.ra_start_date && b.ra_info.ra_start_date !== 'N/A') ? b.ra_info.ra_start_date : '' },
   { key: 'bid_date',      label: 'Bid Date', type: 'date', getVal: b => getBidDateVal(b) },
   { key: 'qty',           label: 'Quantity', type: 'multi', getVal: b => (b.bid_details && b.bid_details['Quantity']) || 'N/A' },
-  { key: 'buyer',         label: 'Buyer & Ministry', type: 'multi', getVal: b => (b.buyer_details && b.buyer_details['Name']) || 'N/A' },
+  { key: 'buyer_name',    label: 'Buyer Name', type: 'multi', getVal: b => (b.buyer_details && b.buyer_details['Name']) || 'N/A' },
+  { key: 'buyer_ministry',label: 'Ministry / Department', type: 'multi', getVal: b => getBuyerMinistry(b) },
   { key: 'l1_seller',     label: 'Financial L1 Leader', type: 'multi', getVal: b => getL1SellerName(b) },
   { key: 'l1_price',      label: 'L1 Price', type: 'multi', getVal: b => getL1Price(b) },
   { key: 'dalui',         label: 'G.M. DALUI Position & Price Gap', type: 'multi', getVal: getDaluiCategory },
   { key: 'remark',        label: 'User Remarks', type: 'multi', getVal: b => b.user_remark || '' },
 ];
+
+function getBuyerMinistry(b) {
+  const bd = b.buyer_details || {};
+  return bd['Ministry'] || bd['Department'] || bd['Organisation'] || bd['Office'] || 'N/A';
+}
 
 function parseGeMRaEndDate(dateStr) {
   if (!dateStr || dateStr === 'N/A') return null;
@@ -126,6 +132,38 @@ function setupEventListeners() {
   document.getElementById('btnExportCsv').addEventListener('click', () => {
     window.location.href = '/api/csv';
   });
+
+  // Make Top Summary Cards Clickable to filter table live
+  const cardClickMap = [
+    { id: 'cStatParticipated', val: 'dalui_participated' },
+    { id: 'cStatQualified', val: 'dalui_qualified' },
+    { id: 'cStatDisqualified', val: 'dalui_disqualified' },
+    { id: 'cStatWonL1', val: 'dalui_l1' },
+    { id: 'cStatMissedL2', val: 'dalui_l2' },
+  ];
+
+  cardClickMap.forEach(item => {
+    const el = document.getElementById(item.id);
+    if (el) {
+      const card = el.closest('.c-metric');
+      if (card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          document.getElementById('filterRankType').value = item.val;
+          filterBidsTable();
+        });
+      }
+    }
+  });
+
+  const applyCard = document.querySelector('.metric-card.card-blue');
+  if (applyCard) {
+    applyCard.style.cursor = 'pointer';
+    applyCard.addEventListener('click', () => {
+      document.getElementById('filterRankType').value = 'dalui_participated';
+      filterBidsTable();
+    });
+  }
 
   // Close dropdowns on outside click or scroll
   document.addEventListener('click', (e) => {
@@ -559,7 +597,10 @@ function filterBidsTable() {
     if (rankType === 'ra_only' && !raInf.is_ra) return false;
     if (rankType === 'l1_available' && finEval.length === 0) return false;
     if (rankType === 'dalui_participated' && !cAn.participated) return false;
+    if (rankType === 'dalui_qualified' && !cAn.is_qualified) return false;
+    if (rankType === 'dalui_disqualified' && !cAn.is_disqualified) return false;
     if (rankType === 'dalui_l1' && !cAn.is_l1) return false;
+    if (rankType === 'dalui_l2' && !cAn.is_l2 && cAn.rank !== 'L2') return false;
 
     // 4. Date Range Filter
     if (dateFrom || dateTo) {
@@ -781,8 +822,10 @@ function renderBidsTable(bids) {
         </td>
         <td><strong>${qty}</strong></td>
         <td>
-          <div><strong>${buyerName}</strong></div>
-          <small class="text-muted">${ministry}</small>
+          <strong style="color:var(--text-main); font-size:0.875rem;">${escapeHtml(buyerName)}</strong>
+        </td>
+        <td>
+          <span class="text-muted" style="font-size:0.825rem; font-weight:500;">${escapeHtml(ministry)}</span>
         </td>
         <td>
           <div style="max-width: 180px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">

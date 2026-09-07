@@ -1,0 +1,44 @@
+# ==========================================
+# Scraped Output Data & Downloads (DO NOT COMMIT)
+# ==========================================
+scraped_output/
+scraped_output/*
+!scraped_output/.gitkeep
+
+# Temporary HTML & PDF Scraped Data
+sample_bid.html
+sample_financial_bid.html
+test.pdf
+test_output.pdf
+txt/
+
+# ==========================================
+# Python & Environment Virtual Folders
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# ==========================================
+# Application Logs & Diagnostics
+# ==========================================
+*.log
+logs/
+*.tmp
+
+# ==========================================
+# Operating System & IDE Files
+# ==========================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
