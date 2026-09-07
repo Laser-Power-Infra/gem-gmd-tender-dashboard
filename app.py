@@ -569,12 +569,24 @@ def background_2h_scheduler():
 
         time.sleep(SCHEDULER_INTERVAL)
 
-def start_scheduler():
-    t = threading.Thread(target=background_2h_scheduler, daemon=True)
-    t.start()
+_scheduler_started = False
+_scheduler_lock = threading.Lock()
 
-# Start scheduler daemon automatically on import/start
+def start_scheduler():
+    global _scheduler_started
+    with _scheduler_lock:
+        if not _scheduler_started:
+            _scheduler_started = True
+            t = threading.Thread(target=background_2h_scheduler, daemon=True)
+            t.start()
+            print("[DOCKER AUTO-START] 2-Hour Auto-Scheduler launched automatically on container startup.", flush=True)
+
+# Start scheduler daemon automatically on container import/start
 start_scheduler()
+
+@app.before_request
+def auto_start_scheduler_on_request():
+    start_scheduler()
 
 @app.route('/api/health', methods=['GET'])
 def get_health():
