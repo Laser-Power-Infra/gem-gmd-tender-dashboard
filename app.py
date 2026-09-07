@@ -502,13 +502,88 @@ def trigger_scraper():
         'items': items_to_scrape
     })
 
+SCHEDULER_INTERVAL = int(os.environ.get('SCHEDULER_INTERVAL', 7200))  # Default 2 hours (7200s)
+
+scheduler_state = {
+    'enabled': True,
+    'interval_seconds': SCHEDULER_INTERVAL,
+    'interval_hours': round(SCHEDULER_INTERVAL / 3600.0, 2),
+    'last_run': None,
+    'next_run': None,
+    'last_scraped_count': 0,
+    'status': 'initialized'
+}
+
+def background_2h_scheduler():
+    """Background daemon thread that scans bids_input_sample.txt every 2 hours."""
+    print(f"\n[SCHEDULER] 2-Hour Auto-Scanner Initialized (Interval: {SCHEDULER_INTERVAL} seconds / {scheduler_state['interval_hours']} hours)", flush=True)
+    # Perform first scan after 10 seconds startup delay
+    time.sleep(10)
+    
+    while True:
+        try:
+            now = datetime.now(timezone.utc)
+            scheduler_state['last_run'] = now.isoformat()
+            next_timestamp = now.timestamp() + SCHEDULER_INTERVAL
+            scheduler_state['next_run'] = datetime.fromtimestamp(next_timestamp, timezone.utc).isoformat()
+            scheduler_state['status'] = 'scanning'
+
+            print(f"\n[SCHEDULER] Starting 2-hour scheduled scan of '{BIDS_INPUT_FILE}' at {now.strftime('%Y-%m-%d %H:%M:%S UTC')}...", flush=True)
+
+            items_to_check = []
+            if os.path.exists(BIDS_INPUT_FILE):
+                with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#'):
+                            items_to_check.append(line)
+
+            # Find missing / unscraped items
+            existing_bids = load_all_json_bids()
+            found_set = set()
+            for b in existing_bids:
+                bn = str(b.get('bid_number', '')).upper()
+                rn = str(b.get('ra_info', {}).get('ra_number', '')).upper()
+                raw = str(b.get('raw_bid_no', '')).upper()
+                if bn: found_set.add(bn)
+                if rn: found_set.add(rn)
+                if raw: found_set.add(raw)
+
+            unscraped = [item for item in items_to_check if item.upper() not in found_set]
+
+            if unscraped and not scraper_state.get('is_running'):
+                print(f"[SCHEDULER] Found {len(unscraped)} unscraped IDs in {BIDS_INPUT_FILE}. Auto-triggering scraper...", flush=True)
+                scheduler_state['last_scraped_count'] = len(unscraped)
+                run_batch_scrape(unscraped)
+            else:
+                if scraper_state.get('is_running'):
+                    print(f"[SCHEDULER] Scraper is already running. Skipping auto-trigger.", flush=True)
+                else:
+                    print(f"[SCHEDULER] All {len(items_to_check)} items in {BIDS_INPUT_FILE} are up to date.", flush=True)
+                scheduler_state['last_scraped_count'] = 0
+
+            scheduler_state['status'] = 'idle'
+        except Exception as e:
+            print(f"[SCHEDULER] Error in 2-hour scan loop: {e}", flush=True)
+            scheduler_state['status'] = 'error'
+
+        time.sleep(SCHEDULER_INTERVAL)
+
+def start_scheduler():
+    t = threading.Thread(target=background_2h_scheduler, daemon=True)
+    t.start()
+
+# Start scheduler daemon automatically on import/start
+start_scheduler()
+
 @app.route('/api/health', methods=['GET'])
 def get_health():
     uptime = round(time.time() - START_TIME, 2)
     response = jsonify({
         'status': 'ok',
         'uptime': uptime,
-        'timestamp': datetime.now(timezone.utc).isoformat()
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'scheduler': scheduler_state
     })
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
@@ -516,6 +591,10 @@ def get_health():
 @app.route('/api/scraper-status', methods=['GET'])
 def get_scraper_status():
     return jsonify(scraper_state)
+
+@app.route('/api/scheduler-status', methods=['GET'])
+def get_scheduler_status():
+    return jsonify(scheduler_state)
 
 if __name__ == '__main__':
     import socket
@@ -536,5 +615,6 @@ if __name__ == '__main__':
     print(f"[SERVER] Starting GeM Bid Scraper Dashboard on Network")
     print(f"  • Local Machine : http://127.0.0.1:{port}")
     print(f"  • Local Network : http://{local_ip}:{port}")
+    print(f"  • Auto Scheduler: Running every 2 Hours ({SCHEDULER_INTERVAL}s)")
     print(f"=======================================================\n")
     app.run(host='0.0.0.0', port=port, debug=False)

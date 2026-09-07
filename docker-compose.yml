@@ -12,6 +12,7 @@ services:
     environment:
       - PORT=6001
       - PYTHONUNBUFFERED=1
+      - SCHEDULER_INTERVAL=7200
     volumes:
       - ./scraped_output:/app/scraped_output
       - ./bids_input_sample.txt:/app/bids_input_sample.txt
