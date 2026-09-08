@@ -525,9 +525,78 @@ function updateStats(stats) {
   setElText('cStatMissedL2Pct', participated > 0 ? `(${Math.round((l2Missed / participated) * 100)}%)` : '');
 }
 
+function computeStatsFromBids(bidsArray) {
+  let totalBids = bidsArray.length;
+  let totalRa = 0;
+  let totalTechQual = 0;
+  let totalTechDisqual = 0;
+  let totalFinL1 = 0;
+
+  let daluiParticipated = 0;
+  let daluiQualifiedExclL1 = 0;
+  let daluiQualifiedTotal = 0;
+  let daluiDisqualified = 0;
+  let daluiL1 = 0;
+  let daluiL2 = 0;
+
+  bidsArray.forEach(b => {
+    const raInf = b.ra_info || {};
+    if (raInf.is_ra) totalRa++;
+
+    const tEval = b.technical_evaluation || [];
+    const fEval = b.financial_evaluation || [];
+
+    if (Array.isArray(tEval)) {
+      tEval.forEach(t => {
+        if (typeof t === 'object' && t !== null) {
+          const st = String(t.Status || '').toUpperCase();
+          if (st.includes('QUALIFIED') && !st.includes('DISQUALIFIED')) totalTechQual++;
+          else if (st.includes('DISQUALIFIED')) totalTechDisqual++;
+        }
+      });
+    }
+
+    if (Array.isArray(fEval) && fEval.length > 0) totalFinL1++;
+
+    const cAn = b.company_analysis || {};
+    if (cAn.participated) {
+      daluiParticipated++;
+      if (cAn.is_disqualified) {
+        daluiDisqualified++;
+      } else if (cAn.is_l1) {
+        daluiL1++;
+        daluiQualifiedTotal++;
+      } else if (cAn.is_qualified) {
+        daluiQualifiedTotal++;
+        daluiQualifiedExclL1++;
+      }
+
+      if (cAn.is_l2 || cAn.rank === 'L2') {
+        daluiL2++;
+      }
+    }
+  });
+
+  return {
+    total_bids: totalBids,
+    total_ra: totalRa,
+    qualified_sellers: totalTechQual,
+    disqualified_sellers: totalTechDisqual,
+    financial_l1_evaluated: totalFinL1,
+    company_stats: {
+      name: 'G.M. DALUI',
+      participated: daluiParticipated,
+      qualified: daluiQualifiedExclL1,
+      qualified_total: daluiQualifiedTotal,
+      disqualified: daluiDisqualified,
+      l1_won: daluiL1,
+      l2_missed: daluiL2
+    }
+  };
+}
+
 function parseGeMDate(dateStr) {
   if (!dateStr) return null;
-  // Format e.g., "18-01-2024 13:22:28" or "18-01-2024"
   const parts = dateStr.trim().split(' ')[0].split('-');
   if (parts.length === 3) {
     const d = parseInt(parts[0], 10);
@@ -538,8 +607,6 @@ function parseGeMDate(dateStr) {
   return null;
 }
 
-// Parse an <input type="date"> value (YYYY-MM-DD) as a local-time Date so it
-// matches the local dates produced by parseGeMDate.
 function parseFilterDate(dateStr) {
   if (!dateStr) return null;
   const parts = dateStr.split('-');
@@ -564,12 +631,10 @@ function filterBidsTable() {
   const dateTo = dateToStr ? new Date(dateToStr) : null;
   if (dateTo) dateTo.setHours(23, 59, 59, 999);
 
-  const filtered = allBidsData.filter(b => {
+  const matchesGlobalFilters = (b) => {
     const bDetails = b.bid_details || {};
     const buyerDetails = b.buyer_details || {};
     const finEval = b.financial_evaluation || [];
-    const l1L2Diff = b.l1_l2_diff;
-    const cAn = b.company_analysis || {};
     const raInf = b.ra_info || {};
 
     // 1. Keyword search
@@ -593,17 +658,7 @@ function filterBidsTable() {
       if (rawQty < minQtyVal) return false;
     }
 
-    // 3. Rank / RA Filter
-    if (rankType === 'ra_only' && !raInf.is_ra) return false;
-    if (rankType === 'l1_available' && finEval.length === 0) return false;
-    if (rankType === 'dalui_participated' && !cAn.participated) return false;
-    if (rankType === 'dalui_qualified' && (!cAn.is_qualified || cAn.is_l1)) return false;
-    if (rankType === 'dalui_qualified_all' && !cAn.is_qualified) return false;
-    if (rankType === 'dalui_disqualified' && !cAn.is_disqualified) return false;
-    if (rankType === 'dalui_l1' && !cAn.is_l1) return false;
-    if (rankType === 'dalui_l2' && !cAn.is_l2 && cAn.rank !== 'L2') return false;
-
-    // 4. Date Range Filter
+    // 3. Date Range Filter
     if (dateFrom || dateTo) {
       let targetDateStr = '';
       if (dateType === 'start') targetDateStr = bDetails['Bid Start Date / Time'];
@@ -617,12 +672,34 @@ function filterBidsTable() {
     }
 
     return true;
+  };
+
+  const bidsMatchingBase = allBidsData.filter(matchesGlobalFilters);
+  const bidsMatchingColFilters = applyColumnFilters(bidsMatchingBase);
+
+  // Dynamically update card numbers based on active search/dates/column filters
+  const dynamicStats = computeStatsFromBids(bidsMatchingColFilters);
+  updateStats(dynamicStats);
+
+  // Filter for specific rank/status option
+  const finalFiltered = bidsMatchingColFilters.filter(b => {
+    const cAn = b.company_analysis || {};
+    const raInf = b.ra_info || {};
+    const finEval = b.financial_evaluation || [];
+
+    if (rankType === 'ra_only' && !raInf.is_ra) return false;
+    if (rankType === 'l1_available' && finEval.length === 0) return false;
+    if (rankType === 'dalui_participated' && !cAn.participated) return false;
+    if (rankType === 'dalui_qualified' && (!cAn.is_qualified || cAn.is_l1)) return false;
+    if (rankType === 'dalui_qualified_all' && !cAn.is_qualified) return false;
+    if (rankType === 'dalui_disqualified' && !cAn.is_disqualified) return false;
+    if (rankType === 'dalui_l1' && !cAn.is_l1) return false;
+    if (rankType === 'dalui_l2' && !cAn.is_l2 && cAn.rank !== 'L2') return false;
+
+    return true;
   });
 
-  // Apply per-column header filters (multi = OR within column; date = within range)
-  const withColFilters = applyColumnFilters(filtered);
-
-  const sorted = sortBids(withColFilters);
+  const sorted = sortBids(finalFiltered);
   isRenderingTable = true;
   renderBidsTable(sorted);
   setTimeout(() => { isRenderingTable = false; }, 200);
