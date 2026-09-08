@@ -695,26 +695,42 @@ function renderBidsTable(bids) {
     const l1Price = finEval.length > 0 ? formatPrice(finEval[0]['Total Price'] || finEval[0]['Total L1 Price']) : 'N/A';
 
     const cAn = b.company_analysis || {};
-    let posCell = '<span class="badge badge-slate">N/A</span>';
+    const GMD_LABEL = 'G.M. DALUI & SONS';
+    let posCell = '<span class="badge badge-slate">—</span>';
 
     if (cAn.participated) {
+      const myPrice = cAn.my_price && cAn.my_price > 0
+        ? `<div style="font-size:0.73rem;color:#64748b;margin-top:4px;">Our Price: <strong style="color:#0f172a;">₹ ${Number(cAn.my_price).toLocaleString('en-IN')}</strong></div>`
+        : '';
+      const rankPill = cAn.rank && cAn.rank !== 'N/A'
+        ? `<span style="font-size:0.7rem;font-weight:700;color:#1d4ed8;background:#dbeafe;padding:1px 7px;border-radius:20px;display:inline-block;margin-right:4px;">${cAn.rank}</span>`
+        : '';
+
       if (cAn.is_l1) {
-        posCell = `<span class="badge badge-gold" style="font-size:0.75rem;"><i data-lucide="award"></i> WON L1!</span>`;
+        posCell = `
+          <div style="font-size:0.78rem;font-weight:700;color:#0f172a;margin-bottom:4px;">${GMD_LABEL}</div>
+          <span class="badge badge-gold"><i data-lucide="award"></i> WON L1!</span>
+          ${myPrice}`;
       } else if (cAn.is_disqualified) {
-        posCell = `<span class="badge badge-red" style="font-size:0.75rem;"><i data-lucide="x-circle"></i> Disqualified</span>`;
+        posCell = `
+          <div style="font-size:0.78rem;font-weight:700;color:#0f172a;margin-bottom:4px;">${GMD_LABEL}</div>
+          <span class="badge badge-red"><i data-lucide="x-circle"></i> Disqualified</span>
+          ${myPrice}`;
       } else if (cAn.diff_amount > 0) {
         posCell = `
-          <div><strong class="text-primary">${cAn.rank || 'Evaluated'}</strong> (${formatPrice(cAn.my_price.toString())})</div>
-          <span class="badge badge-red" style="font-size:0.725rem; margin-top:2px;">
-            +₹ ${cAn.diff_amount.toLocaleString('en-IN')} (+${cAn.diff_pct}% vs L1)
-          </span>`;
+          <div style="font-size:0.78rem;font-weight:700;color:#0f172a;margin-bottom:4px;">${GMD_LABEL}</div>
+          <div>${rankPill}<span class="badge badge-amber">+₹ ${Number(cAn.diff_amount).toLocaleString('en-IN')} (+${cAn.diff_pct}% vs L1)</span></div>
+          ${myPrice}`;
       } else {
-        posCell = `<span class="badge badge-green" style="font-size:0.75rem;">${cAn.rank || 'Qualified'}</span>`;
+        posCell = `
+          <div style="font-size:0.78rem;font-weight:700;color:#0f172a;margin-bottom:4px;">${GMD_LABEL}</div>
+          <span class="badge badge-green">${rankPill}Qualified</span>
+          ${myPrice}`;
       }
     } else if (diff) {
       posCell = `
         <div><strong>${formatPrice(diff.l2_price.toString())}</strong></div>
-        <span class="badge badge-slate" style="font-size:0.7rem;">L2: +₹ ${diff.diff_amount.toLocaleString('en-IN')} (+${diff.diff_pct}%)</span>`;
+        <span class="badge badge-slate" style="font-size:0.7rem;margin-top:3px;">L2: +₹ ${diff.diff_amount.toLocaleString('en-IN')} (+${diff.diff_pct}%)</span>`;
     }
 
     const raBadge = raInf.is_ra ? `<span class="badge badge-purple" style="font-size:0.65rem; margin-left:4px;" title="Reverse Auction Active"><i data-lucide="zap"></i> RA</span>` : '';
