@@ -939,7 +939,7 @@ function renderBidsTable(bids) {
           </div>
         </td>
         <td style="text-align: right;">
-          <button class="btn btn-sm btn-secondary" onclick="viewBidDetails('${bidNo}')" style="margin-right:4px;">
+          <button class="btn btn-sm btn-outline-primary" onclick="viewBidDetails('${bidNo}')" style="margin-right:4px;">
             <i data-lucide="eye"></i> View Details
           </button>
           <button class="btn btn-sm btn-primary" onclick="openPdfModal('${pdfFilename}', '${bidNo}')">
