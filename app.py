@@ -196,11 +196,11 @@ def load_all_json_bids():
                 data = json.load(f)
                 
                 # Check if data already has ra_info with parent bid_number
-                b_details = data.get('bid_details', {})
-                raw_bid_no = data.get('bid_number', os.path.splitext(os.path.basename(filepath))[0])
+                b_details = data.get('bid_details') or {}
+                raw_bid_no = data.get('bid_number') or os.path.splitext(os.path.basename(filepath))[0]
                 
-                # Extract RA details
-                ra_inf = data.get('ra_info', {})
+                # Extract RA details (ra_info may be explicitly null in some JSON files)
+                ra_inf = data.get('ra_info') or {}
                 ra_no = ra_inf.get('ra_number') or b_details.get('RA Number') or (raw_bid_no if '/R/' in raw_bid_no.upper() else 'N/A')
                 
                 # Determine primary bid number (always prefer /B/ format if available)
@@ -563,9 +563,12 @@ def background_2h_scheduler():
             existing_bids = load_all_json_bids()
             found_set = set()
             for b in existing_bids:
-                bn = str(b.get('bid_number', '')).upper()
-                rn = str(b.get('ra_info', {}).get('ra_number', '')).upper()
-                raw = str(b.get('raw_bid_no', '')).upper()
+                if not isinstance(b, dict):
+                    continue
+                bn = str(b.get('bid_number') or '').upper()
+                ra_inf_b = b.get('ra_info') or {}
+                rn = str(ra_inf_b.get('ra_number') or '').upper()
+                raw = str(b.get('raw_bid_no') or '').upper()
                 if bn: found_set.add(bn)
                 if rn: found_set.add(rn)
                 if raw: found_set.add(raw)
