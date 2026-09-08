@@ -587,18 +587,23 @@ def background_2h_scheduler():
 
             unscraped = [item for item in items_to_check if item.upper() not in found_set]
 
-            if unscraped and not scraper_state.get('is_running'):
-                print(f"[SCHEDULER] Found {len(unscraped)} unscraped IDs in {BIDS_INPUT_FILE}. Auto-triggering scraper...", flush=True)
-                scheduler_state['last_scraped_count'] = len(unscraped)
-                run_batch_scrape(unscraped)
+            # Priority 1: Scrape any missing/new items
+            # Priority 2: Re-scrape all items in bids_input_sample.txt to keep data updated every 2 hours
+            target_items = unscraped if unscraped else items_to_check
+
+            if target_items and not scraper_state.get('is_running'):
+                mode_desc = f"{len(unscraped)} missing ID(s)" if unscraped else f"all {len(target_items)} ID(s) (2h auto-refresh)"
+                print(f"[SCHEDULER] Auto-triggering batch scrape for {mode_desc} from {BIDS_INPUT_FILE}...", flush=True)
+                scheduler_state['last_scraped_count'] = len(target_items)
+                run_batch_scrape(target_items)
+                scheduler_state['status'] = 'idle'
             else:
                 if scraper_state.get('is_running'):
-                    print(f"[SCHEDULER] Scraper is already running. Skipping auto-trigger.", flush=True)
+                    print(f"[SCHEDULER] Scraper is already running. Skipping scheduled auto-trigger.", flush=True)
                 else:
-                    print(f"[SCHEDULER] All {len(items_to_check)} items in {BIDS_INPUT_FILE} are up to date.", flush=True)
+                    print(f"[SCHEDULER] No items found in {BIDS_INPUT_FILE} to scan.", flush=True)
                 scheduler_state['last_scraped_count'] = 0
-
-            scheduler_state['status'] = 'idle'
+                scheduler_state['status'] = 'idle'
         except Exception as e:
             print(f"[SCHEDULER] Error in 2-hour scan loop: {e}", flush=True)
             scheduler_state['status'] = 'error'
