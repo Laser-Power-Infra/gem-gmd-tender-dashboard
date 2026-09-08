@@ -67,23 +67,23 @@
       </div>
 
       <div class="company-metrics-grid">
-        <div class="c-metric">
+        <div class="c-metric" title="Total Participated Bids">
           <span class="c-label">Participated Bids</span>
           <h3 id="cStatParticipated">0</h3>
         </div>
-        <div class="c-metric">
-          <span class="c-label">Qualified</span>
+        <div class="c-metric" title="Qualified Bids excluding Won L1 (Total Qualified = Qualified + Won L1)">
+          <span class="c-label">Qualified (Other)</span>
           <h3 id="cStatQualified" style="color:#22c55e;">0 <span id="cStatQualifiedPct" class="c-pct"></span></h3>
         </div>
-        <div class="c-metric">
+        <div class="c-metric" title="Disqualified in Technical Evaluation">
           <span class="c-label">Disqualified</span>
           <h3 id="cStatDisqualified" style="color:#ef4444;">0 <span id="cStatDisqualifiedPct" class="c-pct"></span></h3>
         </div>
-        <div class="c-metric">
+        <div class="c-metric" title="Won L1 Lowest Bids">
           <span class="c-label">Won L1 Bids</span>
           <h3 id="cStatWonL1" style="color:#eab308;">0 <span id="cStatWonL1Pct" class="c-pct"></span></h3>
         </div>
-        <div class="c-metric">
+        <div class="c-metric" title="Second Lowest Bids (L2)">
           <span class="c-label">L2 (Missed L1)</span>
           <h3 id="cStatMissedL2" style="color:#38bdf8;">0 <span id="cStatMissedL2Pct" class="c-pct"></span></h3>
         </div>
@@ -161,7 +161,8 @@
             <option value="ra_only">⚡ Reverse Auction (RA) Bids</option>
             <option value="l1_available">Financial Evaluated (L1)</option>
             <option value="dalui_participated">🏢 G.M. DALUI Participated</option>
-            <option value="dalui_qualified">🟢 G.M. DALUI Qualified</option>
+            <option value="dalui_qualified">🟢 G.M. DALUI Qualified (Other / Non-L1)</option>
+            <option value="dalui_qualified_all">🟢 G.M. DALUI Total Qualified (Incl. L1)</option>
             <option value="dalui_disqualified">🔴 G.M. DALUI Disqualified</option>
             <option value="dalui_l1">🏆 G.M. DALUI Won L1</option>
             <option value="dalui_l2">🔵 G.M. DALUI L2 (Missed L1)</option>

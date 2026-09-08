@@ -129,13 +129,14 @@ def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI
     st_upper = tech_status.upper()
     
     is_disqual = 'DISQUALIFIED' in st_upper or 'REJECTED' in st_upper
-    is_qual = ('QUALIFIED' in st_upper or 'EVALUATED' in st_upper or 'ACCEPTED' in st_upper) and not is_disqual
+    is_qual = ('QUALIFIED' in st_upper or 'EVALUATED' in st_upper or 'ACCEPTED' in st_upper or (comp_fin_row is not None)) and not is_disqual
 
-    l1_row = next((r for r in f_eval if r.get('Rank', '').upper() == 'L1'), None)
-    l2_row = next((r for r in f_eval if r.get('Rank', '').upper() == 'L2'), None)
+    l1_row = next((r for r in f_eval if isinstance(r, dict) and r.get('Rank', '').upper() == 'L1'), None)
+    l2_row = next((r for r in f_eval if isinstance(r, dict) and r.get('Rank', '').upper() == 'L2'), None)
 
-    my_rank = comp_fin_row.get('Rank', 'N/A') if comp_fin_row else 'N/A'
-    is_l1 = my_rank.upper() == 'L1' or (comp_fin_row and comp_fin_row.get('L1 Seller Name') and any(kw in str(comp_fin_row.get('L1 Seller Name')).upper() for kw in company_keywords))
+    my_rank = str(comp_fin_row.get('Rank', 'N/A')).upper() if comp_fin_row else 'N/A'
+    is_l1 = my_rank == 'L1' or (comp_fin_row and comp_fin_row.get('L1 Seller Name') and any(kw in str(comp_fin_row.get('L1 Seller Name')).upper() for kw in company_keywords))
+    is_l2 = my_rank == 'L2'
 
     my_price = parse_val(comp_fin_row.get('Total Price', '')) if comp_fin_row else 0.0
     l1_price = parse_val(l1_row.get('Total Price', '')) if l1_row else 0.0
@@ -167,6 +168,7 @@ def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI
         'is_disqualified': is_disqual,
         'rank': my_rank if not is_l1 else 'L1',
         'is_l1': is_l1,
+        'is_l2': is_l2,
         'my_price': my_price,
         'l1_price': l1_price,
         'diff_amount': diff_amount,
@@ -359,17 +361,19 @@ def get_bids():
     
     # G.M. DALUI specific stats
     dalui_participated = 0
-    dalui_qualified = 0
+    dalui_qualified_total = 0
+    dalui_qualified_excl_l1 = 0
     dalui_disqualified = 0
     dalui_l1 = 0
     dalui_l2 = 0
 
     for b in bids:
-        t_eval = b.get('technical_evaluation', [])
-        f_eval = b.get('financial_evaluation', [])
+        t_eval = b.get('technical_evaluation') or []
+        f_eval = b.get('financial_evaluation') or []
         c_an = b.get('company_analysis', {})
 
         for t in t_eval:
+            if not isinstance(t, dict): continue
             st = t.get('Status', '').upper()
             if 'QUALIFIED' in st and 'DISQUALIFIED' not in st:
                 total_tech_qualified += 1
@@ -381,10 +385,17 @@ def get_bids():
 
         if c_an.get('participated'):
             dalui_participated += 1
-            if c_an.get('is_qualified'): dalui_qualified += 1
-            if c_an.get('is_disqualified'): dalui_disqualified += 1
-            if c_an.get('is_l1'): dalui_l1 += 1
-            if c_an.get('is_l2'): dalui_l2 += 1
+            if c_an.get('is_disqualified'):
+                dalui_disqualified += 1
+            elif c_an.get('is_l1'):
+                dalui_l1 += 1
+                dalui_qualified_total += 1
+            elif c_an.get('is_qualified'):
+                dalui_qualified_total += 1
+                dalui_qualified_excl_l1 += 1
+
+            if c_an.get('is_l2'):
+                dalui_l2 += 1
 
     return jsonify({
         'status': 'success',
@@ -396,7 +407,8 @@ def get_bids():
             'company_stats': {
                 'name': 'G.M. DALUI',
                 'participated': dalui_participated,
-                'qualified': dalui_qualified,
+                'qualified': dalui_qualified_excl_l1,
+                'qualified_total': dalui_qualified_total,
                 'disqualified': dalui_disqualified,
                 'l1_won': dalui_l1,
                 'l2_missed': dalui_l2

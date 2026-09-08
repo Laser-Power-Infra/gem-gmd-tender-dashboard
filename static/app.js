@@ -597,7 +597,8 @@ function filterBidsTable() {
     if (rankType === 'ra_only' && !raInf.is_ra) return false;
     if (rankType === 'l1_available' && finEval.length === 0) return false;
     if (rankType === 'dalui_participated' && !cAn.participated) return false;
-    if (rankType === 'dalui_qualified' && !cAn.is_qualified) return false;
+    if (rankType === 'dalui_qualified' && (!cAn.is_qualified || cAn.is_l1)) return false;
+    if (rankType === 'dalui_qualified_all' && !cAn.is_qualified) return false;
     if (rankType === 'dalui_disqualified' && !cAn.is_disqualified) return false;
     if (rankType === 'dalui_l1' && !cAn.is_l1) return false;
     if (rankType === 'dalui_l2' && !cAn.is_l2 && cAn.rank !== 'L2') return false;
