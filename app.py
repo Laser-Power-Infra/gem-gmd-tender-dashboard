@@ -541,27 +541,30 @@ scheduler_state = {
     'enabled': True,
     'interval_seconds': SCHEDULER_INTERVAL,
     'interval_hours': round(SCHEDULER_INTERVAL / 3600.0, 2),
+    'current_round': 0,
     'last_run': None,
+    'last_finish': None,
     'next_run': None,
     'last_scraped_count': 0,
     'status': 'initialized'
 }
 
 def background_2h_scheduler():
-    """Background daemon thread that scans bids_input_sample.txt every 2 hours."""
-    print(f"\n[SCHEDULER] 2-Hour Auto-Scanner Initialized (Interval: {SCHEDULER_INTERVAL} seconds / {scheduler_state['interval_hours']} hours)", flush=True)
-    # Perform first scan after 10 seconds startup delay
-    time.sleep(10)
+    """Background daemon thread that runs batch scrape rounds every 2 hours continuously."""
+    print(f"\n[SCHEDULER] 2-Hour Auto-Scanner Daemon Initialized (Interval: {SCHEDULER_INTERVAL} seconds / {scheduler_state['interval_hours']} hours)", flush=True)
+    # Perform initial startup delay before first round
+    time.sleep(5)
     
+    round_count = 0
     while True:
         try:
+            round_count += 1
             now = datetime.now(timezone.utc)
             scheduler_state['last_run'] = now.isoformat()
-            next_timestamp = now.timestamp() + SCHEDULER_INTERVAL
-            scheduler_state['next_run'] = datetime.fromtimestamp(next_timestamp, timezone.utc).isoformat()
-            scheduler_state['status'] = 'scanning'
+            scheduler_state['status'] = f'running_round_{round_count}'
+            scheduler_state['current_round'] = round_count
 
-            print(f"\n[SCHEDULER] Starting 2-hour scheduled scan of '{BIDS_INPUT_FILE}' at {now.strftime('%Y-%m-%d %H:%M:%S UTC')}...", flush=True)
+            print(f"\n[SCHEDULER] === Starting Scraping Round #{round_count} at {now.strftime('%Y-%m-%d %H:%M:%S UTC')} ===", flush=True)
 
             items_to_check = []
             if os.path.exists(BIDS_INPUT_FILE):
@@ -587,27 +590,41 @@ def background_2h_scheduler():
 
             unscraped = [item for item in items_to_check if item.upper() not in found_set]
 
-            # Priority 1: Scrape any missing/new items
-            # Priority 2: Re-scrape all items in bids_input_sample.txt to keep data updated every 2 hours
+            # Priority 1: Scrape missing/new items
+            # Priority 2: Re-scrape all items in bids_input_sample.txt for complete 2h update
             target_items = unscraped if unscraped else items_to_check
 
             if target_items and not scraper_state.get('is_running'):
-                mode_desc = f"{len(unscraped)} missing ID(s)" if unscraped else f"all {len(target_items)} ID(s) (2h auto-refresh)"
+                mode_desc = f"{len(unscraped)} missing ID(s)" if unscraped else f"all {len(target_items)} ID(s) (Round #{round_count})"
                 print(f"[SCHEDULER] Auto-triggering batch scrape for {mode_desc} from {BIDS_INPUT_FILE}...", flush=True)
                 scheduler_state['last_scraped_count'] = len(target_items)
+                
+                # Execute batch scrape (runs until round completes)
                 run_batch_scrape(target_items)
-                scheduler_state['status'] = 'idle'
             else:
                 if scraper_state.get('is_running'):
-                    print(f"[SCHEDULER] Scraper is already running. Skipping scheduled auto-trigger.", flush=True)
+                    print(f"[SCHEDULER] Scraper engine is already active. Skipping auto-trigger for Round #{round_count}.", flush=True)
                 else:
                     print(f"[SCHEDULER] No items found in {BIDS_INPUT_FILE} to scan.", flush=True)
                 scheduler_state['last_scraped_count'] = 0
-                scheduler_state['status'] = 'idle'
-        except Exception as e:
-            print(f"[SCHEDULER] Error in 2-hour scan loop: {e}", flush=True)
-            scheduler_state['status'] = 'error'
 
+            # Round completed! Record finish time and exact next run timestamp (2 hours after finish)
+            finish_time = datetime.now(timezone.utc)
+            next_timestamp = finish_time.timestamp() + SCHEDULER_INTERVAL
+            scheduler_state['last_finish'] = finish_time.isoformat()
+            scheduler_state['next_run'] = datetime.fromtimestamp(next_timestamp, timezone.utc).isoformat()
+            scheduler_state['status'] = 'waiting_2h'
+
+            print(f"[SCHEDULER] Round #{round_count} finished at {finish_time.strftime('%Y-%m-%d %H:%M:%S UTC')}. Next Round #{round_count+1} starts in 2 hours at {scheduler_state['next_run']}.", flush=True)
+
+        except Exception as e:
+            print(f"[SCHEDULER ERROR] Exception in Round #{round_count}: {e}", flush=True)
+            scheduler_state['status'] = 'error'
+            finish_time = datetime.now(timezone.utc)
+            next_timestamp = finish_time.timestamp() + SCHEDULER_INTERVAL
+            scheduler_state['next_run'] = datetime.fromtimestamp(next_timestamp, timezone.utc).isoformat()
+
+        # Wait 2 hours (7200 seconds) before starting the next round
         time.sleep(SCHEDULER_INTERVAL)
 
 _scheduler_started = False
