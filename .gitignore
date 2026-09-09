@@ -42,3 +42,10 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# ==========================================
+# Next.js & Node.js
+# ==========================================
+next-app/.next/
+next-app/node_modules/
+next-app/out/

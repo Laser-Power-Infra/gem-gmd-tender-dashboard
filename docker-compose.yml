@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  gem-dashboard:
+  gem-backend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: gem-scraper-dashboard
+    container_name: gem-scraper-backend
     restart: unless-stopped
     ports:
       - "6001:6001"
@@ -16,4 +16,16 @@ services:
     volumes:
       - ./scraped_output:/app/scraped_output
       - ./bids_input_sample.txt:/app/bids_input_sample.txt
-    network_mode: bridge
+
+  gem-frontend:
+    build:
+      context: ./next-app
+      dockerfile: Dockerfile
+    container_name: gem-dashboard-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    depends_on:
+      - gem-backend
