@@ -297,9 +297,13 @@ def run_batch_scrape(inputs_list):
         
         try:
             data, pdf_path = scrape_gem_bid(item, output_dir=OUTPUT_DIR)
-            all_results.append(data)
-            pdf_paths.append(pdf_path)
-            scraper_state["completed_items"].append(item)
+            if data and isinstance(data, dict):
+                all_results.append(data)
+                scraper_state["completed_items"].append(item)
+            else:
+                scraper_state["failed_items"].append({"item": item, "error": "No data returned"})
+            if pdf_path and isinstance(pdf_path, str) and os.path.exists(pdf_path):
+                pdf_paths.append(pdf_path)
         except Exception as e:
             print(f"[SCRAPER WORKER ERROR] Failed {item}: {e}")
             scraper_state["failed_items"].append({"item": item, "error": str(e)})
@@ -308,11 +312,22 @@ def run_batch_scrape(inputs_list):
     if all_results:
         summary_rows = []
         for d in all_results:
-            b_details = d.get('bid_details', {})
-            b_buyer = d.get('buyer_details', {})
-            t_eval = d.get('technical_evaluation', [])
-            f_eval = d.get('financial_evaluation', [])
+            if not isinstance(d, dict):
+                continue
+            b_details = d.get('bid_details') or {}
+            b_buyer = d.get('buyer_details') or {}
+            t_eval = d.get('technical_evaluation') or []
+            f_eval = d.get('financial_evaluation') or []
             
+            t_qual = sum(1 for x in t_eval if isinstance(x, dict) and 'QUALIFIED' in str(x.get('Status', '')).upper() and 'DISQUALIFIED' not in str(x.get('Status', '')).upper())
+            t_disqual = sum(1 for x in t_eval if isinstance(x, dict) and 'DISQUALIFIED' in str(x.get('Status', '')).upper())
+
+            l1_seller = 'N/A'
+            l1_price = 'N/A'
+            if isinstance(f_eval, list) and len(f_eval) > 0 and isinstance(f_eval[0], dict):
+                l1_seller = f_eval[0].get('Seller Name', 'N/A')
+                l1_price = f_eval[0].get('Total Price', 'N/A')
+
             row = {
                 'Bid Number': d.get('bid_number', ''),
                 'Source ID': d.get('source_id', ''),
@@ -323,11 +338,11 @@ def run_batch_scrape(inputs_list):
                 'Buyer Name': b_buyer.get('Name', ''),
                 'Buyer Ministry': b_buyer.get('Ministry', ''),
                 'Buyer Organisation': b_buyer.get('Organisation', ''),
-                'Total Tech Sellers': len(t_eval),
-                'Qualified Sellers': sum(1 for x in t_eval if 'QUALIFIED' in x.get('Status', '').upper() and 'DISQUALIFIED' not in x.get('Status', '').upper()),
-                'Disqualified Sellers': sum(1 for x in t_eval if 'DISQUALIFIED' in x.get('Status', '').upper()),
-                'Financial L1 Seller': f_eval[0].get('Seller Name', '') if f_eval else 'N/A',
-                'Financial L1 Price': f_eval[0].get('Total Price', '') if f_eval else 'N/A'
+                'Total Tech Sellers': len(t_eval) if isinstance(t_eval, list) else 0,
+                'Qualified Sellers': t_qual,
+                'Disqualified Sellers': t_disqual,
+                'Financial L1 Seller': l1_seller,
+                'Financial L1 Price': l1_price
             }
             summary_rows.append(row)
 
