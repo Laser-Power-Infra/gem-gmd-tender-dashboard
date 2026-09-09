@@ -570,46 +570,25 @@ def background_2h_scheduler():
 
             print(f"\n[SCHEDULER] === Starting Scraping Round #{round_count} at {now.strftime('%Y-%m-%d %H:%M:%S UTC')} ===", flush=True)
 
-            items_to_check = []
+            items_to_scrape = []
             if os.path.exists(BIDS_INPUT_FILE):
                 with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f:
                     for line in f:
                         line = line.strip()
                         if line and not line.startswith('#'):
-                            items_to_check.append(line)
+                            items_to_scrape.append(line)
 
-            # Find missing / unscraped items
-            existing_bids = load_all_json_bids()
-            found_set = set()
-            for b in existing_bids:
-                if not isinstance(b, dict):
-                    continue
-                bn = str(b.get('bid_number') or '').upper()
-                ra_inf_b = b.get('ra_info') or {}
-                rn = str(ra_inf_b.get('ra_number') or '').upper() if isinstance(ra_inf_b, dict) else ''
-                raw = str(b.get('raw_bid_no') or '').upper()
-                if bn: found_set.add(bn)
-                if rn: found_set.add(rn)
-                if raw: found_set.add(raw)
-
-            unscraped = [item for item in items_to_check if item.upper() not in found_set]
-
-            # Priority 1: Scrape missing/new items
-            # Priority 2: Re-scrape all items in bids_input_sample.txt for complete 2h update
-            target_items = unscraped if unscraped else items_to_check
-
-            if target_items and not scraper_state.get('is_running'):
-                mode_desc = f"{len(unscraped)} missing ID(s)" if unscraped else f"all {len(target_items)} ID(s) (Round #{round_count})"
-                print(f"[SCHEDULER] Auto-triggering batch scrape for {mode_desc} from {BIDS_INPUT_FILE}...", flush=True)
-                scheduler_state['last_scraped_count'] = len(target_items)
+            if items_to_scrape and not scraper_state.get('is_running'):
+                print(f"[SCHEDULER] Round #{round_count}: Auto-triggering full scrape of ALL {len(items_to_scrape)} bid IDs from '{BIDS_INPUT_FILE}'...", flush=True)
+                scheduler_state['last_scraped_count'] = len(items_to_scrape)
                 
-                # Execute batch scrape (runs until round completes)
-                run_batch_scrape(target_items)
+                # Execute full batch scrape for ALL bid IDs
+                run_batch_scrape(items_to_scrape)
             else:
                 if scraper_state.get('is_running'):
                     print(f"[SCHEDULER] Scraper engine is already active. Skipping auto-trigger for Round #{round_count}.", flush=True)
                 else:
-                    print(f"[SCHEDULER] No items found in {BIDS_INPUT_FILE} to scan.", flush=True)
+                    print(f"[SCHEDULER] No items found in '{BIDS_INPUT_FILE}' to scan.", flush=True)
                 scheduler_state['last_scraped_count'] = 0
 
             # Round completed! Record finish time and exact next run timestamp (2 hours after finish)
