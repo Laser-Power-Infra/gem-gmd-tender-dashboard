@@ -255,21 +255,25 @@ def load_all_json_bids():
                 # Deduplicate: if bid_no is already in bids_dict, merge RA info into existing record
                 if bid_no in bids_dict:
                     existing = bids_dict[bid_no]
-                    if is_ra and not existing.get('ra_info', {}).get('is_ra'):
-                        existing['ra_info'] = data['ra_info']
-                    elif is_ra and ra_no != 'N/A':
-                        existing['ra_info']['ra_number'] = ra_no
-                        existing['ra_info']['is_ra'] = True
-                    if not existing.get('user_remark') and data.get('user_remark'):
-                        existing['user_remark'] = data['user_remark']
+                    if isinstance(existing, dict):
+                        existing_ra = existing.get('ra_info') or {}
+                        if is_ra and not existing_ra.get('is_ra'):
+                            existing['ra_info'] = data['ra_info']
+                        elif is_ra and ra_no != 'N/A':
+                            if not isinstance(existing.get('ra_info'), dict):
+                                existing['ra_info'] = {}
+                            existing['ra_info']['ra_number'] = ra_no
+                            existing['ra_info']['is_ra'] = True
+                        if not existing.get('user_remark') and data.get('user_remark'):
+                            existing['user_remark'] = data['user_remark']
                 else:
                     bids_dict[bid_no] = data
 
         except Exception as e:
             print(f"Error loading {filepath}: {e}")
     
-    bids = list(bids_dict.values())
-    bids.sort(key=lambda x: x.get('bid_number', ''), reverse=True)
+    bids = [b for b in bids_dict.values() if isinstance(b, dict)]
+    bids.sort(key=lambda x: str((x or {}).get('bid_number') or ''), reverse=True)
     return bids
 
 def run_batch_scrape(inputs_list):
@@ -582,7 +586,7 @@ def background_2h_scheduler():
                     continue
                 bn = str(b.get('bid_number') or '').upper()
                 ra_inf_b = b.get('ra_info') or {}
-                rn = str(ra_inf_b.get('ra_number') or '').upper()
+                rn = str(ra_inf_b.get('ra_number') or '').upper() if isinstance(ra_inf_b, dict) else ''
                 raw = str(b.get('raw_bid_no') or '').upper()
                 if bn: found_set.add(bn)
                 if rn: found_set.add(rn)
