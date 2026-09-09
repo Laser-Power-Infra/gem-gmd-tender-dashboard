@@ -24,8 +24,8 @@ services:
     container_name: gem-dashboard-frontend
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "6012:6012"
     environment:
-      - PORT=3000
+      - PORT=6012
     depends_on:
       - gem-backend
