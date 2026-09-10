@@ -19,6 +19,10 @@ def load_notifications():
             return []
     return []
 
+def save_notifications(notifs):
+    with open(NOTIFICATIONS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(notifs, f, indent=2, ensure_ascii=False)
+
 def parse_date_safely(date_str):
     if not date_str or not isinstance(date_str, str):
         return None
