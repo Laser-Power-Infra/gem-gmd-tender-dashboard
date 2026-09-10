@@ -9,7 +9,6 @@ export async function GET() {
   try {
     const res = await fetch(`${BACKEND_URL}/api/notifications`, {
       cache: 'no-store',
-      next: { revalidate: 0 },
     });
     if (res.ok) {
       const data = await res.json();
