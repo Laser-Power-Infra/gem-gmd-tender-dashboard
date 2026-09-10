@@ -13,9 +13,13 @@ services:
       - PORT=6001
       - PYTHONUNBUFFERED=1
       - SCHEDULER_INTERVAL=7200
+      - DATABASE_URL=postgresql://asmita:asmita@192.168.1.190:5432/gmd_gem_ids
     volumes:
       - ./scraped_output:/app/scraped_output
       - ./bids_input_sample.txt:/app/bids_input_sample.txt
+      - ./gem_database.db:/app/gem_database.db
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.json:/app/token.json
 
   gem-frontend:
     build:
@@ -27,5 +31,7 @@ services:
       - "6012:6012"
     environment:
       - PORT=6012
+      - BACKEND_API_URL=http://gem-backend:6001
+      - DATABASE_URL=postgresql://asmita:asmita@192.168.1.190:5432/gmd_gem_ids
     depends_on:
       - gem-backend

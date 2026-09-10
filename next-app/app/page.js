@@ -1,21 +1,26 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
+import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import CompanyBanner from '../components/CompanyBanner';
-import ApplyBidCard from '../components/ApplyBidCard';
 import FilterPanel from '../components/FilterPanel';
 import BidsTable from '../components/BidsTable';
 import ViewDetailsModal from '../components/ViewDetailsModal';
 import PdfPreviewModal from '../components/PdfPreviewModal';
 import ManageIdsModal from '../components/ManageIdsModal';
 import ProgressOverlay from '../components/ProgressOverlay';
-import { RefreshCw, Database } from 'lucide-react';
+import AnalyticsReportsView from '../components/AnalyticsReportsView';
+import NetworkPortalView from '../components/NetworkPortalView';
+import UserSettingsView from '../components/UserSettingsView';
+import { RefreshCw } from 'lucide-react';
 
 export default function Dashboard() {
   const [allBidsData, setAllBidsData] = useState([]);
   const [globalStats, setGlobalStats] = useState({});
   const [displayStats, setDisplayStats] = useState({});
   const [loading, setLoading] = useState(true);
+
+  // Active Navigation Tab
+  const [activeNav, setActiveNav] = useState('Dashboard');
 
   // Filters
   const [query, setQuery] = useState('');
@@ -30,6 +35,25 @@ export default function Dashboard() {
   const [pdfModal, setPdfModal] = useState({ open: false, filename: '', title: '' });
   const [manageModal, setManageModal] = useState(false);
   const [progressModal, setProgressModal] = useState({ open: false, message: '', percent: 0 });
+
+  // Handle Sidebar Navigation Click
+  const handleNavSelect = (navId) => {
+    setActiveNav(navId);
+
+    if (navId === 'Dashboard') {
+      setRankType('all');
+    } else if (navId === 'My Bids') {
+      setRankType('dalui_participated');
+    } else if (navId === 'My Bids Qualified') {
+      setRankType('dalui_qualified_all');
+    } else if (navId === 'My Bids Won') {
+      setRankType('dalui_l1');
+    } else if (navId === 'My Bids Disqualified') {
+      setRankType('dalui_disqualified');
+    } else if (navId === 'Reverse Auctions') {
+      setRankType('ra_only');
+    }
+  };
 
   // Compute dynamic stats from filtered bids
   const computeStatsFromBids = useCallback((bidsArray) => {
@@ -105,7 +129,7 @@ export default function Dashboard() {
   const fetchBids = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/bids');
+      const res = await fetch(`/api/bids?t=${Date.now()}`, { cache: 'no-store' });
       const json = await res.json();
       if (json.status === 'success') {
         const bids = json.bids || [];
@@ -137,7 +161,7 @@ export default function Dashboard() {
     return null;
   };
 
-  // Match global filters (Search, Quantity, Date Range)
+  // Match global filters
   const matchesGlobalFilters = useCallback(
     (b) => {
       const bDetails = b.bid_details || {};
@@ -145,7 +169,6 @@ export default function Dashboard() {
       const finEval = b.financial_evaluation || [];
       const raInf = b.ra_info || {};
 
-      // 1. Keyword Search
       if (query) {
         const fullText = (
           (b.bid_number || '') + ' ' +
@@ -160,14 +183,12 @@ export default function Dashboard() {
         if (!fullText.includes(query.toLowerCase())) return false;
       }
 
-      // 2. Quantity Filter
       const minQtyVal = parseInt(minQty, 10);
       if (!isNaN(minQtyVal)) {
         const rawQty = parseInt((bDetails['Quantity'] || '0').replace(/\D/g, ''), 10);
         if (rawQty < minQtyVal) return false;
       }
 
-      // 3. Date Range Filter
       if (dateFrom || dateTo) {
         let targetDateStr = '';
         if (dateType === 'start') targetDateStr = bDetails['Bid Start Date / Time'];
@@ -189,11 +210,9 @@ export default function Dashboard() {
     [query, minQty, dateFrom, dateTo, dateType]
   );
 
-  // Apply filters and update display stats
   const getFilteredBids = useCallback(() => {
     const bidsMatchingBase = allBidsData.filter(matchesGlobalFilters);
 
-    // Filter down further for specific rankType
     return bidsMatchingBase.filter((b) => {
       const cAn = b.company_analysis || {};
       const raInf = b.ra_info || {};
@@ -212,7 +231,6 @@ export default function Dashboard() {
     });
   }, [allBidsData, matchesGlobalFilters, rankType]);
 
-  // Recalculate cards dynamically
   useEffect(() => {
     const bidsMatchingBase = allBidsData.filter(matchesGlobalFilters);
     const dynamicStats = computeStatsFromBids(bidsMatchingBase);
@@ -264,6 +282,26 @@ export default function Dashboard() {
     }
   };
 
+  const handleUploadSuccess = (bidNo, newAtts, newLinks) => {
+    const targetKey = String(bidNo || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+    setAllBidsData((prev) =>
+      prev.map((b) => {
+        const bn = String(b.bid_number || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+        const raw = String(b.raw_bid_no || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+        if (bn === targetKey || raw === targetKey || (targetKey && bn.includes(targetKey)) || (bn && targetKey.includes(bn))) {
+          const mergedAtts = (newAtts && newAtts.length > 0) ? newAtts : b.attachments;
+          const mergedLinks = (newLinks && newLinks.length > 0) ? newLinks : b.drive_links;
+          return {
+            ...b,
+            attachments: mergedAtts,
+            drive_links: mergedLinks,
+          };
+        }
+        return b;
+      })
+    );
+  };
+
   const triggerScraper = async () => {
     setProgressModal({ open: true, message: 'Starting scraper engine...', percent: 0 });
     try {
@@ -308,70 +346,88 @@ export default function Dashboard() {
   const filteredBidsList = getFilteredBids();
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header
-        onOpenCombinedPdf={() => setPdfModal({ open: true, filename: 'combined', title: 'Combined Master PDF Report' })}
-        onExportCsv={() => { window.location.href = '/api/csv'; }}
-        onOpenManageIds={() => setManageModal(true)}
-      />
-
-      <main className="main-container">
-        <CompanyBanner
-          stats={displayStats}
-          onCardClick={(val) => setRankType(val)}
-          onFilterOnlyGmd={() => setRankType('dalui_participated')}
+    <div className="app-layout">
+      <Sidebar activeNav={activeNav} onNavSelect={handleNavSelect} stats={displayStats} />
+      <div className="app-main">
+        <Header
+          onOpenCombinedPdf={() => setPdfModal({ open: true, filename: 'combined', title: 'Combined Master PDF Report' })}
+          onExportCsv={() => { window.location.href = '/api/csv'; }}
+          onOpenManageIds={() => setManageModal(true)}
+          onViewDetails={(bidNo) => setDetailsModal({ open: true, bidNo })}
         />
 
-        <ApplyBidCard
-          stats={displayStats}
-          onCardClick={(val) => setRankType(val)}
-        />
-
-        <div className="content-card">
-          <div className="table-header">
-            <div className="table-title">
-              <h3>GeM Bid Result Records</h3>
-              <span className="badge badge-slate">{filteredBidsList.length} records</span>
-            </div>
-            <div className="table-controls">
-              <button className="btn btn-icon" onClick={fetchBids} title="Refresh Data">
-                <RefreshCw className={`w-4 h-4 ${loading ? 'spin-icon' : ''}`} />
-              </button>
-            </div>
-          </div>
-
-          <FilterPanel
-            query={query}
-            setQuery={setQuery}
-            dateType={dateType}
-            setDateType={setDateType}
-            dateFrom={dateFrom}
-            setDateFrom={setDateFrom}
-            dateTo={dateTo}
-            setDateTo={setDateTo}
-            minQty={minQty}
-            setMinQty={setMinQty}
-            rankType={rankType}
-            setRankType={setRankType}
-            onResetFilters={handleResetFilters}
-          />
-
-          {loading ? (
-            <div className="loading-state">
-              <RefreshCw className="w-8 h-8 spin-icon" style={{ color: '#0284c7' }} />
-              <span>Loading tender records from server...</span>
-            </div>
-          ) : (
-            <BidsTable
-              bids={filteredBidsList}
-              onSaveRemark={handleSaveRemark}
-              onSaveStatus={handleSaveStatus}
-              onViewDetails={(bidNo) => setDetailsModal({ open: true, bidNo })}
-              onOpenPdf={(filename, bidNo) => setPdfModal({ open: true, filename, title: bidNo })}
+        <main className="main-content-area flex-1">
+          {/* Main View Router */}
+          {activeNav === 'Analytics Reports' ? (
+            <AnalyticsReportsView
+              bids={allBidsData}
+              stats={displayStats}
+              onExportCsv={() => { window.location.href = '/api/csv'; }}
+              onOpenCombinedPdf={() => setPdfModal({ open: true, filename: 'combined', title: 'Combined Master PDF Report' })}
             />
+          ) : activeNav === 'Network Portal' ? (
+            <NetworkPortalView onTriggerScraper={triggerScraper} />
+          ) : activeNav === 'User Management' ? (
+            <UserSettingsView mode="users" onTriggerScraper={triggerScraper} />
+          ) : activeNav === 'Settings' ? (
+            <UserSettingsView mode="settings" onTriggerScraper={triggerScraper} />
+          ) : (
+            /* Full-screen Tender Records View */
+            <div className="records-card flex-1 flex flex-col">
+              <div className="records-header">
+                <div className="records-title-group">
+                  <h3>
+                    {activeNav.startsWith('My Bids')
+                      ? `MY BIDS RECORD VIEW (${activeNav})`
+                      : activeNav === 'Reverse Auctions'
+                      ? 'REVERSE AUCTION (RA) RECORDS'
+                      : 'GEM BID RESULT RECORDS'}
+                  </h3>
+                  <span className="badge badge-count">{filteredBidsList.length} records</span>
+                </div>
+                <div className="records-controls">
+                  <button className="btn btn-icon" onClick={fetchBids} title="Refresh Data">
+                    <RefreshCw className={`w-4 h-4 ${loading ? 'spin-icon' : ''}`} />
+                  </button>
+                </div>
+              </div>
+
+              <FilterPanel
+                query={query}
+                setQuery={setQuery}
+                dateType={dateType}
+                setDateType={setDateType}
+                dateFrom={dateFrom}
+                setDateFrom={setDateFrom}
+                dateTo={dateTo}
+                setDateTo={setDateTo}
+                minQty={minQty}
+                setMinQty={setMinQty}
+                rankType={rankType}
+                setRankType={setRankType}
+                onResetFilters={handleResetFilters}
+              />
+
+              {loading ? (
+                <div className="loading-state">
+                  <RefreshCw className="w-8 h-8 spin-icon text-blue" />
+                  <span>Loading tender records from server...</span>
+                </div>
+              ) : (
+                <BidsTable
+                  bids={filteredBidsList}
+                  onSaveRemark={handleSaveRemark}
+                  onSaveStatus={handleSaveStatus}
+                  onViewDetails={(bidNo) => setDetailsModal({ open: true, bidNo })}
+                  onOpenPdf={(filename, bidNo) => setPdfModal({ open: true, filename, title: bidNo })}
+                  onRefresh={fetchBids}
+                  onUploadSuccess={handleUploadSuccess}
+                />
+              )}
+            </div>
           )}
-        </div>
-      </main>
+        </main>
+      </div>
 
       {/* Modals */}
       <ViewDetailsModal
@@ -392,6 +448,7 @@ export default function Dashboard() {
         isOpen={manageModal}
         onClose={() => setManageModal(false)}
         onSaveAndRun={triggerScraper}
+        onRefresh={fetchBids}
       />
 
       <ProgressOverlay

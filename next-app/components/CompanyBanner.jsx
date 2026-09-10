@@ -1,69 +1,121 @@
 'use client';
-import { Filter } from 'lucide-react';
 
 export default function CompanyBanner({ stats, onCardClick, onFilterOnlyGmd }) {
   const cStats = stats.company_stats || {};
   const participated = cStats.participated || 0;
-  const qualified = cStats.qualified || 0;
+  const qualifiedTotal = cStats.qualified_total || (cStats.qualified + cStats.l1_won) || 0;
+  const qualifiedOther = cStats.qualified || 0;
   const disqualified = cStats.disqualified || 0;
   const l1Won = cStats.l1_won || 0;
-  const l2Missed = cStats.l2_missed || 0;
 
-  const qualPct = participated > 0 ? Math.round((qualified / participated) * 100) : 0;
+  const qualPct = participated > 0 ? Math.round((qualifiedTotal / participated) * 100) : 0;
   const disqualPct = participated > 0 ? Math.round((disqualified / participated) * 100) : 0;
   const wonPct = participated > 0 ? Math.round((l1Won / participated) * 100) : 0;
-  const l2Pct = participated > 0 ? Math.round((l2Missed / participated) * 100) : 0;
 
   return (
-    <div className="company-banner">
-      <div className="company-banner-header">
-        <div className="company-title">
+    <div className="performance-banner">
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', background: '#ffffff', padding: '10px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <img 
+            src="/logo.png" 
+            alt="DALUI Logo" 
+            style={{ height: '34px', width: 'auto', objectFit: 'contain' }} 
+          />
           <div>
-            <h2>G.M. DALUI Performance Tracker</h2>
-            <p>Targeted bid evaluation, Reverse Auction (RA), &amp; price gap analysis for G.M. DALUI</p>
+            <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#881337', letterSpacing: '-0.2px' }}>
+              G.M. DALUI &amp; SONS
+            </div>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500 }}>
+              Making Valves Since 1976 • GeM Bid Tracking &amp; Competitor Intelligence Dashboard
+            </div>
           </div>
         </div>
-        <button
-          className="btn btn-secondary btn-sm"
-          onClick={onFilterOnlyGmd}
-          style={{ background: '#0284c7', color: '#fff', border: 'none' }}
-        >
-          <Filter className="w-4 h-4" /> Show Only G.M. DALUI Bids
-        </button>
+        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0284c7', background: '#e0f2fe', padding: '4px 10px', borderRadius: '14px' }}>
+          Official Company Profile
+        </div>
       </div>
-
-      <div className="company-metrics-grid">
-        <div className="c-metric" title="Total Participated Bids" onClick={() => onCardClick('dalui_participated')}>
-          <span className="c-label">Participated Bids</span>
-          <h3>{participated}</h3>
+      <div className="banner-cards-grid">
+        {/* Card 1: PARTICIPATED BIDS */}
+        <div
+          className="p-card border-blue"
+          onClick={() => onCardClick('dalui_participated')}
+          title="Filter Participated Bids"
+        >
+          <div className="p-card-body">
+            <span className="p-card-label">PARTICIPATED BIDS</span>
+            <div className="p-card-val-row">
+              <h2 className="p-card-value text-blue">{participated}</h2>
+            </div>
+          </div>
+          <div className="p-card-graphic">
+            <svg viewBox="0 0 100 35" className="sparkline-svg" fill="none">
+              <path
+                d="M 0,25 Q 15,10 30,22 T 60,12 T 80,26 T 100,8 L 100,35 L 0,35 Z"
+                fill="rgba(2, 132, 199, 0.12)"
+              />
+              <path
+                d="M 0,25 Q 15,10 30,22 T 60,12 T 80,26 T 100,8"
+                stroke="#0284c7"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
         </div>
 
-        <div className="c-metric" title="Qualified Bids excluding Won L1 (Total Qualified = Qualified + Won L1)" onClick={() => onCardClick('dalui_qualified')}>
-          <span className="c-label">Qualified (Other)</span>
-          <h3 style={{ color: '#22c55e' }}>
-            {qualified} {participated > 0 && <span className="c-pct">({qualPct}%)</span>}
-          </h3>
+        {/* Card 2: QUALIFIED BIDS */}
+        <div
+          className="p-card border-green"
+          onClick={() => onCardClick('dalui_qualified_all')}
+          title="Filter Qualified Bids"
+        >
+          <div className="p-card-body">
+            <span className="p-card-label">QUALIFIED BIDS</span>
+            <div className="p-card-val-row">
+              <h2 className="p-card-value text-green">{qualifiedTotal}</h2>
+              <span className="p-card-sub text-green">/ {qualPct}%</span>
+            </div>
+          </div>
+          <div className="p-card-graphic">
+            <svg viewBox="0 0 40 40" className="pie-svg">
+              <circle cx="20" cy="20" r="14" fill="#ef4444" />
+              <path
+                d="M 20 20 L 20 6 A 14 14 0 1 1 6.5 24.5 Z"
+                fill="#22c55e"
+              />
+              <circle cx="20" cy="20" r="6" fill="#ffffff" />
+            </svg>
+          </div>
         </div>
 
-        <div className="c-metric" title="Disqualified in Technical Evaluation" onClick={() => onCardClick('dalui_disqualified')}>
-          <span className="c-label">Disqualified</span>
-          <h3 style={{ color: '#ef4444' }}>
-            {disqualified} {participated > 0 && <span className="c-pct">({disqualPct}%)</span>}
-          </h3>
+        {/* Card 3: DISQUALIFIED BIDS */}
+        <div
+          className="p-card border-red"
+          onClick={() => onCardClick('dalui_disqualified')}
+          title="Filter Disqualified Bids"
+        >
+          <div className="p-card-body">
+            <span className="p-card-label">DISQUALIFIED BIDS</span>
+            <div className="p-card-val-row">
+              <h2 className="p-card-value text-red">{disqualified}</h2>
+              <span className="p-card-sub text-red">/ {disqualPct}%</span>
+            </div>
+          </div>
         </div>
 
-        <div className="c-metric" title="Won L1 Lowest Bids" onClick={() => onCardClick('dalui_l1')}>
-          <span className="c-label">Won L1 Bids</span>
-          <h3 style={{ color: '#eab308' }}>
-            {l1Won} {participated > 0 && <span className="c-pct">({wonPct}%)</span>}
-          </h3>
-        </div>
-
-        <div className="c-metric" title="Second Lowest Bids (L2)" onClick={() => onCardClick('dalui_l2')}>
-          <span className="c-label">L2 (Missed L1)</span>
-          <h3 style={{ color: '#38bdf8' }}>
-            {l2Missed} {participated > 0 && <span className="c-pct">({l2Pct}%)</span>}
-          </h3>
+        {/* Card 4: WON L1 BIDS */}
+        <div
+          className="p-card border-cyan"
+          onClick={() => onCardClick('dalui_l1')}
+          title="Filter Won L1 Bids"
+        >
+          <div className="p-card-body">
+            <span className="p-card-label">WON L1 BIDS</span>
+            <div className="p-card-val-row">
+              <h2 className="p-card-value text-cyan">{l1Won}</h2>
+              <span className="p-card-sub text-cyan">/ {wonPct}%</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

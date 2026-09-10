@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model gmd_gem_ids {
+  id         Int      @id @default(autoincrement())
+  gem_id     String   @unique
+  drive_link String?
+  order_pdf  String?
+  remarks    String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model gmd_gem_files {
+  id         Int      @id @default(autoincrement())
+  gem_id     String
+  file_name  String
+  drive_link String
+  file_type  String?  @default("pdf")
+  created_at DateTime @default(now())
+}
+

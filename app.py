@@ -9,6 +9,9 @@ import pandas as pd
 from flask import Flask, render_template, jsonify, request, send_file
 from flask_cors import CORS
 from gem_scraper import scrape_gem_bid, extract_bid_details_from_html
+from db_service import save_gem_record, get_all_gem_records, get_gem_record, save_file_record, get_files_for_gem_id, get_all_gem_files
+from gdrive_service import upload_pdf_to_gdrive
+from notifications_service import load_notifications, mark_notifications_read, add_notification, detect_bid_changes
 
 START_TIME = time.time()
 
@@ -274,6 +277,111 @@ def load_all_json_bids():
     
     bids = [b for b in bids_dict.values() if isinstance(b, dict)]
     bids.sort(key=lambda x: str((x or {}).get('bid_number') or ''), reverse=True)
+
+    # Merge DB records (attachments, drive_links, db_remarks) into each bid
+    try:
+        db_records = get_all_gem_records()
+        all_files_map = get_all_gem_files()
+        db_map = {}
+
+        def get_keys_for_id(val):
+            if not val:
+                return []
+            s = str(val).strip().upper()
+            keys = {s}
+            keys.add(s.replace('_', '/'))
+            keys.add(s.replace('/', '_'))
+            clean = re.sub(r'[^A-Z0-9]', '', s)
+            if clean:
+                keys.add(clean)
+            digits = re.sub(r'\D', '', s)
+            if len(digits) >= 5:
+                keys.add(digits)
+            return list(keys)
+
+        for rec in db_records:
+            gid = str(rec.get('gem_id', '')).strip().upper()
+            if gid:
+                for k in get_keys_for_id(gid):
+                    if k not in db_map:
+                        db_map[k] = rec
+
+        matched_db_recs = set()
+        for b in bids:
+            bid_key = b.get('bid_number', '')
+            raw_key = b.get('raw_bid_no', '')
+            source_key = b.get('source_id', '')
+            ra_key = (b.get('ra_info') or {}).get('ra_number', '')
+
+            search_keys = get_keys_for_id(bid_key) + get_keys_for_id(raw_key) + get_keys_for_id(source_key) + get_keys_for_id(ra_key)
+            db_rec = None
+            for sk in search_keys:
+                if sk in db_map:
+                    db_rec = db_map[sk]
+                    break
+
+            # Collect multiple files from gmd_gem_files table
+            files_from_db_table = []
+            for sk in search_keys:
+                if sk in all_files_map:
+                    files_from_db_table.extend(all_files_map[sk])
+
+            # Deduplicate by url
+            seen_urls = set()
+            combined_attachments = []
+            for f in files_from_db_table:
+                u = f.get('url') or f.get('drive_link')
+                if u and u not in seen_urls:
+                    seen_urls.add(u)
+                    combined_attachments.append({
+                        'name': f.get('file_name') or f.get('name') or 'Doc',
+                        'url': u,
+                        'type': (f.get('file_type') or f.get('type') or 'pdf').lower()
+                    })
+
+            if db_rec:
+                for att in db_rec.get('attachments', []):
+                    u = att.get('url') if isinstance(att, dict) else att
+                    if u and u not in seen_urls:
+                        seen_urls.add(u)
+                        combined_attachments.append(att if isinstance(att, dict) else {'name': 'Doc', 'url': u, 'type': 'pdf'})
+                b['db_remarks'] = db_rec.get('remarks', '')
+                b['order_pdf'] = db_rec.get('order_pdf') or ''
+                matched_db_recs.add(db_rec.get('id'))
+            else:
+                b['db_remarks'] = ''
+                b['order_pdf'] = ''
+
+            b['attachments'] = combined_attachments
+            b['drive_links'] = [a['url'] for a in combined_attachments]
+
+        # Add DB-only records (uploaded but not yet scraped) as standalone bids
+        for rec in db_records:
+            rec_id = rec.get('id')
+            if rec_id not in matched_db_recs and (rec.get('attachments') or rec.get('drive_links') or rec.get('order_pdf')):
+                stub_bid = {
+                    'bid_number': rec['gem_id'],
+                    'raw_bid_no': rec['gem_id'],
+                    'bid_details': {},
+                    'buyer_details': {},
+                    'technical_evaluation': [],
+                    'financial_evaluation': [],
+                    'ra_info': {'is_ra': False, 'ra_number': 'N/A', 'ra_status': 'N/A', 'ra_start_date': 'N/A', 'ra_end_date': 'N/A'},
+                    'company_analysis': {'participated': False, 'company_name': 'G.M. DALUI & SONS'},
+                    'l1_l2_diff': None,
+                    'user_remark': rec.get('remarks', ''),
+                    'user_status': 'Pending',
+                    'attachments': rec.get('attachments', []),
+                    'drive_links': rec.get('drive_links', []),
+                    'db_remarks': rec.get('remarks', ''),
+                    'order_pdf': rec.get('order_pdf') or '',
+                    'has_pdf': bool(rec.get('order_pdf')),
+                    'pdf_filename': rec['gem_id'].replace('/', '_') + '.pdf',
+                }
+                bids.append(stub_bid)
+    except Exception as dbe:
+        print(f"[DB MERGE] Could not merge DB records into bids: {dbe}")
+
     return bids
 
 def run_batch_scrape(inputs_list):
@@ -294,12 +402,28 @@ def run_batch_scrape(inputs_list):
         scraper_state["current_item"] = item
         scraper_state["status_message"] = f"Scraping bid {i+1}/{len(inputs_list)}: {item}..."
         print(f"[SCRAPER WORKER] Scraping {item}...")
-        
+
+        # Load old JSON data before scrape to detect changes
+        clean_item_file = item.replace('/', '_')
+        old_json_path = os.path.join(JSON_DIR, f"{clean_item_file}.json")
+        old_data = None
+        if os.path.exists(old_json_path):
+            try:
+                with open(old_json_path, 'r', encoding='utf-8') as f_old:
+                    old_data = json.load(f_old)
+            except Exception:
+                old_data = None
+
         try:
             data, pdf_path = scrape_gem_bid(item, output_dir=OUTPUT_DIR)
             if data and isinstance(data, dict):
                 all_results.append(data)
                 scraper_state["completed_items"].append(item)
+                # Automatically detect and log bid changes to Notification Center
+                try:
+                    detect_bid_changes(old_data, data, item)
+                except Exception as ne:
+                    print(f"[NOTIFICATION ERROR] {ne}")
             else:
                 scraper_state["failed_items"].append({"item": item, "error": "No data returned"})
             if pdf_path and isinstance(pdf_path, str) and os.path.exists(pdf_path):
@@ -444,7 +568,130 @@ def save_user_remark():
     if not bid_no:
         return jsonify({'status': 'error', 'message': 'bid_number is required'}), 400
     save_remark(bid_no, remark)
+    try:
+        save_gem_record(bid_no, remarks=remark)
+    except Exception as dbe:
+        print(f"Error syncing remark to DB table gmd_gem_ids: {dbe}")
     return jsonify({'status': 'success', 'bid_number': bid_no, 'remark': remark})
+
+@app.route('/api/upload-bid-document', methods=['POST'])
+def upload_bid_document():
+    gem_id = request.form.get('gem_id', '').strip()
+    remarks = request.form.get('remarks', '').strip()
+    file = request.files.get('pdf_file')
+
+    if not gem_id:
+        return jsonify({'status': 'error', 'message': 'GeM BID / RA ID is required'}), 400
+
+    clean_bid_no = gem_id.upper()
+    drive_link = None
+
+    if file and file.filename:
+        orig_ext = os.path.splitext(file.filename)[1] or '.pdf'
+        ts = int(time.time())
+        safe_filename = f"{clean_bid_no.replace('/', '_')}_{ts}{orig_ext}"
+        local_pdf_path = os.path.join(PDF_DIR, safe_filename)
+        file.save(local_pdf_path)
+
+        # Upload file to Google Drive folder 1WR5AkLfp_ymTgBeLbLbfJq1Zng_KfB90
+        try:
+            drive_link = upload_pdf_to_gdrive(local_pdf_path, filename=safe_filename)
+            print(f"[GDRIVE UPLOAD] Uploaded {safe_filename} -> {drive_link}")
+        except Exception as e:
+            print(f"[GDRIVE ERROR] Google Drive upload error: {e}")
+            drive_link = f"/api/view-pdf/{safe_filename}"  # Fallback link so attachment ALWAYS saves and displays
+
+    # Save record to Database table gmd_gem_files & gmd_gem_ids
+    file_rec = save_file_record(clean_bid_no, file_name=file.filename if file else "Uploaded Document", drive_link=drive_link, file_type=orig_ext.lstrip('.') if file else "pdf")
+    db_rec = save_gem_record(clean_bid_no, drive_link=drive_link, remarks=remarks, filename=file.filename if file else None)
+
+    # Save remark if provided
+    if remarks:
+        save_remark(clean_bid_no, remarks)
+
+    # Append new GeM ID to bids_input_sample.txt so scraper scans it
+    try:
+        existing_items = []
+        if os.path.exists(BIDS_INPUT_FILE):
+            with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f_in:
+                existing_items = [l.strip().upper() for l in f_in if l.strip() and not l.startswith('#')]
+        
+        if clean_bid_no not in existing_items:
+            with open(BIDS_INPUT_FILE, 'a', encoding='utf-8') as f_app:
+                f_app.write(f"\n{clean_bid_no}")
+    except Exception as fe:
+        print(f"Error appending GeM ID to scraper input file: {fe}")
+
+    return jsonify({
+        'status': 'success',
+        'gem_id': clean_bid_no,
+        'drive_link': drive_link,
+        'remarks': remarks,
+        'db_record': db_rec,
+        'file_record': file_rec
+    })
+
+@app.route('/api/view-pdf/<path:filename>', methods=['GET'])
+def view_local_pdf(filename):
+    """Serve uploaded PDF locally if Google Drive link is unavailable."""
+    file_path = os.path.join(PDF_DIR, filename)
+    if os.path.exists(file_path):
+        return send_file(file_path)
+    return jsonify({'status': 'error', 'message': 'File not found'}), 404
+
+@app.route('/api/add-drive-link', methods=['POST'])
+def add_drive_link():
+    """Add a Google Drive link manually to a GeM ID without uploading a file."""
+    req = request.json or {}
+    gem_id = req.get('gem_id', '').strip()
+    drive_link = req.get('drive_link', '').strip()
+
+    if not gem_id:
+        return jsonify({'status': 'error', 'message': 'gem_id is required'}), 400
+    if not drive_link:
+        return jsonify({'status': 'error', 'message': 'drive_link is required'}), 400
+
+    clean_bid_no = gem_id.upper()
+    file_rec = save_file_record(clean_bid_no, file_name="Drive Document", drive_link=drive_link, file_type="pdf")
+    db_rec = save_gem_record(clean_bid_no, drive_link=drive_link)
+
+    # Append to bids_input_sample.txt if not already present
+    try:
+        existing_items = []
+        if os.path.exists(BIDS_INPUT_FILE):
+            with open(BIDS_INPUT_FILE, 'r', encoding='utf-8') as f_in:
+                existing_items = [l.strip().upper() for l in f_in if l.strip() and not l.startswith('#')]
+        if clean_bid_no not in existing_items:
+            with open(BIDS_INPUT_FILE, 'a', encoding='utf-8') as f_app:
+                f_app.write(f"\n{clean_bid_no}")
+    except Exception as fe:
+        print(f"Error appending GeM ID to scraper input file: {fe}")
+
+    return jsonify({
+        'status': 'success',
+        'gem_id': clean_bid_no,
+        'drive_link': drive_link,
+        'db_record': db_rec
+    })
+
+@app.route('/api/db-records', methods=['GET'])
+def get_db_records_endpoint():
+    records = get_all_gem_records()
+    return jsonify({'status': 'success', 'records': records})
+
+@app.route('/api/notifications', methods=['GET'])
+def get_notifications_endpoint():
+    notifs = load_notifications()
+    unread_count = sum(1 for n in notifs if not n.get('read'))
+    return jsonify({'status': 'success', 'notifications': notifs, 'unread_count': unread_count})
+
+@app.route('/api/notifications/read', methods=['POST'])
+def mark_notifications_read_endpoint():
+    req = request.json or {}
+    ids = req.get('ids')
+    updated = mark_notifications_read(ids)
+    unread_count = sum(1 for n in updated if not n.get('read'))
+    return jsonify({'status': 'success', 'notifications': updated, 'unread_count': unread_count})
 
 @app.route('/api/status', methods=['POST'])
 def save_manual_user_status():

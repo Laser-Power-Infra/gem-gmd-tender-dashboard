@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { X, FileText, Zap, Edit3, Save } from 'lucide-react';
+import { X, FileText, Zap, Edit3, Save, Paperclip, ExternalLink, FileSpreadsheet, Image as ImageIcon } from 'lucide-react';
 
 export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) {
   const [data, setData] = useState(null);
@@ -62,7 +62,12 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
     <div className="modal-overlay active">
       <div className="modal-card modal-lg">
         <div className="modal-header">
-          <div className="modal-title-group">
+          <div className="modal-title-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <img 
+              src="/logo.png" 
+              alt="DALUI Logo" 
+              style={{ height: '26px', width: 'auto', objectFit: 'contain' }} 
+            />
             <h3 style={{ margin: 0 }}>GeM Tender Details — {bidNo}</h3>
           </div>
           <button className="modal-close" onClick={onClose}>
@@ -136,6 +141,95 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                       </div>
                     ))}
                   </div>
+
+                  {/* Attachments Section */}
+                  {(() => {
+                    let rawList = [];
+                    if (Array.isArray(data?.attachments) && data.attachments.length > 0) {
+                      rawList = [...data.attachments];
+                    }
+                    if (Array.isArray(data?.drive_links) && data.drive_links.length > 0) {
+                      rawList = [...rawList, ...data.drive_links.map((link, idx) => ({ name: `Doc ${idx + 1}`, url: link, type: 'pdf' }))];
+                    }
+                    if (data?.drive_link && typeof data.drive_link === 'string') {
+                      try {
+                        const parsed = JSON.parse(data.drive_link);
+                        if (Array.isArray(parsed)) rawList = [...rawList, ...parsed];
+                        else rawList.push({ name: 'Doc 1', url: data.drive_link, type: 'pdf' });
+                      } catch {
+                        data.drive_link.split(',').filter(Boolean).forEach((link, idx) => {
+                          rawList.push({ name: `Doc ${idx + 1}`, url: link.trim(), type: 'pdf' });
+                        });
+                      }
+                    }
+
+                    const seenUrls = new Set();
+                    const uniqueAtts = [];
+                    for (const item of rawList) {
+                      const u = typeof item === 'string' ? item : item?.url;
+                      if (u && !seenUrls.has(u)) {
+                        seenUrls.add(u);
+                        uniqueAtts.push(item);
+                      }
+                    }
+
+                    if (uniqueAtts.length === 0) return null;
+
+                    return (
+                      <div style={{ marginBottom: '20px' }}>
+                        <h4 style={{ fontSize: '0.9rem', color: '#0284c7', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <Paperclip className="w-3.5 h-3.5" /> Attached Files &amp; Google Drive Documents ({uniqueAtts.length})
+                        </h4>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                          {uniqueAtts.map((att, idx) => {
+                            const url = typeof att === 'string' ? att : att.url;
+                            const name = typeof att === 'string' ? `Doc ${idx + 1}` : (att.name || `Doc ${idx + 1}`);
+                            let ext = (typeof att === 'object' && att.type ? att.type : (name.split('.').pop() || 'pdf')).toLowerCase();
+                            if (url.includes('.pdf') || name.toLowerCase().endsWith('.pdf')) ext = 'pdf';
+
+                            let icon = <Paperclip className="w-3.5 h-3.5" />;
+                            let badgeClass = "pill-badge pill-slate";
+                            if (ext === 'pdf') {
+                              icon = <FileText className="w-3.5 h-3.5 text-red-500" />;
+                              badgeClass = "pill-badge pill-red";
+                            } else if (ext === 'doc' || ext === 'docx') {
+                              icon = <FileText className="w-3.5 h-3.5 text-blue-500" />;
+                              badgeClass = "pill-badge pill-blue";
+                            } else if (ext === 'xls' || ext === 'xlsx' || ext === 'csv') {
+                              icon = <FileSpreadsheet className="w-3.5 h-3.5 text-green-600" />;
+                              badgeClass = "pill-badge pill-green";
+                            } else if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(ext)) {
+                              icon = <ImageIcon className="w-3.5 h-3.5 text-amber-500" />;
+                              badgeClass = "pill-badge pill-amber";
+                            }
+
+                            return (
+                              <a
+                                key={idx}
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={badgeClass}
+                                style={{
+                                  textDecoration: 'none',
+                                  padding: '6px 12px',
+                                  fontSize: '0.8rem',
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '6px',
+                                  borderRadius: '6px'
+                                }}
+                              >
+                                {icon}
+                                <span>{name}</span>
+                                <ExternalLink className="w-3 h-3 opacity-60" />
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })()}
 
                   {/* Remarks textarea */}
                   <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '12px' }}>
