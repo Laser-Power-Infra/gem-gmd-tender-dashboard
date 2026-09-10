@@ -69,3 +69,13 @@ Thumbs.db
 next-app/.next/
 next-app/node_modules/
 next-app/out/
+
+
+# ==========================================
+# Bid Inputs & Data Files
+# ==========================================
+bids_input.txt
+bids_input*.txt
+bid_inputs/
+*.csv
+*.xlsx
