@@ -8,6 +8,14 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
+# Ensure stdout and stderr handle utf-8 on Windows / non-UTF8 terminals
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
 # Headers to emulate browser request
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -695,6 +703,7 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
     os.makedirs(os.path.join(output_dir, "json"), exist_ok=True)
 
     html_content = ""
+    bid_input_orig = str(bid_input).strip()
     source_id = str(bid_input).strip()
     
     discovered_ra_no = None
@@ -766,12 +775,26 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
         if ra_schedules_url:
             scraped_data['ra_info']['ra_schedules_url'] = ra_schedules_url
 
+    # Record parent_bid_number if input was a /B/ bid number that resolved to an RA
+    if isinstance(bid_input_orig, str) and ("/B/" in bid_input_orig.upper() or "GEM/" in bid_input_orig.upper()):
+        scraped_data['parent_bid_number'] = bid_input_orig
+        if 'ra_info' not in scraped_data:
+            scraped_data['ra_info'] = {}
+        scraped_data['ra_info']['parent_bid_number'] = bid_input_orig
+
     bid_no = scraped_data.get('bid_number', source_id).replace('/', '_')
 
     json_filename = os.path.join(output_dir, "json", f"{bid_no}.json")
     with open(json_filename, 'w', encoding='utf-8') as f:
         json.dump(scraped_data, f, indent=2, ensure_ascii=False)
     print(f"  -> Saved JSON data to {json_filename}")
+
+    # Also save with parent_bid_number filename so lookups directly by parent bid ID always match
+    if 'parent_bid_number' in scraped_data and scraped_data['parent_bid_number'] != scraped_data.get('bid_number'):
+        parent_file_key = scraped_data['parent_bid_number'].replace('/', '_')
+        parent_json_file = os.path.join(output_dir, "json", f"{parent_file_key}.json")
+        with open(parent_json_file, 'w', encoding='utf-8') as f_p:
+            json.dump(scraped_data, f_p, indent=2, ensure_ascii=False)
 
     html_report = build_pdf_html(scraped_data)
     temp_html_path = os.path.join(output_dir, "json", f"temp_{bid_no}.html")
