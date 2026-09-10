@@ -630,22 +630,64 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
                             href = 'https://bidplus.gem.gov.in' + href
                         target_url = href
                         
-                if target_url or discovered_ra_no:
+                # If no evaluation result link yet, extract the active bid card details so it isn't skipped
+                active_card_data = None
+                if not target_url:
+                    # Parse start / end dates, quantity, department from search card
+                    b_start = "N/A"
+                    b_end = "N/A"
+                    start_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', c_text, re.IGNORECASE)
+                    end_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', c_text, re.IGNORECASE)
+                    if start_m: b_start = start_m.group(1).strip()
+                    if end_m: b_end = end_m.group(1).strip()
+
+                    items_m = re.search(r'Items\s*:\s*([^\n\r]+?)(?=\s*Quantity|\s*Department|\s*Start|\$)', c_text, re.IGNORECASE)
+                    qty_m = re.search(r'Quantity\s*:\s*([\d,]+)', c_text, re.IGNORECASE)
+                    dept_m = re.search(r'Department\s*Name\s*And\s*Address\s*:\s*([^\n\r]+?)(?=\s*Start|\s*End|\$)', c_text, re.IGNORECASE)
+
+                    active_card_data = {
+                        'source_id': gem_bid_no,
+                        'bid_number': gem_bid_no,
+                        'bid_title_type': 'BID DETAILS',
+                        'bid_details': {
+                            'Bid Status': 'Active / Ongoing (Evaluation Pending)',
+                            'Bid Start Date / Time': b_start,
+                            'Bid End Date / Time': b_end,
+                            'Quantity': qty_m.group(1).strip() if qty_m else 'N/A',
+                            'Items': items_m.group(1).strip() if items_m else 'N/A'
+                        },
+                        'buyer_details': {
+                            'Department Name': dept_m.group(1).strip() if dept_m else 'N/A'
+                        },
+                        'technical_evaluation': [],
+                        'financial_evaluation': [],
+                        'ra_info': {
+                            'is_ra': bool(discovered_ra_no),
+                            'ra_number': discovered_ra_no or 'N/A',
+                            'ra_status': discovered_ra_status or ('RA Active' if discovered_ra_no else 'N/A'),
+                            'ra_start_date': ra_start_date,
+                            'ra_end_date': ra_end_date,
+                            'ra_schedules': ra_schedules,
+                            'ra_schedules_url': ra_schedules_url
+                        }
+                    }
+
+                if target_url or discovered_ra_no or active_card_data:
                     break
                     
         browser.close()
 
-        if target_url or discovered_ra_no:
+        if target_url or discovered_ra_no or active_card_data:
             if target_url:
                 print(f"  -> Found Exact Bid Result URL: {target_url}")
             if ra_schedules_url:
                 print(f"  -> Found Exact RA Schedules URL: {ra_schedules_url}")
             if discovered_ra_no:
                 print(f"  -> ⚡ Discovered RA Number: {discovered_ra_no} (Schedules: {len(ra_schedules)}, Start: {ra_start_date}, End: {ra_end_date})")
-            return target_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url
+            return target_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card_data
         else:
-            print(f"  -> No exact search result card found on portal for '{gem_bid_no}'")
-            return None, None, None, "N/A", "N/A", [], None
+            print(f"  -> No search result card found on portal for '{gem_bid_no}' (Bid may be fresh or unpublished)")
+            return None, None, None, "N/A", "N/A", [], None, None
 
 def scrape_gem_bid(bid_input, output_dir="scraped_output"):
     os.makedirs(output_dir, exist_ok=True)
@@ -662,44 +704,49 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
     ra_schedules = []
     ra_schedules_url = None
 
+    active_card = None
     # Check if input is a GEM Bid Number e.g. GEM/2023/B/4309262
     if source_id.upper().startswith("GEM/") or "/B/" in source_id.upper() or "/R/" in source_id.upper():
-        resolved_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url = resolve_gem_bid_number_to_url(source_id)
+        resolved_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card = resolve_gem_bid_number_to_url(source_id)
         if resolved_url:
             bid_input = resolved_url
             match = re.search(r'getBidResultView(?:Schedule)?/(\d+)', resolved_url)
             if match:
                 source_id = match.group(1)
+        elif active_card:
+            print(f"  -> Captured Active/Ongoing Bid card data for '{source_id}'")
         elif discovered_ra_no:
             print(f"  -> Discovered RA Number '{discovered_ra_no}' for '{source_id}' even without direct result link")
         else:
             print(f"[SKIP] Bid result not yet available or non-existent on portal for '{source_id}'")
             return None, None
 
-    if os.path.exists(bid_input):
-        print(f"Reading local HTML file: {bid_input}")
-        with open(bid_input, 'r', encoding='utf-8', errors='ignore') as f:
-            html_content = f.read()
-        source_id = os.path.splitext(os.path.basename(bid_input))[0]
-    elif bid_input.startswith("http://") or bid_input.startswith("https://"):
-        print(f"Fetching URL: {bid_input}")
-        match = re.search(r'getBidResultView/(\d+)', bid_input)
-        if match:
-            source_id = match.group(1)
-        res = requests.get(bid_input, headers=HEADERS, timeout=15)
-        res.raise_for_status()
-        html_content = res.text
+    if active_card and not (bid_input.startswith("http://") or bid_input.startswith("https://") or os.path.exists(bid_input)):
+        scraped_data = active_card
     else:
-        url = f"https://bidplus.gem.gov.in/bidding/bid/getBidResultView/{bid_input}"
-        print(f"Fetching Bid Result View ID {bid_input} from URL: {url}")
-        res = requests.get(url, headers=HEADERS, timeout=15)
-        res.raise_for_status()
-        html_content = res.text
+        if os.path.exists(bid_input):
+            print(f"Reading local HTML file: {bid_input}")
+            with open(bid_input, 'r', encoding='utf-8', errors='ignore') as f:
+                html_content = f.read()
+            source_id = os.path.splitext(os.path.basename(bid_input))[0]
+        elif bid_input.startswith("http://") or bid_input.startswith("https://"):
+            print(f"Fetching URL: {bid_input}")
+            match = re.search(r'getBidResultView(?:Schedule)?/(\d+)', bid_input)
+            if match:
+                source_id = match.group(1)
+            res = requests.get(bid_input, headers=HEADERS, timeout=15)
+            res.raise_for_status()
+            html_content = res.text
+        else:
+            url = f"https://bidplus.gem.gov.in/bidding/bid/getBidResultView/{bid_input}"
+            print(f"Fetching Bid Result View ID {bid_input} from URL: {url}")
+            res = requests.get(url, headers=HEADERS, timeout=15)
+            res.raise_for_status()
+            html_content = res.text
 
-
-    scraped_data = extract_bid_details_from_html(html_content, source_id=source_id)
-    if 'bid_input' in locals() and (str(bid_input).startswith("http://") or str(bid_input).startswith("https://")):
-        scraped_data['bid_result_url'] = bid_input
+        scraped_data = extract_bid_details_from_html(html_content, source_id=source_id)
+        if str(bid_input).startswith("http://") or str(bid_input).startswith("https://"):
+            scraped_data['bid_result_url'] = bid_input
 
     if discovered_ra_no:
         if 'ra_info' not in scraped_data:
