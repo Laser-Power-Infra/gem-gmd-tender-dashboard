@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import time
 from datetime import datetime, timezone
@@ -18,21 +19,71 @@ def load_notifications():
             return []
     return []
 
-def save_notifications(notifs):
-    with open(NOTIFICATIONS_FILE, 'w', encoding='utf-8') as f:
-        json.dump(notifs, f, indent=2, ensure_ascii=False)
+def parse_date_safely(date_str):
+    if not date_str or not isinstance(date_str, str):
+        return None
+    # Support formats like '15-09-2026 14:00:00', '15-09-2026', '2026-09-15', etc.
+    clean_d = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', date_str.strip())
+    clean_d = clean_d.replace('/', '-')
+    formats = [
+        '%d-%m-%Y %H:%M:%S',
+        '%d-%m-%Y %H:%M',
+        '%d-%m-%Y %I:%M %p',
+        '%d-%m-%Y',
+        '%Y-%m-%d %H:%M:%S',
+        '%Y-%m-%d'
+    ]
+    for fmt in formats:
+        try:
+            return datetime.strptime(clean_d.split('+')[0].strip(), fmt)
+        except Exception:
+            continue
+    return None
+
+def is_date_in_past(date_str):
+    """Returns True if the date has already passed."""
+    dt = parse_date_safely(date_str)
+    if not dt:
+        return False
+    # If no timezone is set, compare against local/naive now
+    now = datetime.now()
+    return dt < now
 
 def add_notification(gem_id, notif_type, title, message, change_details=None):
     notifs = load_notifications()
     now_str = datetime.now(timezone.utc).isoformat()
+    clean_gem_id = str(gem_id).strip().upper()
+    change_details = change_details or {}
+
+    # 1. If this is a DATE change notification, ignore if the new date is already in the past
+    if notif_type == "DATE_CHANGED":
+        new_val = str(change_details.get("new_value") or "")
+        if new_val and is_date_in_past(new_val):
+            # Expired / past date change, ignore to avoid obsolete alerts
+            return None
+
+    # 2. Prevent duplicate notifications for the same event
+    # Check if an identical notification already exists for this gem_id
+    for existing in notifs:
+        if existing.get("gem_id") == clean_gem_id and existing.get("type") == notif_type:
+            # Check for same title or same change details
+            ex_details = existing.get("change_details") or {}
+            if existing.get("title") == title or (
+                ex_details.get("field") == change_details.get("field") and
+                str(ex_details.get("new_value", "")) == str(change_details.get("new_value", ""))
+            ) or (
+                notif_type in ["WON_L1", "QUALIFIED", "DISQUALIFIED", "RA_TRIGGERED"]
+            ):
+                # Duplicate notification already recorded, don't spam
+                return None
     
     new_notif = {
         "id": f"notif_{int(time.time()*1000)}",
-        "gem_id": str(gem_id).upper(),
+        "gem_id": clean_gem_id,
         "type": notif_type, # 'WON_L1', 'QUALIFIED', 'DISQUALIFIED', 'RA_TRIGGERED', 'STATUS_CHANGE', 'NEW_BID'
         "title": title,
         "message": message,
-        "change_details": change_details or {},
+        "change_details": change_details,
         "timestamp": now_str,
         "read": False
     }
