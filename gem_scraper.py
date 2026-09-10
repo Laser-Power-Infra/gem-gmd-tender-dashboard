@@ -562,6 +562,7 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
         ra_end_date = "N/A"
         ra_schedules = []
         ra_schedules_url = None
+        active_card_data = None
 
         for c in cards:
             c_text = ' '.join(c.get_text().split())
