@@ -337,24 +337,24 @@ export default function Dashboard() {
 
       return [
         idx + 1,
-        `"${(b.bid_number || '').replace(/"/g, '""')}"`,
-        `"${(ra.ra_number || '').replace(/"/g, '""')}"`,
-        `"${(bDetails['Items'] || bDetails['Item Categories'] || b.bid_title_type || '').replace(/"/g, '""')}"`,
-        `"${(bDept['Ministry/State Name'] || bDept['Department Name'] || '').replace(/"/g, '""')}"`,
-        `"${(bDetails['Bid Start Date / Time'] || '').replace(/"/g, '""')}"`,
-        `"${(bDetails['Bid End Date / Time'] || '').replace(/"/g, '""')}"`,
-        `"${(bDetails['Bid Opening Date / Time'] || '').replace(/"/g, '""')}"`,
-        `"${(bDetails['Quantity'] || '').replace(/"/g, '""')}"`,
-        `"${(b.user_status || bDetails['Bid Status'] || 'Active').replace(/"/g, '""')}"`,
-        `"${gmdStatus}"`,
-        `"${(cAn.rank || 'N/A').replace(/"/g, '""')}"`,
-        `"${(cAn.my_price || 'N/A').replace(/"/g, '""')}"`,
-        `"${(l1Seller.seller_name || l1Seller.name || 'N/A').replace(/"/g, '""')}"`,
-        `"${(l1Seller.price || l1Seller.total_price || 'N/A').replace(/"/g, '""')}"`,
-        `"${fDiff.diff_pct !== undefined ? fDiff.diff_pct + '%' : 'N/A'}"`,
-        `"${(b.user_remark || '').replace(/"/g, '""')}"`,
-        `"${(b.order_pdf || '').replace(/"/g, '""')}"`,
-        `"${attLinks.replace(/"/g, '""')}"`
+        `"${String(b.bid_number || '').replace(/"/g, '""')}"`,
+        `"${String(ra.ra_number || '').replace(/"/g, '""')}"`,
+        `"${String(bDetails['Items'] || bDetails['Item Categories'] || b.bid_title_type || '').replace(/"/g, '""')}"`,
+        `"${String(bDept['Ministry/State Name'] || bDept['Department Name'] || '').replace(/"/g, '""')}"`,
+        `"${String(bDetails['Bid Start Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${String(bDetails['Bid End Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${String(bDetails['Bid Opening Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${String(bDetails['Quantity'] || '').replace(/"/g, '""')}"`,
+        `"${String(b.user_status || bDetails['Bid Status'] || 'Active').replace(/"/g, '""')}"`,
+        `"${String(gmdStatus).replace(/"/g, '""')}"`,
+        `"${String(cAn.rank || 'N/A').replace(/"/g, '""')}"`,
+        `"${String(cAn.my_price || 'N/A').replace(/"/g, '""')}"`,
+        `"${String(l1Seller.seller_name || l1Seller.name || 'N/A').replace(/"/g, '""')}"`,
+        `"${String(l1Seller.price || l1Seller.total_price || 'N/A').replace(/"/g, '""')}"`,
+        `"${String(fDiff.diff_pct !== undefined ? fDiff.diff_pct + '%' : 'N/A').replace(/"/g, '""')}"`,
+        `"${String(b.user_remark || '').replace(/"/g, '""')}"`,
+        `"${String(b.order_pdf || '').replace(/"/g, '""')}"`,
+        `"${String(attLinks).replace(/"/g, '""')}"`
       ].join(',');
     });
 
