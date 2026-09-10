@@ -515,8 +515,23 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
-        page.goto('https://bidplus.gem.gov.in/all-bids', wait_until='domcontentloaded')
-        page.wait_for_timeout(1000)
+        
+        # Resilient navigation with retry
+        nav_success = False
+        for attempt in range(1, 4):
+            try:
+                page.goto('https://bidplus.gem.gov.in/all-bids', wait_until='domcontentloaded', timeout=30000)
+                page.wait_for_timeout(1000)
+                nav_success = True
+                break
+            except Exception as nav_err:
+                print(f"  [Attempt {attempt}/3] Navigation notice: {nav_err}. Retrying in 3s...")
+                page.wait_for_timeout(3000)
+        
+        if not nav_success:
+            print(f"  -> Could not reach GeM portal after 3 attempts (Check Internet connectivity).")
+            browser.close()
+            return None, None, None, "N/A", "N/A", [], None
         
         # Click Bid/RA Status radio button if available
         try:
