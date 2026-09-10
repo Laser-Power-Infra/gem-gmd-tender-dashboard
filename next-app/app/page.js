@@ -282,6 +282,95 @@ export default function Dashboard() {
     }
   };
 
+  const handleExportCsv = () => {
+    const bidsToExport = getFilteredBids();
+    if (!bidsToExport || bidsToExport.length === 0) {
+      alert('No tender records available to export.');
+      return;
+    }
+
+    const headers = [
+      '#',
+      'Bid Number',
+      'RA Number',
+      'Items / Categories',
+      'Department / Ministry',
+      'Start Date',
+      'End Date',
+      'Opening Date',
+      'Quantity',
+      'Tender Status',
+      'G.M. DALUI Status',
+      'G.M. DALUI Rank',
+      'G.M. DALUI Price',
+      'L1 Seller',
+      'L1 Price',
+      'L1-L2 Diff %',
+      'User Remark',
+      'Orders PDF Link',
+      'Attached Files'
+    ];
+
+    const rows = bidsToExport.map((b, idx) => {
+      const bDetails = b.bid_details || {};
+      const bDept = b.buyer_details || {};
+      const ra = b.ra_info || {};
+      const cAn = b.company_analysis || {};
+      const fDiff = b.l1_l2_diff || {};
+      const fEval = b.financial_evaluation || [];
+      const l1Seller = fEval.find((s) => s.rank === 'L1' || s.is_l1) || (fEval.length > 0 ? fEval[0] : {});
+
+      // Extract all attachment links
+      const attLinks = (b.attachments && b.attachments.length > 0)
+        ? b.attachments.map((a) => `${a.name}: ${a.url}`).join(' | ')
+        : (b.drive_links || []).join(' | ');
+
+      const gmdStatus = cAn.is_disqualified
+        ? 'Disqualified'
+        : cAn.is_l1
+        ? 'L1 Won'
+        : cAn.is_qualified
+        ? 'Qualified'
+        : cAn.participated
+        ? 'Participated'
+        : 'Not Participated';
+
+      return [
+        idx + 1,
+        `"${(b.bid_number || '').replace(/"/g, '""')}"`,
+        `"${(ra.ra_number || '').replace(/"/g, '""')}"`,
+        `"${(bDetails['Items'] || bDetails['Item Categories'] || b.bid_title_type || '').replace(/"/g, '""')}"`,
+        `"${(bDept['Ministry/State Name'] || bDept['Department Name'] || '').replace(/"/g, '""')}"`,
+        `"${(bDetails['Bid Start Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${(bDetails['Bid End Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${(bDetails['Bid Opening Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${(bDetails['Quantity'] || '').replace(/"/g, '""')}"`,
+        `"${(b.user_status || bDetails['Bid Status'] || 'Active').replace(/"/g, '""')}"`,
+        `"${gmdStatus}"`,
+        `"${(cAn.rank || 'N/A').replace(/"/g, '""')}"`,
+        `"${(cAn.my_price || 'N/A').replace(/"/g, '""')}"`,
+        `"${(l1Seller.seller_name || l1Seller.name || 'N/A').replace(/"/g, '""')}"`,
+        `"${(l1Seller.price || l1Seller.total_price || 'N/A').replace(/"/g, '""')}"`,
+        `"${fDiff.diff_pct !== undefined ? fDiff.diff_pct + '%' : 'N/A'}"`,
+        `"${(b.user_remark || '').replace(/"/g, '""')}"`,
+        `"${(b.order_pdf || '').replace(/"/g, '""')}"`,
+        `"${attLinks.replace(/"/g, '""')}"`
+      ].join(',');
+    });
+
+    const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const timestamp = new Date().toISOString().slice(0, 10);
+    link.setAttribute('href', url);
+    link.setAttribute('download', `gem_bids_summary_${timestamp}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   const handleUploadSuccess = (bidNo, newAtts, newLinks) => {
     const targetKey = String(bidNo || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
     setAllBidsData((prev) =>
@@ -351,7 +440,7 @@ export default function Dashboard() {
       <div className="app-main">
         <Header
           onOpenCombinedPdf={() => setPdfModal({ open: true, filename: 'combined', title: 'Combined Master PDF Report' })}
-          onExportCsv={() => { window.location.href = '/api/csv'; }}
+          onExportCsv={handleExportCsv}
           onOpenManageIds={() => setManageModal(true)}
           onViewDetails={(bidNo) => setDetailsModal({ open: true, bidNo })}
         />
@@ -362,7 +451,7 @@ export default function Dashboard() {
             <AnalyticsReportsView
               bids={allBidsData}
               stats={displayStats}
-              onExportCsv={() => { window.location.href = '/api/csv'; }}
+              onExportCsv={handleExportCsv}
               onOpenCombinedPdf={() => setPdfModal({ open: true, filename: 'combined', title: 'Combined Master PDF Report' })}
             />
           ) : activeNav === 'Network Portal' ? (
