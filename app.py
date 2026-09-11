@@ -85,13 +85,13 @@ def compute_l1_l2_diff(fin_eval):
     if not l1_row or not l2_row:
         return None
     try:
-        p1 = float(re.sub(r'[^\d.]', '', l1_row.get('Total Price', '')))
-        p2 = float(re.sub(r'[^\d.]', '', l2_row.get('Total Price', '')))
+        p1 = float(re.sub(r'[^\d.]', '', str(l1_row.get('Total Price') or l1_row.get('Total L1 Price') or '')))
+        p2 = float(re.sub(r'[^\d.]', '', str(l2_row.get('Total Price') or l2_row.get('Total L1 Price') or '')))
         if p1 > 0 and p2 > p1:
             diff_amt = p2 - p1
             diff_pct = (diff_amt / p1) * 100.0
             return {
-                'l1_seller': l1_row.get('Seller Name', ''),
+                'l1_seller': l1_row.get('Seller Name') or l1_row.get('L1 Seller Name', ''),
                 'l1_price': p1,
                 'l2_seller': l2_row.get('Seller Name', ''),
                 'l2_price': p2,
@@ -116,7 +116,7 @@ def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI
             
     comp_fin_row = None
     for row in f_eval:
-        row_str = (str(row.get('Seller Name', '')) + ' ' + str(row.get('L1 Seller Name', '')) + ' ' + str(row.get('Offered Item', ''))).upper()
+        row_str = (str(row.get('Seller Name', '')) + ' ' + str(row.get('L1 Seller Name', '')) + ' ' + str(row.get('Offered Item', '')) + ' ' + str(row.get('Schedule Title', ''))).upper()
         if any(kw in row_str for kw in company_keywords):
             comp_fin_row = row
             break
@@ -134,15 +134,15 @@ def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI
     is_disqual = 'DISQUALIFIED' in st_upper or 'REJECTED' in st_upper
     is_qual = ('QUALIFIED' in st_upper or 'EVALUATED' in st_upper or 'ACCEPTED' in st_upper or (comp_fin_row is not None)) and not is_disqual
 
-    l1_row = next((r for r in f_eval if isinstance(r, dict) and r.get('Rank', '').upper() == 'L1'), None)
+    l1_row = next((r for r in f_eval if isinstance(r, dict) and (r.get('Rank', '').upper() == 'L1' or bool(r.get('Total L1 Price')))), None)
     l2_row = next((r for r in f_eval if isinstance(r, dict) and r.get('Rank', '').upper() == 'L2'), None)
 
-    my_rank = str(comp_fin_row.get('Rank', 'N/A')).upper() if comp_fin_row else 'N/A'
-    is_l1 = my_rank == 'L1' or (comp_fin_row and comp_fin_row.get('L1 Seller Name') and any(kw in str(comp_fin_row.get('L1 Seller Name')).upper() for kw in company_keywords))
+    my_rank = str(comp_fin_row.get('Rank', comp_fin_row.get('Schedule Status', 'N/A'))).upper() if comp_fin_row else 'N/A'
+    is_l1 = my_rank == 'L1' or my_rank == 'AWARDED' or (comp_fin_row and comp_fin_row.get('L1 Seller Name') and any(kw in str(comp_fin_row.get('L1 Seller Name')).upper() for kw in company_keywords))
     is_l2 = my_rank == 'L2'
 
-    my_price = parse_val(comp_fin_row.get('Total Price', '')) if comp_fin_row else 0.0
-    l1_price = parse_val(l1_row.get('Total Price', '')) if l1_row else 0.0
+    my_price = parse_val(comp_fin_row.get('Total Price') or comp_fin_row.get('Total L1 Price') or '') if comp_fin_row else 0.0
+    l1_price = parse_val(l1_row.get('Total Price') or l1_row.get('Total L1 Price') or '') if l1_row else 0.0
 
     gap_msg = ''
     diff_amount = 0.0
@@ -151,7 +151,7 @@ def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI
     if comp_fin_row and l1_price > 0 and my_price > 0:
         if is_l1:
             if l2_row:
-                p2 = parse_val(l2_row.get('Total Price', ''))
+                p2 = parse_val(l2_row.get('Total Price') or l2_row.get('Total L1 Price') or '')
                 if p2 > my_price:
                     diff_amount = p2 - my_price
                     diff_pct = (diff_amount / my_price) * 100.0

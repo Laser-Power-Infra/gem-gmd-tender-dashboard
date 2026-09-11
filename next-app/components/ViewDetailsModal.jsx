@@ -310,25 +310,36 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                     <table className="modal-table">
                       <thead>
                         <tr>
-                          <th>Rank</th>
+                          <th>Rank / Status</th>
                           <th>Seller Name</th>
-                          <th>Offered Item</th>
+                          <th>Schedule / Offered Item</th>
                           <th>Total Price</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {fEval.map((row, idx) => (
-                          <tr key={idx}>
-                            <td>
-                              <span className={`badge ${row['Rank'] === 'L1' ? 'badge-gold' : 'badge-blue'}`}>
-                                {row['Rank'] || '—'}
-                              </span>
-                            </td>
-                            <td><strong>{row['Seller Name'] || row['L1 Seller Name'] || '—'}</strong></td>
-                            <td>{row['Offered Item'] || '—'}</td>
-                            <td><strong>₹ {Number(String(row['Total Price'] || '0').replace(/[^\d.]/g, '')).toLocaleString('en-IN')}</strong></td>
-                          </tr>
-                        ))}
+                        {fEval.map((row, idx) => {
+                          const rawPrice = row['Total Price'] || row['Total L1 Price'] || row['total_price'] || row['price'] || '';
+                          const cleanPriceNum = Number(String(rawPrice).replace(/[^\d.]/g, ''));
+                          const formattedPrice = cleanPriceNum > 0 ? `₹ ${cleanPriceNum.toLocaleString('en-IN')}` : (rawPrice && rawPrice !== '0' ? String(rawPrice) : '—');
+                          
+                          const seller = row['Seller Name'] || row['L1 Seller Name'] || '—';
+                          const item = row['Offered Item'] || row['Schedule Title'] || row['Item Categories'] || '—';
+                          const rank = row['Rank'] || row['Schedule Status'] || (row['Total L1 Price'] ? 'L1' : '—');
+                          const isGold = rank === 'L1' || rank === 'Awarded';
+
+                          return (
+                            <tr key={idx}>
+                              <td>
+                                <span className={`badge ${isGold ? 'badge-gold' : 'badge-blue'}`}>
+                                  {rank}
+                                </span>
+                              </td>
+                              <td><strong>{seller}</strong></td>
+                              <td>{item}</td>
+                              <td><strong>{formattedPrice}</strong></td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                     </table>
                   )}

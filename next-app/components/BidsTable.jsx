@@ -125,7 +125,7 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       getVal: (b) => {
         const fe = b.financial_evaluation || [];
         const cAn = b.company_analysis || {};
-        const p = fe[0]?.['Total Price'] || fe[0]?.['total_price'] || fe[0]?.['price'] || cAn.l1_price;
+        const p = fe[0]?.['Total Price'] || fe[0]?.['Total L1 Price'] || fe[0]?.['total_price'] || fe[0]?.['price'] || cAn.l1_price;
         return p && p !== 'N/A' && p !== 0 ? formatPrice(p) : '—';
       } 
     },
@@ -463,7 +463,7 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                   <td>{posCell}</td>
                   <td>
                     {(() => {
-                      const rawPrice = finEval[0]?.['Total Price'] || finEval[0]?.['total_price'] || finEval[0]?.['price'] || cAn.l1_price || b.l1_price;
+                      const rawPrice = finEval[0]?.['Total Price'] || finEval[0]?.['Total L1 Price'] || finEval[0]?.['total_price'] || finEval[0]?.['price'] || cAn.l1_price || b.l1_price;
                       if (rawPrice && rawPrice !== 'N/A' && rawPrice !== 0) {
                         return <div className="l1-price-val">{formatPrice(rawPrice)}</div>;
                       }
