@@ -2,6 +2,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { Award, Eye, FileText, FileSpreadsheet, Image as ImageIcon, XCircle, Filter, X, ExternalLink, Paperclip, Upload } from 'lucide-react';
 
+const formatPrice = (str) => {
+  if (!str) return '—';
+  str = String(str).replace(/`/g, '₹').replace(/INR/g, '₹').trim();
+  if (!str.startsWith('₹')) str = '₹ ' + str;
+  return str;
+};
+
 export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDetails, onOpenPdf, onRefresh, onUploadSuccess }) {
   const [sortKey, setSortKey] = useState(null);
   const [sortDir, setSortDir] = useState(1);
@@ -217,13 +224,6 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
   const selectAllColValues = (colKey) => {
     const vals = getDistinctValues(colKey);
     setColumnFilters((prev) => ({ ...prev, [colKey]: new Set(vals) }));
-  };
-
-  const formatPrice = (str) => {
-    if (!str) return 'N/A';
-    str = String(str).replace(/`/g, '₹').replace(/INR/g, '₹').trim();
-    if (!str.startsWith('₹')) str = '₹ ' + str;
-    return str;
   };
 
   return (

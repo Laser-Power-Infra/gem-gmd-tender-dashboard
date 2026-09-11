@@ -285,7 +285,7 @@ def load_all_json_bids():
                     'ra_end_date': b_details.get('RA End Date / Time', b_details.get('RA End Date', ra_inf.get('ra_end_date', 'N/A')))
                 }
                 
-                # Deduplicate: if bid_no is already in bids_dict, merge RA info into existing record
+                # Deduplicate: if bid_no is already in bids_dict, merge RA info & evaluations into existing record
                 if bid_no in bids_dict:
                     existing = bids_dict[bid_no]
                     if isinstance(existing, dict):
@@ -299,12 +299,63 @@ def load_all_json_bids():
                             existing['ra_info']['is_ra'] = True
                         if not existing.get('user_remark') and data.get('user_remark'):
                             existing['user_remark'] = data['user_remark']
+                        
+                        # Merge evaluations between partner records
+                        if (not existing.get('financial_evaluation') or len(existing.get('financial_evaluation', [])) == 0) and data.get('financial_evaluation'):
+                            existing['financial_evaluation'] = data['financial_evaluation']
+                        if (not existing.get('technical_evaluation') or len(existing.get('technical_evaluation', [])) == 0) and data.get('technical_evaluation'):
+                            existing['technical_evaluation'] = data['technical_evaluation']
                 else:
                     bids_dict[bid_no] = data
 
         except Exception as e:
             print(f"Error loading {filepath}: {e}")
     
+    # Second Pass: Cross-link any remaining bids with their corresponding RA / parent partners
+    all_records_by_key = {}
+    for b in bids_dict.values():
+        if isinstance(b, dict):
+            bn = str(b.get('bid_number', '')).strip().upper()
+            raw_bn = str(b.get('raw_bid_no', '')).strip().upper()
+            ra_n = str((b.get('ra_info') or {}).get('ra_number', '')).strip().upper()
+            if bn: all_records_by_key[bn] = b
+            if raw_bn: all_records_by_key[raw_bn] = b
+            if ra_n and ra_n != 'N/A': all_records_by_key[ra_n] = b
+
+    for b in bids_dict.values():
+        if not isinstance(b, dict):
+            continue
+        ra_inf = b.get('ra_info') or {}
+        ra_no = str(ra_inf.get('ra_number', '')).strip().upper()
+        parent_no = str(b.get('parent_bid_number', '')).strip().upper()
+
+        partner = None
+        if ra_no and ra_no != 'N/A' and ra_no in all_records_by_key and all_records_by_key[ra_no] is not b:
+            partner = all_records_by_key[ra_no]
+        elif parent_no and parent_no != 'N/A' and parent_no in all_records_by_key and all_records_by_key[parent_no] is not b:
+            partner = all_records_by_key[parent_no]
+
+        if partner and isinstance(partner, dict):
+            # 1. Merge Financial Evaluation if missing
+            if (not b.get('financial_evaluation') or len(b.get('financial_evaluation', [])) == 0) and partner.get('financial_evaluation'):
+                b['financial_evaluation'] = partner['financial_evaluation']
+            # 2. Merge Technical Evaluation if missing
+            if (not b.get('technical_evaluation') or len(b.get('technical_evaluation', [])) == 0) and partner.get('technical_evaluation'):
+                b['technical_evaluation'] = partner['technical_evaluation']
+            # 3. Merge RA info
+            p_ra = partner.get('ra_info') or {}
+            if (not ra_inf.get('ra_number') or ra_inf.get('ra_number') == 'N/A') and p_ra.get('ra_number') and p_ra.get('ra_number') != 'N/A':
+                ra_inf['ra_number'] = p_ra['ra_number']
+                ra_inf['is_ra'] = True
+            if (not ra_inf.get('ra_start_date') or ra_inf.get('ra_start_date') == 'N/A') and p_ra.get('ra_start_date') and p_ra.get('ra_start_date') != 'N/A':
+                ra_inf['ra_start_date'] = p_ra['ra_start_date']
+            if (not ra_inf.get('ra_end_date') or ra_inf.get('ra_end_date') == 'N/A') and p_ra.get('ra_end_date') and p_ra.get('ra_end_date') != 'N/A':
+                ra_inf['ra_end_date'] = p_ra['ra_end_date']
+
+        # Recalculate company analysis and L1 diff after cross-linking
+        b['l1_l2_diff'] = compute_l1_l2_diff(b.get('financial_evaluation', []))
+        b['company_analysis'] = analyze_company_bid(b)
+
     bids = [b for b in bids_dict.values() if isinstance(b, dict)]
     bids.sort(key=lambda x: str((x or {}).get('bid_number') or ''), reverse=True)
 
