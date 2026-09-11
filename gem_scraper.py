@@ -628,6 +628,7 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
                     if end_m:
                         ra_end_date = end_m.group(1).strip()
 
+                bid_result_links = []
                 for a in c.find_all('a', href=True):
                     href = a['href']
                     link_text = a.get_text(strip=True).upper()
@@ -635,9 +636,13 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
                         discovered_ra_status = "RA Result Published"
 
                     if 'getBidResultView' in href or 'getBidResultViewSchedule' in href:
-                        if not href.startswith('http'):
-                            href = 'https://bidplus.gem.gov.in' + href
-                        target_url = href
+                        full_h = href if href.startswith('http') else 'https://bidplus.gem.gov.in' + href
+                        if full_h not in bid_result_links:
+                            bid_result_links.append(full_h)
+
+                # Prioritize first / main Bid Result View URL (contains full Technical and Financial evaluation tables)
+                if bid_result_links:
+                    target_url = bid_result_links[0]
                         
                 # If no evaluation result link yet, extract the active bid card details so it isn't skipped
                 active_card_data = None
