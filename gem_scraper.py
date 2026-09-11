@@ -86,7 +86,7 @@ def extract_bid_details_from_html(html_content, source_id=""):
                         k = node[:-1].strip()
                         v = all_text_nodes[i+1].strip()
                         if not v.endswith(':'):
-                            if k in ['Name', 'Address', 'Ministry', 'Department', 'Organisation', 'Office', 'State']:
+                            if k in ['Name', 'Address', 'Ministry', 'Department', 'Organisation', 'Office', 'State', 'Designation', 'Ministry/State Name', 'Department Name', 'Organisation Name', 'Office Name']:
                                 data['buyer_details'][k] = v
                             elif k not in ['Buyer Details', 'Consignees / Reporting Officer / Delivery Location(S)', 'Buyer Uploaded CA Documents']:
                                 data['bid_details'][k] = v
@@ -133,6 +133,17 @@ def extract_bid_details_from_html(html_content, source_id=""):
                         item[h] = val
                     data['financial_evaluation'].append(item)
 
+    # NORMALIZE BUYER DETAILS
+    by = data['buyer_details']
+    if 'Ministry/State Name' in by and not by.get('Ministry'):
+        by['Ministry'] = by['Ministry/State Name']
+    if 'Department Name' in by and not by.get('Department'):
+        by['Department'] = by['Department Name']
+    if 'Organisation Name' in by and not by.get('Organisation'):
+        by['Organisation'] = by['Organisation Name']
+    if 'Office Name' in by and not by.get('Office'):
+        by['Office'] = by['Office Name']
+
     # REVERSE AUCTION (RA) DETECTION
     bid_no_str = data.get('bid_number', '')
     b_details = data.get('bid_details', {})
@@ -142,12 +153,21 @@ def extract_bid_details_from_html(html_content, source_id=""):
     ra_number = b_details.get('RA Number', bid_no_str if '/R/' in bid_no_str else '')
     ra_status = b_details.get('RA Status', b_details.get('RA Bid Status', b_details.get('Bid Status', 'Active' if is_ra else 'N/A')))
     
+    ra_start = b_details.get('RA Start Date / Time', b_details.get('RA Start Date', 'N/A'))
+    ra_end = b_details.get('RA End Date / Time', b_details.get('RA End Date', 'N/A'))
+
+    # If primary bid dates are missing but RA dates exist, use them
+    if not b_details.get('Bid Start Date / Time') and ra_start != 'N/A':
+        b_details['Bid Start Date / Time'] = ra_start
+    if not b_details.get('Bid End Date / Time') and ra_end != 'N/A':
+        b_details['Bid End Date / Time'] = ra_end
+
     data['ra_info'] = {
         'is_ra': is_ra,
         'ra_number': ra_number,
         'ra_status': ra_status,
-        'ra_start_date': b_details.get('RA Start Date / Time', b_details.get('RA Start Date', 'N/A')),
-        'ra_end_date': b_details.get('RA End Date / Time', b_details.get('RA End Date', 'N/A'))
+        'ra_start_date': ra_start,
+        'ra_end_date': ra_end
     }
 
     return data

@@ -259,7 +259,14 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
               {activeTab === 'tech_eval' && (
                 <div>
                   {tEval.length === 0 ? (
-                    <p className="text-muted text-center py-8">No technical evaluation records found.</p>
+                    <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '24px', textAlign: 'center' }}>
+                      <p style={{ margin: 0, fontWeight: 600, color: '#475569', fontSize: '0.95rem' }}>
+                        Technical Evaluation Not Yet Published
+                      </p>
+                      <p style={{ margin: '6px 0 0 0', color: '#94a3b8', fontSize: '0.82rem' }}>
+                        This tender is currently active / ongoing or technical evaluation results have not been published by the buyer on GeM portal.
+                      </p>
+                    </div>
                   ) : (
                     <table className="modal-table">
                       <thead>
@@ -272,11 +279,11 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                       <tbody>
                         {tEval.map((row, idx) => (
                           <tr key={idx}>
-                            <td><strong>{row['Seller Name'] || 'N/A'}</strong></td>
-                            <td>{row['Offered Item'] || 'N/A'}</td>
+                            <td><strong>{row['Seller Name'] || '—'}</strong></td>
+                            <td>{row['Offered Item'] || '—'}</td>
                             <td>
                               <span className={`badge ${String(row['Status']).toUpperCase().includes('QUALIFIED') && !String(row['Status']).toUpperCase().includes('DISQUALIFIED') ? 'badge-green' : 'badge-red'}`}>
-                                {row['Status'] || 'N/A'}
+                                {row['Status'] || '—'}
                               </span>
                             </td>
                           </tr>
@@ -291,7 +298,14 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
               {activeTab === 'fin_eval' && (
                 <div>
                   {fEval.length === 0 ? (
-                    <p className="text-muted text-center py-8">No financial evaluation records found.</p>
+                    <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '24px', textAlign: 'center' }}>
+                      <p style={{ margin: 0, fontWeight: 600, color: '#475569', fontSize: '0.95rem' }}>
+                        Financial Evaluation / L1 Price Not Yet Published
+                      </p>
+                      <p style={{ margin: '6px 0 0 0', color: '#94a3b8', fontSize: '0.82rem' }}>
+                        Financial evaluation or Reverse Auction results will appear once financial bids are opened by the department.
+                      </p>
+                    </div>
                   ) : (
                     <table className="modal-table">
                       <thead>
@@ -307,11 +321,11 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                           <tr key={idx}>
                             <td>
                               <span className={`badge ${row['Rank'] === 'L1' ? 'badge-gold' : 'badge-blue'}`}>
-                                {row['Rank'] || 'N/A'}
+                                {row['Rank'] || '—'}
                               </span>
                             </td>
-                            <td><strong>{row['Seller Name'] || row['L1 Seller Name'] || 'N/A'}</strong></td>
-                            <td>{row['Offered Item'] || 'N/A'}</td>
+                            <td><strong>{row['Seller Name'] || row['L1 Seller Name'] || '—'}</strong></td>
+                            <td>{row['Offered Item'] || '—'}</td>
                             <td><strong>₹ {Number(String(row['Total Price'] || '0').replace(/[^\d.]/g, '')).toLocaleString('en-IN')}</strong></td>
                           </tr>
                         ))}

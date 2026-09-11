@@ -202,6 +202,7 @@ def load_all_json_bids():
                 
                 # Check if data already has ra_info with parent bid_number
                 b_details = data.get('bid_details') or {}
+                buyer_details = data.get('buyer_details') or {}
                 raw_bid_no = data.get('bid_number') or os.path.splitext(os.path.basename(filepath))[0]
                 
                 # Extract RA details (ra_info may be explicitly null in some JSON files)
@@ -213,6 +214,35 @@ def load_all_json_bids():
                 parent_b = data.get('parent_bid_number') or ra_inf.get('parent_bid_number')
                 if '/R/' in bid_no.upper() and parent_b:
                     bid_no = parent_b
+
+                # Normalize Dates into b_details
+                ra_s_date = b_details.get('RA Start Date / Time') or b_details.get('RA Start Date') or ra_inf.get('ra_start_date') or (ra_inf.get('ra_schedules', [{}])[0].get('start_date') if ra_inf.get('ra_schedules') else None)
+                ra_e_date = b_details.get('RA End Date / Time') or b_details.get('RA End Date') or ra_inf.get('ra_end_date') or (ra_inf.get('ra_schedules', [{}])[0].get('end_date') if ra_inf.get('ra_schedules') else None)
+                
+                if (not b_details.get('Bid Start Date / Time') or b_details.get('Bid Start Date / Time') == 'N/A') and ra_s_date and ra_s_date != 'N/A':
+                    b_details['Bid Start Date / Time'] = ra_s_date
+                if (not b_details.get('Bid End Date / Time') or b_details.get('Bid End Date / Time') == 'N/A') and ra_e_date and ra_e_date != 'N/A':
+                    b_details['Bid End Date / Time'] = ra_e_date
+
+                # Normalize Buyer Department / Ministry
+                if not buyer_details.get('Department') and buyer_details.get('Department Name'):
+                    buyer_details['Department'] = buyer_details['Department Name']
+                if not buyer_details.get('Ministry') and buyer_details.get('Ministry/State Name'):
+                    buyer_details['Ministry'] = buyer_details['Ministry/State Name']
+                if not buyer_details.get('Organisation') and buyer_details.get('Organisation Name'):
+                    buyer_details['Organisation'] = buyer_details['Organisation Name']
+                if not buyer_details.get('Department') and b_details.get('Department Name'):
+                    buyer_details['Department'] = b_details['Department Name']
+
+                # Normalize Quantity
+                if not b_details.get('Quantity') or b_details.get('Quantity') == 'N/A':
+                    if b_details.get('Contract Duration'):
+                        b_details['Quantity'] = b_details['Contract Duration']
+                    elif b_details.get('Items'):
+                        b_details['Quantity'] = b_details['Items']
+
+                data['bid_details'] = b_details
+                data['buyer_details'] = buyer_details
 
                 # Filter out files that do not belong to bids_input_sample.txt
                 if valid_input_ids:

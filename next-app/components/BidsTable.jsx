@@ -63,25 +63,46 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       getVal: (b) => {
         const raNo = b.ra_info?.ra_number;
         const bNo = b.bid_number || '';
-        return (raNo && raNo !== 'N/A') ? `${bNo} ${raNo}` : bNo;
+        return (raNo && raNo !== 'N/A' && raNo !== bNo) ? `${bNo} ${raNo}` : bNo;
       }
     },
-    { key: 'qty', label: 'QUANTITY', minWidth: '110px', getVal: (b) => b.bid_details?.['Quantity'] || 'N/A' },
-    { key: 'buyer_name', label: 'BUYER', minWidth: '200px', getVal: (b) => b.buyer_details?.['Name'] || 'N/A' },
+    { 
+      key: 'qty', 
+      label: 'QUANTITY', 
+      minWidth: '110px', 
+      getVal: (b) => {
+        const bd = b.bid_details || {};
+        return bd['Quantity'] || bd['Contract Duration'] || bd['Items'] || '—';
+      } 
+    },
+    { 
+      key: 'buyer_name', 
+      label: 'BUYER', 
+      minWidth: '200px', 
+      getVal: (b) => {
+        const bd = b.buyer_details || {};
+        return bd['Name'] || bd['Designation'] || '—';
+      } 
+    },
     {
       key: 'buyer_ministry',
       label: 'MINISTRY / DEPARTMENT',
       minWidth: '230px',
       getVal: (b) => {
         const bd = b.buyer_details || {};
-        return bd['Ministry'] || bd['Department'] || bd['Organisation'] || bd['Office'] || 'N/A';
+        const bdt = b.bid_details || {};
+        return bd['Ministry'] || bd['Department'] || bd['Organisation'] || bd['Office'] || bd['Ministry/State Name'] || bd['Department Name'] || bdt['Department Name'] || '—';
       }
     },
     {
       key: 'dates',
       label: 'RA & BID CLOSING DATES',
       minWidth: '190px',
-      getVal: (b) => b.ra_info?.ra_end_date || b.bid_details?.['Bid End Date / Time'] || ''
+      getVal: (b) => {
+        const bdt = b.bid_details || {};
+        const raInf = b.ra_info || {};
+        return raInf.ra_end_date || bdt['Bid End Date / Time'] || bdt['RA End Date / Time'] || raInf.ra_schedules?.[0]?.end_date || '';
+      }
     },
     {
       key: 'dalui_pos',
@@ -97,7 +118,17 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
         return 'Not Participated';
       }
     },
-    { key: 'l1_price', label: 'L1 PRICE', minWidth: '130px', getVal: (b) => b.financial_evaluation?.[0]?.['Total Price'] || 'N/A' },
+    { 
+      key: 'l1_price', 
+      label: 'L1 PRICE', 
+      minWidth: '130px', 
+      getVal: (b) => {
+        const fe = b.financial_evaluation || [];
+        const cAn = b.company_analysis || {};
+        const p = fe[0]?.['Total Price'] || fe[0]?.['total_price'] || fe[0]?.['price'] || cAn.l1_price;
+        return p && p !== 'N/A' && p !== 0 ? formatPrice(p) : '—';
+      } 
+    },
     { key: 'status', label: 'STATUS', minWidth: '140px', getVal: (b) => b.user_status || 'Pending' }
   ];
 
@@ -396,24 +427,53 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                       <div><strong className="bid-number">{bidNo}</strong></div>
                     )}
                   </td>
-                  <td><span className="cell-qty">{bDetails['Quantity'] || 'N/A'}</span></td>
                   <td>
-                    <div className="buyer-name">{buyerDetails['Name'] || 'N/A'}</div>
+                    <span className="cell-qty">
+                      {bDetails['Quantity'] || bDetails['Contract Duration'] || bDetails['Items'] || '—'}
+                    </span>
+                  </td>
+                  <td>
+                    <div className="buyer-name">{buyerDetails['Name'] || buyerDetails['Designation'] || '—'}</div>
                   </td>
                   <td>
                     <div className="buyer-dept">
-                      {buyerDetails['Ministry'] || buyerDetails['Department'] || buyerDetails['Organisation'] || buyerDetails['Office'] || 'N/A'}
+                      {buyerDetails['Ministry'] || buyerDetails['Department'] || buyerDetails['Organisation'] || buyerDetails['Office'] || buyerDetails['Ministry/State Name'] || buyerDetails['Department Name'] || bDetails['Department Name'] || '—'}
                     </div>
                   </td>
                   <td>
                     <div className="date-cell">
-                      <span className="d-start">Start: {bDetails['Bid Start Date / Time'] || 'N/A'}</span>
-                      <span className="d-end">End: {bDetails['Bid End Date / Time'] || 'N/A'}</span>
+                      {(() => {
+                        const sDate = bDetails['Bid Start Date / Time'] || bDetails['RA Start Date / Time'] || raInf.ra_start_date || raInf.ra_schedules?.[0]?.start_date || '';
+                        const eDate = bDetails['Bid End Date / Time'] || bDetails['RA End Date / Time'] || raInf.ra_end_date || raInf.ra_schedules?.[0]?.end_date || '';
+                        const hasRaEnd = raInf.ra_end_date && raInf.ra_end_date !== 'N/A' && raInf.ra_end_date !== eDate;
+                        return (
+                          <>
+                            <span className="d-start">Start: {sDate && sDate !== 'N/A' ? sDate : '—'}</span>
+                            <span className="d-end">End: {eDate && eDate !== 'N/A' ? eDate : '—'}</span>
+                            {hasRaEnd && (
+                              <span className="pill-badge pill-amber" style={{ fontSize: '0.68rem', marginTop: '2px', display: 'inline-block' }}>
+                                ⚡ RA End: {raInf.ra_end_date}
+                              </span>
+                            )}
+                          </>
+                        );
+                      })()}
                     </div>
                   </td>
                   <td>{posCell}</td>
                   <td>
-                    <div className="l1-price-val">{formatPrice(finEval[0]?.['Total Price'])}</div>
+                    {(() => {
+                      const rawPrice = finEval[0]?.['Total Price'] || finEval[0]?.['total_price'] || finEval[0]?.['price'] || cAn.l1_price || b.l1_price;
+                      if (rawPrice && rawPrice !== 'N/A' && rawPrice !== 0) {
+                        return <div className="l1-price-val">{formatPrice(rawPrice)}</div>;
+                      }
+                      const tEval = b.technical_evaluation || [];
+                      const isOngoing = (bDetails['Bid Status'] && (bDetails['Bid Status'].includes('Ongoing') || bDetails['Bid Status'].includes('Active'))) || tEval.length === 0;
+                      if (isOngoing) {
+                        return <span className="pill-badge pill-slate" style={{ fontSize: '0.72rem' }}>Eval Pending</span>;
+                      }
+                      return <span className="text-muted">—</span>;
+                    })()}
                   </td>
                   <td>
                     <select

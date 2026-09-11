@@ -191,8 +191,8 @@ export default function Dashboard() {
 
       if (dateFrom || dateTo) {
         let targetDateStr = '';
-        if (dateType === 'start') targetDateStr = bDetails['Bid Start Date / Time'];
-        else if (dateType === 'end') targetDateStr = bDetails['Bid End Date / Time'];
+        if (dateType === 'start') targetDateStr = bDetails['Bid Start Date / Time'] || bDetails['RA Start Date / Time'] || raInf.ra_start_date || raInf.ra_schedules?.[0]?.start_date;
+        else if (dateType === 'end') targetDateStr = bDetails['Bid End Date / Time'] || bDetails['RA End Date / Time'] || raInf.ra_end_date || raInf.ra_schedules?.[0]?.end_date;
         else if (dateType === 'opening') targetDateStr = bDetails['Bid Opening Date / Time'];
 
         const parsedDate = parseGeMDate(targetDateStr);
@@ -318,40 +318,31 @@ export default function Dashboard() {
       const cAn = b.company_analysis || {};
       const fDiff = b.l1_l2_diff || {};
       const fEval = b.financial_evaluation || [];
-      const l1Seller = fEval.find((s) => s.rank === 'L1' || s.is_l1) || (fEval.length > 0 ? fEval[0] : {});
+      const l1Price = fEval[0]?.['Total Price'] || fEval[0]?.['total_price'] || fEval[0]?.['price'] || cAn.l1_price || '';
+      const l1SellerName = fEval[0]?.['Seller Name'] || fEval[0]?.['L1 Seller Name'] || '';
 
-      // Extract all attachment links
-      const attLinks = (b.attachments && b.attachments.length > 0)
-        ? b.attachments.map((a) => `${a.name}: ${a.url}`).join(' | ')
-        : (b.drive_links || []).join(' | ');
-
-      const gmdStatus = cAn.is_disqualified
-        ? 'Disqualified'
-        : cAn.is_l1
-        ? 'L1 Won'
-        : cAn.is_qualified
-        ? 'Qualified'
-        : cAn.participated
-        ? 'Participated'
-        : 'Not Participated';
+      const sDate = bDetails['Bid Start Date / Time'] || bDetails['RA Start Date / Time'] || ra.ra_start_date || '';
+      const eDate = bDetails['Bid End Date / Time'] || bDetails['RA End Date / Time'] || ra.ra_end_date || '';
+      const deptName = bDept['Ministry'] || bDept['Department'] || bDept['Organisation'] || bDept['Ministry/State Name'] || bDept['Department Name'] || bDetails['Department Name'] || '';
+      const qtyVal = bDetails['Quantity'] || bDetails['Contract Duration'] || bDetails['Items'] || '';
 
       return [
         idx + 1,
         `"${String(b.bid_number || '').replace(/"/g, '""')}"`,
         `"${String(ra.ra_number || '').replace(/"/g, '""')}"`,
         `"${String(bDetails['Items'] || bDetails['Item Categories'] || b.bid_title_type || '').replace(/"/g, '""')}"`,
-        `"${String(bDept['Ministry/State Name'] || bDept['Department Name'] || '').replace(/"/g, '""')}"`,
-        `"${String(bDetails['Bid Start Date / Time'] || '').replace(/"/g, '""')}"`,
-        `"${String(bDetails['Bid End Date / Time'] || '').replace(/"/g, '""')}"`,
+        `"${String(deptName).replace(/"/g, '""')}"`,
+        `"${String(sDate).replace(/"/g, '""')}"`,
+        `"${String(eDate).replace(/"/g, '""')}"`,
         `"${String(bDetails['Bid Opening Date / Time'] || '').replace(/"/g, '""')}"`,
-        `"${String(bDetails['Quantity'] || '').replace(/"/g, '""')}"`,
+        `"${String(qtyVal).replace(/"/g, '""')}"`,
         `"${String(b.user_status || bDetails['Bid Status'] || 'Active').replace(/"/g, '""')}"`,
         `"${String(gmdStatus).replace(/"/g, '""')}"`,
-        `"${String(cAn.rank || 'N/A').replace(/"/g, '""')}"`,
-        `"${String(cAn.my_price || 'N/A').replace(/"/g, '""')}"`,
-        `"${String(l1Seller.seller_name || l1Seller.name || 'N/A').replace(/"/g, '""')}"`,
-        `"${String(l1Seller.price || l1Seller.total_price || 'N/A').replace(/"/g, '""')}"`,
-        `"${String(fDiff.diff_pct !== undefined ? fDiff.diff_pct + '%' : 'N/A').replace(/"/g, '""')}"`,
+        `"${String(cAn.rank || '').replace(/"/g, '""')}"`,
+        `"${String(cAn.my_price ? '₹ ' + cAn.my_price : '').replace(/"/g, '""')}"`,
+        `"${String(l1SellerName).replace(/"/g, '""')}"`,
+        `"${String(l1Price ? (String(l1Price).startsWith('₹') ? l1Price : '₹ ' + l1Price) : '').replace(/"/g, '""')}"`,
+        `"${String(fDiff.diff_pct !== undefined ? fDiff.diff_pct + '%' : '').replace(/"/g, '""')}"`,
         `"${String(b.user_remark || '').replace(/"/g, '""')}"`,
         `"${String(b.order_pdf || '').replace(/"/g, '""')}"`,
         `"${String(attLinks).replace(/"/g, '""')}"`
