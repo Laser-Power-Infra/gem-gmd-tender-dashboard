@@ -21,6 +21,7 @@ export default function Sidebar({ activeNav = 'Dashboard', onNavSelect, stats = 
 
   const cStats = stats.company_stats || {};
   const participated = cStats.participated || 0;
+  const qualified = cStats.qualified || 0;
   const qualifiedTotal = cStats.qualified_total || 0;
   const disqualified = cStats.disqualified || 0;
   const l1Won = cStats.l1_won || 0;
@@ -84,10 +85,11 @@ export default function Sidebar({ activeNav = 'Dashboard', onNavSelect, stats = 
                 <button
                   className={`tree-node child-node ${activeNav === 'My Bids Qualified' ? 'active' : ''}`}
                   onClick={() => handleSelect('My Bids Qualified')}
+                  title="Qualified non-L1 bids (Ranked)"
                 >
                   <CheckCircle className="tree-icon text-green" />
                   <span className="tree-label">Qualified</span>
-                  <span className="tree-badge badge-green-sub">{qualifiedTotal}</span>
+                  <span className="tree-badge badge-green-sub">{qualified}</span>
                 </button>
 
                 <button

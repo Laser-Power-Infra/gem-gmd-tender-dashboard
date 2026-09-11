@@ -45,7 +45,7 @@ export default function Dashboard() {
     } else if (navId === 'My Bids') {
       setRankType('dalui_participated');
     } else if (navId === 'My Bids Qualified') {
-      setRankType('dalui_qualified_all');
+      setRankType('dalui_qualified');
     } else if (navId === 'My Bids Won') {
       setRankType('dalui_l1');
     } else if (navId === 'My Bids Disqualified') {
