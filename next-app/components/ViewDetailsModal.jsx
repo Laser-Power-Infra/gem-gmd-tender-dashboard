@@ -271,23 +271,57 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                     <table className="modal-table">
                       <thead>
                         <tr>
+                          <th style={{ width: '45px' }}>#</th>
                           <th>Seller Name</th>
                           <th>Offered Item</th>
-                          <th>Status</th>
+                          <th>Participated On</th>
+                          <th>EMD / MSE Status</th>
+                          <th>Technical Status</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {tEval.map((row, idx) => (
-                          <tr key={idx}>
-                            <td><strong>{row['Seller Name'] || '—'}</strong></td>
-                            <td>{row['Offered Item'] || '—'}</td>
-                            <td>
-                              <span className={`badge ${String(row['Status']).toUpperCase().includes('QUALIFIED') && !String(row['Status']).toUpperCase().includes('DISQUALIFIED') ? 'badge-green' : 'badge-red'}`}>
-                                {row['Status'] || '—'}
-                              </span>
-                            </td>
-                          </tr>
-                        ))}
+                        {tEval.map((row, idx) => {
+                          const seller = row['Seller Name'] || '—';
+                          const offered = row['Offered Item'] && row['Offered Item'] !== '-' ? row['Offered Item'] : (bDetails['Items'] || bDetails['Item Categories'] || '—');
+                          const participated = row['Participated On'] || row['Participated'] || '—';
+                          const emd = row['EMD Status'] || row['MSE/MII Status'] || '—';
+                          const st = String(row['Status'] || '—');
+                          const stUp = st.toUpperCase();
+                          const isQualified = (stUp.includes('QUALIFIED') || stUp.includes('EVALUATED') || stUp.includes('ACCEPTED') || stUp.includes('PASSED')) && !stUp.includes('DISQUALIFIED');
+                          const isDisqualified = stUp.includes('DISQUALIFIED') || stUp.includes('REJECTED') || stUp.includes('FAILED');
+
+                          let badgeClass = 'badge-slate';
+                          if (isQualified) badgeClass = 'badge-green';
+                          else if (isDisqualified) badgeClass = 'badge-red';
+
+                          const isDalui = seller.toUpperCase().includes('DALUI');
+
+                          return (
+                            <tr key={idx} style={isDalui ? { background: '#f0fdf4' } : {}}>
+                              <td>{row['S.No.'] || idx + 1}</td>
+                              <td>
+                                <strong>{seller}</strong>
+                                {isDalui && (
+                                  <span className="badge badge-green" style={{ marginLeft: '6px', fontSize: '0.65rem' }}>
+                                    Our Company
+                                  </span>
+                                )}
+                              </td>
+                              <td>{offered}</td>
+                              <td>{participated}</td>
+                              <td>
+                                <span className="badge badge-blue" style={{ fontSize: '0.75rem' }}>
+                                  {emd}
+                                </span>
+                              </td>
+                              <td>
+                                <span className={`badge ${badgeClass}`}>
+                                  {st}
+                                </span>
+                              </td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                     </table>
                   )}

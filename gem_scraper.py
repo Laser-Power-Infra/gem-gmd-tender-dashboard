@@ -431,9 +431,10 @@ def build_pdf_html(data):
             mse = row.get('MSE/MII Status', row.get('MSE Status', 'N/A'))
             status = row.get('Status', '')
             
-            if 'QUALIFIED' in status.upper() and 'DISQUALIFIED' not in status.upper():
+            st_up = status.upper()
+            if (('QUALIFIED' in st_up or 'EVALUATED' in st_up or 'ACCEPTED' in st_up or 'PASSED' in st_up) and 'DISQUALIFIED' not in st_up):
                 status_badge = f'<span class="badge badge-green">{status}</span>'
-            elif 'DISQUALIFIED' in status.upper():
+            elif 'DISQUALIFIED' in st_up or 'REJECTED' in st_up:
                 status_badge = f'<span class="badge badge-red">{status}</span>'
             else:
                 status_badge = f'<span class="badge badge-slate">{status}</span>'
@@ -459,7 +460,7 @@ def build_pdf_html(data):
     # 4. FINANCIAL EVALUATION
     if fin_eval:
         # Calculate L1 vs L2 difference if available
-        l1_row = next((r for r in fin_eval if r.get('Rank', '').upper() == 'L1'), None)
+        l1_row = next((r for r in fin_eval if r.get('Rank', '').upper() == 'L1' or bool(r.get('Total L1 Price'))), None)
         l2_row = next((r for r in fin_eval if r.get('Rank', '').upper() == 'L2'), None)
         diff_info = None
         
@@ -467,8 +468,8 @@ def build_pdf_html(data):
             def parse_val(s):
                 c = re.sub(r'[^\d.]', '', s or '')
                 return float(c) if c else 0.0
-            p1 = parse_val(l1_row.get('Total Price', ''))
-            p2 = parse_val(l2_row.get('Total Price', ''))
+            p1 = parse_val(l1_row.get('Total Price') or l1_row.get('Total L1 Price') or '')
+            p2 = parse_val(l2_row.get('Total Price') or l2_row.get('Total L1 Price') or '')
             if p1 > 0 and p2 > p1:
                 diff_amt = p2 - p1
                 diff_pct = (diff_amt / p1) * 100.0
@@ -485,22 +486,23 @@ def build_pdf_html(data):
         <tr>
           <th style="width: 5%;">S.No</th>
           <th style="width: 32%;">Seller Name</th>
-          <th style="width: 28%;">Offered Item / Specification</th>
+          <th style="width: 28%;">Offered Item / Schedule</th>
           <th style="width: 20%;">Total Price</th>
-          <th style="width: 15%;">Rank</th>
+          <th style="width: 15%;">Rank / Status</th>
         </tr>
       </thead>
       <tbody>
 """
         for row in fin_eval:
             sno = row.get('S.No.', '')
-            seller = row.get('Seller Name', '')
-            offered = row.get('Offered Item', '')
-            price = format_price(row.get('Total Price', ''))
-            rank = row.get('Rank', '')
+            seller = row.get('Seller Name') or row.get('L1 Seller Name') or ''
+            offered = row.get('Offered Item') or row.get('Schedule Title') or row.get('Item Categories') or ''
+            raw_p = row.get('Total Price') or row.get('Total L1 Price') or ''
+            price = format_price(str(raw_p))
+            rank = row.get('Rank') or row.get('Schedule Status') or (row.get('Total L1 Price') and 'L1') or ''
             
-            if rank.upper() == 'L1':
-                rank_badge = f'<span class="badge badge-gold">{rank} (Lowest Bidder)</span>'
+            if rank.upper() == 'L1' or rank.upper() == 'AWARDED':
+                rank_badge = f'<span class="badge badge-gold">{rank} (L1 / Awarded)</span>'
             elif rank.upper() == 'L2' and diff_info:
                 rank_badge = f'<span class="badge badge-blue">{rank} (+{diff_pct:.2f}%)</span>'
             elif rank.upper().startswith('L'):
