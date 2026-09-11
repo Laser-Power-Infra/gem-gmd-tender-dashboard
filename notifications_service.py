@@ -53,6 +53,22 @@ def is_date_in_past(date_str):
     now = datetime.now()
     return dt < now
 
+def is_bid_closed_or_in_past(data):
+    """Returns True if the bid's end date or RA end date has already passed."""
+    if not data or not isinstance(data, dict):
+        return False
+    bd = data.get("bid_details") or {}
+    ra = data.get("ra_info") or {}
+    
+    ra_end = ra.get("ra_end_date") or bd.get("RA End Date / Time")
+    b_end = bd.get("Bid End Date / Time")
+    
+    if ra_end and ra_end != "N/A" and is_date_in_past(ra_end):
+        return True
+    if b_end and b_end != "N/A" and is_date_in_past(b_end) and (not ra_end or ra_end == "N/A"):
+        return True
+    return False
+
 def add_notification(gem_id, notif_type, title, message, change_details=None):
     notifs = load_notifications()
     now_str = datetime.now(timezone.utc).isoformat()
@@ -110,42 +126,25 @@ def mark_notifications_read(notif_ids=None):
 def detect_bid_changes(old_data, new_data, gem_id):
     """
     Compares old bid data JSON with newly scraped bid data JSON
-    and triggers automatic notifications ONLY for vital events:
-    - Date changes (Bid End Date / Opening Date / RA End Date extended or changed)
-    - Reverse Auction (RA) triggered or active
-    - Company Bid status (Won L1, Qualified, Disqualified, Rank changed)
-    - Financial Evaluation L1 winner published or price changed
-    - Quantity changes
-    Does NOT send noisy 'New Tender Scraped' notifications.
+    and triggers automatic notifications ONLY for live, updated events
+    on active/ongoing bids.
+    Does NOT notify for historical completed tenders or initial database load.
     """
     if not new_data or not isinstance(new_data, dict):
+        return
+
+    # Ignore bids that have already expired/closed in the past
+    if is_bid_closed_or_in_past(new_data):
+        return
+
+    # If first scrape of this bid, do not spam with historical notifications
+    if not old_data or not isinstance(old_data, dict):
         return
 
     new_ra = new_data.get("ra_info") or {}
     new_ca = new_data.get("company_analysis") or {}
     new_bd = new_data.get("bid_details") or {}
     new_fe = new_data.get("financial_evaluation") or []
-
-    # If first scrape of this bid, only notify if already in a vital state (e.g. active RA or G.M. DALUI L1)
-    if not old_data or not isinstance(old_data, dict):
-        if new_ra.get("is_ra"):
-            ra_no = new_ra.get("ra_number") or gem_id
-            add_notification(
-                gem_id=gem_id,
-                notif_type="RA_TRIGGERED",
-                title=f"⚡ Reverse Auction (RA) Active: {gem_id}",
-                message=f"Tender is in Reverse Auction stage! RA NO: {ra_no} (Closing: {new_ra.get('ra_end_date', 'N/A')})",
-                change_details={"ra_number": ra_no, "ra_end_date": new_ra.get("ra_end_date")}
-            )
-        if new_ca.get("is_l1"):
-            add_notification(
-                gem_id=gem_id,
-                notif_type="WON_L1",
-                title=f"🏆 WON L1! {gem_id}",
-                message=f"G.M. DALUI & SONS is the L1 lowest bidder!",
-                change_details={"rank": "L1", "price": new_ca.get("my_price")}
-            )
-        return
 
     old_ra = old_data.get("ra_info") or {}
     old_ca = old_data.get("company_analysis") or {}
