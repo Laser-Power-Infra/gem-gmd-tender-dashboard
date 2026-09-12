@@ -720,12 +720,12 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
                 print(f"  -> Found Exact RA Schedules URL: {ra_schedules_url}")
             if discovered_ra_no:
                 print(f"  -> ⚡ Discovered RA Number: {discovered_ra_no} (Schedules: {len(ra_schedules)}, Start: {ra_start_date}, End: {ra_end_date})")
-            return target_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card_data
+            return target_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card_data, bid_result_links
         else:
             print(f"  -> No search result card found on portal for '{gem_bid_no}' (Bid may be fresh or unpublished)")
-            return None, None, None, "N/A", "N/A", [], None, None
+            return None, None, None, "N/A", "N/A", [], None, None, []
 
-def scrape_gem_bid(bid_input, output_dir="scraped_output"):
+def scrape_gem_bid(bid_input, output_dir="scraped_output", _recursion_depth=0):
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(os.path.join(output_dir, "pdfs"), exist_ok=True)
     os.makedirs(os.path.join(output_dir, "json"), exist_ok=True)
@@ -740,11 +740,12 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
     ra_end_date = "N/A"
     ra_schedules = []
     ra_schedules_url = None
+    all_eval_urls = []
 
     active_card = None
     # Check if input is a GEM Bid Number e.g. GEM/2023/B/4309262
     if source_id.upper().startswith("GEM/") or "/B/" in source_id.upper() or "/R/" in source_id.upper():
-        resolved_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card = resolve_gem_bid_number_to_url(source_id)
+        resolved_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card, all_eval_urls = resolve_gem_bid_number_to_url(source_id)
         if resolved_url:
             bid_input = resolved_url
             match = re.search(r'getBidResultView(?:Schedule)?/(\d+)', resolved_url)
@@ -761,35 +762,77 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
     if active_card and not (bid_input.startswith("http://") or bid_input.startswith("https://") or os.path.exists(bid_input)):
         scraped_data = active_card
     else:
-        if os.path.exists(bid_input):
-            print(f"Reading local HTML file: {bid_input}")
-            with open(bid_input, 'r', encoding='utf-8', errors='ignore') as f:
-                html_content = f.read()
-            source_id = os.path.splitext(os.path.basename(bid_input))[0]
-        elif bid_input.startswith("http://") or bid_input.startswith("https://"):
-            print(f"Fetching URL: {bid_input}")
-            match = re.search(r'getBidResultView(?:Schedule)?/(\d+)', bid_input)
-            if match:
-                source_id = match.group(1)
-            res = requests.get(bid_input, headers=HEADERS, timeout=15)
-            res.raise_for_status()
-            html_content = res.text
-        else:
-            url = f"https://bidplus.gem.gov.in/bidding/bid/getBidResultView/{bid_input}"
-            print(f"Fetching Bid Result View ID {bid_input} from URL: {url}")
-            res = requests.get(url, headers=HEADERS, timeout=15)
-            res.raise_for_status()
-            html_content = res.text
+        # Collect evaluation URLs to fetch (fetch all discovered evaluation result links on card)
+        urls_to_scrape = list(all_eval_urls) if all_eval_urls else []
+        if not urls_to_scrape and (str(bid_input).startswith("http://") or str(bid_input).startswith("https://") or os.path.exists(bid_input)):
+            urls_to_scrape = [bid_input]
+        elif not urls_to_scrape:
+            urls_to_scrape = [f"https://bidplus.gem.gov.in/bidding/bid/getBidResultView/{bid_input}"]
 
-        scraped_data = extract_bid_details_from_html(html_content, source_id=source_id)
-        if str(bid_input).startswith("http://") or str(bid_input).startswith("https://"):
-            scraped_data['bid_result_url'] = bid_input
+        scraped_data = None
+        for u_idx, u in enumerate(urls_to_scrape):
+            try:
+                sub_html = ""
+                sub_sid = source_id
+                if os.path.exists(u):
+                    print(f"Reading local HTML file: {u}")
+                    with open(u, 'r', encoding='utf-8', errors='ignore') as f:
+                        sub_html = f.read()
+                    sub_sid = os.path.splitext(os.path.basename(u))[0]
+                elif u.startswith("http://") or u.startswith("https://"):
+                    print(f"Fetching URL [{u_idx+1}/{len(urls_to_scrape)}]: {u}")
+                    m_sid = re.search(r'getBidResultView(?:Schedule)?/(\d+)', u)
+                    if m_sid:
+                        sub_sid = m_sid.group(1)
+                    res = requests.get(u, headers=HEADERS, timeout=15)
+                    res.raise_for_status()
+                    sub_html = res.text
+                
+                sub_data = extract_bid_details_from_html(sub_html, source_id=sub_sid)
+                if u.startswith("http://") or u.startswith("https://"):
+                    sub_data['bid_result_url'] = u
+
+                if scraped_data is None:
+                    scraped_data = sub_data
+                else:
+                    # Merge technical evaluation if missing in primary but present in sub_data
+                    if not scraped_data.get('technical_evaluation') and sub_data.get('technical_evaluation'):
+                        scraped_data['technical_evaluation'] = sub_data['technical_evaluation']
+                    # Merge financial evaluation if missing in primary but present in sub_data
+                    if not scraped_data.get('financial_evaluation') and sub_data.get('financial_evaluation'):
+                        scraped_data['financial_evaluation'] = sub_data['financial_evaluation']
+                    # Merge buyer details
+                    for k, v in sub_data.get('buyer_details', {}).items():
+                        if v and not scraped_data['buyer_details'].get(k):
+                            scraped_data['buyer_details'][k] = v
+                    # Merge bid details
+                    for k, v in sub_data.get('bid_details', {}).items():
+                        if v and not scraped_data['bid_details'].get(k):
+                            scraped_data['bid_details'][k] = v
+            except Exception as fe_err:
+                print(f"  -> Warning: Failed to fetch evaluation URL '{u}': {fe_err}")
+
+        if scraped_data is None:
+            print(f"[SKIP] Could not extract data for '{source_id}'")
+            return None, None
+
+    # If financial evaluation is still empty but an RA was discovered, try resolving RA directly
+    if (not scraped_data.get('financial_evaluation') or len(scraped_data.get('financial_evaluation', [])) == 0) and discovered_ra_no and _recursion_depth < 1:
+        print(f"  -> ⚡ Financial evaluation missing on main bid. Attempting lookup for discovered RA: {discovered_ra_no}...")
+        try:
+            ra_res, _ = scrape_gem_bid(discovered_ra_no, output_dir=output_dir, _recursion_depth=_recursion_depth + 1)
+            if ra_res and ra_res.get('financial_evaluation'):
+                scraped_data['financial_evaluation'] = ra_res['financial_evaluation']
+                print(f"  -> ⚡ Successfully merged {len(ra_res['financial_evaluation'])} RA financial evaluation rows into {scraped_data.get('bid_number')}")
+        except Exception as ra_err:
+            print(f"  -> Note: Could not auto-fetch RA details for '{discovered_ra_no}': {ra_err}")
 
     if discovered_ra_no:
-        if 'ra_info' not in scraped_data:
+        if 'ra_info' not in scraped_data or not isinstance(scraped_data['ra_info'], dict):
             scraped_data['ra_info'] = {}
         scraped_data['ra_info']['is_ra'] = True
         scraped_data['ra_info']['ra_number'] = discovered_ra_no
+        scraped_data['bid_details']['RA Number'] = discovered_ra_no
         if discovered_ra_status:
             scraped_data['ra_info']['ra_status'] = discovered_ra_status
         if ra_start_date != "N/A":
@@ -803,10 +846,10 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
         if ra_schedules_url:
             scraped_data['ra_info']['ra_schedules_url'] = ra_schedules_url
 
-    # Record parent_bid_number if input was a /B/ bid number that resolved to an RA
+    # Record parent_bid_number if input was a /B/ bid number
     if isinstance(bid_input_orig, str) and ("/B/" in bid_input_orig.upper() or "GEM/" in bid_input_orig.upper()):
         scraped_data['parent_bid_number'] = bid_input_orig
-        if 'ra_info' not in scraped_data:
+        if 'ra_info' not in scraped_data or not isinstance(scraped_data['ra_info'], dict):
             scraped_data['ra_info'] = {}
         scraped_data['ra_info']['parent_bid_number'] = bid_input_orig
 
@@ -823,6 +866,13 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output"):
         parent_json_file = os.path.join(output_dir, "json", f"{parent_file_key}.json")
         with open(parent_json_file, 'w', encoding='utf-8') as f_p:
             json.dump(scraped_data, f_p, indent=2, ensure_ascii=False)
+
+    # Also save with discovered_ra_no filename so lookups by RA ID always match
+    if discovered_ra_no and discovered_ra_no != scraped_data.get('bid_number'):
+        ra_file_key = discovered_ra_no.replace('/', '_')
+        ra_json_file = os.path.join(output_dir, "json", f"{ra_file_key}.json")
+        with open(ra_json_file, 'w', encoding='utf-8') as f_ra:
+            json.dump(scraped_data, f_ra, indent=2, ensure_ascii=False)
 
     html_report = build_pdf_html(scraped_data)
     temp_html_path = os.path.join(output_dir, "json", f"temp_{bid_no}.html")

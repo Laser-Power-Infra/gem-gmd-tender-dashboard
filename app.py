@@ -181,7 +181,6 @@ def analyze_company_bid(data, company_keywords=['DALUI', 'G.M. DALUI', 'GM DALUI
 
 def load_all_json_bids():
     json_files = glob.glob(os.path.join(JSON_DIR, "*.json"))
-    bids_dict = {}
     remarks = load_remarks()
     statuses = load_statuses()
     
@@ -193,6 +192,7 @@ def load_all_json_bids():
                 if line and not line.startswith('#'):
                     valid_input_ids.add(line.upper())
     
+    raw_records = []
     for filepath in json_files:
         if os.path.basename(filepath).startswith("temp_"):
             continue
@@ -200,12 +200,11 @@ def load_all_json_bids():
             with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 
-                # Check if data already has ra_info with parent bid_number
                 b_details = data.get('bid_details') or {}
                 buyer_details = data.get('buyer_details') or {}
                 raw_bid_no = data.get('bid_number') or os.path.splitext(os.path.basename(filepath))[0]
                 
-                # Extract RA details (ra_info may be explicitly null in some JSON files)
+                # Extract RA details
                 ra_inf = data.get('ra_info') or {}
                 ra_no = ra_inf.get('ra_number') or b_details.get('RA Number') or (raw_bid_no if '/R/' in raw_bid_no.upper() else 'N/A')
                 
@@ -243,19 +242,9 @@ def load_all_json_bids():
 
                 data['bid_details'] = b_details
                 data['buyer_details'] = buyer_details
-
-                # Filter out files that do not belong to bids_input_sample.txt
-                if valid_input_ids:
-                    raw_upper = raw_bid_no.upper()
-                    bid_upper = bid_no.upper()
-                    parent_upper = (parent_b or '').upper()
-                    ra_upper = (ra_no or '').upper()
-                    source_upper = str(data.get('source_id', '')).upper()
-
-                    if not (raw_upper in valid_input_ids or bid_upper in valid_input_ids or 
-                            parent_upper in valid_input_ids or ra_upper in valid_input_ids or 
-                            source_upper in valid_input_ids):
-                        continue
+                data['raw_bid_no'] = raw_bid_no
+                data['bid_number'] = bid_no
+                data['parent_bid_number'] = parent_b
 
                 title_type = str(data.get('bid_title_type', '')).upper()
                 has_r_in_no = '/R/' in raw_bid_no.upper()
@@ -266,7 +255,6 @@ def load_all_json_bids():
                 is_ra = has_r_in_no or has_ra_title or has_ra_num or has_ra_dates
                 ra_status = b_details.get('RA Status', b_details.get('RA Bid Status', b_details.get('Bid Status', 'Active' if is_ra else 'N/A')))
 
-                data['bid_number'] = bid_no
                 data['user_remark'] = remarks.get(bid_no, remarks.get(raw_bid_no, ''))
                 data['user_status'] = statuses.get(bid_no, statuses.get(raw_bid_no, 'Pending'))
                 
@@ -274,8 +262,6 @@ def load_all_json_bids():
                 pdf_path = os.path.join(PDF_DIR, f"{bid_file_name}.pdf")
                 data['has_pdf'] = os.path.exists(pdf_path)
                 data['pdf_filename'] = f"{bid_file_name}.pdf"
-                data['l1_l2_diff'] = compute_l1_l2_diff(data.get('financial_evaluation', []))
-                data['company_analysis'] = analyze_company_bid(data)
 
                 data['ra_info'] = {
                     'is_ra': is_ra,
@@ -284,56 +270,56 @@ def load_all_json_bids():
                     'ra_start_date': b_details.get('RA Start Date / Time', b_details.get('RA Start Date', ra_inf.get('ra_start_date', 'N/A'))),
                     'ra_end_date': b_details.get('RA End Date / Time', b_details.get('RA End Date', ra_inf.get('ra_end_date', 'N/A')))
                 }
-                
-                # Deduplicate: if bid_no is already in bids_dict, merge RA info & evaluations into existing record
-                if bid_no in bids_dict:
-                    existing = bids_dict[bid_no]
-                    if isinstance(existing, dict):
-                        existing_ra = existing.get('ra_info') or {}
-                        if is_ra and not existing_ra.get('is_ra'):
-                            existing['ra_info'] = data['ra_info']
-                        elif is_ra and ra_no != 'N/A':
-                            if not isinstance(existing.get('ra_info'), dict):
-                                existing['ra_info'] = {}
-                            existing['ra_info']['ra_number'] = ra_no
-                            existing['ra_info']['is_ra'] = True
-                        if not existing.get('user_remark') and data.get('user_remark'):
-                            existing['user_remark'] = data['user_remark']
-                        
-                        # Merge evaluations between partner records
-                        if (not existing.get('financial_evaluation') or len(existing.get('financial_evaluation', [])) == 0) and data.get('financial_evaluation'):
-                            existing['financial_evaluation'] = data['financial_evaluation']
-                        if (not existing.get('technical_evaluation') or len(existing.get('technical_evaluation', [])) == 0) and data.get('technical_evaluation'):
-                            existing['technical_evaluation'] = data['technical_evaluation']
-                else:
-                    bids_dict[bid_no] = data
+                raw_records.append(data)
 
         except Exception as e:
             print(f"Error loading {filepath}: {e}")
-    
-    # Second Pass: Cross-link any remaining bids with their corresponding RA / parent partners
-    all_records_by_key = {}
-    for b in bids_dict.values():
-        if isinstance(b, dict):
-            bn = str(b.get('bid_number', '')).strip().upper()
-            raw_bn = str(b.get('raw_bid_no', '')).strip().upper()
-            ra_n = str((b.get('ra_info') or {}).get('ra_number', '')).strip().upper()
-            if bn: all_records_by_key[bn] = b
-            if raw_bn: all_records_by_key[raw_bn] = b
-            if ra_n and ra_n != 'N/A': all_records_by_key[ra_n] = b
 
-    for b in bids_dict.values():
-        if not isinstance(b, dict):
-            continue
+    # Index all records by multiple keys for cross-linking
+    all_records_by_key = {}
+    for b in raw_records:
+        bn = str(b.get('bid_number', '')).strip().upper()
+        raw_bn = str(b.get('raw_bid_no', '')).strip().upper()
+        ra_n = str((b.get('ra_info') or {}).get('ra_number', '')).strip().upper()
+        pb_n = str(b.get('parent_bid_number', '')).strip().upper()
+        src_n = str(b.get('source_id', '')).strip().upper()
+
+        for k in [bn, raw_bn, ra_n, pb_n, src_n]:
+            if k and k != 'N/A':
+                all_records_by_key[k] = b
+                all_records_by_key[k.replace('/', '_')] = b
+                all_records_by_key[k.replace('_', '/')] = b
+                digits = re.sub(r'\D', '', k)
+                if len(digits) >= 6:
+                    all_records_by_key[digits] = b
+
+    # Cross-link any remaining bids with their corresponding RA / parent partners
+    for b in raw_records:
         ra_inf = b.get('ra_info') or {}
         ra_no = str(ra_inf.get('ra_number', '')).strip().upper()
         parent_no = str(b.get('parent_bid_number', '')).strip().upper()
+        b_no = str(b.get('bid_number', '')).strip().upper()
+        raw_b_no = str(b.get('raw_bid_no', '')).strip().upper()
 
         partner = None
         if ra_no and ra_no != 'N/A' and ra_no in all_records_by_key and all_records_by_key[ra_no] is not b:
             partner = all_records_by_key[ra_no]
         elif parent_no and parent_no != 'N/A' and parent_no in all_records_by_key and all_records_by_key[parent_no] is not b:
             partner = all_records_by_key[parent_no]
+        elif '/R/' in raw_b_no:
+            # Try to match /R/ record with /B/ record by shared dates/quantity/organisation
+            b_qty = (b.get('bid_details') or {}).get('Quantity')
+            b_sdate = (b.get('bid_details') or {}).get('RA Start Date / Time')
+            b_org = (b.get('buyer_details') or {}).get('Organisation')
+            if b_qty and b_sdate and b_sdate != 'N/A':
+                for cand in raw_records:
+                    if cand is not b and '/B/' in str(cand.get('bid_number', '')).upper():
+                        cand_qty = (cand.get('bid_details') or {}).get('Quantity')
+                        cand_sdate = (cand.get('bid_details') or {}).get('RA Start Date / Time')
+                        cand_org = (cand.get('buyer_details') or {}).get('Organisation')
+                        if cand_qty == b_qty and cand_sdate == b_sdate and (not b_org or not cand_org or b_org == cand_org):
+                            partner = cand
+                            break
 
         if partner and isinstance(partner, dict):
             # 1. Merge Financial Evaluation if missing
@@ -352,9 +338,54 @@ def load_all_json_bids():
             if (not ra_inf.get('ra_end_date') or ra_inf.get('ra_end_date') == 'N/A') and p_ra.get('ra_end_date') and p_ra.get('ra_end_date') != 'N/A':
                 ra_inf['ra_end_date'] = p_ra['ra_end_date']
 
-        # Recalculate company analysis and L1 diff after cross-linking
+    # Build final dictionary filtered by valid_input_ids
+    bids_dict = {}
+    for b in raw_records:
+        bid_no = b.get('bid_number')
+        raw_bid_no = b.get('raw_bid_no')
+        parent_b = b.get('parent_bid_number')
+        ra_no = (b.get('ra_info') or {}).get('ra_number')
+        source_id = b.get('source_id')
+
+        if valid_input_ids:
+            raw_upper = str(raw_bid_no or '').upper()
+            bid_upper = str(bid_no or '').upper()
+            parent_upper = str(parent_b or '').upper()
+            ra_upper = str(ra_no or '').upper()
+            source_upper = str(source_id or '').upper()
+
+            matched_valid = (
+                raw_upper in valid_input_ids or bid_upper in valid_input_ids or 
+                parent_upper in valid_input_ids or ra_upper in valid_input_ids or 
+                source_upper in valid_input_ids
+            )
+            if not matched_valid:
+                # Also check digits match in valid_input_ids
+                for vk in valid_input_ids:
+                    vk_dig = re.sub(r'\D', '', vk)
+                    if len(vk_dig) >= 6 and (vk_dig in raw_upper or vk_dig in bid_upper or vk_dig in parent_upper or vk_dig in ra_upper):
+                        matched_valid = True
+                        break
+
+            if not matched_valid:
+                continue
+
+        # Recalculate company analysis and L1 diff
         b['l1_l2_diff'] = compute_l1_l2_diff(b.get('financial_evaluation', []))
         b['company_analysis'] = analyze_company_bid(b)
+
+        # Deduplicate into bids_dict
+        if bid_no in bids_dict:
+            existing = bids_dict[bid_no]
+            if (not existing.get('financial_evaluation') or len(existing.get('financial_evaluation', [])) == 0) and b.get('financial_evaluation'):
+                existing['financial_evaluation'] = b['financial_evaluation']
+                existing['l1_l2_diff'] = b['l1_l2_diff']
+                existing['company_analysis'] = b['company_analysis']
+            if (not existing.get('technical_evaluation') or len(existing.get('technical_evaluation', [])) == 0) and b.get('technical_evaluation'):
+                existing['technical_evaluation'] = b['technical_evaluation']
+                existing['company_analysis'] = b['company_analysis']
+        else:
+            bids_dict[bid_no] = b
 
     bids = [b for b in bids_dict.values() if isinstance(b, dict)]
     bids.sort(key=lambda x: str((x or {}).get('bid_number') or ''), reverse=True)
@@ -791,11 +822,20 @@ def get_single_bid(bid_no):
     bid_no_clean = urllib.parse.unquote(bid_no).strip().upper()
     all_bids = load_all_json_bids()
     
+    clean_digits = re.sub(r'\D', '', bid_no_clean)
+
     for b in all_bids:
         bn = str(b.get('bid_number', '')).strip().upper()
         rn = str(b.get('ra_info', {}).get('ra_number', '')).strip().upper()
         raw = str(b.get('raw_bid_no', '')).strip().upper()
-        if bid_no_clean in (bn, rn, raw) or bid_no_clean.replace('_', '/') in (bn, rn, raw):
+        parent = str(b.get('parent_bid_number', '')).strip().upper()
+
+        if (bid_no_clean in (bn, rn, raw, parent) or 
+            bid_no_clean.replace('_', '/') in (bn, rn, raw, parent) or 
+            bid_no_clean.replace('/', '_') in (bn, rn, raw, parent)):
+            return jsonify({'status': 'success', 'data': b})
+            
+        if len(clean_digits) >= 6 and (clean_digits in bn or clean_digits in rn or clean_digits in raw or clean_digits in parent):
             return jsonify({'status': 'success', 'data': b})
 
     # Fallback to direct file search
