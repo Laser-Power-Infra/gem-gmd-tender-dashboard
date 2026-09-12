@@ -133,6 +133,34 @@ def extract_bid_details_from_html(html_content, source_id=""):
                         item[h] = val
                     data['financial_evaluation'].append(item)
 
+        # 4. SINGLE PACKET EVALUATION (Heading like '2. Evaluation' containing both Rank/Price and Status)
+        elif 'EVALUATION' in heading_text.upper():
+            table = panel.find('table')
+            if table:
+                headers = [clean_text(th.get_text()) for th in table.find_all('th')]
+                rows = table.find_all('tr')[1:]
+                for r in rows:
+                    tds = r.find_all('td')
+                    if not tds:
+                        continue
+                    cols = [clean_text(td.get_text(separator=' ')) for td in tds]
+                    item = {}
+                    for idx, h in enumerate(headers):
+                        val = cols[idx] if idx < len(cols) else ""
+                        item[h] = val
+                    
+                    # Single packet bids contain both financial prices/rank and technical qualification status
+                    data['financial_evaluation'].append(item)
+                    
+                    # Also populate technical evaluation with seller and qualification status
+                    tech_item = {
+                        'S.No.': item.get('S.No.', ''),
+                        'Seller Name': item.get('Seller Name', ''),
+                        'Offered Item': item.get('Offered Item', ''),
+                        'Status': item.get('Status', 'Qualified' if item.get('Rank') in ['L1', 'L2'] else 'Evaluated')
+                    }
+                    data['technical_evaluation'].append(tech_item)
+
     # NORMALIZE BUYER DETAILS
     by = data['buyer_details']
     if 'Ministry/State Name' in by and not by.get('Ministry'):
@@ -657,7 +685,7 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
                     if 'RA' in link_text or 'REVERSE' in link_text:
                         discovered_ra_status = "RA Result Published"
 
-                    if 'getBidResultView' in href or 'getBidResultViewSchedule' in href:
+                    if 'getBidResultView' in href or 'getBidResultViewSchedule' in href or 'getSinglePacketResultView' in href:
                         full_h = href if href.startswith('http') else 'https://bidplus.gem.gov.in' + href
                         if full_h not in bid_result_links:
                             bid_result_links.append(full_h)
@@ -748,7 +776,7 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output", _recursion_depth=0):
         resolved_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card, all_eval_urls = resolve_gem_bid_number_to_url(source_id)
         if resolved_url:
             bid_input = resolved_url
-            match = re.search(r'getBidResultView(?:Schedule)?/(\d+)', resolved_url)
+            match = re.search(r'(?:getBidResultView|getBidResultViewSchedule|getSinglePacketResultView)/(\d+)', resolved_url)
             if match:
                 source_id = match.group(1)
         elif active_card:
@@ -781,7 +809,7 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output", _recursion_depth=0):
                     sub_sid = os.path.splitext(os.path.basename(u))[0]
                 elif u.startswith("http://") or u.startswith("https://"):
                     print(f"Fetching URL [{u_idx+1}/{len(urls_to_scrape)}]: {u}")
-                    m_sid = re.search(r'getBidResultView(?:Schedule)?/(\d+)', u)
+                    m_sid = re.search(r'(?:getBidResultView|getBidResultViewSchedule|getSinglePacketResultView)/(\d+)', u)
                     if m_sid:
                         sub_sid = m_sid.group(1)
                     res = requests.get(u, headers=HEADERS, timeout=15)
