@@ -8,6 +8,14 @@ RUN npm install
 
 COPY . .
 RUN npx prisma generate
+
+ENV NEXT_TELEMETRY_DISABLED=1 \
+    RAYON_NUM_THREADS=1 \
+    NEXT_CPU_NUM=1 \
+    SWC_COMPILER_NUM_THREADS=1 \
+    UV_THREADPOOL_SIZE=1 \
+    NODE_OPTIONS="--max-old-space-size=4096"
+
 RUN npm run build
 
 FROM node:20-alpine AS runner
