@@ -4,12 +4,13 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --ignore-scripts
 
 COPY . .
 RUN npx prisma generate
 
 ENV NEXT_TELEMETRY_DISABLED=1 \
+    UV_THREADPOOL_SIZE=1 \
     NODE_OPTIONS="--max-old-space-size=4096"
 
 RUN npm run build
