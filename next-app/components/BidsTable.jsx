@@ -31,6 +31,36 @@ const parseDateStringToDate = (str) => {
   return isNaN(parsed.getTime()) ? null : parsed;
 };
 
+const getBidderInfo = (b, targetRank) => {
+  const fe = Array.isArray(b?.financial_evaluation) ? b.financial_evaluation : [];
+  
+  // Try to find matching row in financial_evaluation
+  let row = fe.find((r) => {
+    const rk = String(r.Rank || r.rank || r['Schedule Status'] || '').toUpperCase().trim();
+    return rk === targetRank;
+  });
+
+  // Fallback for L1
+  if (!row && targetRank === 'L1') {
+    row = fe.find((r) => r['Total L1 Price'] || r['L1 Seller Name']) || fe[0];
+  }
+  // Fallback for L2 if fe has at least 2 items and no explicit Rank
+  if (!row && targetRank === 'L2' && fe.length >= 2) {
+    row = fe[1];
+  }
+
+  const name = row?.['Seller Name'] || row?.['L1 Seller Name'] || row?.['Bidder Name'] || row?.['Company Name'] || (targetRank === 'L1' ? b?.company_analysis?.l1_name : null) || '—';
+  
+  let rawPrice = row?.['Total Price'] || row?.['Total L1 Price'] || row?.['Total L2 Price'] || row?.['total_price'] || row?.['price'] || (targetRank === 'L1' ? (b?.company_analysis?.l1_price || b?.l1_price) : null);
+  
+  let formattedPrice = '—';
+  if (rawPrice && rawPrice !== 'N/A' && rawPrice !== 0 && rawPrice !== '0') {
+    formattedPrice = formatPrice(rawPrice);
+  }
+
+  return { name, price: formattedPrice, rawPrice, hasData: (name !== '—' && name !== '') || (formattedPrice !== '—') };
+};
+
 export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDetails, onOpenPdf, onRefresh, onUploadSuccess }) {
   const [sortKey, setSortKey] = useState(null);
   const [sortDir, setSortDir] = useState(1);
@@ -46,15 +76,29 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
   const [orderNumbers, setOrderNumbers] = useState({});
   const [savedOrderNos, setSavedOrderNos] = useState({});
 
+  // Docket Number state
+  const [docketNumbers, setDocketNumbers] = useState({});
+  const [savedDocketNos, setSavedDocketNos] = useState({});
+
+  // Rate state
+  const [rates, setRates] = useState({});
+  const [savedRates, setSavedRates] = useState({});
+
   useEffect(() => {
-    const initial = {};
+    const initOrder = {};
+    const initDocket = {};
+    const initRate = {};
     (bids || []).forEach((b) => {
       const k = b.bid_number || b.raw_bid_no;
-      if (k && b.order_number !== undefined) {
-        initial[k] = b.order_number || '';
+      if (k) {
+        if (b.order_number !== undefined) initOrder[k] = b.order_number || '';
+        if (b.docket_number !== undefined) initDocket[k] = b.docket_number || '';
+        if (b.rate !== undefined) initRate[k] = b.rate || '';
       }
     });
-    setOrderNumbers((prev) => ({ ...initial, ...prev }));
+    setOrderNumbers((prev) => ({ ...initOrder, ...prev }));
+    setDocketNumbers((prev) => ({ ...initDocket, ...prev }));
+    setRates((prev) => ({ ...initRate, ...prev }));
   }, [bids]);
 
   const handleOrderNumberChange = (bidNo, val) => {
@@ -78,6 +122,54 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       }
     } catch (err) {
       console.error('Error saving order number:', err);
+    }
+  };
+
+  const handleDocketNumberChange = (bidNo, val) => {
+    setDocketNumbers((prev) => ({ ...prev, [bidNo]: val }));
+  };
+
+  const handleSaveDocketNumber = async (bidNo) => {
+    const docketNo = docketNumbers[bidNo] !== undefined ? docketNumbers[bidNo] : '';
+    try {
+      const res = await fetch('/api/docket-number', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bid_number: bidNo, docket_number: docketNo }),
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        setSavedDocketNos((prev) => ({ ...prev, [bidNo]: true }));
+        setTimeout(() => {
+          setSavedDocketNos((prev) => ({ ...prev, [bidNo]: false }));
+        }, 2000);
+      }
+    } catch (err) {
+      console.error('Error saving docket number:', err);
+    }
+  };
+
+  const handleRateChange = (bidNo, val) => {
+    setRates((prev) => ({ ...prev, [bidNo]: val }));
+  };
+
+  const handleSaveRate = async (bidNo) => {
+    const rateVal = rates[bidNo] !== undefined ? rates[bidNo] : '';
+    try {
+      const res = await fetch('/api/rate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bid_number: bidNo, rate: rateVal }),
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        setSavedRates((prev) => ({ ...prev, [bidNo]: true }));
+        setTimeout(() => {
+          setSavedRates((prev) => ({ ...prev, [bidNo]: false }));
+        }, 2000);
+      }
+    } catch (err) {
+      console.error('Error saving rate:', err);
     }
   };
 
@@ -211,14 +303,21 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       }
     },
     { 
-      key: 'l1_price', 
-      label: 'L1 PRICE', 
-      minWidth: '130px', 
+      key: 'l1_bidder', 
+      label: 'L1 BIDDER & PRICE', 
+      minWidth: '200px', 
       getVal: (b) => {
-        const fe = b.financial_evaluation || [];
-        const cAn = b.company_analysis || {};
-        const p = fe[0]?.['Total Price'] || fe[0]?.['Total L1 Price'] || fe[0]?.['total_price'] || fe[0]?.['price'] || cAn.l1_price;
-        return p && p !== 'N/A' && p !== 0 ? formatPrice(p) : '—';
+        const info = getBidderInfo(b, 'L1');
+        return info.hasData ? `${info.name} - ${info.price}` : '—';
+      } 
+    },
+    { 
+      key: 'l2_bidder', 
+      label: 'L2 BIDDER & PRICE', 
+      minWidth: '200px', 
+      getVal: (b) => {
+        const info = getBidderInfo(b, 'L2');
+        return info.hasData ? `${info.name} - ${info.price}` : '—';
       } 
     },
     { key: 'status', label: 'STATUS', minWidth: '140px', getVal: (b) => b.user_status || 'Pending' },
@@ -229,6 +328,24 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       getVal: (b) => {
         const k = b.bid_number || b.raw_bid_no;
         return orderNumbers[k] !== undefined ? orderNumbers[k] : (b.order_number || '');
+      }
+    },
+    {
+      key: 'docket_number',
+      label: 'DOCKET NUMBER',
+      minWidth: '160px',
+      getVal: (b) => {
+        const k = b.bid_number || b.raw_bid_no;
+        return docketNumbers[k] !== undefined ? docketNumbers[k] : (b.docket_number || '');
+      }
+    },
+    {
+      key: 'rate',
+      label: 'RATE',
+      minWidth: '150px',
+      getVal: (b) => {
+        const k = b.bid_number || b.raw_bid_no;
+        return rates[k] !== undefined ? rates[k] : (b.rate || '');
       }
     }
   ];
@@ -507,7 +624,7 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
         <tbody>
           {sortedBids.length === 0 ? (
             <tr>
-              <td colSpan={17} className="text-center py-8 text-muted">
+              <td colSpan={20} className="text-center py-8 text-muted">
                 No tender records found matching your active filter criteria.
               </td>
             </tr>
@@ -594,6 +711,12 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
               else if (userStatus === 'Won') statusClass = 'pill-status-won';
               else if (userStatus === 'Not Interested') statusClass = 'pill-status-disqualified';
 
+              // L1 & L2 extraction
+              const l1Info = getBidderInfo(b, 'L1');
+              const l2Info = getBidderInfo(b, 'L2');
+              const isWeL2 = cAn.is_l2 || (cAn.rank && String(cAn.rank).toUpperCase().trim() === 'L2');
+              const showL2Diff = !cAn.is_l1 && isWeL2 && cAn.diff_amount > 0;
+
               return (
                 <tr key={bidNo + i}>
                   <td className="cell-num">{i + 1}</td>
@@ -656,20 +779,45 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                     </div>
                   </td>
                   <td>{posCell}</td>
+                  {/* L1 BIDDER & PRICE */}
                   <td>
                     {(() => {
-                      const rawPrice = finEval[0]?.['Total Price'] || finEval[0]?.['Total L1 Price'] || finEval[0]?.['total_price'] || finEval[0]?.['price'] || cAn.l1_price || b.l1_price;
-                      if (rawPrice && rawPrice !== 'N/A' && rawPrice !== 0) {
-                        return <div className="l1-price-val">{formatPrice(rawPrice)}</div>;
+                      if (!l1Info.hasData) {
+                        const tEval = b.technical_evaluation || [];
+                        const isOngoing = (bDetails['Bid Status'] && (bDetails['Bid Status'].includes('Ongoing') || bDetails['Bid Status'].includes('Active'))) || tEval.length === 0;
+                        if (isOngoing) {
+                          return <span className="pill-badge pill-slate" style={{ fontSize: '0.72rem' }}>Eval Pending</span>;
+                        }
+                        return <span className="text-muted">—</span>;
                       }
-                      const tEval = b.technical_evaluation || [];
-                      const isOngoing = (bDetails['Bid Status'] && (bDetails['Bid Status'].includes('Ongoing') || bDetails['Bid Status'].includes('Active'))) || tEval.length === 0;
-                      if (isOngoing) {
-                        return <span className="pill-badge pill-slate" style={{ fontSize: '0.72rem' }}>Eval Pending</span>;
-                      }
-                      return <span className="text-muted">—</span>;
+                      return (
+                        <div className="bidder-card">
+                          <div className="bidder-name" title={l1Info.name}>{l1Info.name}</div>
+                          <div className="bidder-price">{l1Info.price}</div>
+                        </div>
+                      );
                     })()}
                   </td>
+                  {/* L2 BIDDER & PRICE */}
+                  <td>
+                    {(() => {
+                      if (!l2Info.hasData) {
+                        return <span className="text-muted">—</span>;
+                      }
+                      return (
+                        <div className="bidder-card">
+                          <div className="bidder-name" title={l2Info.name}>{l2Info.name}</div>
+                          <div className="bidder-price">{l2Info.price}</div>
+                          {showL2Diff && (
+                            <div className="bidder-diff">
+                              +₹ {Number(cAn.diff_amount).toLocaleString('en-IN')} (+{cAn.diff_pct}% vs L1)
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })()}
+                  </td>
+                  {/* STATUS */}
                   <td>
                     <select
                       className={`user-status-select ${statusClass}`}
@@ -682,6 +830,7 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                       <option value="Not Interested">Not Interested</option>
                     </select>
                   </td>
+                  {/* ORDER NUMBER */}
                   <td>
                     <div className="order-num-input-wrap">
                       <input
@@ -698,6 +847,48 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                         }}
                       />
                       {savedOrderNos[bidNo] && (
+                        <span className="order-saved-tag">✓ Saved</span>
+                      )}
+                    </div>
+                  </td>
+                  {/* DOCKET NUMBER */}
+                  <td>
+                    <div className="order-num-input-wrap">
+                      <input
+                        type="text"
+                        className="order-num-input"
+                        placeholder="Enter Docket No"
+                        value={docketNumbers[bidNo] !== undefined ? docketNumbers[bidNo] : (b.docket_number || '')}
+                        onChange={(e) => handleDocketNumberChange(bidNo, e.target.value)}
+                        onBlur={() => handleSaveDocketNumber(bidNo)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.target.blur();
+                          }
+                        }}
+                      />
+                      {savedDocketNos[bidNo] && (
+                        <span className="order-saved-tag">✓ Saved</span>
+                      )}
+                    </div>
+                  </td>
+                  {/* RATE */}
+                  <td>
+                    <div className="order-num-input-wrap">
+                      <input
+                        type="text"
+                        className="order-num-input"
+                        placeholder="Enter Rate"
+                        value={rates[bidNo] !== undefined ? rates[bidNo] : (b.rate || '')}
+                        onChange={(e) => handleRateChange(bidNo, e.target.value)}
+                        onBlur={() => handleSaveRate(bidNo)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.target.blur();
+                          }
+                        }}
+                      />
+                      {savedRates[bidNo] && (
                         <span className="order-saved-tag">✓ Saved</span>
                       )}
                     </div>

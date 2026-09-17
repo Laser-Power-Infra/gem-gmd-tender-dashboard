@@ -683,7 +683,7 @@ body {
 .gmd-name { font-size: 0.73rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
 .our-price-sub { font-size: 0.69rem; color: #64748b; margin-top: 2px; }
 
-/* Order Number Cell */
+/* Order Number, Docket Number & Rate Cells */
 .order-num-input-wrap {
   display: flex;
   flex-direction: column;
@@ -691,8 +691,8 @@ body {
 }
 .order-num-input {
   width: 100%;
-  min-width: 120px;
-  max-width: 150px;
+  min-width: 110px;
+  max-width: 145px;
   padding: 4px 8px;
   font-size: 0.78rem;
   font-weight: 600;
@@ -721,6 +721,43 @@ body {
   align-items: center;
   gap: 3px;
   animation: fadeIn 0.2s ease-in;
+}
+
+/* Bidder Card (L1 & L2) */
+.bidder-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 220px;
+}
+.bidder-head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bidder-name {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.25;
+  word-break: break-word;
+}
+.bidder-price {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1px;
+}
+.bidder-diff {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  padding: 1px 5px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 2px;
 }
 
 .ra-sub-badge {
