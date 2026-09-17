@@ -11,3 +11,8 @@ venv/
 *.tar
 *.zip
 *.log
+next-app/
+scraped_output/
+*.pdf
+sample_*.html
+test_template.html

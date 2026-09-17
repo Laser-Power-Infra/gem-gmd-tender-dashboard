@@ -20,14 +20,14 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
-ENV NODE_ENV=production
-ENV PORT=6012
+ENV NODE_ENV=production \
+    PORT=6012 \
+    HOSTNAME="0.0.0.0"
 
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
 EXPOSE 6012
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
