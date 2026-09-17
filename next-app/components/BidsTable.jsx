@@ -9,12 +9,35 @@ const formatPrice = (str) => {
   return str;
 };
 
+const parseDateStringToDate = (str) => {
+  if (!str || str === '—' || str === 'N/A') return null;
+  // Match DD-MM-YYYY or DD/MM/YYYY with optional time
+  const dmy = String(str).match(/(\d{1,2})[-/](\d{1,2})[-/](\d{4})/);
+  if (dmy) {
+    const day = parseInt(dmy[1], 10);
+    const month = parseInt(dmy[2], 10) - 1;
+    const year = parseInt(dmy[3], 10);
+    return new Date(year, month, day);
+  }
+  // Match YYYY-MM-DD
+  const ymd = String(str).match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+  if (ymd) {
+    const year = parseInt(ymd[1], 10);
+    const month = parseInt(ymd[2], 10) - 1;
+    const day = parseInt(ymd[3], 10);
+    return new Date(year, month, day);
+  }
+  const parsed = new Date(str);
+  return isNaN(parsed.getTime()) ? null : parsed;
+};
+
 export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDetails, onOpenPdf, onRefresh, onUploadSuccess }) {
   const [sortKey, setSortKey] = useState(null);
   const [sortDir, setSortDir] = useState(1);
   const [activeColFilter, setActiveColFilter] = useState(null);
   const [columnFilters, setColumnFilters] = useState({});
   const [colSearchQuery, setColSearchQuery] = useState('');
+  const [dateInputs, setDateInputs] = useState({});
   const dropdownRef = useRef(null);
   const [uploadingRow, setUploadingRow] = useState(null); // bid_number currently uploading
   const fileInputRefs = useRef({});
@@ -122,16 +145,6 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       } 
     },
     {
-      key: 'buyer_ministry',
-      label: 'MINISTRY / DEPARTMENT',
-      minWidth: '220px',
-      getVal: (b) => {
-        const bd = b.buyer_details || {};
-        const bdt = b.bid_details || {};
-        return bd['Ministry'] || bd['Department'] || bd['Ministry/State Name'] || bd['Department Name'] || bdt['Department Name'] || '—';
-      }
-    },
-    {
       key: 'buyer_org',
       label: 'ORGANIZATION',
       minWidth: '220px',
@@ -139,6 +152,16 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
         const bd = b.buyer_details || {};
         const bdt = b.bid_details || {};
         return bd['Organisation'] || bd['Organisation Name'] || bd['Office'] || bd['Office Name'] || bdt['Department Name'] || '—';
+      }
+    },
+    {
+      key: 'buyer_ministry',
+      label: 'MINISTRY / DEPARTMENT',
+      minWidth: '220px',
+      getVal: (b) => {
+        const bd = b.buyer_details || {};
+        const bdt = b.bid_details || {};
+        return bd['Ministry'] || bd['Department'] || bd['Ministry/State Name'] || bd['Department Name'] || bdt['Department Name'] || '—';
       }
     },
     { 
@@ -174,15 +197,6 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       }
     },
     {
-      key: 'order_number',
-      label: 'ORDER NUMBER',
-      minWidth: '160px',
-      getVal: (b) => {
-        const k = b.bid_number || b.raw_bid_no;
-        return orderNumbers[k] !== undefined ? orderNumbers[k] : (b.order_number || '');
-      }
-    },
-    {
       key: 'dalui_pos',
       label: 'G.M. DALUI - OUR BID',
       minWidth: '195px',
@@ -207,7 +221,16 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
         return p && p !== 'N/A' && p !== 0 ? formatPrice(p) : '—';
       } 
     },
-    { key: 'status', label: 'STATUS', minWidth: '140px', getVal: (b) => b.user_status || 'Pending' }
+    { key: 'status', label: 'STATUS', minWidth: '140px', getVal: (b) => b.user_status || 'Pending' },
+    {
+      key: 'order_number',
+      label: 'ORDER NUMBER',
+      minWidth: '160px',
+      getVal: (b) => {
+        const k = b.bid_number || b.raw_bid_no;
+        return orderNumbers[k] !== undefined ? orderNumbers[k] : (b.order_number || '');
+      }
+    }
   ];
 
   const handleSort = (key) => {
@@ -244,7 +267,9 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
   const filterByColumnFilters = (inputBids) => {
     const activeKeys = Object.keys(columnFilters).filter((k) => {
       const f = columnFilters[k];
-      return f instanceof Set ? f.size > 0 : Boolean(f?.from || f?.to);
+      if (!f) return false;
+      if (f instanceof Set) return f.size > 0;
+      return Boolean(f.from || f.to);
     });
     if (activeKeys.length === 0) return inputBids;
 
@@ -252,9 +277,34 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
       for (const key of activeKeys) {
         const col = COLUMNS.find((c) => c.key === key);
         const filter = columnFilters[key];
-        const val = col ? col.getVal(b) : '';
+        if (!col || !filter) continue;
+
         if (filter instanceof Set) {
+          const val = col.getVal(b);
           if (!filter.has(String(val))) return false;
+        } else if (typeof filter === 'object' && (filter.from || filter.to)) {
+          const fromDate = filter.from ? new Date(filter.from + 'T00:00:00') : null;
+          const toDate = filter.to ? new Date(filter.to + 'T23:59:59') : null;
+
+          if (key === 'bid_end_date') {
+            const bdt = b.bid_details || {};
+            const dStr = bdt['Bid End Date / Time'] || bdt['Bid End Date'] || '';
+            const d = parseDateStringToDate(dStr);
+            if (!d) return false;
+            if (fromDate && d < fromDate) return false;
+            if (toDate && d > toDate) return false;
+          } else if (key === 'ra_dates') {
+            const bdt = b.bid_details || {};
+            const raInf = b.ra_info || {};
+            const rStartStr = raInf.ra_start_date || bdt['RA Start Date / Time'] || raInf.ra_schedules?.[0]?.start_date || '';
+            const rEndStr = raInf.ra_end_date || bdt['RA End Date / Time'] || raInf.ra_schedules?.[0]?.end_date || '';
+            const dStart = parseDateStringToDate(rStartStr);
+            const dEnd = parseDateStringToDate(rEndStr);
+            const targetDate = dEnd || dStart;
+            if (!targetDate) return false;
+            if (fromDate && targetDate < fromDate) return false;
+            if (toDate && targetDate > toDate) return false;
+          }
         }
       }
       return true;
@@ -297,14 +347,39 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
     setColumnFilters((prev) => ({ ...prev, [colKey]: new Set(vals) }));
   };
 
+  const handleDateChange = (colKey, field, value) => {
+    const cur = { ...(dateInputs[colKey] || columnFilters[colKey] || {}), [field]: value };
+    setDateInputs((prev) => ({ ...prev, [colKey]: cur }));
+    if (!cur.from && !cur.to) {
+      clearColFilter(colKey);
+    } else {
+      setColumnFilters((prev) => ({
+        ...prev,
+        [colKey]: { from: cur.from || '', to: cur.to || '' }
+      }));
+    }
+  };
+
+  const handleClearDateFilter = (colKey) => {
+    setDateInputs((prev) => ({ ...prev, [colKey]: { from: '', to: '' } }));
+    clearColFilter(colKey);
+  };
+
   return (
     <div className="table-responsive">
       <table className="dashboard-table">
         <thead>
           <tr>
-            {COLUMNS.map((col) => {
-              const filterActive = Boolean(columnFilters[col.key]?.size);
-              const filterCount = columnFilters[col.key]?.size || 0;
+            {COLUMNS.map((col, colIdx) => {
+              const isDateCol = col.key === 'bid_end_date' || col.key === 'ra_dates';
+              const filterVal = columnFilters[col.key];
+              const filterActive = isDateCol
+                ? Boolean(filterVal?.from || filterVal?.to)
+                : Boolean(filterVal instanceof Set && filterVal.size > 0);
+              const filterCount = isDateCol
+                ? (filterVal?.from || filterVal?.to ? 1 : 0)
+                : (filterVal instanceof Set ? filterVal.size : 0);
+              const isLeftAligned = colIdx < 6;
 
               return (
                 <th key={col.key} style={{ minWidth: col.minWidth, position: 'relative' }}>
@@ -315,13 +390,20 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                         <span className="sort-indicator">{sortDir === 1 ? ' ▲' : ' ▼'}</span>
                       )}
                     </span>
-                    {col.key !== 'index' && col.key !== 'dates' && (
+                    {col.key !== 'index' && (
                       <button
                         className={`th-filter-btn ${filterActive ? 'active' : ''}`}
                         onClick={(e) => {
                           e.stopPropagation();
-                          setActiveColFilter(activeColFilter === col.key ? null : col.key);
+                          const nextKey = activeColFilter === col.key ? null : col.key;
+                          setActiveColFilter(nextKey);
                           setColSearchQuery('');
+                          if (isDateCol && nextKey) {
+                            setDateInputs((prev) => ({
+                              ...prev,
+                              [col.key]: columnFilters[col.key] || { from: '', to: '' }
+                            }));
+                          }
                         }}
                         title={`Filter ${col.label}`}
                       >
@@ -333,47 +415,83 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
 
                   {/* Per Column Filter Dropdown */}
                   {activeColFilter === col.key && (
-                    <div className="col-dropdown open" ref={dropdownRef}>
+                    <div className={`col-dropdown open ${isLeftAligned ? 'align-left' : 'align-right'}`} ref={dropdownRef}>
                       <div className="dd-pop-header">
                         <span>Filter {col.label}</span>
                         <button className="dd-close-x" onClick={() => setActiveColFilter(null)}>
                           <X className="w-3.5 h-3.5" />
                         </button>
                       </div>
-                      <div className="dd-search">
-                        <input
-                          type="text"
-                          placeholder="Search options..."
-                          value={colSearchQuery}
-                          onChange={(e) => setColSearchQuery(e.target.value)}
-                        />
-                      </div>
-                      <div className="dd-actions-bar">
-                        <button onClick={() => selectAllColValues(col.key)}>Select All</button>
-                        <button onClick={() => clearColFilter(col.key)}>Clear</button>
-                      </div>
-                      <div className="dd-options">
-                        {getDistinctValues(col.key)
-                          .filter((v) => v.toLowerCase().includes(colSearchQuery.toLowerCase()))
-                          .map((val) => {
-                            const isChecked = columnFilters[col.key]?.has(val) || false;
-                            return (
-                              <label key={val} className="dd-opt">
-                                <input
-                                  type="checkbox"
-                                  checked={isChecked}
-                                  onChange={() => toggleColValue(col.key, val)}
-                                />
-                                <span>{val}</span>
-                              </label>
-                            );
-                          })}
-                      </div>
-                      <div className="dd-footer">
-                        <button className="btn btn-secondary btn-sm" onClick={() => clearColFilter(col.key)} style={{ width: '100%' }}>
-                          Reset Filter
-                        </button>
-                      </div>
+
+                      {isDateCol ? (
+                        <div className="dd-date-range">
+                          <div className="dd-date-group">
+                            <label className="dd-date-label">From Date</label>
+                            <input
+                              type="date"
+                              className="dd-date-input"
+                              value={dateInputs[col.key]?.from || columnFilters[col.key]?.from || ''}
+                              onChange={(e) => handleDateChange(col.key, 'from', e.target.value)}
+                            />
+                          </div>
+                          <div className="dd-date-group">
+                            <label className="dd-date-label">To Date</label>
+                            <input
+                              type="date"
+                              className="dd-date-input"
+                              value={dateInputs[col.key]?.to || columnFilters[col.key]?.to || ''}
+                              onChange={(e) => handleDateChange(col.key, 'to', e.target.value)}
+                            />
+                          </div>
+                          <div className="dd-date-actions">
+                            <button
+                              type="button"
+                              className="btn btn-secondary btn-sm"
+                              onClick={() => handleClearDateFilter(col.key)}
+                              style={{ width: '100%' }}
+                            >
+                              Reset Dates
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="dd-search">
+                            <input
+                              type="text"
+                              placeholder="Search options..."
+                              value={colSearchQuery}
+                              onChange={(e) => setColSearchQuery(e.target.value)}
+                            />
+                          </div>
+                          <div className="dd-actions-bar">
+                            <button onClick={() => selectAllColValues(col.key)}>Select All</button>
+                            <button onClick={() => clearColFilter(col.key)}>Clear</button>
+                          </div>
+                          <div className="dd-options">
+                            {getDistinctValues(col.key)
+                              .filter((v) => v.toLowerCase().includes(colSearchQuery.toLowerCase()))
+                              .map((val) => {
+                                const isChecked = columnFilters[col.key]?.has(val) || false;
+                                return (
+                                  <label key={val} className="dd-opt">
+                                    <input
+                                      type="checkbox"
+                                      checked={isChecked}
+                                      onChange={() => toggleColValue(col.key, val)}
+                                    />
+                                    <span>{val}</span>
+                                  </label>
+                                );
+                              })}
+                          </div>
+                          <div className="dd-footer">
+                            <button className="btn btn-secondary btn-sm" onClick={() => clearColFilter(col.key)} style={{ width: '100%' }}>
+                              Reset Filter
+                            </button>
+                          </div>
+                        </>
+                      )}
                     </div>
                   )}
                 </th>
@@ -504,13 +622,13 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                     </span>
                   </td>
                   <td>
-                    <div className="buyer-dept">
-                      {buyerDetails['Ministry'] || buyerDetails['Department'] || buyerDetails['Ministry/State Name'] || buyerDetails['Department Name'] || bDetails['Department Name'] || '—'}
+                    <div className="buyer-org">
+                      {buyerDetails['Organisation'] || buyerDetails['Organisation Name'] || buyerDetails['Office'] || buyerDetails['Office Name'] || '—'}
                     </div>
                   </td>
                   <td>
-                    <div className="buyer-dept" style={{ fontWeight: 500 }}>
-                      {buyerDetails['Organisation'] || buyerDetails['Organisation Name'] || buyerDetails['Office'] || buyerDetails['Office Name'] || '—'}
+                    <div className="buyer-dept">
+                      {buyerDetails['Ministry'] || buyerDetails['Department'] || buyerDetails['Ministry/State Name'] || buyerDetails['Department Name'] || bDetails['Department Name'] || '—'}
                     </div>
                   </td>
                   <td>
@@ -535,26 +653,6 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                           </>
                         );
                       })()}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="order-num-input-wrap">
-                      <input
-                        type="text"
-                        className="order-num-input"
-                        placeholder="Enter Order No"
-                        value={orderNumbers[bidNo] !== undefined ? orderNumbers[bidNo] : (b.order_number || '')}
-                        onChange={(e) => handleOrderNumberChange(bidNo, e.target.value)}
-                        onBlur={() => handleSaveOrderNumber(bidNo)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter') {
-                            e.target.blur();
-                          }
-                        }}
-                      />
-                      {savedOrderNos[bidNo] && (
-                        <span className="order-saved-tag">✓ Saved</span>
-                      )}
                     </div>
                   </td>
                   <td>{posCell}</td>
@@ -583,6 +681,26 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                       <option value="Won">Won</option>
                       <option value="Not Interested">Not Interested</option>
                     </select>
+                  </td>
+                  <td>
+                    <div className="order-num-input-wrap">
+                      <input
+                        type="text"
+                        className="order-num-input"
+                        placeholder="Enter Order No"
+                        value={orderNumbers[bidNo] !== undefined ? orderNumbers[bidNo] : (b.order_number || '')}
+                        onChange={(e) => handleOrderNumberChange(bidNo, e.target.value)}
+                        onBlur={() => handleSaveOrderNumber(bidNo)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.target.blur();
+                          }
+                        }}
+                      />
+                      {savedOrderNos[bidNo] && (
+                        <span className="order-saved-tag">✓ Saved</span>
+                      )}
+                    </div>
                   </td>
                   {/* ORDERS PDF Column (Strictly from order_pdf in database) */}
                   <td>

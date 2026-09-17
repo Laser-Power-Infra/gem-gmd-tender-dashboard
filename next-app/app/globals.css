@@ -676,9 +676,9 @@ body {
 .cell-num { font-weight: 600; color: #64748b; }
 .bid-number { font-size: 0.84rem; font-weight: 700; color: var(--text-dark); }
 .cell-qty { font-weight: 700; color: #1e293b; }
-.buyer-name { font-weight: 700; color: var(--text-dark); font-size: 0.82rem; }
+.buyer-name { font-weight: 500; color: #64748b; font-size: 0.78rem; }
 .buyer-dept { font-size: 0.73rem; color: #64748b; }
-.buyer-org { font-size: 0.78rem; font-weight: 600; color: #1e293b; }
+.buyer-org { font-size: 0.82rem; font-weight: 700; color: var(--text-dark); }
 .l1-price-val { font-weight: 700; color: var(--text-dark); }
 .gmd-name { font-size: 0.73rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
 .our-price-sub { font-size: 0.69rem; color: #64748b; margin-top: 2px; }
@@ -789,16 +789,26 @@ body {
 .col-dropdown {
   position: absolute;
   top: calc(100% + 4px);
-  right: 0;
-  min-width: 240px;
+  min-width: 280px;
+  max-width: 360px;
   background: #ffffff;
   border: 1.5px solid #0284c7;
   border-radius: 10px;
-  box-shadow: 0 12px 28px -4px rgba(15,23,42,0.2);
-  z-index: 100;
-  padding: 10px;
+  box-shadow: 0 12px 28px -4px rgba(15,23,42,0.25);
+  z-index: 1000;
+  padding: 12px;
   display: flex;
   flex-direction: column;
+}
+
+.col-dropdown.align-left {
+  left: 0;
+  right: auto;
+}
+
+.col-dropdown.align-right {
+  right: 0;
+  left: auto;
 }
 
 .dd-pop-header {
@@ -807,19 +817,130 @@ body {
   align-items: center;
   border-bottom: 1px solid #f1f5f9;
   padding-bottom: 6px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-weight: 700;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   color: #0284c7;
 }
 
-.dd-close-x { background: none; border: none; color: #94a3b8; cursor: pointer; }
+.dd-close-x {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .dd-close-x:hover { color: #dc2626; }
-.dd-search input { width: 100%; padding: 4px 8px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.76rem; }
-.dd-actions-bar { display: flex; justify-content: space-between; margin: 4px 0; }
-.dd-actions-bar button { background: none; border: none; color: #0284c7; font-size: 0.7rem; font-weight: 600; cursor: pointer; }
-.dd-options { max-height: 140px; overflow-y: auto; margin: 4px 0; }
-.dd-opt { display: flex; align-items: center; gap: 6px; padding: 4px; font-size: 0.76rem; cursor: pointer; }
+
+.dd-search input {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.76rem;
+  outline: none;
+}
+.dd-search input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.dd-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+.dd-actions-bar button {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+.dd-actions-bar button:hover {
+  text-decoration: underline;
+}
+
+.dd-options {
+  max-height: 180px;
+  overflow-y: auto;
+  margin: 4px 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dd-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 6px;
+  font-size: 0.76rem;
+  color: #1e293b;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.3;
+}
+.dd-opt:hover {
+  background: #f1f5f9;
+}
+.dd-opt input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.dd-opt span {
+  flex: 1;
+}
+
+/* Date Range Filter Dropdown */
+.dd-date-range {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px 0;
+}
+.dd-date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.dd-date-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.dd-date-input {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  color: #0f172a;
+  outline: none;
+  background: #ffffff;
+}
+.dd-date-input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+.dd-date-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+.dd-date-actions button {
+  flex: 1;
+}
 
 /* PILL BADGES */
 .pill-badge {
