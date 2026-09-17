@@ -19,6 +19,45 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
   const [uploadingRow, setUploadingRow] = useState(null); // bid_number currently uploading
   const fileInputRefs = useRef({});
 
+  // Order Number state
+  const [orderNumbers, setOrderNumbers] = useState({});
+  const [savedOrderNos, setSavedOrderNos] = useState({});
+
+  useEffect(() => {
+    const initial = {};
+    (bids || []).forEach((b) => {
+      const k = b.bid_number || b.raw_bid_no;
+      if (k && b.order_number !== undefined) {
+        initial[k] = b.order_number || '';
+      }
+    });
+    setOrderNumbers((prev) => ({ ...initial, ...prev }));
+  }, [bids]);
+
+  const handleOrderNumberChange = (bidNo, val) => {
+    setOrderNumbers((prev) => ({ ...prev, [bidNo]: val }));
+  };
+
+  const handleSaveOrderNumber = async (bidNo) => {
+    const orderNo = orderNumbers[bidNo] !== undefined ? orderNumbers[bidNo] : '';
+    try {
+      const res = await fetch('/api/order-number', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bid_number: bidNo, order_number: orderNo }),
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        setSavedOrderNos((prev) => ({ ...prev, [bidNo]: true }));
+        setTimeout(() => {
+          setSavedOrderNos((prev) => ({ ...prev, [bidNo]: false }));
+        }, 2000);
+      }
+    } catch (err) {
+      console.error('Error saving order number:', err);
+    }
+  };
+
   const handleFileUpload = async (bidNo, file) => {
     if (!file || !bidNo) return;
     setUploadingRow(bidNo);
@@ -82,33 +121,65 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
         return bd['Quantity'] || bd['Contract Duration'] || bd['Items'] || '—';
       } 
     },
+    {
+      key: 'buyer_ministry',
+      label: 'MINISTRY / DEPARTMENT',
+      minWidth: '220px',
+      getVal: (b) => {
+        const bd = b.buyer_details || {};
+        const bdt = b.bid_details || {};
+        return bd['Ministry'] || bd['Department'] || bd['Ministry/State Name'] || bd['Department Name'] || bdt['Department Name'] || '—';
+      }
+    },
+    {
+      key: 'buyer_org',
+      label: 'ORGANIZATION',
+      minWidth: '220px',
+      getVal: (b) => {
+        const bd = b.buyer_details || {};
+        const bdt = b.bid_details || {};
+        return bd['Organisation'] || bd['Organisation Name'] || bd['Office'] || bd['Office Name'] || bdt['Department Name'] || '—';
+      }
+    },
     { 
       key: 'buyer_name', 
-      label: 'BUYER', 
-      minWidth: '200px', 
+      label: 'BUYER NAME', 
+      minWidth: '180px', 
       getVal: (b) => {
         const bd = b.buyer_details || {};
         return bd['Name'] || bd['Designation'] || '—';
       } 
     },
     {
-      key: 'buyer_ministry',
-      label: 'MINISTRY / DEPARTMENT',
-      minWidth: '230px',
+      key: 'bid_end_date',
+      label: 'BID CLOSING DATE',
+      minWidth: '170px',
       getVal: (b) => {
-        const bd = b.buyer_details || {};
         const bdt = b.bid_details || {};
-        return bd['Ministry'] || bd['Department'] || bd['Organisation'] || bd['Office'] || bd['Ministry/State Name'] || bd['Department Name'] || bdt['Department Name'] || '—';
+        return bdt['Bid End Date / Time'] || bdt['Bid End Date'] || '—';
       }
     },
     {
-      key: 'dates',
-      label: 'RA & BID CLOSING DATES',
-      minWidth: '190px',
+      key: 'ra_dates',
+      label: 'RA DATES',
+      minWidth: '200px',
       getVal: (b) => {
         const bdt = b.bid_details || {};
         const raInf = b.ra_info || {};
-        return raInf.ra_end_date || bdt['Bid End Date / Time'] || bdt['RA End Date / Time'] || raInf.ra_schedules?.[0]?.end_date || '';
+        const isRa = raInf.is_ra || (raInf.ra_number && raInf.ra_number !== 'N/A') || (raInf.ra_start_date && raInf.ra_start_date !== 'N/A') || bdt['RA Start Date / Time'];
+        if (!isRa) return '—';
+        const rStart = raInf.ra_start_date || bdt['RA Start Date / Time'] || '—';
+        const rEnd = raInf.ra_end_date || bdt['RA End Date / Time'] || '—';
+        return `${rStart} - ${rEnd}`;
+      }
+    },
+    {
+      key: 'order_number',
+      label: 'ORDER NUMBER',
+      minWidth: '160px',
+      getVal: (b) => {
+        const k = b.bid_number || b.raw_bid_no;
+        return orderNumbers[k] !== undefined ? orderNumbers[k] : (b.order_number || '');
       }
     },
     {
@@ -318,7 +389,7 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
         <tbody>
           {sortedBids.length === 0 ? (
             <tr>
-              <td colSpan={14} className="text-center py-8 text-muted">
+              <td colSpan={17} className="text-center py-8 text-muted">
                 No tender records found matching your active filter criteria.
               </td>
             </tr>
@@ -433,31 +504,57 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                     </span>
                   </td>
                   <td>
+                    <div className="buyer-dept">
+                      {buyerDetails['Ministry'] || buyerDetails['Department'] || buyerDetails['Ministry/State Name'] || buyerDetails['Department Name'] || bDetails['Department Name'] || '—'}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="buyer-dept" style={{ fontWeight: 500 }}>
+                      {buyerDetails['Organisation'] || buyerDetails['Organisation Name'] || buyerDetails['Office'] || buyerDetails['Office Name'] || '—'}
+                    </div>
+                  </td>
+                  <td>
                     <div className="buyer-name">{buyerDetails['Name'] || buyerDetails['Designation'] || '—'}</div>
                   </td>
                   <td>
-                    <div className="buyer-dept">
-                      {buyerDetails['Ministry'] || buyerDetails['Department'] || buyerDetails['Organisation'] || buyerDetails['Office'] || buyerDetails['Ministry/State Name'] || buyerDetails['Department Name'] || bDetails['Department Name'] || '—'}
+                    <div className="date-cell">
+                      <span className="d-end">{bDetails['Bid End Date / Time'] || bDetails['Bid End Date'] || '—'}</span>
                     </div>
                   </td>
                   <td>
                     <div className="date-cell">
                       {(() => {
-                        const sDate = bDetails['Bid Start Date / Time'] || bDetails['RA Start Date / Time'] || raInf.ra_start_date || raInf.ra_schedules?.[0]?.start_date || '';
-                        const eDate = bDetails['Bid End Date / Time'] || bDetails['RA End Date / Time'] || raInf.ra_end_date || raInf.ra_schedules?.[0]?.end_date || '';
-                        const hasRaEnd = raInf.ra_end_date && raInf.ra_end_date !== 'N/A' && raInf.ra_end_date !== eDate;
+                        const isRaActive = isRa || (raNo && raNo !== 'N/A') || (raInf.ra_start_date && raInf.ra_start_date !== 'N/A') || bDetails['RA Start Date / Time'];
+                        if (!isRaActive) return <span className="text-muted">—</span>;
+                        const raStart = raInf.ra_start_date || bDetails['RA Start Date / Time'] || raInf.ra_schedules?.[0]?.start_date || '—';
+                        const raEnd = raInf.ra_end_date || bDetails['RA End Date / Time'] || raInf.ra_schedules?.[0]?.end_date || '—';
                         return (
                           <>
-                            <span className="d-start">Start: {sDate && sDate !== 'N/A' ? sDate : '—'}</span>
-                            <span className="d-end">End: {eDate && eDate !== 'N/A' ? eDate : '—'}</span>
-                            {hasRaEnd && (
-                              <span className="pill-badge pill-amber" style={{ fontSize: '0.68rem', marginTop: '2px', display: 'inline-block' }}>
-                                ⚡ RA End: {raInf.ra_end_date}
-                              </span>
-                            )}
+                            <span className="d-start">Start: {raStart}</span>
+                            <span className="d-end">End: {raEnd}</span>
                           </>
                         );
                       })()}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="order-num-input-wrap">
+                      <input
+                        type="text"
+                        className="order-num-input"
+                        placeholder="Enter Order No"
+                        value={orderNumbers[bidNo] !== undefined ? orderNumbers[bidNo] : (b.order_number || '')}
+                        onChange={(e) => handleOrderNumberChange(bidNo, e.target.value)}
+                        onBlur={() => handleSaveOrderNumber(bidNo)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.target.blur();
+                          }
+                        }}
+                      />
+                      {savedOrderNos[bidNo] && (
+                        <span className="order-saved-tag">✓ Saved</span>
+                      )}
                     </div>
                   </td>
                   <td>{posCell}</td>
