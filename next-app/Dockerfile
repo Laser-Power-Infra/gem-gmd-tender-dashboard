@@ -1,7 +1,7 @@
-FROM node:20-alpine AS builder
+FROM node:20-slim AS builder
 WORKDIR /app
 
-RUN apk add --no-cache openssl libc6-compat
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 COPY package*.json ./
 RUN npm install
@@ -10,18 +10,14 @@ COPY . .
 RUN npx prisma generate
 
 ENV NEXT_TELEMETRY_DISABLED=1 \
-    RAYON_NUM_THREADS=1 \
-    NEXT_CPU_NUM=1 \
-    SWC_COMPILER_NUM_THREADS=1 \
-    UV_THREADPOOL_SIZE=1 \
     NODE_OPTIONS="--max-old-space-size=4096"
 
 RUN npm run build
 
-FROM node:20-alpine AS runner
+FROM node:20-slim AS runner
 WORKDIR /app
 
-RUN apk add --no-cache openssl libc6-compat
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
 ENV PORT=6012
