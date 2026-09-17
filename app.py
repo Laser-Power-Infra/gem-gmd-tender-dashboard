@@ -9,7 +9,7 @@ import pandas as pd
 from flask import Flask, render_template, jsonify, request, send_file
 from flask_cors import CORS
 from gem_scraper import scrape_gem_bid, extract_bid_details_from_html
-from db_service import save_gem_record, get_all_gem_records, get_gem_record, save_file_record, get_files_for_gem_id, get_all_gem_files, save_order_number
+from db_service import save_gem_record, get_all_gem_records, get_gem_record, save_file_record, get_files_for_gem_id, get_all_gem_files, save_order_number, save_docket_number, save_rate, save_custom_fields
 from gdrive_service import upload_pdf_to_gdrive
 from notifications_service import load_notifications, mark_notifications_read, add_notification, detect_bid_changes
 
@@ -460,11 +460,15 @@ def load_all_json_bids():
                 b['db_remarks'] = db_rec.get('remarks', '')
                 b['order_pdf'] = db_rec.get('order_pdf') or ''
                 b['order_number'] = db_rec.get('order_number') or ''
+                b['docket_number'] = db_rec.get('docket_number') or ''
+                b['rate'] = db_rec.get('rate') or ''
                 matched_db_recs.add(db_rec.get('id'))
             else:
                 b['db_remarks'] = ''
                 b['order_pdf'] = ''
                 b['order_number'] = ''
+                b['docket_number'] = ''
+                b['rate'] = ''
 
             b['attachments'] = combined_attachments
             b['drive_links'] = [a['url'] for a in combined_attachments]
@@ -472,7 +476,7 @@ def load_all_json_bids():
         # Add DB-only records (uploaded but not yet scraped) as standalone bids
         for rec in db_records:
             rec_id = rec.get('id')
-            if rec_id not in matched_db_recs and (rec.get('attachments') or rec.get('drive_links') or rec.get('order_pdf') or rec.get('order_number')):
+            if rec_id not in matched_db_recs and (rec.get('attachments') or rec.get('drive_links') or rec.get('order_pdf') or rec.get('order_number') or rec.get('docket_number') or rec.get('rate')):
                 stub_bid = {
                     'bid_number': rec['gem_id'],
                     'raw_bid_no': rec['gem_id'],
@@ -490,6 +494,8 @@ def load_all_json_bids():
                     'db_remarks': rec.get('remarks', ''),
                     'order_pdf': rec.get('order_pdf') or '',
                     'order_number': rec.get('order_number') or '',
+                    'docket_number': rec.get('docket_number') or '',
+                    'rate': rec.get('rate') or '',
                     'has_pdf': bool(rec.get('order_pdf')),
                     'pdf_filename': rec['gem_id'].replace('/', '_') + '.pdf',
                 }
@@ -828,6 +834,54 @@ def save_order_number_endpoint():
     try:
         db_rec = save_order_number(bid_no, order_number)
         return jsonify({'status': 'success', 'bid_number': bid_no, 'order_number': order_number, 'db_record': db_rec})
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/docket-number', methods=['POST'])
+def save_docket_number_endpoint():
+    req = request.json or {}
+    bid_no = req.get('bid_number')
+    docket_number = req.get('docket_number', '').strip()
+    if not bid_no:
+        return jsonify({'status': 'error', 'message': 'bid_number is required'}), 400
+    try:
+        db_rec = save_docket_number(bid_no, docket_number)
+        return jsonify({'status': 'success', 'bid_number': bid_no, 'docket_number': docket_number, 'db_record': db_rec})
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/rate', methods=['POST'])
+def save_rate_endpoint():
+    req = request.json or {}
+    bid_no = req.get('bid_number')
+    rate = req.get('rate', '').strip()
+    if not bid_no:
+        return jsonify({'status': 'error', 'message': 'bid_number is required'}), 400
+    try:
+        db_rec = save_rate(bid_no, rate)
+        return jsonify({'status': 'success', 'bid_number': bid_no, 'rate': rate, 'db_record': db_rec})
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/bid-custom-fields', methods=['POST'])
+def save_bid_custom_fields_endpoint():
+    req = request.json or {}
+    bid_no = req.get('bid_number')
+    if not bid_no:
+        return jsonify({'status': 'error', 'message': 'bid_number is required'}), 400
+    order_num = req.get('order_number')
+    docket_num = req.get('docket_number')
+    rate_val = req.get('rate')
+    try:
+        db_rec = save_custom_fields(bid_no, order_number=order_num, docket_number=docket_num, rate=rate_val)
+        return jsonify({
+            'status': 'success',
+            'bid_number': bid_no,
+            'order_number': db_rec.get('order_number', '') if db_rec else order_num,
+            'docket_number': db_rec.get('docket_number', '') if db_rec else docket_num,
+            'rate': db_rec.get('rate', '') if db_rec else rate_val,
+            'db_record': db_rec
+        })
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 

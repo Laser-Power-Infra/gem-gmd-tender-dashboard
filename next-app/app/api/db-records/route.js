@@ -19,7 +19,7 @@ export async function GET() {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { gem_id, drive_link, remarks } = body;
+    const { gem_id, drive_link, remarks, user_status, order_number, docket_number, rate } = body;
 
     if (!gem_id) {
       return NextResponse.json({ status: 'error', message: 'gem_id is required' }, { status: 400 });
@@ -32,11 +32,19 @@ export async function POST(request) {
       update: {
         drive_link: drive_link !== undefined ? drive_link : undefined,
         remarks: remarks !== undefined ? remarks : undefined,
+        user_status: user_status !== undefined ? user_status : undefined,
+        order_number: order_number !== undefined ? order_number : undefined,
+        docket_number: docket_number !== undefined ? docket_number : undefined,
+        rate: rate !== undefined ? rate : undefined,
       },
       create: {
         gem_id: clean_gem_id,
         drive_link: drive_link || null,
         remarks: remarks || null,
+        user_status: user_status || null,
+        order_number: order_number || null,
+        docket_number: docket_number || null,
+        rate: rate || null,
       },
     });
 

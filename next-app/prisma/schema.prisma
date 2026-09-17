@@ -9,21 +9,27 @@ datasource db {
 }
 
 model gmd_gem_ids {
-  id         Int      @id @default(autoincrement())
-  gem_id     String   @unique
-  drive_link String?
-  order_pdf  String?
-  remarks    String?
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id            Int       @id @default(autoincrement())
+  gem_id        String    @unique @db.VarChar(255)
+  drive_link    String?
+  order_pdf     String?
+  remarks       String?
+  user_status   String?
+  order_number  String?
+  docket_number String?
+  rate          String?
+  created_at    DateTime? @default(now()) @db.Timestamp(6)
+  updated_at    DateTime? @default(now()) @db.Timestamp(6)
 }
 
 model gmd_gem_files {
-  id         Int      @id @default(autoincrement())
-  gem_id     String
-  file_name  String
+  id         Int       @id @default(autoincrement())
+  gem_id     String    @db.VarChar(255)
+  file_name  String    @db.VarChar(255)
   drive_link String
-  file_type  String?  @default("pdf")
-  created_at DateTime @default(now())
+  file_type  String?   @default("pdf") @db.VarChar(50)
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+
+  @@index([gem_id], map: "idx_gmd_files_gem_id")
 }
 

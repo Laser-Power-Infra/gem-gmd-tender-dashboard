@@ -34,12 +34,16 @@ def init_db():
                     drive_link TEXT,
                     order_pdf TEXT,
                     order_number TEXT,
+                    docket_number TEXT,
+                    rate TEXT,
                     remarks TEXT,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 );
                 ALTER TABLE gmd_gem_ids ADD COLUMN IF NOT EXISTS order_pdf TEXT;
                 ALTER TABLE gmd_gem_ids ADD COLUMN IF NOT EXISTS order_number TEXT;
+                ALTER TABLE gmd_gem_ids ADD COLUMN IF NOT EXISTS docket_number TEXT;
+                ALTER TABLE gmd_gem_ids ADD COLUMN IF NOT EXISTS rate TEXT;
                 CREATE TABLE IF NOT EXISTS gmd_gem_files (
                     id SERIAL PRIMARY KEY,
                     gem_id VARCHAR(255) NOT NULL,
@@ -58,6 +62,8 @@ def init_db():
                     drive_link TEXT,
                     order_pdf TEXT,
                     order_number TEXT,
+                    docket_number TEXT,
+                    rate TEXT,
                     remarks TEXT,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -80,10 +86,18 @@ def init_db():
                 cursor.execute("ALTER TABLE gmd_gem_ids ADD COLUMN order_number TEXT;")
             except Exception:
                 pass
+            try:
+                cursor.execute("ALTER TABLE gmd_gem_ids ADD COLUMN docket_number TEXT;")
+            except Exception:
+                pass
+            try:
+                cursor.execute("ALTER TABLE gmd_gem_ids ADD COLUMN rate TEXT;")
+            except Exception:
+                pass
         conn.commit()
         cursor.close()
         conn.close()
-        print(f"[DB] Initialized tables 'gmd_gem_ids' (with order_pdf & order_number) & 'gmd_gem_files' successfully in database ({db_type}).")
+        print(f"[DB] Initialized tables 'gmd_gem_ids' (with order_number, docket_number, rate) & 'gmd_gem_files' successfully in database ({db_type}).")
     except Exception as e:
         print(f"[DB ERROR] Error initializing tables: {e}")
 
@@ -127,7 +141,7 @@ def parse_drive_links(raw):
     atts = parse_drive_attachments(raw)
     return [a['url'] for a in atts if a.get('url')]
 
-def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_pdf=None, order_number=None):
+def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_pdf=None, order_number=None, docket_number=None, rate=None):
     if not gem_id:
         return None
     gem_id_raw = str(gem_id).strip()
@@ -142,7 +156,7 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
         
         if db_type == "postgres":
             cursor.execute("""
-                SELECT gem_id, drive_link, order_pdf, remarks, order_number 
+                SELECT gem_id, drive_link, order_pdf, remarks, order_number, docket_number, rate 
                 FROM gmd_gem_ids 
                 WHERE UPPER(gem_id) = %s 
                    OR UPPER(REPLACE(REPLACE(gem_id, '/', ''), '_', '')) = %s;
@@ -151,6 +165,8 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
             
             if row:
                 matched_id, existing_link, existing_order_pdf, existing_remarks, existing_order_num = row[0], row[1], row[2], row[3], row[4]
+                existing_docket_num = row[5] if len(row) > 5 else None
+                existing_rate = row[6] if len(row) > 6 else None
                 if drive_link is not None:
                     existing_atts = parse_drive_attachments(existing_link)
                     existing_urls = [a['url'] for a in existing_atts]
@@ -168,11 +184,13 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
                 updated_remarks = remarks if remarks is not None else existing_remarks
                 updated_order_pdf = order_pdf if order_pdf is not None else existing_order_pdf
                 updated_order_num = order_number if order_number is not None else existing_order_num
+                updated_docket_num = docket_number if docket_number is not None else existing_docket_num
+                updated_rate = rate if rate is not None else existing_rate
                 cursor.execute("""
                     UPDATE gmd_gem_ids
-                    SET drive_link = %s, order_pdf = %s, remarks = %s, order_number = %s, updated_at = %s
+                    SET drive_link = %s, order_pdf = %s, remarks = %s, order_number = %s, docket_number = %s, rate = %s, updated_at = %s
                     WHERE UPPER(gem_id) = %s;
-                """, (updated_link, updated_order_pdf, updated_remarks, updated_order_num, now_dt, matched_id.upper()))
+                """, (updated_link, updated_order_pdf, updated_remarks, updated_order_num, updated_docket_num, updated_rate, now_dt, matched_id.upper()))
             else:
                 if drive_link is not None:
                     file_ext = 'pdf'
@@ -185,12 +203,12 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
                 else:
                     stored_link = None
                 cursor.execute("""
-                    INSERT INTO gmd_gem_ids (gem_id, drive_link, order_pdf, remarks, order_number, created_at, updated_at)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s);
-                """, (gem_id_upper, stored_link, order_pdf, remarks, order_number, now_dt, now_dt))
+                    INSERT INTO gmd_gem_ids (gem_id, drive_link, order_pdf, remarks, order_number, docket_number, rate, created_at, updated_at)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+                """, (gem_id_upper, stored_link, order_pdf, remarks, order_number, docket_number, rate, now_dt, now_dt))
         else:
             cursor.execute("""
-                SELECT gem_id, drive_link, order_pdf, remarks, order_number 
+                SELECT gem_id, drive_link, order_pdf, remarks, order_number, docket_number, rate 
                 FROM gmd_gem_ids 
                 WHERE UPPER(gem_id) = ? 
                    OR UPPER(REPLACE(REPLACE(gem_id, '/', ''), '_', '')) = ?;
@@ -203,6 +221,8 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
                 existing_order_pdf = (row['order_pdf'] if 'order_pdf' in row.keys() else row[2]) if isinstance(row, sqlite3.Row) else row[2]
                 existing_remarks = (row['remarks'] if 'remarks' in row.keys() else row[3]) if isinstance(row, sqlite3.Row) else row[3]
                 existing_order_num = (row['order_number'] if 'order_number' in row.keys() else (row[4] if len(row) > 4 else '')) if isinstance(row, sqlite3.Row) else (row[4] if len(row) > 4 else '')
+                existing_docket_num = (row['docket_number'] if 'docket_number' in row.keys() else (row[5] if len(row) > 5 else '')) if isinstance(row, sqlite3.Row) else (row[5] if len(row) > 5 else '')
+                existing_rate = (row['rate'] if 'rate' in row.keys() else (row[6] if len(row) > 6 else '')) if isinstance(row, sqlite3.Row) else (row[6] if len(row) > 6 else '')
                 if drive_link is not None:
                     existing_atts = parse_drive_attachments(existing_link)
                     existing_urls = [a['url'] for a in existing_atts]
@@ -220,11 +240,13 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
                 updated_remarks = remarks if remarks is not None else existing_remarks
                 updated_order_pdf = order_pdf if order_pdf is not None else existing_order_pdf
                 updated_order_num = order_number if order_number is not None else existing_order_num
+                updated_docket_num = docket_number if docket_number is not None else existing_docket_num
+                updated_rate = rate if rate is not None else existing_rate
                 cursor.execute("""
                     UPDATE gmd_gem_ids
-                    SET drive_link = ?, order_pdf = ?, remarks = ?, order_number = ?, updated_at = ?
+                    SET drive_link = ?, order_pdf = ?, remarks = ?, order_number = ?, docket_number = ?, rate = ?, updated_at = ?
                     WHERE UPPER(gem_id) = ?;
-                """, (updated_link, updated_order_pdf, updated_remarks, updated_order_num, now_str, matched_id.upper()))
+                """, (updated_link, updated_order_pdf, updated_remarks, updated_order_num, updated_docket_num, updated_rate, now_str, matched_id.upper()))
             else:
                 if drive_link is not None:
                     file_ext = 'pdf'
@@ -237,9 +259,9 @@ def save_gem_record(gem_id, drive_link=None, remarks=None, filename=None, order_
                 else:
                     stored_link = None
                 cursor.execute("""
-                    INSERT INTO gmd_gem_ids (gem_id, drive_link, order_pdf, remarks, order_number, created_at, updated_at)
-                    VALUES (?, ?, ?, ?, ?, ?, ?);
-                """, (gem_id_upper, stored_link, order_pdf, remarks, order_number, now_str, now_str))
+                    INSERT INTO gmd_gem_ids (gem_id, drive_link, order_pdf, remarks, order_number, docket_number, rate, created_at, updated_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+                """, (gem_id_upper, stored_link, order_pdf, remarks, order_number, docket_number, rate, now_str, now_str))
 
         conn.commit()
         cursor.close()
@@ -253,8 +275,20 @@ def save_order_number(gem_id, order_number):
     """Save/update the manual order_number for a GeM ID."""
     return save_gem_record(gem_id, order_number=order_number)
 
+def save_docket_number(gem_id, docket_number):
+    """Save/update the manual docket_number for a GeM ID."""
+    return save_gem_record(gem_id, docket_number=docket_number)
+
+def save_rate(gem_id, rate):
+    """Save/update the manual rate for a GeM ID."""
+    return save_gem_record(gem_id, rate=rate)
+
+def save_custom_fields(gem_id, order_number=None, docket_number=None, rate=None):
+    """Save/update multiple custom manual fields for a GeM ID."""
+    return save_gem_record(gem_id, order_number=order_number, docket_number=docket_number, rate=rate)
+
 def _format_record(raw_dict):
-    """Add parsed attachments, order_pdf, order_number, and drive_links array to a record dict."""
+    """Add parsed attachments, order_pdf, order_number, docket_number, rate, and drive_links array to a record dict."""
     if not raw_dict:
         return raw_dict
     gid = str(raw_dict.get('gem_id', '')).strip().upper()
@@ -272,6 +306,8 @@ def _format_record(raw_dict):
     raw_dict['drive_links'] = [a['url'] for a in combined if a.get('url')]
     raw_dict['order_pdf'] = raw_dict.get('order_pdf') or ''
     raw_dict['order_number'] = raw_dict.get('order_number') or ''
+    raw_dict['docket_number'] = raw_dict.get('docket_number') or ''
+    raw_dict['rate'] = raw_dict.get('rate') or ''
     return raw_dict
 
 def save_file_record(gem_id, file_name, drive_link, file_type=None):
@@ -423,7 +459,7 @@ def get_gem_record(gem_id):
         conn, db_type = get_connection()
         cursor = conn.cursor()
         if db_type == "postgres":
-            cursor.execute("SELECT id, gem_id, drive_link, order_pdf, remarks, order_number, created_at, updated_at FROM gmd_gem_ids WHERE UPPER(gem_id) = %s;", (gem_id,))
+            cursor.execute("SELECT id, gem_id, drive_link, order_pdf, remarks, order_number, docket_number, rate, created_at, updated_at FROM gmd_gem_ids WHERE UPPER(gem_id) = %s;", (gem_id,))
             row = cursor.fetchone()
             cursor.close()
             conn.close()
@@ -435,8 +471,10 @@ def get_gem_record(gem_id):
                     "order_pdf": row[3],
                     "remarks": row[4],
                     "order_number": row[5],
-                    "created_at": str(row[6]),
-                    "updated_at": str(row[7])
+                    "docket_number": row[6],
+                    "rate": row[7],
+                    "created_at": str(row[8]),
+                    "updated_at": str(row[9])
                 })
         else:
             cursor.execute("SELECT * FROM gmd_gem_ids WHERE UPPER(gem_id) = ?;", (gem_id,))
@@ -454,7 +492,7 @@ def get_all_gem_records():
         conn, db_type = get_connection()
         cursor = conn.cursor()
         if db_type == "postgres":
-            cursor.execute("SELECT id, gem_id, drive_link, order_pdf, remarks, order_number, created_at, updated_at FROM gmd_gem_ids ORDER BY id DESC;")
+            cursor.execute("SELECT id, gem_id, drive_link, order_pdf, remarks, order_number, docket_number, rate, created_at, updated_at FROM gmd_gem_ids ORDER BY id DESC;")
             rows = cursor.fetchall()
             cursor.close()
             conn.close()
@@ -466,8 +504,10 @@ def get_all_gem_records():
                     "order_pdf": r[3],
                     "remarks": r[4],
                     "order_number": r[5],
-                    "created_at": str(r[6]),
-                    "updated_at": str(r[7])
+                    "docket_number": r[6],
+                    "rate": r[7],
+                    "created_at": str(r[8]),
+                    "updated_at": str(r[9])
                 })
                 for r in rows
             ]
