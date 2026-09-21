@@ -963,8 +963,7 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output", _recursion_depth=0):
                     path=pdf_filename,
                     format='A4',
                     margin={'top': '12mm', 'bottom': '12mm', 'left': '12mm', 'right': '12mm'},
-                    print_background=True,
-                    timeout=15000
+                    print_background=True
                 )
             finally:
                 if browser:
