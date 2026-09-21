@@ -4,6 +4,7 @@ import glob
 import json
 import time
 import threading
+import concurrent.futures
 from datetime import datetime, timezone
 import pandas as pd
 from flask import Flask, render_template, jsonify, request, send_file
@@ -536,7 +537,16 @@ def run_batch_scrape(inputs_list):
                 old_data = None
 
         try:
-            data, pdf_path = scrape_gem_bid(item, output_dir=OUTPUT_DIR)
+            # Run with a 75-second watchdog timeout so network hangs or crashed browser targets never block the entire queue
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(scrape_gem_bid, item, output_dir=OUTPUT_DIR)
+                try:
+                    data, pdf_path = future.result(timeout=75)
+                except concurrent.futures.TimeoutError:
+                    print(f"[SCRAPER WORKER TIMEOUT] Bid {item} exceeded 75s limit. Skipping to next bid...")
+                    data, pdf_path = None, None
+                    scraper_state["failed_items"].append({"item": item, "error": "Operation timed out after 75s"})
+
             if data and isinstance(data, dict):
                 all_results.append(data)
                 scraper_state["completed_items"].append(item)
@@ -545,7 +555,7 @@ def run_batch_scrape(inputs_list):
                     detect_bid_changes(old_data, data, item)
                 except Exception as ne:
                     print(f"[NOTIFICATION ERROR] {ne}")
-            else:
+            elif not any(f.get('item') == item for f in scraper_state["failed_items"]):
                 scraper_state["failed_items"].append({"item": item, "error": "No data returned"})
             if pdf_path and isinstance(pdf_path, str) and os.path.exists(pdf_path):
                 pdf_paths.append(pdf_path)

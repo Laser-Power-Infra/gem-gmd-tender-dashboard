@@ -142,7 +142,53 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                     ))}
                   </div>
 
-                  {/* Attachments Section */}
+                  {/* PO Order PDF Section */}
+                  {data?.order_pdf && data.order_pdf.trim() && (
+                    <div style={{ marginBottom: '20px', background: '#fef2f2', border: '1.5px solid #fecaca', borderRadius: '8px', padding: '12px' }}>
+                      <h4 style={{ fontSize: '0.9rem', color: '#dc2626', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <FileText className="w-4 h-4" /> PO Order Document
+                      </h4>
+                      {(() => {
+                        const poPdf = data.order_pdf.trim();
+                        const poFileName = poPdf.split('/').pop().split('?')[0] || 'PO_Order.pdf';
+                        if (poPdf.startsWith('http')) {
+                          return (
+                            <a
+                              href={poPdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="pill-badge pill-red"
+                              style={{
+                                textDecoration: 'none',
+                                padding: '6px 12px',
+                                fontSize: '0.82rem',
+                                fontWeight: '600',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                borderRadius: '6px'
+                              }}
+                            >
+                              <FileText className="w-3.5 h-3.5 text-red-500" />
+                              <span>{poFileName}</span>
+                              <ExternalLink className="w-3 h-3 opacity-70" />
+                            </a>
+                          );
+                        }
+                        return (
+                          <button
+                            className="btn btn-primary btn-sm"
+                            onClick={() => onOpenPdf(poPdf, data.bid_number || bidNo)}
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                          >
+                            <FileText className="w-3.5 h-3.5" /> View {poFileName}
+                          </button>
+                        );
+                      })()}
+                    </div>
+                  )}
+
+                  {/* Other Attachments Section */}
                   {(() => {
                     let rawList = [];
                     if (Array.isArray(data?.attachments) && data.attachments.length > 0) {
@@ -163,7 +209,12 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                       }
                     }
 
+                    const poPdfUrl = (data?.order_pdf || '').trim();
                     const seenUrls = new Set();
+                    if (poPdfUrl) {
+                      seenUrls.add(poPdfUrl);
+                    }
+
                     const uniqueAtts = [];
                     for (const item of rawList) {
                       const u = typeof item === 'string' ? item : item?.url;
@@ -178,7 +229,7 @@ export default function ViewDetailsModal({ isOpen, bidNo, onClose, onOpenPdf }) 
                     return (
                       <div style={{ marginBottom: '20px' }}>
                         <h4 style={{ fontSize: '0.9rem', color: '#0284c7', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <Paperclip className="w-3.5 h-3.5" /> Attached Files &amp; Google Drive Documents ({uniqueAtts.length})
+                          <Paperclip className="w-3.5 h-3.5" /> Other Attached Files ({uniqueAtts.length})
                         </h4>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                           {uniqueAtts.map((att, idx) => {

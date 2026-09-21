@@ -893,34 +893,64 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                       )}
                     </div>
                   </td>
-                  {/* ORDERS PDF Column (Strictly from order_pdf in database) */}
+                  {/* PO ORDERS PDF Column */}
                   <td>
-                    {b.order_pdf && b.order_pdf.trim() ? (
-                      b.order_pdf.startsWith('http') ? (
-                        <a
-                          href={b.order_pdf}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="action-btn btn-pdf"
-                          title="View Order PDF on Google Drive"
-                          style={{ textDecoration: 'none' }}
-                        >
-                          <FileText className="w-3.5 h-3.5" /> Drive <ExternalLink className="w-3 h-3" />
-                        </a>
-                      ) : (
+                    {(() => {
+                      const poPdf = b.order_pdf && b.order_pdf.trim();
+                      if (!poPdf) {
+                        return <span className="pill-badge pill-slate" style={{ fontSize: '0.7rem' }}>—</span>;
+                      }
+                      const poFileName = poPdf.split('/').pop().split('?')[0] || 'PO_Order.pdf';
+                      const displayName = poFileName.length > 22 ? `${poFileName.substring(0, 19)}...` : poFileName;
+
+                      if (poPdf.startsWith('http')) {
+                        return (
+                          <a
+                            href={poPdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="pill-badge pill-red"
+                            title={`Open PO Order (${poFileName}) in Google Drive`}
+                            style={{
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '5px',
+                              fontSize: '0.74rem',
+                              fontWeight: '600',
+                              padding: '4px 8px',
+                              borderRadius: '6px'
+                            }}
+                          >
+                            <FileText className="w-3.5 h-3.5 text-red-500" />
+                            <span>{displayName}</span>
+                            <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                          </a>
+                        );
+                      }
+                      return (
                         <button
-                          className="action-btn btn-pdf"
-                          onClick={() => onOpenPdf(b.order_pdf, bidNo)}
-                          title="View Order PDF"
+                          className="pill-badge pill-red"
+                          onClick={() => onOpenPdf(poPdf, bidNo)}
+                          title={`View PO Order PDF: ${poFileName}`}
+                          style={{
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            fontSize: '0.74rem',
+                            fontWeight: '600',
+                            padding: '4px 8px',
+                            borderRadius: '6px'
+                          }}
                         >
-                          <FileText className="w-3.5 h-3.5" /> PDF
+                          <FileText className="w-3.5 h-3.5 text-red-500" />
+                          <span>{displayName}</span>
                         </button>
-                      )
-                    ) : (
-                      <span className="pill-badge pill-slate" style={{ fontSize: '0.7rem' }}>—</span>
-                    )}
+                      );
+                    })()}
                   </td>
-                  {/* ATTACHED FILES Column (Displays all attachment file names with direct Google Drive links) */}
+                  {/* ATTACHED FILES Column (Displays all other attachment files with their names & direct links) */}
                   <td>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-start' }}>
                       {(() => {
@@ -943,8 +973,13 @@ export default function BidsTable({ bids, onSaveRemark, onSaveStatus, onViewDeta
                           }
                         }
 
-                        // Deduplicate across all items by URL
+                        // Filter out PO Order PDF URL so attachments are strictly other files
+                        const poPdfUrl = (b.order_pdf || '').trim();
                         const seenUrls = new Set();
+                        if (poPdfUrl) {
+                          seenUrls.add(poPdfUrl);
+                        }
+
                         const uniqueAtts = [];
                         for (const item of rawList) {
                           const u = typeof item === 'string' ? item : item?.url;

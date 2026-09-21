@@ -23,6 +23,25 @@ HEADERS = {
     'Accept-Language': 'en-US,en;q=0.5'
 }
 
+# Resilient Chromium arguments for Docker, Linux, and high-load environments
+CHROMIUM_LAUNCH_ARGS = [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu',
+    '--disable-software-rasterizer',
+    '--disable-extensions',
+    '--disable-background-networking',
+    '--disable-default-apps',
+    '--disable-sync',
+    '--disable-translate',
+    '--mute-audio',
+    '--no-first-run',
+    '--safebrowsing-disable-auto-update',
+    '--ignore-certificate-errors',
+    '--js-flags=--max-old-space-size=512'
+]
+
 def clean_text(text):
     if not text:
         return ""
@@ -570,188 +589,207 @@ def resolve_gem_bid_number_to_url(gem_bid_no):
     discover any associated Reverse Auction (RA) Number, and dynamically parse all real-time RA Schedules.
     """
     print(f"Searching GeM portal for exact Bid Number: '{gem_bid_no}'...")
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        
-        # Resilient navigation with retry
-        nav_success = False
-        for attempt in range(1, 4):
+    target_url = None
+    discovered_ra_no = None
+    discovered_ra_status = None
+    ra_start_date = "N/A"
+    ra_end_date = "N/A"
+    ra_schedules = []
+    ra_schedules_url = None
+    active_card_data = None
+    bid_result_links = []
+
+    try:
+        with sync_playwright() as p:
+            browser = None
             try:
-                page.goto('https://bidplus.gem.gov.in/all-bids', wait_until='domcontentloaded', timeout=30000)
-                page.wait_for_timeout(1000)
-                nav_success = True
-                break
-            except Exception as nav_err:
-                print(f"  [Attempt {attempt}/3] Navigation notice: {nav_err}. Retrying in 3s...")
-                page.wait_for_timeout(3000)
-        
-        if not nav_success:
-            print(f"  -> Could not reach GeM portal after 3 attempts (Check Internet connectivity).")
-            browser.close()
-            return None, None, None, "N/A", "N/A", [], None
-        
-        # Click Bid/RA Status radio button if available
-        try:
-            page.click('input#bidrastatus')
-            page.wait_for_timeout(1500)
-        except Exception:
-            pass
-            
-        page.fill('input#searchBid', gem_bid_no)
-        page.keyboard.press('Enter')
-        page.wait_for_timeout(3500)
-        
-        soup = BeautifulSoup(page.content(), 'html.parser')
-        cards = soup.find_all(class_='card')
-        
-        target_url = None
-        discovered_ra_no = None
-        discovered_ra_status = None
-        ra_start_date = "N/A"
-        ra_end_date = "N/A"
-        ra_schedules = []
-        ra_schedules_url = None
-        active_card_data = None
-
-        for c in cards:
-            c_text = ' '.join(c.get_text().split())
-            if gem_bid_no in c_text:
-                # Extract RA Number directly from card header text
-                ra_match = re.search(r'RA\s*NO\s*:\s*(GEM/\d+/R/\d+)', c_text, re.IGNORECASE) or re.search(r'GEM/\d+/R/\d+', c_text)
-                if ra_match:
-                    discovered_ra_no = ra_match.group(1) if ra_match.groups() else ra_match.group(0)
-                    discovered_ra_status = "RA Created / Active"
-
-                # Check for RA Schedules Page Link
-                ra_sched_link = c.find('a', href=re.compile(r'ra-schedules', re.IGNORECASE))
-                if ra_sched_link:
-                    sched_href = ra_sched_link['href']
-                    ra_schedules_url = sched_href if sched_href.startswith('http') else 'https://bidplus.gem.gov.in' + sched_href
-                    print(f"  -> ⚡ Fetching Real-Time RA Schedules Page: {ra_schedules_url}")
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=CHROMIUM_LAUNCH_ARGS,
+                    timeout=25000
+                )
+                context = browser.new_context(
+                    user_agent=HEADERS['User-Agent'],
+                    viewport={'width': 1280, 'height': 800}
+                )
+                page = context.new_page()
+                page.set_default_navigation_timeout(25000)
+                page.set_default_timeout(15000)
+                
+                # Resilient navigation with retry
+                nav_success = False
+                for attempt in range(1, 4):
                     try:
-                        page.goto(ra_schedules_url, wait_until='domcontentloaded')
-                        page.wait_for_timeout(2500)
-                        
-                        sched_soup = BeautifulSoup(page.content(), 'html.parser')
-                        # Extract all schedule cards/rows dynamically
-                        sch_elements = sched_soup.find_all(class_='card') or sched_soup.find_all('div', class_=lambda x: x and ('border' in str(x) or 'panel' in str(x) or 'row' in str(x)))
-                        if not sch_elements:
-                            sch_elements = [sched_soup]
-
-                        for el in sch_elements:
-                            el_txt = ' '.join(el.get_text().split())
-                            if 'Start Date' in el_txt or 'Schedule' in el_txt:
-                                t_m = re.search(r'Schedule\s*Title\s*:\s*([^\n<]+?)(?:Start|End|RA|\$|Status)', el_txt, re.IGNORECASE) or re.search(r'Schedule\s*\d+', el_txt, re.IGNORECASE)
-                                s_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', el_txt, re.IGNORECASE)
-                                e_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', el_txt, re.IGNORECASE)
-
-                                if s_m or e_m:
-                                    t_str = t_m.group(1).strip() if t_m and t_m.groups() else (t_m.group(0).strip() if t_m else f"Schedule {len(ra_schedules)+1}")
-                                    s_str = s_m.group(1).strip() if s_m else 'N/A'
-                                    e_str = e_m.group(1).strip() if e_m else 'N/A'
-
-                                    # Clean dates
-                                    s_clean = re.split(r'(?:End|Status|RA|\$)', s_str)[0].strip()
-                                    e_clean = re.split(r'(?:Status|RA|View|\$)', e_str)[0].strip()
-
-                                    if not any(s['title'] == t_str and s['end_date'] == e_clean for s in ra_schedules):
-                                        ra_schedules.append({
-                                            'title': t_str,
-                                            'start_date': s_clean,
-                                            'end_date': e_clean,
-                                            'status': 'RA Active / Completed'
-                                        })
-                    except Exception as s_err:
-                        print(f"  -> Error fetching RA schedules page: {s_err}")
-
-                # If ra_schedules were found dynamically, set start/end date from first schedule
-                if ra_schedules:
-                    ra_start_date = ra_schedules[0]['start_date']
-                    ra_end_date = ra_schedules[0]['end_date']
-                else:
-                    # Fallback to dates directly in search card text
-                    start_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', c_text, re.IGNORECASE)
-                    end_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', c_text, re.IGNORECASE)
-                    if start_m:
-                        ra_start_date = start_m.group(1).strip()
-                    if end_m:
-                        ra_end_date = end_m.group(1).strip()
-
-                bid_result_links = []
-                for a in c.find_all('a', href=True):
-                    href = a['href']
-                    link_text = a.get_text(strip=True).upper()
-                    if 'RA' in link_text or 'REVERSE' in link_text:
-                        discovered_ra_status = "RA Result Published"
-
-                    if 'getBidResultView' in href or 'getBidResultViewSchedule' in href or 'getSinglePacketResultView' in href:
-                        full_h = href if href.startswith('http') else 'https://bidplus.gem.gov.in' + href
-                        if full_h not in bid_result_links:
-                            bid_result_links.append(full_h)
-
-                # Prioritize first / main Bid Result View URL (contains full Technical and Financial evaluation tables)
-                if bid_result_links:
-                    target_url = bid_result_links[0]
-                        
-                # If no evaluation result link yet, extract the active bid card details so it isn't skipped
-                active_card_data = None
-                if not target_url:
-                    # Parse start / end dates, quantity, department from search card
-                    b_start = "N/A"
-                    b_end = "N/A"
-                    start_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', c_text, re.IGNORECASE)
-                    end_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', c_text, re.IGNORECASE)
-                    if start_m: b_start = start_m.group(1).strip()
-                    if end_m: b_end = end_m.group(1).strip()
-
-                    items_m = re.search(r'Items\s*:\s*([^\n\r]+?)(?=\s*Quantity|\s*Department|\s*Start|\$)', c_text, re.IGNORECASE)
-                    qty_m = re.search(r'Quantity\s*:\s*([\d,]+)', c_text, re.IGNORECASE)
-                    dept_m = re.search(r'Department\s*Name\s*And\s*Address\s*:\s*([^\n\r]+?)(?=\s*Start|\s*End|\$)', c_text, re.IGNORECASE)
-
-                    active_card_data = {
-                        'source_id': gem_bid_no,
-                        'bid_number': gem_bid_no,
-                        'bid_title_type': 'BID DETAILS',
-                        'bid_details': {
-                            'Bid Status': 'Active / Ongoing (Evaluation Pending)',
-                            'Bid Start Date / Time': b_start,
-                            'Bid End Date / Time': b_end,
-                            'Quantity': qty_m.group(1).strip() if qty_m else 'N/A',
-                            'Items': items_m.group(1).strip() if items_m else 'N/A'
-                        },
-                        'buyer_details': {
-                            'Department Name': dept_m.group(1).strip() if dept_m else 'N/A'
-                        },
-                        'technical_evaluation': [],
-                        'financial_evaluation': [],
-                        'ra_info': {
-                            'is_ra': bool(discovered_ra_no),
-                            'ra_number': discovered_ra_no or 'N/A',
-                            'ra_status': discovered_ra_status or ('RA Active' if discovered_ra_no else 'N/A'),
-                            'ra_start_date': ra_start_date,
-                            'ra_end_date': ra_end_date,
-                            'ra_schedules': ra_schedules,
-                            'ra_schedules_url': ra_schedules_url
-                        }
-                    }
-
-                if target_url or discovered_ra_no or active_card_data:
-                    break
+                        page.goto('https://bidplus.gem.gov.in/all-bids', wait_until='domcontentloaded', timeout=25000)
+                        page.wait_for_timeout(1000)
+                        nav_success = True
+                        break
+                    except Exception as nav_err:
+                        print(f"  [Attempt {attempt}/3] Navigation notice: {nav_err}. Retrying in 2s...")
+                        page.wait_for_timeout(2000)
+                
+                if not nav_success:
+                    print(f"  -> Could not reach GeM portal after 3 attempts (Check Internet connectivity).")
+                    return None, None, None, "N/A", "N/A", [], None, None, []
+                
+                # Click Bid/RA Status radio button if available
+                try:
+                    page.click('input#bidrastatus', timeout=4000)
+                    page.wait_for_timeout(1000)
+                except Exception:
+                    pass
                     
-        browser.close()
+                try:
+                    page.fill('input#searchBid', gem_bid_no, timeout=5000)
+                    page.keyboard.press('Enter')
+                    page.wait_for_timeout(3000)
+                except Exception as fill_err:
+                    print(f"  -> Notice on search submit: {fill_err}")
+                
+                try:
+                    html_src = page.content()
+                except Exception:
+                    html_src = ""
 
-        if target_url or discovered_ra_no or active_card_data:
-            if target_url:
-                print(f"  -> Found Exact Bid Result URL: {target_url}")
-            if ra_schedules_url:
-                print(f"  -> Found Exact RA Schedules URL: {ra_schedules_url}")
-            if discovered_ra_no:
-                print(f"  -> ⚡ Discovered RA Number: {discovered_ra_no} (Schedules: {len(ra_schedules)}, Start: {ra_start_date}, End: {ra_end_date})")
-            return target_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card_data, bid_result_links
-        else:
-            print(f"  -> No search result card found on portal for '{gem_bid_no}' (Bid may be fresh or unpublished)")
-            return None, None, None, "N/A", "N/A", [], None, None, []
+                soup = BeautifulSoup(html_src, 'html.parser')
+                cards = soup.find_all(class_='card')
+
+                for c in cards:
+                    c_text = ' '.join(c.get_text().split())
+                    if gem_bid_no in c_text:
+                        # Extract RA Number directly from card header text
+                        ra_match = re.search(r'RA\s*NO\s*:\s*(GEM/\d+/R/\d+)', c_text, re.IGNORECASE) or re.search(r'GEM/\d+/R/\d+', c_text)
+                        if ra_match:
+                            discovered_ra_no = ra_match.group(1) if ra_match.groups() else ra_match.group(0)
+                            discovered_ra_status = "RA Created / Active"
+
+                        # Check for RA Schedules Page Link
+                        ra_sched_link = c.find('a', href=re.compile(r'ra-schedules', re.IGNORECASE))
+                        if ra_sched_link:
+                            sched_href = ra_sched_link['href']
+                            ra_schedules_url = sched_href if sched_href.startswith('http') else 'https://bidplus.gem.gov.in' + sched_href
+                            print(f"  -> ⚡ Fetching Real-Time RA Schedules Page: {ra_schedules_url}")
+                            try:
+                                page.goto(ra_schedules_url, wait_until='domcontentloaded', timeout=15000)
+                                page.wait_for_timeout(2000)
+                                
+                                sched_soup = BeautifulSoup(page.content(), 'html.parser')
+                                sch_elements = sched_soup.find_all(class_='card') or sched_soup.find_all('div', class_=lambda x: x and ('border' in str(x) or 'panel' in str(x) or 'row' in str(x)))
+                                if not sch_elements:
+                                    sch_elements = [sched_soup]
+
+                                for el in sch_elements:
+                                    el_txt = ' '.join(el.get_text().split())
+                                    if 'Start Date' in el_txt or 'Schedule' in el_txt:
+                                        t_m = re.search(r'Schedule\s*Title\s*:\s*([^\n<]+?)(?:Start|End|RA|\$|Status)', el_txt, re.IGNORECASE) or re.search(r'Schedule\s*\d+', el_txt, re.IGNORECASE)
+                                        s_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', el_txt, re.IGNORECASE)
+                                        e_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', el_txt, re.IGNORECASE)
+
+                                        if s_m or e_m:
+                                            t_str = t_m.group(1).strip() if t_m and t_m.groups() else (t_m.group(0).strip() if t_m else f"Schedule {len(ra_schedules)+1}")
+                                            s_str = s_m.group(1).strip() if s_m else 'N/A'
+                                            e_str = e_m.group(1).strip() if e_m else 'N/A'
+
+                                            s_clean = re.split(r'(?:End|Status|RA|\$)', s_str)[0].strip()
+                                            e_clean = re.split(r'(?:Status|RA|View|\$)', e_str)[0].strip()
+
+                                            if not any(s['title'] == t_str and s['end_date'] == e_clean for s in ra_schedules):
+                                                ra_schedules.append({
+                                                    'title': t_str,
+                                                    'start_date': s_clean,
+                                                    'end_date': e_clean,
+                                                    'status': 'RA Active / Completed'
+                                                })
+                            except Exception as s_err:
+                                print(f"  -> Error fetching RA schedules page: {s_err}")
+
+                        if ra_schedules:
+                            ra_start_date = ra_schedules[0]['start_date']
+                            ra_end_date = ra_schedules[0]['end_date']
+                        else:
+                            start_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', c_text, re.IGNORECASE)
+                            end_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', c_text, re.IGNORECASE)
+                            if start_m:
+                                ra_start_date = start_m.group(1).strip()
+                            if end_m:
+                                ra_end_date = end_m.group(1).strip()
+
+                        for a in c.find_all('a', href=True):
+                            href = a['href']
+                            link_text = a.get_text(strip=True).upper()
+                            if 'RA' in link_text or 'REVERSE' in link_text:
+                                discovered_ra_status = "RA Result Published"
+
+                            if 'getBidResultView' in href or 'getBidResultViewSchedule' in href or 'getSinglePacketResultView' in href:
+                                full_h = href if href.startswith('http') else 'https://bidplus.gem.gov.in' + href
+                                if full_h not in bid_result_links:
+                                    bid_result_links.append(full_h)
+
+                        if bid_result_links:
+                            target_url = bid_result_links[0]
+                                
+                        if not target_url:
+                            b_start = "N/A"
+                            b_end = "N/A"
+                            start_m = re.search(r'Start\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+?)(?=\s*End|\s*Status|\$)', c_text, re.IGNORECASE)
+                            end_m = re.search(r'End\s*Date\s*:\s*([\d\-\/\:\sA-Za-z]+)', c_text, re.IGNORECASE)
+                            if start_m: b_start = start_m.group(1).strip()
+                            if end_m: b_end = end_m.group(1).strip()
+
+                            items_m = re.search(r'Items\s*:\s*([^\n\r]+?)(?=\s*Quantity|\s*Department|\s*Start|\$)', c_text, re.IGNORECASE)
+                            qty_m = re.search(r'Quantity\s*:\s*([\d,]+)', c_text, re.IGNORECASE)
+                            dept_m = re.search(r'Department\s*Name\s*And\s*Address\s*:\s*([^\n\r]+?)(?=\s*Start|\s*End|\$)', c_text, re.IGNORECASE)
+
+                            active_card_data = {
+                                'source_id': gem_bid_no,
+                                'bid_number': gem_bid_no,
+                                'bid_title_type': 'BID DETAILS',
+                                'bid_details': {
+                                    'Bid Status': 'Active / Ongoing (Evaluation Pending)',
+                                    'Bid Start Date / Time': b_start,
+                                    'Bid End Date / Time': b_end,
+                                    'Quantity': qty_m.group(1).strip() if qty_m else 'N/A',
+                                    'Items': items_m.group(1).strip() if items_m else 'N/A'
+                                },
+                                'buyer_details': {
+                                    'Department Name': dept_m.group(1).strip() if dept_m else 'N/A'
+                                },
+                                'technical_evaluation': [],
+                                'financial_evaluation': [],
+                                'ra_info': {
+                                    'is_ra': bool(discovered_ra_no),
+                                    'ra_number': discovered_ra_no or 'N/A',
+                                    'ra_status': discovered_ra_status or ('RA Active' if discovered_ra_no else 'N/A'),
+                                    'ra_start_date': ra_start_date,
+                                    'ra_end_date': ra_end_date,
+                                    'ra_schedules': ra_schedules,
+                                    'ra_schedules_url': ra_schedules_url
+                                }
+                            }
+
+                        if target_url or discovered_ra_no or active_card_data:
+                            break
+
+            finally:
+                if browser:
+                    try:
+                        browser.close()
+                    except Exception:
+                        pass
+    except Exception as pw_err:
+        print(f"  [PLAYWRIGHT NOTICE] Error during search resolution for '{gem_bid_no}': {pw_err}")
+
+    if target_url or discovered_ra_no or active_card_data:
+        if target_url:
+            print(f"  -> Found Exact Bid Result URL: {target_url}")
+        if ra_schedules_url:
+            print(f"  -> Found Exact RA Schedules URL: {ra_schedules_url}")
+        if discovered_ra_no:
+            print(f"  -> ⚡ Discovered RA Number: {discovered_ra_no} (Schedules: {len(ra_schedules)}, Start: {ra_start_date}, End: {ra_end_date})")
+        return target_url, discovered_ra_no, discovered_ra_status, ra_start_date, ra_end_date, ra_schedules, ra_schedules_url, active_card_data, bid_result_links
+    else:
+        print(f"  -> No search result card found on portal for '{gem_bid_no}' (Bid may be fresh or unpublished)")
+        return None, None, None, "N/A", "N/A", [], None, None, []
 
 def scrape_gem_bid(bid_input, output_dir="scraped_output", _recursion_depth=0):
     os.makedirs(output_dir, exist_ok=True)
@@ -908,23 +946,46 @@ def scrape_gem_bid(bid_input, output_dir="scraped_output", _recursion_depth=0):
         f.write(html_report)
 
     pdf_filename = os.path.join(output_dir, "pdfs", f"{bid_no}.pdf")
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto('file:///' + os.path.abspath(temp_html_path).replace('\\', '/'))
-        page.pdf(
-            path=pdf_filename,
-            format='A4',
-            margin={'top': '12mm', 'bottom': '12mm', 'left': '12mm', 'right': '12mm'},
-            print_background=True
-        )
-        browser.close()
+    try:
+        with sync_playwright() as p:
+            browser = None
+            try:
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=CHROMIUM_LAUNCH_ARGS,
+                    timeout=20000
+                )
+                page = browser.new_page()
+                page.set_default_navigation_timeout(20000)
+                page.set_default_timeout(15000)
+                page.goto('file:///' + os.path.abspath(temp_html_path).replace('\\', '/'), wait_until='load', timeout=15000)
+                page.pdf(
+                    path=pdf_filename,
+                    format='A4',
+                    margin={'top': '12mm', 'bottom': '12mm', 'left': '12mm', 'right': '12mm'},
+                    print_background=True,
+                    timeout=15000
+                )
+            finally:
+                if browser:
+                    try:
+                        browser.close()
+                    except Exception:
+                        pass
+    except Exception as pdf_err:
+        print(f"  -> Warning: Could not generate PDF with Playwright ({pdf_err}). Continuing without PDF.")
 
     if os.path.exists(temp_html_path):
-        os.remove(temp_html_path)
+        try:
+            os.remove(temp_html_path)
+        except Exception:
+            pass
 
-    print(f"  -> Successfully generated PDF: {pdf_filename}")
-    return scraped_data, pdf_filename
+    if os.path.exists(pdf_filename):
+        print(f"  -> Successfully generated PDF: {pdf_filename}")
+        return scraped_data, pdf_filename
+    else:
+        return scraped_data, None
 
 def main():
     parser = argparse.ArgumentParser(description="GeM Portal Bid Details & Evaluation Scraper & PDF Generator")

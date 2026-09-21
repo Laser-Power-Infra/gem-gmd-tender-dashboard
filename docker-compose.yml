@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: gem-scraper-backend
     restart: unless-stopped
+    shm_size: '2gb'
+    ipc: host
     ports:
       - "6001:6001"
     environment:
